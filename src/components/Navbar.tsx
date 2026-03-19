@@ -19,9 +19,7 @@ export default function Navbar() {
           margin: "0 auto",
         }}
       >
-        <span style={{ color: "#D4AF37", fontWeight: 600 }}>
-          UKIGT
-        </span>
+        <span style={{ color: "#D4AF37", fontWeight: 600 }}>UKIGT</span>
 
         <nav style={{ display: "flex", gap: "20px" }}>
           <a href="/" style={link}>Home</a>
