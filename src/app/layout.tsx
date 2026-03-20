@@ -13,9 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ margin: 0 }}>
         <Navbar />
-        <main style={{ paddingTop: "90px" }}>{children}</main>
+        {children}
       </body>
     </html>
   );
