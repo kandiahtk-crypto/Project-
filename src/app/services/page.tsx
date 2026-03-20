@@ -1,6 +1,3 @@
-// trigger deploy
-import Navbar from "../../components/Navbar";
-
 function ServiceBlock({
   number,
   title,
@@ -38,7 +35,6 @@ function ServiceBlock({
           margin: "0 0 14px",
           color: "#0F172A",
           fontSize: "26px",
-          lineHeight: 1.2,
         }}
       >
         {title}
@@ -49,7 +45,6 @@ function ServiceBlock({
           margin: 0,
           color: "#475569",
           lineHeight: 1.9,
-          fontSize: "16px",
         }}
       >
         {text}
@@ -61,292 +56,190 @@ function ServiceBlock({
 export default function ServicesPage() {
   return (
     <>
-      <Navbar />
+      {/* HERO */}
+      <section
+        style={{
+          background:
+            "linear-gradient(135deg, #07111F 0%, #0B1728 45%, #10233B 100%)",
+          color: "white",
+          padding: "60px 20px 90px", // 🔥 FIXED GAP
+          textAlign: "center",
+        }}
+      >
+        <div style={{ maxWidth: "920px", margin: "0 auto" }}>
+          <p
+            style={{
+              color: "#D4AF37",
+              letterSpacing: "0.14em",
+              fontSize: "12px",
+              fontWeight: 700,
+              marginBottom: "14px",
+            }}
+          >
+            OUR SERVICES
+          </p>
 
-      <main style={{ fontFamily: "Arial, sans-serif", paddingTop: "84px", background: "#F8FBFF" }}>
-        <section
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "clamp(38px, 5vw, 64px)",
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
+            }}
+          >
+            Premium UK & Ireland ground-transport solutions
+          </h1>
+
+          <p
+            style={{
+              maxWidth: "780px",
+              margin: "24px auto 0",
+              color: "#DCE8F5",
+              lineHeight: 1.9,
+              fontSize: "18px",
+            }}
+          >
+            Structured, dependable touring logistics designed for international
+            tour operators, DMCs and travel brands across the United Kingdom
+            and Ireland.
+          </p>
+        </div>
+      </section>
+
+      {/* SERVICES GRID */}
+      <section style={{ padding: "90px 20px", background: "#F8FBFF" }}>
+        <div
           style={{
-            background:
-              "linear-gradient(135deg, #07111F 0%, #0B1728 45%, #10233B 100%)",
-            color: "white",
-            padding: "110px 20px 90px",
-            textAlign: "center",
+            maxWidth: "1120px",
+            margin: "0 auto",
+            display: "grid",
+            gap: "24px",
           }}
         >
-          <div style={{ maxWidth: "920px", margin: "0 auto" }}>
-            <p
-              style={{
-                margin: "0 0 14px",
-                color: "#D4AF37",
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                fontSize: "12px",
-                fontWeight: 700,
-              }}
-            >
-              Our Services
-            </p>
+          <ServiceBlock
+            number="01"
+            title="Fixed-Departure Series Support"
+            text="Structured and repeatable operations for season-long touring programmes with consistent timing, routing and delivery."
+          />
 
-            <h1
-              style={{
-                margin: 0,
-                fontSize: "clamp(38px, 5vw, 64px)",
-                lineHeight: 1.05,
-                letterSpacing: "-0.03em",
-              }}
-            >
-              Premium UK &amp; Ireland ground-transport solutions for international tour operators.
-            </h1>
+          <ServiceBlock
+            number="02"
+            title="Multi-Region UK Touring"
+            text="Seamless touring across England, Scotland and Wales with efficient movement and balanced routing."
+          />
 
-            <p
-              style={{
-                maxWidth: "820px",
-                margin: "24px auto 0",
-                color: "#DCE8F5",
-                lineHeight: 1.9,
-                fontSize: "18px",
-              }}
-            >
-              UK Inbound Ground Transport delivers professional, structured and
-              dependable touring logistics across the United Kingdom and Ireland.
-              We support tour operators, DMCs and international travel brands
-              with a high-quality transport service built for multi-day
-              programmes, fixed-departure series and high-volume group travel.
-            </p>
+          <ServiceBlock
+            number="03"
+            title="UK–Ireland Integration"
+            text="Unified British Isles touring with coordinated ferry logistics and smooth cross-country continuity."
+          />
 
-            <p
-              style={{
-                maxWidth: "780px",
-                margin: "18px auto 0",
-                color: "#DCE8F5",
-                lineHeight: 1.9,
-                fontSize: "18px",
-              }}
-            >
-              Our focus is on delivering consistent, precision-driven operations
-              that strengthen your touring programmes and elevate the guest
-              experience.
-            </p>
-          </div>
-        </section>
+          <ServiceBlock
+            number="04"
+            title="Large Group Coordination"
+            text="Efficient multi-coach and high-volume group transport management with structured execution."
+          />
 
-        <section style={{ padding: "90px 20px" }}>
+          <ServiceBlock
+            number="05"
+            title="International Market Alignment"
+            text="Touring flow tailored to long-haul markets including the US, India, China and Europe."
+          />
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section
+        style={{
+          padding: "90px 20px",
+          background: "#EAF3FF",
+        }}
+      >
+        <div style={{ maxWidth: "1100px", margin: "0 auto", textAlign: "center" }}>
+          <p
+            style={{
+              color: "#D4AF37",
+              fontSize: "12px",
+              letterSpacing: "0.12em",
+              marginBottom: "12px",
+              fontWeight: 700,
+            }}
+          >
+            WHY OPERATORS CHOOSE US
+          </p>
+
+          <h2 style={{ fontSize: "42px", marginBottom: "40px" }}>
+            Built for structured inbound touring
+          </h2>
+
           <div
             style={{
-              maxWidth: "1120px",
-              margin: "0 auto",
               display: "grid",
-              gap: "24px",
+              gap: "20px",
+              gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
             }}
           >
-            <ServiceBlock
-              number="01"
-              title="Fixed-Departure Series Support"
-              text="Our Fixed-Departure Series service ensures complete operational consistency for season-long touring programmes. Every departure follows an identical structure, offering predictable routing, familiar timing patterns and dependable service delivery. This level of repeatability helps operators maintain product quality, support brochure schedules, and deliver a stable touring experience across the entire season."
-            />
-
-            <ServiceBlock
-              number="02"
-              title="Multi-Region UK Touring"
-              text="Our multi-region touring service supports seamless travel across England, Scotland and Wales. We design touring flows that offer balanced pacing, manageable distances and smooth transitions between regions. Whether your itineraries cover cultural highlights, scenic routes or major cities, we ensure day-to-day operations run with clarity, efficiency and professional oversight."
-            />
-
-            <ServiceBlock
-              number="03"
-              title="UK–Ireland Integrated Touring"
-              text="We offer fully integrated UK–Ireland logistics for British Isles programmes requiring unified standards across both countries. Our team manages timings, ferry coordination and cross-country continuity to ensure an uninterrupted touring experience. This service is ideal for long-haul markets and operators offering UK + Ireland combination itineraries."
-            />
-
-            <ServiceBlock
-              number="04"
-              title="Large Group & Multi-Coach Coordination"
-              text="We specialise in supporting high-volume group movements, including multi-coach touring, incentive travel, student groups and special-interest programmes. Our coordination covers vehicle sequencing, daily timing, loading patterns and on-tour management. This ensures large groups can move efficiently and safely while maintaining a smooth touring flow."
-            />
-
-            <ServiceBlock
-              number="05"
-              title="Long-Haul Market Alignment"
-              text="We understand the expectations of long-haul markets, particularly from the United States, India, China and Europe. We tailor pacing, routing and daily schedules to match each market’s preferred travel style, ensuring guests experience a comfortable and well-timed journey. From arrival-day logistics to photo-friendly pacing, our operational style aligns with the needs of international travellers."
-            />
+            {[
+              "Consistent delivery across departures",
+              "UK & Ireland coverage",
+              "Clear operational structure",
+              "Reliable complex logistics",
+              "Long-haul market expertise",
+              "Premium brand execution",
+            ].map((item) => (
+              <div
+                key={item}
+                style={{
+                  background: "white",
+                  padding: "22px",
+                  borderRadius: "14px",
+                }}
+              >
+                {item}
+              </div>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section
+      {/* CTA */}
+      <section style={{ padding: "90px 20px", background: "#F8FBFF" }}>
+        <div
           style={{
-            padding: "90px 20px",
-            background: "#EAF3FF",
-            borderTop: "1px solid rgba(15,23,42,0.05)",
-            borderBottom: "1px solid rgba(15,23,42,0.05)",
+            maxWidth: "900px",
+            margin: "0 auto",
+            textAlign: "center",
+            background: "#0B1728",
+            color: "white",
+            padding: "50px",
+            borderRadius: "24px",
           }}
         >
-          <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-            <div style={{ maxWidth: "760px", margin: "0 auto 46px", textAlign: "center" }}>
-              <p
-                style={{
-                  margin: "0 0 12px",
-                  color: "#D4AF37",
-                  letterSpacing: "0.12em",
-                  textTransform: "uppercase",
-                  fontSize: "12px",
-                  fontWeight: 700,
-                }}
-              >
-                Why Operators Choose Us
-              </p>
+          <h2 style={{ margin: 0, fontSize: "40px" }}>
+            Ready to plan your next programme?
+          </h2>
 
-              <h2
-                style={{
-                  margin: 0,
-                  fontSize: "clamp(30px, 4vw, 48px)",
-                  lineHeight: 1.1,
-                  color: "#111827",
-                }}
-              >
-                Structured service delivery built for inbound touring excellence.
-              </h2>
-            </div>
+          <p style={{ marginTop: "16px", color: "#DCE8F5" }}>
+            Speak with our team about your touring requirements.
+          </p>
 
-            <div
-              style={{
-                display: "grid",
-                gap: "20px",
-                gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-              }}
-            >
-              {[
-                "Consistent service delivery across all departures",
-                "UK-wide and Ireland-wide operational coverage",
-                "Structured planning and professional communication",
-                "Reliable management of large and complex touring programmes",
-                "Tailored support for long-haul inbound markets",
-                "Premium brand presentation and dependable day-to-day execution",
-              ].map((item) => (
-                <div
-                  key={item}
-                  style={{
-                    background: "#ffffff",
-                    borderRadius: "16px",
-                    padding: "22px",
-                    boxShadow: "0 10px 28px rgba(15,23,42,0.06)",
-                    border: "1px solid rgba(15,23,42,0.06)",
-                  }}
-                >
-                  <div
-                    style={{
-                      width: "10px",
-                      height: "10px",
-                      borderRadius: "999px",
-                      background: "#D4AF37",
-                      marginBottom: "14px",
-                    }}
-                  />
-                  <p
-                    style={{
-                      margin: 0,
-                      color: "#334155",
-                      lineHeight: 1.7,
-                      fontSize: "16px",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {item}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section style={{ padding: "90px 20px", background: "#F8FBFF" }}>
-          <div
+          <a
+            href="/contact"
             style={{
-              maxWidth: "960px",
-              margin: "0 auto",
-              textAlign: "center",
-              background: "#0B1728",
-              color: "white",
-              borderRadius: "28px",
-              padding: "54px 28px",
-              boxShadow: "0 24px 50px rgba(11,23,40,0.18)",
+              display: "inline-block",
+              marginTop: "24px",
+              background: "#D4AF37",
+              color: "#0B1728",
+              padding: "14px 22px",
+              borderRadius: "10px",
+              textDecoration: "none",
+              fontWeight: 700,
             }}
           >
-            <p
-              style={{
-                margin: "0 0 12px",
-                color: "#D4AF37",
-                textTransform: "uppercase",
-                letterSpacing: "0.12em",
-                fontSize: "12px",
-                fontWeight: 700,
-              }}
-            >
-              Operator Enquiries
-            </p>
-
-            <h2
-              style={{
-                margin: 0,
-                fontSize: "clamp(30px, 4vw, 46px)",
-                lineHeight: 1.1,
-              }}
-            >
-              Let’s support your next touring programme with dependable transport delivery.
-            </h2>
-
-            <p
-              style={{
-                maxWidth: "720px",
-                margin: "18px auto 0",
-                color: "#DCE8F5",
-                lineHeight: 1.8,
-                fontSize: "17px",
-              }}
-            >
-              Speak with our team about departure structure, route planning,
-              group size and operational requirements across the UK and Ireland.
-            </p>
-
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                flexWrap: "wrap",
-                gap: "14px",
-                marginTop: "30px",
-              }}
-            >
-              <a
-                href="/contact"
-                style={{
-                  background: "#D4AF37",
-                  color: "#0B1728",
-                  textDecoration: "none",
-                  padding: "15px 22px",
-                  borderRadius: "12px",
-                  fontWeight: 700,
-                }}
-              >
-                Contact Us
-              </a>
-
-              <a
-                href="/"
-                style={{
-                  background: "transparent",
-                  color: "#EAF3FF",
-                  textDecoration: "none",
-                  padding: "15px 22px",
-                  borderRadius: "12px",
-                  fontWeight: 700,
-                  border: "1px solid rgba(255,255,255,0.16)",
-                }}
-              >
-                Back to Home
-              </a>
-            </div>
-          </div>
-        </section>
-      </main>
+            Contact Us
+          </a>
+        </div>
+      </section>
     </>
   );
 }
