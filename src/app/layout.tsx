@@ -1,4 +1,5 @@
 import "./globals.css";
+import Navbar from "../components/Navbar";
 
 export const metadata = {
   title: "UK Inbound Ground Transport",
@@ -12,7 +13,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        <main style={{ paddingTop: "90px" }}>{children}</main>
+      </body>
     </html>
   );
 }
