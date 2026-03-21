@@ -1,17 +1,39 @@
 export default function AboutPage() {
   return (
     <>
-      {/* HERO */}
-      <section style={hero}>
-        <h1 style={title}>About UKIGT</h1>
+      <section
+        style={{
+          background:
+            "linear-gradient(135deg, #07111F 0%, #0B1728 45%, #10233B 100%)",
+          color: "white",
+          padding: "60px 20px 90px",
+          textAlign: "center",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "clamp(40px, 6vw, 68px)",
+            color: "#D4AF37",
+            margin: 0,
+          }}
+        >
+          About Us
+        </h1>
 
-        <p style={subtitle}>
-          A premium transport partner for UK & Ireland inbound touring.
+        <p
+          style={{
+            maxWidth: "700px",
+            margin: "20px auto 0",
+            color: "#DCE8F5",
+            lineHeight: 1.8,
+            fontSize: "18px",
+          }}
+        >
+          A premium transport partner for international UK &amp; Ireland touring.
         </p>
       </section>
 
-      {/* CONTENT */}
-      <section style={sectionLight}>
+      <section style={{ padding: "80px 20px", background: "#F8FBFF" }}>
         <div style={content}>
           <p>
             UK Inbound Ground Transport supports international tour operators,
@@ -20,22 +42,19 @@ export default function AboutPage() {
           </p>
 
           <p>
-            Our focus is consistency, clarity and operational excellence —
+            Our focus is consistency, clarity and operational excellence,
             ensuring every touring programme runs smoothly from start to finish.
           </p>
         </div>
       </section>
-
-      {/* CTA */}
-      <section style={ctaSection}>
-        <h2 style={{ color: "#D4AF37", margin: 0 }}>
-          Partner with a reliable transport provider
-        </h2>
-
-        <a href="/contact" style={ctaButton}>
-          Get in Touch
-        </a>
-      </section>
     </>
   );
 }
+
+const content: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "0 auto",
+  lineHeight: 1.8,
+  fontSize: "18px",
+  color: "#334155",
+};
