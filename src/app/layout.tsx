@@ -13,14 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body style={{ margin: 0 }}>
         <Navbar />
-
-        {/* ✅ THIS FIXES EVERYTHING */}
-        <main style={{ marginTop: "80px" }}>
-          {children}
-        </main>
-
+        {children}
       </body>
     </html>
   );
