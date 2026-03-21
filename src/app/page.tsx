@@ -36,7 +36,7 @@ export default function HomePage() {
       </section>
 
       <section style={{ padding: "80px 20px", background: "#F8FBFF" }}>
-        <div style={{ maxWidth: "900px", margin: "0 auto", display: "grid", gap: "20px" }}>
+        <div style={grid}>
           <div style={card}>Fixed-Departure Series</div>
           <div style={card}>Multi-Region UK Touring</div>
           <div style={card}>UK–Ireland Integration</div>
@@ -55,19 +55,7 @@ export default function HomePage() {
           Ready to plan your next programme?
         </h2>
 
-        <a
-          href="/contact"
-          style={{
-            display: "inline-block",
-            marginTop: "20px",
-            background: "#D4AF37",
-            color: "#07111F",
-            padding: "12px 20px",
-            borderRadius: "8px",
-            textDecoration: "none",
-            fontWeight: 700,
-          }}
-        >
+        <a href="/contact" style={ctaButton}>
           Contact Us
         </a>
       </section>
@@ -75,10 +63,28 @@ export default function HomePage() {
   );
 }
 
+const grid: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "0 auto",
+  display: "grid",
+  gap: "20px",
+};
+
 const card: React.CSSProperties = {
   background: "white",
   padding: "24px",
   borderRadius: "12px",
   borderLeft: "5px solid #D4AF37",
   boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
+};
+
+const ctaButton: React.CSSProperties = {
+  display: "inline-block",
+  marginTop: "20px",
+  background: "#D4AF37",
+  color: "#07111F",
+  padding: "12px 20px",
+  borderRadius: "8px",
+  textDecoration: "none",
+  fontWeight: 700,
 };
