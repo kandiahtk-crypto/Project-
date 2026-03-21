@@ -13,67 +13,164 @@ export default function ContactPage() {
         <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
           <p style={eyebrow}>Contact</p>
 
-          <h1 style={heroTitle}>
-            Speak with our team about your touring programme
+          <h1
+            style={{
+              margin: 0,
+              fontSize: "clamp(42px, 7vw, 72px)",
+              lineHeight: 1.02,
+              letterSpacing: "-0.03em",
+              maxWidth: "900px",
+            }}
+          >
+            Let’s discuss your next touring programme
           </h1>
 
-          <p style={heroText}>
-            Whether you're planning fixed-departure series, multi-region UK
-            touring or British Isles programmes, we’re here to support your
-            operational requirements with clarity and reliability.
+          <p
+            style={{
+              margin: "26px 0 0",
+              maxWidth: "760px",
+              color: "#DCE8F5",
+              lineHeight: 1.9,
+              fontSize: "18px",
+            }}
+          >
+            Speak with our team about fixed-departure series, multi-region UK
+            touring, British Isles programmes and operator-specific transport
+            requirements across the United Kingdom and Ireland.
           </p>
         </div>
       </section>
 
-      {/* CONTACT CONTENT */}
-      <section style={{ padding: "90px 20px", background: "#F8FBFF" }}>
-        <div style={grid}>
-          
-          {/* LEFT SIDE */}
-          <div style={card}>
-            <h2 style={sectionTitle}>Get in touch</h2>
+      {/* CONTACT SECTION */}
+      <section
+        style={{
+          padding: "90px 20px",
+          background: "#F8FBFF",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1180px",
+            margin: "0 auto",
+            display: "grid",
+            gap: "28px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            alignItems: "start",
+          }}
+        >
+          {/* LEFT PANEL */}
+          <div
+            style={{
+              background: "#0B1728",
+              color: "white",
+              borderRadius: "22px",
+              padding: "34px",
+              boxShadow: "0 20px 50px rgba(11,23,40,0.16)",
+            }}
+          >
+            <p style={panelEyebrow}>Operator Enquiries</p>
 
-            <p style={sectionText}>
-              Our team supports international operators, DMCs and travel brands.
-              Speak with us about your programme structure, routing, group size
-              and operational planning.
+            <h2
+              style={{
+                margin: "0 0 16px",
+                fontSize: "34px",
+                lineHeight: 1.15,
+              }}
+            >
+              Premium support with clarity, structure and speed.
+            </h2>
+
+            <p
+              style={{
+                margin: 0,
+                color: "#DCE8F5",
+                lineHeight: 1.8,
+                fontSize: "17px",
+              }}
+            >
+              We work with international tour operators, DMCs and travel brands
+              seeking a dependable transport partner for touring programmes
+              across the UK and Ireland.
             </p>
 
-            <div style={infoBlock}>
-              <p style={label}>Email</p>
-              <p style={value}>info@ukinboundgroundtransport.com</p>
-            </div>
+            <div style={{ marginTop: "28px", display: "grid", gap: "18px" }}>
+              <div>
+                <p style={infoLabel}>Email</p>
+                <p style={infoText}>info@ukinboundgroundtransport.com</p>
+              </div>
 
-            <div style={infoBlock}>
-              <p style={label}>Phone</p>
-              <p style={value}>+44 20 8629 2776</p>
-            </div>
+              <div>
+                <p style={infoLabel}>Phone</p>
+                <p style={infoText}>+44 20 8629 2776</p>
+              </div>
 
-            <div style={infoBlock}>
-              <p style={label}>Company</p>
-              <p style={value}>
-                Evershine Transport Limited <br />
-                Trading name: UK Inbound Ground Transport
-              </p>
+              <div>
+                <p style={infoLabel}>Company</p>
+                <p style={infoText}>
+                  Evershine Transport Limited
+                  <br />
+                  Trading name: UK Inbound Ground Transport
+                </p>
+              </div>
+
+              <div>
+                <p style={infoLabel}>Registration</p>
+                <p style={infoText}>
+                  Company Reg: 13507458
+                  <br />
+                  VAT: 388919914
+                </p>
+              </div>
             </div>
           </div>
 
-          {/* RIGHT SIDE FORM */}
-          <div style={card}>
-            <h2 style={sectionTitle}>Send an enquiry</h2>
+          {/* RIGHT PANEL / FORM */}
+          <div
+            style={{
+              background: "#ffffff",
+              borderRadius: "22px",
+              padding: "34px",
+              boxShadow: "0 20px 50px rgba(15,23,42,0.08)",
+              border: "1px solid rgba(15,23,42,0.06)",
+            }}
+          >
+            <p style={formEyebrow}>Send an Enquiry</p>
 
-            <form style={form}>
-              <input placeholder="Full Name" style={input} />
-              <input placeholder="Company" style={input} />
-              <input placeholder="Email Address" style={input} />
-              <input placeholder="Phone Number" style={input} />
+            <h2
+              style={{
+                margin: "0 0 14px",
+                fontSize: "34px",
+                lineHeight: 1.15,
+                color: "#0F172A",
+              }}
+            >
+              Tell us about your programme requirements
+            </h2>
 
+            <p
+              style={{
+                margin: "0 0 24px",
+                color: "#475569",
+                lineHeight: 1.8,
+                fontSize: "16px",
+              }}
+            >
+              Share your programme details and our team will respond with the
+              most suitable support for your touring operation.
+            </p>
+
+            <form style={{ display: "grid", gap: "16px" }}>
+              <input type="text" placeholder="Full Name" style={input} />
+              <input type="text" placeholder="Company / Organisation" style={input} />
+              <input type="email" placeholder="Email Address" style={input} />
+              <input type="text" placeholder="Phone Number" style={input} />
+              <input type="text" placeholder="Programme / Destination" style={input} />
               <textarea
-                placeholder="Tell us about your programme requirements..."
+                placeholder="Tell us about your routing, group size, departure structure or programme requirements..."
                 style={textarea}
               />
 
-              <button type="submit" style={ctaPrimary}>
+              <button type="submit" style={submitButton}>
                 Submit Enquiry
               </button>
             </form>
@@ -81,26 +178,74 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section style={ctaSection}>
-        <h2 style={{ margin: 0 }}>
-          Let’s support your next UK & Ireland touring programme.
-        </h2>
+      {/* CTA BAND */}
+      <section
+        style={{
+          padding: "90px 20px",
+          background: "#FFFFFF",
+          textAlign: "center",
+        }}
+      >
+        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+          <p style={eyebrow}>Touring Support</p>
 
-        <p style={{ marginTop: "16px", color: "#475569" }}>
-          Structured delivery. Clear communication. Dependable execution.
-        </p>
+          <h2
+            style={{
+              margin: 0,
+              fontSize: "36px",
+              lineHeight: 1.2,
+              color: "#0F172A",
+            }}
+          >
+            Built for operators who value dependable delivery.
+          </h2>
+
+          <p
+            style={{
+              margin: "18px auto 0",
+              maxWidth: "720px",
+              color: "#475569",
+              lineHeight: 1.8,
+              fontSize: "18px",
+            }}
+          >
+            We combine structure, communication and operational consistency to
+            help operators deliver stronger touring programmes across the UK and
+            Ireland.
+          </p>
+        </div>
       </section>
 
       {/* FOOTER */}
-      <footer style={footer}>
-        <div style={footerGrid}>
-          
+      <footer
+        style={{
+          background: "#0B1728",
+          color: "#DCE8F5",
+          padding: "50px 20px 30px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1180px",
+            margin: "0 auto",
+            display: "grid",
+            gap: "30px",
+            gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+          }}
+        >
           <div>
-            <h3 style={footerLogo}>UK Inbound Ground Transport</h3>
+            <h3
+              style={{
+                color: "#D4AF37",
+                margin: "0 0 12px",
+                fontSize: "20px",
+              }}
+            >
+              UK Inbound Ground Transport
+            </h3>
             <p style={footerText}>
-              Premium UK & Ireland ground transport solutions for international
-              tour operators.
+              Premium UK &amp; Ireland ground transport solutions for
+              international tour operators and travel partners.
             </p>
           </div>
 
@@ -134,10 +279,18 @@ export default function ContactPage() {
               <span style={footerText}>+44 20 8629 2776</span>
             </div>
           </div>
-
         </div>
 
-        <div style={footerBottom}>
+        <div
+          style={{
+            maxWidth: "1180px",
+            margin: "30px auto 0",
+            paddingTop: "20px",
+            borderTop: "1px solid rgba(255,255,255,0.08)",
+            fontSize: "14px",
+            color: "#94A3B8",
+          }}
+        >
           © UK Inbound Ground Transport. All rights reserved.
         </div>
       </footer>
@@ -145,126 +298,96 @@ export default function ContactPage() {
   );
 }
 
-/* STYLES */
-
-const grid: React.CSSProperties = {
-  maxWidth: "1100px",
-  margin: "0 auto",
-  display: "grid",
-  gap: "24px",
-  gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-};
-
-const card: React.CSSProperties = {
-  background: "white",
-  padding: "28px",
-  borderRadius: "14px",
-  boxShadow: "0 12px 30px rgba(15, 23, 42, 0.06)",
-};
-
-const heroTitle: React.CSSProperties = {
-  fontSize: "clamp(42px, 7vw, 72px)",
-  margin: 0,
-  lineHeight: 1.05,
-};
-
-const heroText: React.CSSProperties = {
-  marginTop: "24px",
-  maxWidth: "720px",
-  color: "#DCE8F5",
-  lineHeight: 1.8,
-};
-
-const sectionTitle: React.CSSProperties = {
-  margin: "0 0 16px",
-  fontSize: "26px",
-};
-
-const sectionText: React.CSSProperties = {
-  color: "#475569",
-  lineHeight: 1.8,
-};
-
-const infoBlock: React.CSSProperties = {
-  marginTop: "20px",
-};
-
-const label: React.CSSProperties = {
-  fontSize: "12px",
-  textTransform: "uppercase",
+const eyebrow: React.CSSProperties = {
   color: "#D4AF37",
-  marginBottom: "6px",
+  textTransform: "uppercase",
+  fontSize: "12px",
+  letterSpacing: "0.14em",
+  fontWeight: 700,
 };
 
-const value: React.CSSProperties = {
+const panelEyebrow: React.CSSProperties = {
+  color: "#D4AF37",
+  textTransform: "uppercase",
+  fontSize: "12px",
+  letterSpacing: "0.14em",
+  fontWeight: 700,
+  margin: "0 0 14px",
+};
+
+const formEyebrow: React.CSSProperties = {
+  color: "#D4AF37",
+  textTransform: "uppercase",
+  fontSize: "12px",
+  letterSpacing: "0.14em",
+  fontWeight: 700,
+  margin: "0 0 14px",
+};
+
+const infoLabel: React.CSSProperties = {
+  margin: "0 0 6px",
+  color: "#D4AF37",
+  textTransform: "uppercase",
+  fontSize: "12px",
+  letterSpacing: "0.12em",
+  fontWeight: 700,
+};
+
+const infoText: React.CSSProperties = {
   margin: 0,
-  color: "#0F172A",
-  fontWeight: 600,
-};
-
-const form: React.CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  gap: "14px",
-  marginTop: "20px",
+  color: "#EAF3FF",
+  lineHeight: 1.8,
+  fontSize: "16px",
 };
 
 const input: React.CSSProperties = {
-  padding: "14px",
-  borderRadius: "8px",
-  border: "1px solid #E2E8F0",
+  width: "100%",
+  boxSizing: "border-box",
+  padding: "15px 16px",
+  borderRadius: "12px",
+  border: "1px solid rgba(15,23,42,0.10)",
+  fontSize: "15px",
+  color: "#0F172A",
+  background: "#F8FBFF",
+  outline: "none",
 };
 
 const textarea: React.CSSProperties = {
-  padding: "14px",
-  borderRadius: "8px",
-  border: "1px solid #E2E8F0",
-  minHeight: "120px",
+  width: "100%",
+  boxSizing: "border-box",
+  padding: "15px 16px",
+  borderRadius: "12px",
+  border: "1px solid rgba(15,23,42,0.10)",
+  fontSize: "15px",
+  color: "#0F172A",
+  background: "#F8FBFF",
+  minHeight: "150px",
+  resize: "vertical",
+  outline: "none",
 };
 
-const ctaPrimary: React.CSSProperties = {
+const submitButton: React.CSSProperties = {
   background: "#D4AF37",
   color: "#07111F",
-  padding: "14px",
-  borderRadius: "8px",
+  padding: "15px 22px",
+  borderRadius: "12px",
   border: "none",
   fontWeight: 700,
+  fontSize: "15px",
   cursor: "pointer",
 };
 
-const ctaSection: React.CSSProperties = {
-  padding: "80px 20px",
-  textAlign: "center",
-  background: "#F8FBFF",
-};
-
-const footer: React.CSSProperties = {
-  background: "#0B1728",
-  color: "#DCE8F5",
-  padding: "50px 20px 30px",
-};
-
-const footerGrid: React.CSSProperties = {
-  maxWidth: "1180px",
-  margin: "0 auto",
-  display: "grid",
-  gap: "30px",
-  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-};
-
 const footerHeading: React.CSSProperties = {
+  margin: "0 0 14px",
   color: "#D4AF37",
-  marginBottom: "12px",
-};
-
-const footerLogo: React.CSSProperties = {
-  color: "#D4AF37",
-  marginBottom: "10px",
+  fontSize: "16px",
 };
 
 const footerText: React.CSSProperties = {
   margin: 0,
-  lineHeight: 1.7,
+  color: "#DCE8F5",
+  lineHeight: 1.8,
+  fontSize: "15px",
 };
 
 const footerLinks: React.CSSProperties = {
@@ -276,21 +399,5 @@ const footerLinks: React.CSSProperties = {
 const footerLink: React.CSSProperties = {
   color: "#DCE8F5",
   textDecoration: "none",
-};
-
-const footerBottom: React.CSSProperties = {
-  maxWidth: "1180px",
-  margin: "30px auto 0",
-  paddingTop: "20px",
-  borderTop: "1px solid rgba(255,255,255,0.08)",
-  fontSize: "14px",
-  color: "#94A3B8",
-};
-
-const eyebrow: React.CSSProperties = {
-  color: "#D4AF37",
-  textTransform: "uppercase",
-  fontSize: "12px",
-  letterSpacing: "0.14em",
-  fontWeight: 700,
+  fontSize: "15px",
 };
