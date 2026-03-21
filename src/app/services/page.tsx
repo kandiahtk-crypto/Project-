@@ -1,4 +1,4 @@
-export default function AboutPage() {
+export default function ServicesPage() {
   return (
     <>
       {/* HERO */}
@@ -11,78 +11,53 @@ export default function AboutPage() {
         }}
       >
         <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
-          <p style={eyebrow}>About Us</p>
+          <p style={eyebrow}>Services</p>
 
           <h1 style={headline}>
-            UK Inbound Ground Transport
+            Structured touring logistics across the UK & Ireland
           </h1>
 
           <p style={subtext}>
-            A professional ground transport partner supporting international tour
-            operators, DMCs and travel brands across the United Kingdom and Ireland.
+            Our services are built for international tour operators, DMCs and
+            travel partners requiring consistent, dependable and professionally
+            delivered ground transport across multi-day touring programmes.
           </p>
         </div>
       </section>
 
-      {/* INTRO */}
+      {/* SERVICES */}
       <section style={sectionLight}>
-        <div style={container}>
-          <h2 style={sectionTitle}>
-            Built for structured, dependable touring delivery.
-          </h2>
+        <div style={grid}>
+          <ServiceCard
+            title="Fixed-Departure Series"
+            text="Season-long touring programmes delivered with complete consistency, ensuring each departure follows the same structure, timing and operational standard."
+          />
 
-          <p style={text}>
-            UK Inbound Ground Transport was created to support inbound operators
-            who require more than just transport — they require consistency,
-            clarity and professional execution across every touring programme.
-          </p>
+          <ServiceCard
+            title="Multi-Region UK Touring"
+            text="Seamless travel across England, Scotland and Wales with balanced routing, efficient movement and professionally managed touring flow."
+          />
 
-          <p style={text}>
-            We specialise in structured, repeatable operations across multi-day
-            itineraries, fixed-departure series and high-volume touring programmes,
-            ensuring every journey runs smoothly from first departure to final arrival.
-          </p>
-        </div>
-      </section>
+          <ServiceCard
+            title="UK–Ireland Integration"
+            text="Fully coordinated British Isles touring with structured ferry planning, timing control and smooth cross-country continuity."
+          />
 
-      {/* WHAT WE DO */}
-      <section style={sectionWhite}>
-        <div style={container}>
-          <h2 style={sectionTitle}>What we deliver</h2>
+          <ServiceCard
+            title="Large Group Coordination"
+            text="Support for high-volume groups, multi-coach touring and complex programmes requiring structured planning and execution."
+          />
 
-          <div style={grid}>
-            <div style={card}>Consistent programme delivery</div>
-            <div style={card}>Clear operational structure</div>
-            <div style={card}>UK & Ireland coverage</div>
-            <div style={card}>Professional coordination</div>
-          </div>
-        </div>
-      </section>
-
-      {/* APPROACH */}
-      <section style={sectionDark}>
-        <div style={container}>
-          <h2 style={sectionTitleDark}>
-            Our approach is built on reliability and clarity.
-          </h2>
-
-          <p style={textDark}>
-            We focus on delivering transport solutions that integrate seamlessly
-            into your touring programmes. Our planning, coordination and execution
-            are designed to remove uncertainty, reduce operational friction and
-            strengthen the overall guest experience.
-          </p>
-
-          <p style={textDark}>
-            Every programme is handled with attention to detail, ensuring timing,
-            routing and delivery remain consistent across all departures.
-          </p>
+          <ServiceCard
+            title="Long-Haul Market Alignment"
+            text="Touring delivery aligned with international expectations including pacing, comfort, timing and overall guest experience."
+          />
         </div>
       </section>
 
       {/* CTA */}
-      <section style={sectionLight}>
-        <div style={{ ...container, textAlign: "center" }}>
+      <section style={sectionDark}>
+        <div style={{ maxWidth: "900px", margin: "0 auto", textAlign: "center" }}>
           <h2 style={{ margin: 0 }}>
             Let’s support your next touring programme.
           </h2>
@@ -99,19 +74,32 @@ export default function AboutPage() {
 }
 
 //////////////////////
-// STYLES (same system as homepage)
+// COMPONENTS
 //////////////////////
 
-const container: React.CSSProperties = {
-  maxWidth: "900px",
-  margin: "0 auto",
-};
+function ServiceCard({
+  title,
+  text,
+}: {
+  title: string;
+  text: string;
+}) {
+  return (
+    <div style={card}>
+      <h3 style={cardTitle}>{title}</h3>
+      <p style={cardText}>{text}</p>
+    </div>
+  );
+}
+
+//////////////////////
+// STYLES
+//////////////////////
 
 const headline: React.CSSProperties = {
   fontSize: "clamp(42px, 7vw, 72px)",
   margin: 0,
-  lineHeight: 1.02,
-  letterSpacing: "-0.03em",
+  lineHeight: 1.05,
 };
 
 const subtext: React.CSSProperties = {
@@ -119,7 +107,7 @@ const subtext: React.CSSProperties = {
   color: "#DCE8F5",
   lineHeight: 1.8,
   fontSize: "18px",
-  maxWidth: "700px",
+  maxWidth: "720px",
 };
 
 const eyebrow: React.CSSProperties = {
@@ -136,54 +124,36 @@ const sectionLight: React.CSSProperties = {
   background: "#F8FBFF",
 };
 
-const sectionWhite: React.CSSProperties = {
-  padding: "90px 20px",
-  background: "#ffffff",
-};
-
 const sectionDark: React.CSSProperties = {
   padding: "90px 20px",
   background: "#07111F",
   color: "white",
 };
 
-const sectionTitle: React.CSSProperties = {
-  fontSize: "32px",
-  marginBottom: "20px",
-};
-
-const sectionTitleDark: React.CSSProperties = {
-  fontSize: "32px",
-  marginBottom: "20px",
-};
-
-const text: React.CSSProperties = {
-  color: "#475569",
-  lineHeight: 1.8,
-  fontSize: "18px",
-  marginBottom: "16px",
-};
-
-const textDark: React.CSSProperties = {
-  color: "#DCE8F5",
-  lineHeight: 1.8,
-  fontSize: "18px",
-  marginBottom: "16px",
-};
-
 const grid: React.CSSProperties = {
+  maxWidth: "1100px",
+  margin: "0 auto",
   display: "grid",
-  gap: "20px",
-  marginTop: "30px",
-  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gap: "24px",
+  gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
 };
 
 const card: React.CSSProperties = {
-  background: "#F8FBFF",
-  padding: "20px",
-  borderRadius: "12px",
-  borderLeft: "4px solid #D4AF37",
-  fontWeight: 600,
+  background: "#ffffff",
+  padding: "28px",
+  borderRadius: "16px",
+  borderLeft: "5px solid #D4AF37",
+  boxShadow: "0 12px 30px rgba(15, 23, 42, 0.06)",
+};
+
+const cardTitle: React.CSSProperties = {
+  margin: "0 0 12px",
+};
+
+const cardText: React.CSSProperties = {
+  margin: 0,
+  color: "#475569",
+  lineHeight: 1.8,
 };
 
 const ctaPrimary: React.CSSProperties = {
