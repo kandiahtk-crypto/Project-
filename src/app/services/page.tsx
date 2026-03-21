@@ -1,7 +1,6 @@
 export default function ServicesPage() {
   return (
     <>
-      {/* HERO */}
       <section
         style={{
           background:
@@ -11,15 +10,30 @@ export default function ServicesPage() {
           textAlign: "center",
         }}
       >
-        <h1 style={title}>Services</h1>
+        <h1
+          style={{
+            fontSize: "clamp(40px, 6vw, 68px)",
+            color: "#D4AF37",
+            margin: 0,
+          }}
+        >
+          Services
+        </h1>
 
-        <p style={subtitle}>
-          Structured, reliable transport solutions for inbound touring programmes.
+        <p
+          style={{
+            maxWidth: "700px",
+            margin: "20px auto 0",
+            color: "#DCE8F5",
+            lineHeight: 1.8,
+            fontSize: "18px",
+          }}
+        >
+          Structured touring logistics designed for professional inbound operators.
         </p>
       </section>
 
-      {/* SERVICES */}
-      <section style={sectionLight}>
+      <section style={{ padding: "80px 20px", background: "#F8FBFF" }}>
         <div style={grid}>
           <div style={card}>Fixed-Departure Series</div>
           <div style={card}>Multi-Region UK Touring</div>
@@ -27,17 +41,21 @@ export default function ServicesPage() {
           <div style={card}>Large Group Coordination</div>
         </div>
       </section>
-
-      {/* CTA */}
-      <section style={ctaSection}>
-        <h2 style={{ color: "#D4AF37", margin: 0 }}>
-          Let’s support your next touring programme
-        </h2>
-
-        <a href="/contact" style={ctaButton}>
-          Contact Us
-        </a>
-      </section>
     </>
   );
 }
+
+const grid: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "0 auto",
+  display: "grid",
+  gap: "20px",
+};
+
+const card: React.CSSProperties = {
+  background: "white",
+  padding: "24px",
+  borderRadius: "12px",
+  borderLeft: "5px solid #D4AF37",
+  boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
+};
