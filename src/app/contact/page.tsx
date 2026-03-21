@@ -34,14 +34,14 @@ export default function ContactPage() {
               fontSize: "18px",
             }}
           >
-            Speak with our team about fixed-departure series, multi-region UK
-            touring, British Isles programmes and operator-specific transport
-            requirements across the United Kingdom and Ireland.
+            Share your contact details, trip details and itinerary requirements,
+            and our team will respond with the most suitable support for your
+            programme.
           </p>
         </div>
       </section>
 
-      {/* CONTACT SECTION */}
+      {/* CONTACT FORM */}
       <section
         style={{
           padding: "90px 20px",
@@ -77,7 +77,7 @@ export default function ContactPage() {
                 lineHeight: 1.15,
               }}
             >
-              Premium support with clarity, structure and speed.
+              Premium support with clarity and reliability.
             </h2>
 
             <p
@@ -88,9 +88,8 @@ export default function ContactPage() {
                 fontSize: "17px",
               }}
             >
-              We work with international tour operators, DMCs and travel brands
-              seeking a dependable transport partner for touring programmes
-              across the UK and Ireland.
+              We support international tour operators, DMCs and travel brands
+              across the United Kingdom and Ireland.
             </p>
 
             <div style={{ marginTop: "28px", display: "grid", gap: "18px" }}>
@@ -144,75 +143,46 @@ export default function ContactPage() {
                 color: "#0F172A",
               }}
             >
-              Tell us about your programme requirements
+              Tell us about your programme
             </h2>
 
-            <p
-              style={{
-                margin: "0 0 24px",
-                color: "#475569",
-                lineHeight: 1.8,
-                fontSize: "16px",
-              }}
-            >
-              Share your programme details and our team will respond with the
-              most suitable support for your touring operation.
-            </p>
+            <form style={{ display: "grid", gap: "24px", marginTop: "24px" }}>
+              {/* CONTACT DETAILS */}
+              <div>
+                <h3 style={groupTitle}>Contact Details</h3>
+                <div style={formGrid}>
+                  <input type="text" placeholder="Full Name" style={input} />
+                  <input type="text" placeholder="Company / Organisation" style={input} />
+                  <input type="email" placeholder="Email Address" style={input} />
+                  <input type="text" placeholder="Phone Number" style={input} />
+                </div>
+              </div>
 
-            <form style={{ display: "grid", gap: "16px" }}>
-              <input type="text" placeholder="Full Name" style={input} />
-              <input type="text" placeholder="Company / Organisation" style={input} />
-              <input type="email" placeholder="Email Address" style={input} />
-              <input type="text" placeholder="Phone Number" style={input} />
-              <input type="text" placeholder="Programme / Destination" style={input} />
-              <textarea
-                placeholder="Tell us about your routing, group size, departure structure or programme requirements..."
-                style={textarea}
-              />
+              {/* TRIP DETAILS */}
+              <div>
+                <h3 style={groupTitle}>Trip Details</h3>
+                <div style={formGrid}>
+                  <input type="text" placeholder="Trip Name / Programme Name" style={input} />
+                  <input type="text" placeholder="Destination / Region" style={input} />
+                  <input type="text" placeholder="Travel Dates" style={input} />
+                  <input type="text" placeholder="Group Size" style={input} />
+                </div>
+              </div>
+
+              {/* ITINERARY */}
+              <div>
+                <h3 style={groupTitle}>Itinerary</h3>
+                <textarea
+                  placeholder="Please share your itinerary, routing, pick-up points, hotel sequence, ferry requirements, or any other programme details..."
+                  style={textarea}
+                />
+              </div>
 
               <button type="submit" style={submitButton}>
                 Submit Enquiry
               </button>
             </form>
           </div>
-        </div>
-      </section>
-
-      {/* CTA BAND */}
-      <section
-        style={{
-          padding: "90px 20px",
-          background: "#FFFFFF",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ maxWidth: "900px", margin: "0 auto" }}>
-          <p style={eyebrow}>Touring Support</p>
-
-          <h2
-            style={{
-              margin: 0,
-              fontSize: "36px",
-              lineHeight: 1.2,
-              color: "#0F172A",
-            }}
-          >
-            Built for operators who value dependable delivery.
-          </h2>
-
-          <p
-            style={{
-              margin: "18px auto 0",
-              maxWidth: "720px",
-              color: "#475569",
-              lineHeight: 1.8,
-              fontSize: "18px",
-            }}
-          >
-            We combine structure, communication and operational consistency to
-            help operators deliver stronger touring programmes across the UK and
-            Ireland.
-          </p>
         </div>
       </section>
 
@@ -324,6 +294,18 @@ const formEyebrow: React.CSSProperties = {
   margin: "0 0 14px",
 };
 
+const groupTitle: React.CSSProperties = {
+  margin: "0 0 12px",
+  color: "#0F172A",
+  fontSize: "18px",
+};
+
+const formGrid: React.CSSProperties = {
+  display: "grid",
+  gap: "14px",
+  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+};
+
 const infoLabel: React.CSSProperties = {
   margin: "0 0 6px",
   color: "#D4AF37",
@@ -361,7 +343,7 @@ const textarea: React.CSSProperties = {
   fontSize: "15px",
   color: "#0F172A",
   background: "#F8FBFF",
-  minHeight: "150px",
+  minHeight: "170px",
   resize: "vertical",
   outline: "none",
 };
