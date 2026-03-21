@@ -2,64 +2,24 @@ export default function HomePage() {
   return (
     <>
       {/* HERO */}
-      <section
-        style={{
-          background:
-            "linear-gradient(135deg, #07111F 0%, #0B1728 45%, #10233B 100%)",
-          color: "white",
-          padding: "80px 20px 110px",
-        }}
-      >
-        <div style={{ maxWidth: "1180px", margin: "0 auto" }}>
-          <p
-            style={{
-              margin: "0 0 18px",
-              color: "#D4AF37",
-              textTransform: "uppercase",
-              letterSpacing: "0.16em",
-              fontSize: "12px",
-              fontWeight: 700,
-            }}
-          >
+      <section style={hero}>
+        <div style={container}>
+          <p style={eyebrow}>
             Premium UK & Ireland Touring Logistics
           </p>
 
-          <h1
-            style={{
-              margin: 0,
-              fontSize: "clamp(42px, 7vw, 72px)",
-              lineHeight: 1.02,
-              letterSpacing: "-0.03em",
-              maxWidth: "900px",
-            }}
-          >
+          <h1 style={headline}>
             UK Inbound Ground Transport
           </h1>
 
-          <p
-            style={{
-              margin: "26px 0 0",
-              maxWidth: "720px",
-              color: "#DCE8F5",
-              lineHeight: 1.9,
-              fontSize: "18px",
-            }}
-          >
+          <p style={subtext}>
             We support international tour operators, DMCs and travel brands with
             structured, dependable and premium ground transport solutions across
-            the United Kingdom and Ireland. From fixed-departure series to
-            complex multi-region programmes, our service is built to deliver
-            consistency, clarity and confidence on every departure.
+            the United Kingdom and Ireland. Built for consistency, clarity and
+            flawless delivery across every touring programme.
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "14px",
-              marginTop: "34px",
-              flexWrap: "wrap",
-            }}
-          >
+          <div style={ctaWrap}>
             <a href="/contact" style={ctaPrimary}>
               Plan Your Programme
             </a>
@@ -72,104 +32,133 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES */}
-      <section style={{ padding: "90px 20px", background: "#F8FBFF" }}>
-        <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center" }}>
-          <p style={eyebrow}>Services</p>
+      <section style={sectionLight}>
+        <div style={containerNarrow}>
+          <p style={eyebrow}>Core Services</p>
 
           <h2 style={sectionTitle}>
-            Structured touring logistics built for professional inbound operators.
+            Structured touring logistics designed for high-standard delivery.
           </h2>
 
           <p style={sectionText}>
-            Our service model is designed around repeatability, operational clarity
-            and premium delivery — ensuring your programmes run smoothly from first
-            departure to final arrival.
+            Our service model is built for repeatable programmes, international
+            expectations and professional operator support.
           </p>
         </div>
 
         <div style={grid}>
           <div style={card}>
-            <h3>Fixed-Departure Series</h3>
-            <p>
-              Consistent, repeatable operations across season-long touring programmes,
-              ensuring every departure follows the same high standard.
+            <h3 style={cardTitle}>Fixed-Departure Series</h3>
+            <p style={cardText}>
+              Reliable, repeatable operations across season-long touring
+              programmes with consistent delivery.
             </p>
           </div>
 
           <div style={card}>
-            <h3>Multi-Region UK Touring</h3>
-            <p>
-              Seamless routing across England, Scotland and Wales with balanced pacing,
-              efficient movement and professional coordination.
+            <h3 style={cardTitle}>Multi-Region UK Touring</h3>
+            <p style={cardText}>
+              Seamless routing across England, Scotland and Wales with balanced
+              pacing and efficient movement.
             </p>
           </div>
 
           <div style={card}>
-            <h3>UK–Ireland Integration</h3>
-            <p>
-              Fully coordinated British Isles touring with managed ferry timings and
-              smooth cross-country continuity.
+            <h3 style={cardTitle}>UK–Ireland Integration</h3>
+            <p style={cardText}>
+              Fully coordinated British Isles touring with smooth cross-country
+              continuity and ferry planning.
             </p>
           </div>
         </div>
       </section>
 
-      {/* WHY US */}
-      <section
-        style={{
-          padding: "90px 20px",
-          background: "#07111F",
-          color: "white",
-        }}
-      >
-        <div style={{ maxWidth: "1000px", margin: "0 auto", textAlign: "center" }}>
+      {/* TRUST / WHY */}
+      <section style={sectionDark}>
+        <div style={containerNarrow}>
           <p style={eyebrow}>Why Operators Choose Us</p>
 
-          <h2 style={{ fontSize: "32px", margin: "0 0 20px" }}>
+          <h2 style={sectionTitleDark}>
             A transport partner built for consistency and reliability.
           </h2>
 
-          <p style={{ color: "#DCE8F5", lineHeight: 1.8 }}>
+          <p style={sectionTextDark}>
             We focus on structured delivery, clear communication and dependable
-            execution — helping operators protect their product quality and
-            deliver a stronger guest experience across every programme.
+            execution — helping operators protect their product quality while
+            delivering a stronger guest experience.
           </p>
         </div>
       </section>
 
       {/* CTA */}
-      <section
-        style={{
-          padding: "90px 20px",
-          textAlign: "center",
-          background: "#F8FBFF",
-        }}
-      >
-        <h2 style={{ margin: 0 }}>
-          Let’s build your next UK & Ireland touring programme.
-        </h2>
+      <section style={sectionLight}>
+        <div style={containerNarrow}>
+          <h2 style={{ fontSize: "30px", margin: 0 }}>
+            Let’s build your next UK & Ireland touring programme.
+          </h2>
 
-        <a href="/contact" style={ctaPrimary}>
-          Contact Us
-        </a>
+          <div style={{ marginTop: "24px" }}>
+            <a href="/contact" style={ctaPrimary}>
+              Contact Us
+            </a>
+          </div>
+        </div>
       </section>
     </>
   );
 }
 
-const grid: React.CSSProperties = {
-  maxWidth: "1100px",
-  margin: "40px auto 0",
-  display: "grid",
-  gap: "24px",
+//////////////////////
+// 🎨 STYLES (clean system)
+//////////////////////
+
+const hero: React.CSSProperties = {
+  background:
+    "linear-gradient(135deg, #07111F 0%, #0B1728 45%, #10233B 100%)",
+  color: "white",
+  padding: "100px 20px 120px",
 };
 
-const card: React.CSSProperties = {
-  background: "#ffffff",
-  padding: "26px",
-  borderRadius: "14px",
-  borderLeft: "5px solid #D4AF37",
-  boxShadow: "0 12px 30px rgba(15, 23, 42, 0.06)",
+const container: React.CSSProperties = {
+  maxWidth: "1100px",
+  margin: "0 auto",
+};
+
+const containerNarrow: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "0 auto",
+  textAlign: "center",
+};
+
+const headline: React.CSSProperties = {
+  fontSize: "clamp(48px, 7vw, 78px)",
+  lineHeight: 1.02,
+  margin: 0,
+  letterSpacing: "-0.03em",
+};
+
+const subtext: React.CSSProperties = {
+  marginTop: "26px",
+  maxWidth: "720px",
+  color: "#DCE8F5",
+  fontSize: "18px",
+  lineHeight: 1.9,
+};
+
+const eyebrow: React.CSSProperties = {
+  color: "#D4AF37",
+  textTransform: "uppercase",
+  fontSize: "12px",
+  letterSpacing: "0.16em",
+  fontWeight: 700,
+  marginBottom: "18px",
+};
+
+const ctaWrap: React.CSSProperties = {
+  marginTop: "34px",
+  display: "flex",
+  gap: "14px",
+  flexWrap: "wrap",
 };
 
 const ctaPrimary: React.CSSProperties = {
@@ -189,20 +178,58 @@ const ctaSecondary: React.CSSProperties = {
   textDecoration: "none",
 };
 
-const eyebrow: React.CSSProperties = {
-  color: "#D4AF37",
-  textTransform: "uppercase",
-  fontSize: "12px",
-  letterSpacing: "0.14em",
-  fontWeight: 700,
+const sectionLight: React.CSSProperties = {
+  padding: "100px 20px",
+  background: "#F8FBFF",
+};
+
+const sectionDark: React.CSSProperties = {
+  padding: "100px 20px",
+  background: "#07111F",
+  color: "white",
 };
 
 const sectionTitle: React.CSSProperties = {
-  fontSize: "32px",
+  fontSize: "34px",
+  margin: "10px 0",
+};
+
+const sectionTitleDark: React.CSSProperties = {
+  fontSize: "34px",
   margin: "10px 0",
 };
 
 const sectionText: React.CSSProperties = {
   color: "#475569",
   lineHeight: 1.8,
+};
+
+const sectionTextDark: React.CSSProperties = {
+  color: "#DCE8F5",
+  lineHeight: 1.8,
+};
+
+const grid: React.CSSProperties = {
+  maxWidth: "1100px",
+  margin: "50px auto 0",
+  display: "grid",
+  gap: "24px",
+};
+
+const card: React.CSSProperties = {
+  background: "#ffffff",
+  padding: "28px",
+  borderRadius: "16px",
+  borderLeft: "5px solid #D4AF37",
+  boxShadow: "0 15px 40px rgba(15, 23, 42, 0.08)",
+};
+
+const cardTitle: React.CSSProperties = {
+  margin: "0 0 10px",
+};
+
+const cardText: React.CSSProperties = {
+  margin: 0,
+  color: "#475569",
+  lineHeight: 1.7,
 };
