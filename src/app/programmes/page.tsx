@@ -1,63 +1,61 @@
-import Navbar from "../../components/Navbar";
-
 export default function ProgrammesPage() {
   return (
     <>
-      <Navbar />
+      <section
+        style={{
+          background:
+            "linear-gradient(135deg, #07111F 0%, #0B1728 45%, #10233B 100%)",
+          color: "white",
+          padding: "60px 20px 90px",
+          textAlign: "center",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "clamp(40px, 6vw, 68px)",
+            color: "#D4AF37",
+            margin: 0,
+          }}
+        >
+          Programmes
+        </h1>
 
-      <main style={{ paddingTop: "90px", fontFamily: "Arial" }}>
-        <section style={hero}>
-          <h1 style={title}>Touring Programmes</h1>
-          <p style={subtitle}>
-            Structured transport delivery designed for international touring operations.
-          </p>
-        </section>
+        <p
+          style={{
+            maxWidth: "700px",
+            margin: "20px auto 0",
+            color: "#DCE8F5",
+            lineHeight: 1.8,
+            fontSize: "18px",
+          }}
+        >
+          Touring programmes built for consistency, pacing and operational clarity.
+        </p>
+      </section>
 
-        <section style={section}>
-          <div style={grid}>
-            {[
-              "Fixed Departure Series",
-              "Multi-Country Touring",
-              "Luxury Group Travel",
-              "Student & Educational Tours",
-              "Incentive & Corporate Travel",
-            ].map((item) => (
-              <div key={item} style={card}>
-                <h3 style={{ color: "#0B1728" }}>{item}</h3>
-                <p style={{ color: "#555" }}>
-                  Professionally structured transport solutions built for consistency and quality delivery.
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-      </main>
+      <section style={{ padding: "80px 20px", background: "#F8FBFF" }}>
+        <div style={grid}>
+          <div style={card}>Fixed-Departure Series</div>
+          <div style={card}>British Isles Touring</div>
+          <div style={card}>Large Group Programmes</div>
+          <div style={card}>Long-Haul Market Touring</div>
+        </div>
+      </section>
     </>
   );
 }
 
-const hero = {
-  padding: "120px 20px",
-  textAlign: "center" as const,
-  background: "#07111F",
-  color: "white",
-};
-
-const title = { fontSize: "46px", color: "#D4AF37" };
-const subtitle = { opacity: 0.85 };
-
-const section = { padding: "80px 20px" };
-
-const grid = {
-  display: "grid",
-  gap: "20px",
+const grid: React.CSSProperties = {
   maxWidth: "900px",
   margin: "0 auto",
+  display: "grid",
+  gap: "20px",
 };
 
-const card = {
+const card: React.CSSProperties = {
   background: "white",
-  padding: "25px",
+  padding: "24px",
   borderRadius: "12px",
-  borderLeft: "4px solid #D4AF37",
+  borderLeft: "5px solid #D4AF37",
+  boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
 };
