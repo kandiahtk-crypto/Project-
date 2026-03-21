@@ -10,9 +10,25 @@ export default function ContactPage() {
           textAlign: "center",
         }}
       >
-        <h1 style={title}>Contact Us</h1>
+        <h1
+          style={{
+            fontSize: "clamp(40px, 6vw, 68px)",
+            color: "#D4AF37",
+            margin: 0,
+          }}
+        >
+          Contact Us
+        </h1>
 
-        <p style={text}>
+        <p
+          style={{
+            maxWidth: "700px",
+            margin: "20px auto 0",
+            color: "#DCE8F5",
+            lineHeight: 1.8,
+            fontSize: "18px",
+          }}
+        >
           Speak with our team about your touring programme requirements.
         </p>
       </section>
@@ -26,3 +42,11 @@ export default function ContactPage() {
     </>
   );
 }
+
+const content: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "0 auto",
+  lineHeight: 1.8,
+  fontSize: "18px",
+  color: "#334155",
+};
