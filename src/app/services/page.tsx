@@ -257,6 +257,9 @@ export default function ServicesPage() {
             <h4 style={footerHeading}>Company</h4>
             <div style={footerLinks}>
               <span style={footerText}>Evershine Transport Limited</span>
+              <span style={footerText}>
+                Trading name: UK Inbound Ground Transport
+              </span>
               <span style={footerText}>Company Reg: 13507458</span>
               <span style={footerText}>VAT: 388919914</span>
             </div>
