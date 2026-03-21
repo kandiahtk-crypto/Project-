@@ -1,119 +1,100 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "UK Inbound Ground Transport | UK & Ireland Touring Logistics",
-  description:
-    "Premium UK and Ireland ground transport solutions for international tour operators, DMCs and travel brands.",
-};
-
-export default function HomePage() {
+export default function ContactPage() {
   return (
     <>
       {/* HERO */}
       <section style={hero}>
         <div style={container}>
-          <p style={eyebrow}>UK & Ireland Touring Logistics</p>
+          <p style={eyebrow}>Contact</p>
 
           <h1 style={title}>
-            UK Inbound
+            Plan your next
             <br />
-            Ground Transport
+            UK & Ireland programme
           </h1>
 
           <p style={subtitle}>
-            Premium ground transport for international tour operators,
-            delivering structured, reliable and consistent touring programmes
-            across the United Kingdom and Ireland.
+            Speak with our team about your touring requirements. We’ll help
+            structure a reliable, premium transport solution tailored to your
+            programme.
           </p>
         </div>
       </section>
 
-      {/* STRIP */}
-      <section style={strip}>
+      {/* FORM */}
+      <section style={section}>
+        <div style={formWrapper}>
+          <form style={form}>
+            {/* CONTACT DETAILS */}
+            <div style={block}>
+              <h3 style={blockTitle}>Contact Details</h3>
+
+              <input placeholder="Full Name" style={input} />
+              <input placeholder="Company / Organisation" style={input} />
+              <input placeholder="Email Address" style={input} />
+              <input placeholder="Phone Number" style={input} />
+            </div>
+
+            {/* TRIP DETAILS */}
+            <div style={block}>
+              <h3 style={blockTitle}>Trip Details</h3>
+
+              <input placeholder="Arrival Date" style={input} />
+              <input placeholder="Departure Date" style={input} />
+              <input placeholder="Group Size" style={input} />
+              <input placeholder="Regions (e.g. England, Scotland)" style={input} />
+            </div>
+
+            {/* ITINERARY */}
+            <div style={block}>
+              <h3 style={blockTitle}>Itinerary</h3>
+
+              <textarea
+                placeholder="Outline your itinerary, routing or programme requirements..."
+                style={textarea}
+              />
+            </div>
+
+            {/* SUBMIT */}
+            <button style={button}>Submit Enquiry</button>
+          </form>
+        </div>
+      </section>
+
+      {/* CONTACT INFO */}
+      <section style={infoSection}>
         <div style={container}>
-          <p style={stripText}>
-            Fixed-Departure Series — Multi-Region UK Touring — UK & Ireland Programmes
-          </p>
-        </div>
-      </section>
+          <h2 style={{ margin: 0 }}>Contact Information</h2>
 
-      {/* CONTENT SPLIT */}
-      <section style={section}>
-        <div style={split}>
-          <div>
-            <h2 style={heading}>
-              Built for operators who expect consistency.
-            </h2>
-          </div>
-
-          <div>
-            <p style={text}>
-              We support international tour operators, DMCs and travel brands
-              with structured touring logistics across England, Scotland,
-              Wales and Ireland. Our approach is built around repeatability,
-              clarity and dependable execution.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SERVICES MINIMAL */}
-      <section style={section}>
-        <div style={containerSmall}>
-          <h2 style={headingCenter}>Services</h2>
-
-          <div style={servicesList}>
-            <div style={lineItem}>
-              <span>Fixed-Departure Series</span>
-              <span>→</span>
+          <div style={infoGrid}>
+            <div>
+              <p style={label}>Company</p>
+              <p style={text}>Evershine Transport Limited</p>
+              <p style={text}>
+                Trading name: UK Inbound Ground Transport
+              </p>
             </div>
 
-            <div style={lineItem}>
-              <span>Multi-Region UK Touring</span>
-              <span>→</span>
+            <div>
+              <p style={label}>Details</p>
+              <p style={text}>Company Reg: 13507458</p>
+              <p style={text}>VAT: 388919914</p>
             </div>
 
-            <div style={lineItem}>
-              <span>UK & Ireland Touring</span>
-              <span>→</span>
+            <div>
+              <p style={label}>Contact</p>
+              <p style={text}>info@ukinboundgroundtransport.com</p>
+              <p style={text}>+44 20 8629 2776</p>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section style={ctaSection}>
-        <div style={containerSmall}>
-          <h2 style={{ margin: 0 }}>
-            Let’s build your next touring programme
-          </h2>
-
-          <a href="/contact" style={ctaButton}>
-            Contact Us
-          </a>
         </div>
       </section>
 
       {/* FOOTER */}
       <footer style={footer}>
-        <div style={footerGrid}>
-          <div>
-            <h3 style={logo}>UK Inbound Ground Transport</h3>
-          </div>
-
-          <div>
-            <p style={footerText}>Evershine Transport Limited</p>
-            <p style={footerText}>
-              Trading name: UK Inbound Ground Transport
-            </p>
-            <p style={footerText}>Company Reg: 13507458</p>
-            <p style={footerText}>VAT: 388919914</p>
-          </div>
-
-          <div>
-            <p style={footerText}>info@ukinboundgroundtransport.com</p>
-            <p style={footerText}>+44 20 8629 2776</p>
-          </div>
+        <div style={container}>
+          <p style={footerText}>
+            © UK Inbound Ground Transport. All rights reserved.
+          </p>
         </div>
       </footer>
     </>
@@ -125,125 +106,106 @@ export default function HomePage() {
 const hero: React.CSSProperties = {
   background: "#07111F",
   color: "white",
-  padding: "120px 20px 100px",
+  padding: "120px 20px 80px",
 };
 
 const container: React.CSSProperties = {
-  maxWidth: "1100px",
+  maxWidth: "1000px",
   margin: "0 auto",
-};
-
-const containerSmall: React.CSSProperties = {
-  maxWidth: "800px",
-  margin: "0 auto",
-  textAlign: "center",
 };
 
 const title: React.CSSProperties = {
-  fontSize: "clamp(48px, 7vw, 84px)",
-  lineHeight: 1,
+  fontSize: "clamp(42px, 6vw, 72px)",
+  lineHeight: 1.05,
   margin: "10px 0",
 };
 
 const subtitle: React.CSSProperties = {
-  marginTop: "20px",
   color: "#C7D5E5",
-  fontSize: "18px",
-  lineHeight: 1.8,
   maxWidth: "600px",
-};
-
-const strip: React.CSSProperties = {
-  background: "#0B1728",
-  padding: "20px",
-  textAlign: "center",
-};
-
-const stripText: React.CSSProperties = {
-  color: "#D4AF37",
-  letterSpacing: "0.1em",
-  fontSize: "14px",
+  lineHeight: 1.8,
 };
 
 const section: React.CSSProperties = {
-  padding: "100px 20px",
+  padding: "80px 20px",
   background: "#F8FBFF",
 };
 
-const split: React.CSSProperties = {
-  maxWidth: "1000px",
+const formWrapper: React.CSSProperties = {
+  maxWidth: "800px",
   margin: "0 auto",
-  display: "grid",
-  gap: "40px",
-  gridTemplateColumns: "1fr 1fr",
 };
 
-const heading: React.CSSProperties = {
-  fontSize: "36px",
-  margin: 0,
-};
-
-const headingCenter: React.CSSProperties = {
-  fontSize: "36px",
-  marginBottom: "40px",
-};
-
-const text: React.CSSProperties = {
-  color: "#475569",
-  lineHeight: 1.8,
-  fontSize: "18px",
-};
-
-const servicesList: React.CSSProperties = {
+const form: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",
-  gap: "20px",
+  gap: "30px",
 };
 
-const lineItem: React.CSSProperties = {
+const block: React.CSSProperties = {
   display: "flex",
-  justifyContent: "space-between",
-  padding: "18px 0",
-  borderBottom: "1px solid #E2E8F0",
-  fontSize: "18px",
+  flexDirection: "column",
+  gap: "14px",
 };
 
-const ctaSection: React.CSSProperties = {
-  padding: "100px 20px",
-  textAlign: "center",
+const blockTitle: React.CSSProperties = {
+  fontSize: "18px",
+  fontWeight: 700,
+};
+
+const input: React.CSSProperties = {
+  padding: "14px",
+  borderRadius: "8px",
+  border: "1px solid #E2E8F0",
+};
+
+const textarea: React.CSSProperties = {
+  padding: "14px",
+  borderRadius: "8px",
+  border: "1px solid #E2E8F0",
+  minHeight: "140px",
+};
+
+const button: React.CSSProperties = {
+  background: "#D4AF37",
+  color: "#07111F",
+  padding: "14px",
+  borderRadius: "8px",
+  border: "none",
+  fontWeight: 700,
+  cursor: "pointer",
+};
+
+const infoSection: React.CSSProperties = {
+  padding: "80px 20px",
   background: "#FFFFFF",
 };
 
-const ctaButton: React.CSSProperties = {
-  display: "inline-block",
-  marginTop: "20px",
-  background: "#D4AF37",
-  color: "#07111F",
-  padding: "14px 24px",
-  borderRadius: "8px",
-  textDecoration: "none",
-  fontWeight: 700,
+const infoGrid: React.CSSProperties = {
+  display: "grid",
+  gap: "30px",
+  marginTop: "30px",
+};
+
+const label: React.CSSProperties = {
+  color: "#D4AF37",
+  fontSize: "12px",
+  letterSpacing: "0.1em",
+};
+
+const text: React.CSSProperties = {
+  margin: "4px 0",
+  color: "#334155",
 };
 
 const footer: React.CSSProperties = {
   background: "#07111F",
   color: "#C7D5E5",
-  padding: "60px 20px",
-};
-
-const footerGrid: React.CSSProperties = {
-  maxWidth: "1100px",
-  margin: "0 auto",
-  display: "grid",
-  gap: "20px",
-};
-
-const logo: React.CSSProperties = {
-  color: "#D4AF37",
+  padding: "40px 20px",
 };
 
 const footerText: React.CSSProperties = {
-  margin: "4px 0",
+  margin: 0,
 };
 
 const eyebrow: React.CSSProperties = {
