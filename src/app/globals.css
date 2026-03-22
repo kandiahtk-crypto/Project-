@@ -1,24 +1,20 @@
-html, body {
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
   margin: 0;
-  padding: 0;
 }
 
-a,
-button,
-input,
-textarea {
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
+a {
+  color: inherit;
 }
 
-a:focus,
-a:focus-visible,
-button:focus,
-button:focus-visible,
-input:focus,
-input:focus-visible,
-textarea:focus,
-textarea:focus-visible {
-  outline: none;
-  box-shadow: none;
+img {
+  max-width: 100%;
+  display: block;
 }
