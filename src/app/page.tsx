@@ -11,8 +11,8 @@ export default function HomePage() {
           </h1>
 
           <p style={heroSubtitle}>
-            Premium transport delivery for international tour operators,
-            DMCs and travel brands across the United Kingdom and Ireland.
+            Premium touring logistics across the United Kingdom and Ireland for
+            international operators who require structure, clarity and reliable delivery.
           </p>
 
           <a href="/contact" style={cta}>
@@ -24,24 +24,55 @@ export default function HomePage() {
       {/* STATEMENT */}
       <section style={band}>
         <h2 style={bandText}>
-          Structured. Reliable. Premium delivery across every programme.
+          Built for operators who expect precision and consistency.
         </h2>
+      </section>
+
+      {/* INTRO SPLIT */}
+      <section style={sectionLight}>
+        <div style={split}>
+          <h2 style={heading}>
+            A transport partner, not just a supplier.
+          </h2>
+
+          <div>
+            <p style={text}>
+              We support international tour operators and DMCs with structured
+              ground transport delivery across England, Scotland, Wales and Ireland.
+            </p>
+
+            <p style={text}>
+              Every programme is delivered with operational clarity, consistent execution
+              and dependable coordination.
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* SERVICES */}
       <section style={section}>
-        <h2 style={heading}>Services</h2>
+        <h2 style={headingCenter}>Services</h2>
 
-        <div style={list}>
-          <div>01 — Fixed-Departure Series</div>
-          <div>02 — Multi-Region UK Touring</div>
-          <div>03 — UK & Ireland Programmes</div>
+        <div style={services}>
+          <div style={service}>01 — Fixed-Departure Series</div>
+          <div style={service}>02 — Multi-Region UK Touring</div>
+          <div style={service}>03 — UK & Ireland Programmes</div>
         </div>
+      </section>
+
+      {/* FULL STRIP */}
+      <section style={darkStrip}>
+        <h2 style={stripText}>
+          Reliable delivery across every departure.
+        </h2>
       </section>
 
       {/* CTA */}
       <section style={ctaSection}>
-        <h2>Plan your next touring programme</h2>
+        <h2 style={headingCenter}>
+          Plan your next touring programme
+        </h2>
+
         <a href="/contact" style={cta}>
           Contact Us
         </a>
@@ -49,8 +80,9 @@ export default function HomePage() {
 
       {/* FOOTER */}
       <footer style={footer}>
-        <p>UK Inbound Ground Transport</p>
-        <p>
+        <p style={footerBrand}>UK Inbound Ground Transport</p>
+
+        <p style={footerText}>
           Evershine Transport Limited, trading as ukinboundgroundtransport.com
         </p>
       </footer>
@@ -63,13 +95,13 @@ export default function HomePage() {
 const hero: React.CSSProperties = {
   background: "#050D18",
   color: "white",
-  padding: "60px 20px 90px", // 👈 tight
+  padding: "60px 20px 90px",
 };
 
 const heroInner: React.CSSProperties = {
   maxWidth: "1000px",
   margin: "0 auto",
-  marginTop: "-30px", // 👈 gap removed
+  marginTop: "-30px",
 };
 
 const heroTitle: React.CSSProperties = {
@@ -92,7 +124,7 @@ const eyebrow: React.CSSProperties = {
 };
 
 const cta: React.CSSProperties = {
-  marginTop: "20px",
+  marginTop: "22px",
   display: "inline-block",
   background: "#D4AF37",
   color: "#07111F",
@@ -112,18 +144,57 @@ const bandText: React.CSSProperties = {
   fontSize: "26px",
 };
 
-const section: React.CSSProperties = {
+const sectionLight: React.CSSProperties = {
   padding: "80px 20px",
+  background: "#F8FBFF",
+};
+
+const split: React.CSSProperties = {
+  maxWidth: "1000px",
+  margin: "0 auto",
+  display: "grid",
+  gap: "40px",
 };
 
 const heading: React.CSSProperties = {
   fontSize: "32px",
+  margin: 0,
 };
 
-const list: React.CSSProperties = {
-  marginTop: "20px",
+const text: React.CSSProperties = {
+  color: "#475569",
+  lineHeight: 1.8,
+};
+
+const section: React.CSSProperties = {
+  padding: "80px 20px",
+};
+
+const headingCenter: React.CSSProperties = {
+  fontSize: "32px",
+  textAlign: "center",
+};
+
+const services: React.CSSProperties = {
+  marginTop: "30px",
   display: "grid",
-  gap: "10px",
+  gap: "14px",
+};
+
+const service: React.CSSProperties = {
+  borderBottom: "1px solid rgba(15,23,42,0.08)",
+  paddingBottom: "12px",
+};
+
+const darkStrip: React.CSSProperties = {
+  background: "#07111F",
+  padding: "100px 20px",
+  textAlign: "center",
+};
+
+const stripText: React.CSSProperties = {
+  color: "white",
+  fontSize: "32px",
 };
 
 const ctaSection: React.CSSProperties = {
@@ -134,6 +205,14 @@ const ctaSection: React.CSSProperties = {
 const footer: React.CSSProperties = {
   background: "#050D18",
   color: "#94A3B8",
-  padding: "40px 20px",
+  padding: "50px 20px",
   textAlign: "center",
+};
+
+const footerBrand: React.CSSProperties = {
+  color: "#D4AF37",
+};
+
+const footerText: React.CSSProperties = {
+  marginTop: "10px",
 };
