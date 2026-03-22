@@ -24,8 +24,8 @@ export default function Navbar() {
     <header style={header}>
       <div style={container}>
         <a href="/" style={logo}>
-          <span style={logoTop}>UK INBOUND GROUND</span>
-          <span style={logoBottom}>TRANSPORT</span>
+          <span style={logoLine}>UK INBOUND GROUND</span>
+          <span style={logoLine}>TRANSPORT</span>
         </a>
 
         {isMobile ? (
@@ -66,19 +66,19 @@ const header: React.CSSProperties = {
   width: "100%",
   zIndex: 1000,
   background: "rgba(5, 13, 24, 0.94)",
-  backdropFilter: "blur(16px)",
-  WebkitBackdropFilter: "blur(16px)",
+  backdropFilter: "blur(14px)",
+  WebkitBackdropFilter: "blur(14px)",
   borderBottom: "1px solid rgba(255,255,255,0.06)",
 };
 
 const container: React.CSSProperties = {
-  maxWidth: "1280px",
+  maxWidth: "1200px",
   margin: "0 auto",
-  padding: "14px 18px",
+  padding: "12px 18px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  gap: "16px",
+  gap: "14px",
 };
 
 const logo: React.CSSProperties = {
@@ -91,19 +91,11 @@ const logo: React.CSSProperties = {
   flexShrink: 0,
 };
 
-const logoTop: React.CSSProperties = {
-  fontSize: "12px",
+const logoLine: React.CSSProperties = {
+  fontSize: "11px",
   fontWeight: 700,
   letterSpacing: "0.18em",
   textTransform: "uppercase",
-};
-
-const logoBottom: React.CSSProperties = {
-  fontSize: "12px",
-  fontWeight: 700,
-  letterSpacing: "0.18em",
-  textTransform: "uppercase",
-  marginTop: "2px",
 };
 
 const desktopNav: React.CSSProperties = {
