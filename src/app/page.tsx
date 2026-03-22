@@ -1,9 +1,18 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "UK Inbound Ground Transport | UK & Ireland Touring Logistics",
+  description:
+    "Premium UK & Ireland ground transport solutions for international tour operators, DMCs and travel brands.",
+};
+
 export default function HomePage() {
   return (
     <>
       {/* HERO */}
       <section style={hero}>
         <div style={overlay} />
+
         <div style={container}>
           <p style={eyebrow}>UK & Ireland Touring Logistics</p>
 
@@ -12,14 +21,22 @@ export default function HomePage() {
           </h1>
 
           <p style={subtitle}>
-            Premium touring logistics across the United Kingdom and Ireland for
-            international operators requiring structure, clarity and reliable delivery.
+            Premium ground transport solutions across the United Kingdom and Ireland
+            for international tour operators, DMCs and travel brands requiring
+            structured, reliable programme delivery.
           </p>
 
           <a href="/contact" style={cta}>
             Plan Your Programme
           </a>
         </div>
+      </section>
+
+      {/* STATEMENT */}
+      <section style={band}>
+        <h2 style={bandText}>
+          Structured. Reliable. Professional touring logistics.
+        </h2>
       </section>
 
       {/* INTRO */}
@@ -30,13 +47,14 @@ export default function HomePage() {
           </h2>
 
           <p style={text}>
-            We support international tour operators and DMCs with structured
-            ground transport delivery across England, Scotland, Wales and Ireland.
+            UK Inbound Ground Transport supports international tour operators,
+            destination management companies (DMCs) and travel brands with structured
+            transport delivery across England, Scotland, Wales and Ireland.
           </p>
 
           <p style={text}>
-            Every programme is delivered with operational clarity, consistency
-            and dependable coordination.
+            Our focus is programme flow — ensuring every itinerary operates with
+            clarity, consistency and dependable execution from arrival to departure.
           </p>
         </div>
       </section>
@@ -44,6 +62,7 @@ export default function HomePage() {
       {/* IMAGE STRIP */}
       <section style={imageStrip}>
         <div style={overlay} />
+
         <h2 style={stripText}>
           Seamless touring across the United Kingdom and Ireland.
         </h2>
@@ -62,6 +81,41 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* SEO CONTENT */}
+      <section style={section}>
+        <div style={container}>
+          <h2 style={heading}>
+            UK & Ireland Ground Transport for Tour Operators
+          </h2>
+
+          <p style={text}>
+            We provide structured ground transport services across major UK and
+            Ireland touring regions including London, Edinburgh, the Scottish Highlands,
+            the Lake District, Wales and Ireland.
+          </p>
+
+          <p style={text}>
+            Our services support fixed-departure series, private touring groups and
+            multi-country itineraries, ensuring reliable delivery across every route
+            and schedule.
+          </p>
+        </div>
+      </section>
+
+      {/* WHY US */}
+      <section style={sectionAlt}>
+        <div style={container}>
+          <h2 style={heading}>Why operators choose us</h2>
+
+          <div style={list}>
+            <div style={item}>Structured programme delivery</div>
+            <div style={item}>Clear operational coordination</div>
+            <div style={item}>UK & Ireland coverage</div>
+            <div style={item}>Consistent service standards</div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section style={section}>
         <div style={container}>
@@ -75,10 +129,27 @@ export default function HomePage() {
 
       {/* FOOTER */}
       <footer style={footer}>
-        <p style={brand}>UK Inbound Ground Transport</p>
-        <p>
+        <div style={footerTop}>
+          <div>
+            <p style={footerBrand}>UK Inbound Ground Transport</p>
+            <p style={footerDesc}>
+              Premium UK & Ireland ground transport solutions for international
+              tour operators and travel brands.
+            </p>
+          </div>
+
+          <div style={footerLinks}>
+            <a href="/" style={footerLink}>Home</a>
+            <a href="/about" style={footerLink}>About</a>
+            <a href="/services" style={footerLink}>Services</a>
+            <a href="/programmes" style={footerLink}>Programmes</a>
+            <a href="/contact" style={footerLink}>Contact</a>
+          </div>
+        </div>
+
+        <div style={footerBottom}>
           Evershine Transport Limited, trading as ukinboundgroundtransport.com
-        </p>
+        </div>
       </footer>
     </>
   );
@@ -133,12 +204,23 @@ const cta = {
   textDecoration: "none",
 };
 
+const band = {
+  background: "#0B1728",
+  padding: "40px 18px",
+  textAlign: "center",
+};
+
+const bandText = {
+  color: "white",
+  fontSize: "22px",
+};
+
 const section = {
-  padding: "50px 18px",
+  padding: "60px 18px",
 };
 
 const sectionAlt = {
-  padding: "50px 18px",
+  padding: "60px 18px",
   background: "#F8FBFF",
 };
 
@@ -181,10 +263,43 @@ const stripText = {
 const footer = {
   background: "#050D18",
   color: "#94A3B8",
-  padding: "40px 18px",
-  textAlign: "center",
+  padding: "60px 20px 30px",
 };
 
-const brand = {
+const footerTop = {
+  maxWidth: "1000px",
+  margin: "0 auto",
+  display: "flex",
+  flexDirection: "column",
+  gap: "30px",
+};
+
+const footerBrand = {
   color: "#D4AF37",
+  fontSize: "16px",
+  fontWeight: 700,
+};
+
+const footerDesc = {
+  marginTop: "10px",
+  maxWidth: "400px",
+};
+
+const footerLinks = {
+  display: "flex",
+  flexDirection: "column",
+  gap: "10px",
+};
+
+const footerLink = {
+  color: "#94A3B8",
+  textDecoration: "none",
+};
+
+const footerBottom = {
+  marginTop: "40px",
+  borderTop: "1px solid rgba(255,255,255,0.08)",
+  paddingTop: "20px",
+  textAlign: "center",
+  fontSize: "14px",
 };
