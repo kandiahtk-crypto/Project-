@@ -10,155 +10,198 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      {/* HERO */}
-      <section style={hero}>
-        <div style={heroOverlay} />
-        <div style={container}>
-          <p style={heroEyebrow}>UK Inbound Ground Transport</p>
-
-          <h1 style={heroTitle}>Premium delivery across every programme.</h1>
-
-          <p style={heroText}>
-            Premium ground transport solutions across the United Kingdom and
-            Ireland for international tour operators, DMCs and travel brands
-            requiring structured, reliable programme delivery.
-          </p>
-
-          <a href="/contact" style={cta}>
-            Plan Your Programme
+      <header style={header}>
+        <div style={headerInner}>
+          <a href="/" style={brand}>
+            UK INBOUND GROUND TRANSPORT
           </a>
+
+          <nav style={nav}>
+            <a href="/about" style={navLink}>
+              About
+            </a>
+            <a href="/services" style={navLink}>
+              Services
+            </a>
+            <a href="/programmes" style={navLink}>
+              Programmes
+            </a>
+            <a href="/contact" style={navCta}>
+              Contact
+            </a>
+          </nav>
         </div>
-      </section>
+      </header>
 
-      {/* STATEMENT BAND */}
-      <section style={band}>
-        <div style={containerNarrow}>
-          <h2 style={bandText}>
-            Structured. Reliable. Professional touring logistics.
-          </h2>
-        </div>
-      </section>
+      <main>
+        {/* HERO */}
+        <section style={hero}>
+          <div style={heroOverlay} />
+          <div style={heroGlow} />
 
-      {/* OUR APPROACH */}
-      <section style={approachSection}>
-        <div style={approachInner}>
-          <p style={approachLabel}>OUR APPROACH</p>
+          <div style={container}>
+            <div style={heroContent}>
+              <p style={heroEyebrow}>UK & Ireland Touring Logistics</p>
 
-          <h2 style={approachHeading}>
-            A
-            <br />
-            transport
-            <br />
-            partner,
-            <br />
-            not just a
-            <br />
-            supplier.
-          </h2>
+              <h1 style={heroTitle}>Premium delivery across every programme.</h1>
 
-          <div style={approachBody}>
-            <p style={approachParagraph}>
-              We support international tour operators and DMCs with structured
-              ground transport delivery across England, Scotland, Wales and
-              Ireland.
+              <p style={heroText}>
+                Premium ground transport solutions across the United Kingdom and
+                Ireland for international tour operators, DMCs and travel brands
+                requiring structured, reliable programme delivery.
+              </p>
+
+              <div style={heroActions}>
+                <a href="/contact" style={ctaPrimary}>
+                  Plan Your Programme
+                </a>
+                <a href="/services" style={ctaGhost}>
+                  Explore Services
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* STATEMENT BAND */}
+        <section style={band}>
+          <div style={containerNarrow}>
+            <h2 style={bandText}>
+              Structured. Reliable. Professional touring logistics.
+            </h2>
+          </div>
+        </section>
+
+        {/* OUR APPROACH */}
+        <section style={approachSection}>
+          <div style={approachInner}>
+            <p style={approachLabel}>OUR APPROACH</p>
+
+            <h2 style={approachHeading}>
+              A
+              <br />
+              transport
+              <br />
+              partner,
+              <br />
+              not just a
+              <br />
+              supplier.
+            </h2>
+
+            <div style={approachBody}>
+              <p style={approachParagraph}>
+                We support international tour operators and DMCs with structured
+                ground transport delivery across England, Scotland, Wales and
+                Ireland.
+              </p>
+
+              <p style={approachParagraph}>
+                Every programme is delivered with clarity, coordination and
+                consistent execution from arrival through to departure.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* SERVICES */}
+        <section style={section}>
+          <div style={container}>
+            <p style={sectionLabel}>SERVICES</p>
+            <h2 style={sectionHeading}>Transport support built for touring.</h2>
+
+            <div style={serviceGrid}>
+              <article style={serviceCard}>
+                <p style={cardNumber}>01</p>
+                <h3 style={cardTitle}>Fixed-Departure Series</h3>
+                <p style={cardText}>
+                  Structured coach and touring transport support for repeat
+                  departures with dependable operational flow.
+                </p>
+              </article>
+
+              <article style={serviceCard}>
+                <p style={cardNumber}>02</p>
+                <h3 style={cardTitle}>Multi-Region UK Touring</h3>
+                <p style={cardText}>
+                  Reliable transport coordination across England, Scotland and
+                  Wales for complex programme routing.
+                </p>
+              </article>
+
+              <article style={serviceCard}>
+                <p style={cardNumber}>03</p>
+                <h3 style={cardTitle}>UK & Ireland Programmes</h3>
+                <p style={cardText}>
+                  Ground transport solutions for cross-border itineraries
+                  requiring consistency, timing discipline and clear delivery.
+                </p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        {/* COVERAGE */}
+        <section style={sectionAlt}>
+          <div style={container}>
+            <p style={sectionLabel}>UK & IRELAND COVERAGE</p>
+            <h2 style={sectionHeading}>
+              Ground transport for international tour operators.
+            </h2>
+
+            <div style={contentColumns}>
+              <p style={bodyText}>
+                We provide structured ground transport services across major UK
+                and Ireland touring regions including London, Edinburgh, the
+                Scottish Highlands, the Lake District, Wales and Ireland.
+              </p>
+
+              <p style={bodyText}>
+                Our services support fixed-departure series, private touring
+                groups and multi-country itineraries, ensuring reliable delivery
+                across every route and schedule.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* WHY US */}
+        <section style={section}>
+          <div style={container}>
+            <p style={sectionLabel}>WHY OPERATORS CHOOSE US</p>
+            <h2 style={sectionHeading}>
+              Programme-focused, operationally reliable.
+            </h2>
+
+            <div style={pointsGrid}>
+              <div style={pointCard}>Structured programme delivery</div>
+              <div style={pointCard}>Clear operational coordination</div>
+              <div style={pointCard}>UK & Ireland coverage</div>
+              <div style={pointCard}>Consistent service standards</div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA */}
+        <section style={ctaSection}>
+          <div style={container}>
+            <p style={sectionLabelLight}>PLAN YOUR NEXT PROGRAMME</p>
+            <h2 style={ctaHeading}>
+              Premium UK & Ireland touring logistics, delivered properly.
+            </h2>
+
+            <p style={ctaText}>
+              For international tour operators, DMCs and travel brands that
+              require dependable, programme-led transport delivery.
             </p>
 
-            <p style={approachParagraph}>
-              Every programme is delivered with clarity, coordination and
-              consistent execution from arrival through to departure.
-            </p>
+            <a href="/contact" style={ctaPrimaryLarge}>
+              Contact Us
+            </a>
           </div>
-        </div>
-      </section>
+        </section>
+      </main>
 
-      {/* SERVICES */}
-      <section style={section}>
-        <div style={container}>
-          <p style={sectionLabel}>SERVICES</p>
-          <h2 style={sectionHeading}>Transport support built for touring.</h2>
-
-          <div style={serviceGrid}>
-            <div style={serviceCard}>
-              <h3 style={cardTitle}>Fixed-Departure Series</h3>
-              <p style={cardText}>
-                Structured coach and touring transport support for repeat
-                departures with dependable operational flow.
-              </p>
-            </div>
-
-            <div style={serviceCard}>
-              <h3 style={cardTitle}>Multi-Region UK Touring</h3>
-              <p style={cardText}>
-                Reliable transport coordination across England, Scotland and
-                Wales for complex programme routing.
-              </p>
-            </div>
-
-            <div style={serviceCard}>
-              <h3 style={cardTitle}>UK & Ireland Programmes</h3>
-              <p style={cardText}>
-                Ground transport solutions for cross-border itineraries
-                requiring consistency, timing discipline and clear delivery.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* COVERAGE */}
-      <section style={sectionAlt}>
-        <div style={container}>
-          <p style={sectionLabel}>UK & IRELAND COVERAGE</p>
-          <h2 style={sectionHeading}>
-            Ground transport for international tour operators.
-          </h2>
-
-          <p style={bodyText}>
-            We provide structured ground transport services across major UK and
-            Ireland touring regions including London, Edinburgh, the Scottish
-            Highlands, the Lake District, Wales and Ireland.
-          </p>
-
-          <p style={bodyText}>
-            Our services support fixed-departure series, private touring groups
-            and multi-country itineraries, ensuring reliable delivery across
-            every route and schedule.
-          </p>
-        </div>
-      </section>
-
-      {/* WHY US */}
-      <section style={section}>
-        <div style={container}>
-          <p style={sectionLabel}>WHY OPERATORS CHOOSE US</p>
-          <h2 style={sectionHeading}>
-            Programme-focused, operationally reliable.
-          </h2>
-
-          <div style={pointsList}>
-            <div style={pointItem}>Structured programme delivery</div>
-            <div style={pointItem}>Clear operational coordination</div>
-            <div style={pointItem}>UK & Ireland coverage</div>
-            <div style={pointItem}>Consistent service standards</div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section style={ctaSection}>
-        <div style={container}>
-          <p style={sectionLabelLight}>PLAN YOUR NEXT PROGRAMME</p>
-          <h2 style={ctaHeading}>
-            Premium UK & Ireland touring logistics, delivered properly.
-          </h2>
-
-          <a href="/contact" style={ctaSecondary}>
-            Contact Us
-          </a>
-        </div>
-      </section>
-
-      {/* FOOTER */}
       <footer style={footer}>
         <div style={footerTop}>
           <div>
@@ -198,13 +241,62 @@ export default function HomePage() {
 
 /* STYLES */
 
+const header: CSSProperties = {
+  position: "sticky",
+  top: 0,
+  zIndex: 50,
+  background: "rgba(5,13,24,0.96)",
+  backdropFilter: "blur(10px)",
+  borderBottom: "1px solid rgba(255,255,255,0.06)",
+};
+
+const headerInner: CSSProperties = {
+  maxWidth: "1120px",
+  margin: "0 auto",
+  padding: "18px 20px",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: "20px",
+};
+
+const brand: CSSProperties = {
+  color: "#D4AF37",
+  textDecoration: "none",
+  fontSize: "12px",
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  fontWeight: 600,
+};
+
+const nav: CSSProperties = {
+  display: "flex",
+  alignItems: "center",
+  gap: "18px",
+  flexWrap: "wrap",
+  justifyContent: "flex-end",
+};
+
+const navLink: CSSProperties = {
+  color: "rgba(255,255,255,0.82)",
+  textDecoration: "none",
+  fontSize: "14px",
+};
+
+const navCta: CSSProperties = {
+  color: "#07111F",
+  background: "#D4AF37",
+  textDecoration: "none",
+  fontSize: "14px",
+  fontWeight: 600,
+  padding: "10px 14px",
+  borderRadius: "999px",
+};
+
 const hero: CSSProperties = {
   position: "relative",
-  backgroundImage:
-    "linear-gradient(rgba(3,10,24,0.78), rgba(3,10,24,0.78)), url('/hero.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  padding: "84px 20px 88px",
+  background:
+    "linear-gradient(180deg, rgba(4,10,22,0.80) 0%, rgba(4,10,22,0.92) 100%), url('/hero.jpg') center/cover no-repeat",
   color: "white",
   overflow: "hidden",
 };
@@ -212,32 +304,54 @@ const hero: CSSProperties = {
 const heroOverlay: CSSProperties = {
   position: "absolute",
   inset: 0,
-  pointerEvents: "none",
+  background:
+    "linear-gradient(90deg, rgba(6,12,24,0.86) 0%, rgba(6,12,24,0.58) 55%, rgba(6,12,24,0.30) 100%)",
+};
+
+const heroGlow: CSSProperties = {
+  position: "absolute",
+  right: "-140px",
+  top: "40px",
+  width: "360px",
+  height: "360px",
+  borderRadius: "999px",
+  background: "rgba(212,175,55,0.08)",
+  filter: "blur(30px)",
 };
 
 const container: CSSProperties = {
   position: "relative",
   maxWidth: "1120px",
   margin: "0 auto",
+  padding: "0 20px",
 };
 
 const containerNarrow: CSSProperties = {
   maxWidth: "980px",
   margin: "0 auto",
+  padding: "0 20px",
+};
+
+const heroContent: CSSProperties = {
+  position: "relative",
+  padding: "110px 0 120px",
+  maxWidth: "780px",
 };
 
 const heroEyebrow: CSSProperties = {
   color: "#D4AF37",
   fontSize: "12px",
-  letterSpacing: "0.18em",
+  letterSpacing: "0.22em",
   textTransform: "uppercase",
   margin: 0,
   fontWeight: 600,
 };
 
 const heroTitle: CSSProperties = {
-  fontSize: "clamp(44px, 9vw, 82px)",
-  lineHeight: 0.98,
+  fontFamily: "var(--font-serif)",
+  fontSize: "clamp(52px, 9vw, 92px)",
+  lineHeight: 0.96,
+  letterSpacing: "-0.03em",
   marginTop: "22px",
   marginBottom: 0,
   maxWidth: "900px",
@@ -245,34 +359,52 @@ const heroTitle: CSSProperties = {
 };
 
 const heroText: CSSProperties = {
-  marginTop: "18px",
+  marginTop: "22px",
   marginBottom: 0,
-  maxWidth: "720px",
+  maxWidth: "680px",
   color: "#D9E2F0",
   fontSize: "18px",
-  lineHeight: 1.7,
+  lineHeight: 1.8,
 };
 
-const cta: CSSProperties = {
-  marginTop: "28px",
+const heroActions: CSSProperties = {
+  marginTop: "32px",
+  display: "flex",
+  gap: "14px",
+  flexWrap: "wrap",
+};
+
+const ctaPrimary: CSSProperties = {
   display: "inline-block",
   background: "#D4AF37",
   color: "#07111F",
   padding: "14px 22px",
   fontWeight: 700,
   textDecoration: "none",
-  borderRadius: "2px",
+  borderRadius: "999px",
+};
+
+const ctaGhost: CSSProperties = {
+  display: "inline-block",
+  background: "transparent",
+  color: "white",
+  padding: "14px 22px",
+  fontWeight: 600,
+  textDecoration: "none",
+  borderRadius: "999px",
+  border: "1px solid rgba(255,255,255,0.18)",
 };
 
 const band: CSSProperties = {
   background: "#081528",
-  padding: "34px 20px",
+  padding: "34px 0",
   textAlign: "center",
 };
 
 const bandText: CSSProperties = {
   color: "white",
-  fontSize: "clamp(22px, 4vw, 34px)",
+  fontFamily: "var(--font-serif)",
+  fontSize: "clamp(24px, 4vw, 38px)",
   lineHeight: 1.2,
   margin: 0,
   fontWeight: 600,
@@ -296,20 +428,21 @@ const approachLabel: CSSProperties = {
   textTransform: "uppercase",
   marginTop: 0,
   marginBottom: "40px",
-  fontWeight: 500,
+  fontWeight: 600,
 };
 
 const approachHeading: CSSProperties = {
+  fontFamily: "var(--font-serif)",
   margin: 0,
-  fontSize: "clamp(48px, 12vw, 72px)",
-  lineHeight: 1.05,
+  fontSize: "clamp(48px, 12vw, 76px)",
+  lineHeight: 1.03,
   fontWeight: 700,
-  letterSpacing: "-0.02em",
+  letterSpacing: "-0.03em",
   color: "#000000",
 };
 
 const approachBody: CSSProperties = {
-  marginTop: "40px",
+  marginTop: "42px",
 };
 
 const approachParagraph: CSSProperties = {
@@ -321,12 +454,12 @@ const approachParagraph: CSSProperties = {
 };
 
 const section: CSSProperties = {
-  padding: "80px 20px",
+  padding: "90px 0",
   background: "#FFFFFF",
 };
 
 const sectionAlt: CSSProperties = {
-  padding: "80px 20px",
+  padding: "90px 0",
   background: "#F8FBFF",
 };
 
@@ -349,89 +482,124 @@ const sectionLabelLight: CSSProperties = {
 };
 
 const sectionHeading: CSSProperties = {
-  fontSize: "clamp(34px, 6vw, 56px)",
+  fontFamily: "var(--font-serif)",
+  fontSize: "clamp(36px, 6vw, 58px)",
   lineHeight: 1.02,
   marginTop: "18px",
   marginBottom: 0,
   maxWidth: "760px",
   color: "#07111F",
   fontWeight: 700,
+  letterSpacing: "-0.02em",
+};
+
+const contentColumns: CSSProperties = {
+  marginTop: "26px",
+  display: "grid",
+  gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))",
+  gap: "28px",
 };
 
 const bodyText: CSSProperties = {
   color: "#556070",
-  marginTop: "18px",
-  marginBottom: 0,
-  maxWidth: "780px",
+  margin: 0,
   fontSize: "18px",
-  lineHeight: 1.8,
+  lineHeight: 1.85,
 };
 
 const serviceGrid: CSSProperties = {
-  marginTop: "34px",
+  marginTop: "36px",
   display: "grid",
   gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
   gap: "18px",
 };
 
 const serviceCard: CSSProperties = {
-  background: "#F8FBFF",
+  background: "#FBFCFE",
   border: "1px solid rgba(15,23,42,0.08)",
-  padding: "24px",
+  padding: "28px",
+  borderRadius: "20px",
+  boxShadow: "0 10px 30px rgba(15,23,42,0.04)",
+};
+
+const cardNumber: CSSProperties = {
+  margin: 0,
+  color: "#C9A640",
+  fontSize: "12px",
+  letterSpacing: "0.16em",
+  fontWeight: 700,
 };
 
 const cardTitle: CSSProperties = {
-  margin: 0,
-  fontSize: "22px",
+  fontFamily: "var(--font-serif)",
+  marginTop: "14px",
+  marginBottom: 0,
+  fontSize: "28px",
   color: "#07111F",
   fontWeight: 700,
+  lineHeight: 1.05,
 };
 
 const cardText: CSSProperties = {
   marginTop: "14px",
   marginBottom: 0,
   color: "#556070",
-  lineHeight: 1.7,
+  lineHeight: 1.8,
   fontSize: "16px",
 };
 
-const pointsList: CSSProperties = {
-  marginTop: "30px",
+const pointsGrid: CSSProperties = {
+  marginTop: "34px",
   display: "grid",
-  gap: "12px",
+  gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+  gap: "16px",
 };
 
-const pointItem: CSSProperties = {
-  borderBottom: "1px solid rgba(15,23,42,0.08)",
-  paddingBottom: "12px",
-  fontSize: "18px",
+const pointCard: CSSProperties = {
+  background: "#F8FBFF",
+  border: "1px solid rgba(15,23,42,0.08)",
+  padding: "22px",
+  borderRadius: "16px",
+  fontSize: "17px",
   color: "#07111F",
 };
 
 const ctaSection: CSSProperties = {
-  background: "#081528",
+  background:
+    "linear-gradient(180deg, #081528 0%, #050D18 100%)",
   color: "white",
-  padding: "80px 20px",
+  padding: "96px 0",
 };
 
 const ctaHeading: CSSProperties = {
+  fontFamily: "var(--font-serif)",
   marginTop: "18px",
   marginBottom: 0,
-  fontSize: "clamp(34px, 6vw, 56px)",
-  lineHeight: 1.04,
-  maxWidth: "760px",
+  fontSize: "clamp(38px, 6vw, 62px)",
+  lineHeight: 1.03,
+  maxWidth: "780px",
   fontWeight: 700,
+  letterSpacing: "-0.02em",
 };
 
-const ctaSecondary: CSSProperties = {
-  marginTop: "28px",
+const ctaText: CSSProperties = {
+  marginTop: "18px",
+  marginBottom: 0,
+  maxWidth: "650px",
+  color: "#C8D3E0",
+  fontSize: "18px",
+  lineHeight: 1.8,
+};
+
+const ctaPrimaryLarge: CSSProperties = {
+  marginTop: "30px",
   display: "inline-block",
   background: "#D4AF37",
   color: "#07111F",
-  padding: "14px 22px",
+  padding: "16px 24px",
   fontWeight: 700,
   textDecoration: "none",
-  borderRadius: "2px",
+  borderRadius: "999px",
 };
 
 const footer: CSSProperties = {
