@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { CSSProperties } from "react";
 
 export const metadata: Metadata = {
   title: "UK Inbound Ground Transport | UK & Ireland Touring Logistics",
@@ -16,9 +17,7 @@ export default function HomePage() {
         <div style={container}>
           <p style={eyebrow}>UK & Ireland Touring Logistics</p>
 
-          <h1 style={title}>
-            UK Inbound Ground Transport
-          </h1>
+          <h1 style={title}>UK Inbound Ground Transport</h1>
 
           <p style={subtitle}>
             Premium ground transport solutions across the United Kingdom and Ireland
@@ -42,9 +41,7 @@ export default function HomePage() {
       {/* INTRO */}
       <section style={section}>
         <div style={container}>
-          <h2 style={heading}>
-            A transport partner, not just a supplier.
-          </h2>
+          <h2 style={heading}>A transport partner, not just a supplier.</h2>
 
           <p style={text}>
             UK Inbound Ground Transport supports international tour operators,
@@ -84,9 +81,7 @@ export default function HomePage() {
       {/* SEO CONTENT */}
       <section style={section}>
         <div style={container}>
-          <h2 style={heading}>
-            UK & Ireland Ground Transport for Tour Operators
-          </h2>
+          <h2 style={heading}>UK & Ireland Ground Transport for Tour Operators</h2>
 
           <p style={text}>
             We provide structured ground transport services across major UK and
@@ -139,11 +134,21 @@ export default function HomePage() {
           </div>
 
           <div style={footerLinks}>
-            <a href="/" style={footerLink}>Home</a>
-            <a href="/about" style={footerLink}>About</a>
-            <a href="/services" style={footerLink}>Services</a>
-            <a href="/programmes" style={footerLink}>Programmes</a>
-            <a href="/contact" style={footerLink}>Contact</a>
+            <a href="/" style={footerLink}>
+              Home
+            </a>
+            <a href="/about" style={footerLink}>
+              About
+            </a>
+            <a href="/services" style={footerLink}>
+              Services
+            </a>
+            <a href="/programmes" style={footerLink}>
+              Programmes
+            </a>
+            <a href="/contact" style={footerLink}>
+              Contact
+            </a>
           </div>
         </div>
 
@@ -157,7 +162,7 @@ export default function HomePage() {
 
 /* STYLES */
 
-const hero = {
+const hero: CSSProperties = {
   position: "relative",
   backgroundImage: "url('/hero.jpg')",
   backgroundSize: "cover",
@@ -166,35 +171,35 @@ const hero = {
   color: "white",
 };
 
-const overlay = {
+const overlay: CSSProperties = {
   position: "absolute",
   inset: 0,
   background: "rgba(5,13,24,0.75)",
 };
 
-const container = {
+const container: CSSProperties = {
   position: "relative",
   maxWidth: "900px",
   margin: "0 auto",
 };
 
-const title = {
+const title: CSSProperties = {
   fontSize: "clamp(40px, 10vw, 80px)",
   lineHeight: 0.95,
 };
 
-const subtitle = {
+const subtitle: CSSProperties = {
   marginTop: "12px",
   color: "#DCE8F5",
 };
 
-const eyebrow = {
+const eyebrow: CSSProperties = {
   color: "#D4AF37",
   fontSize: "11px",
   letterSpacing: "0.15em",
 };
 
-const cta = {
+const cta: CSSProperties = {
   marginTop: "18px",
   display: "inline-block",
   background: "#D4AF37",
@@ -204,48 +209,48 @@ const cta = {
   textDecoration: "none",
 };
 
-const band = {
+const band: CSSProperties = {
   background: "#0B1728",
   padding: "40px 18px",
   textAlign: "center",
 };
 
-const bandText = {
+const bandText: CSSProperties = {
   color: "white",
   fontSize: "22px",
 };
 
-const section = {
+const section: CSSProperties = {
   padding: "60px 18px",
 };
 
-const sectionAlt = {
+const sectionAlt: CSSProperties = {
   padding: "60px 18px",
   background: "#F8FBFF",
 };
 
-const heading = {
+const heading: CSSProperties = {
   fontSize: "24px",
 };
 
-const text = {
+const text: CSSProperties = {
   color: "#475569",
   marginTop: "10px",
 };
 
-const list = {
+const list: CSSProperties = {
   marginTop: "20px",
   display: "flex",
   flexDirection: "column",
   gap: "10px",
 };
 
-const item = {
+const item: CSSProperties = {
   borderBottom: "1px solid rgba(15,23,42,0.08)",
   paddingBottom: "8px",
 };
 
-const imageStrip = {
+const imageStrip: CSSProperties = {
   position: "relative",
   backgroundImage: "url('/uk.jpg')",
   backgroundSize: "cover",
@@ -254,19 +259,19 @@ const imageStrip = {
   textAlign: "center",
 };
 
-const stripText = {
+const stripText: CSSProperties = {
   position: "relative",
   color: "white",
   fontSize: "22px",
 };
 
-const footer = {
+const footer: CSSProperties = {
   background: "#050D18",
   color: "#94A3B8",
   padding: "60px 20px 30px",
 };
 
-const footerTop = {
+const footerTop: CSSProperties = {
   maxWidth: "1000px",
   margin: "0 auto",
   display: "flex",
@@ -274,29 +279,29 @@ const footerTop = {
   gap: "30px",
 };
 
-const footerBrand = {
+const footerBrand: CSSProperties = {
   color: "#D4AF37",
   fontSize: "16px",
   fontWeight: 700,
 };
 
-const footerDesc = {
+const footerDesc: CSSProperties = {
   marginTop: "10px",
   maxWidth: "400px",
 };
 
-const footerLinks = {
+const footerLinks: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   gap: "10px",
 };
 
-const footerLink = {
+const footerLink: CSSProperties = {
   color: "#94A3B8",
   textDecoration: "none",
 };
 
-const footerBottom = {
+const footerBottom: CSSProperties = {
   marginTop: "40px",
   borderTop: "1px solid rgba(255,255,255,0.08)",
   paddingTop: "20px",
