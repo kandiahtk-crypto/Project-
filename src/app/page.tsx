@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UK Inbound Ground Transport",
-  description: "Premium UK & Ireland touring logistics",
+  title: "UK Inbound Ground Transport | Premium UK & Ireland Touring Logistics",
+  description:
+    "Premium UK & Ireland ground transport solutions for international tour operators.",
 };
 
 export default function HomePage() {
@@ -10,6 +11,8 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section style={hero}>
+        <div style={heroOverlay} />
+
         <div style={heroInner}>
           <p style={eyebrow}>UK & Ireland Touring Logistics</p>
 
@@ -18,75 +21,42 @@ export default function HomePage() {
           </h1>
 
           <p style={heroSubtitle}>
-            Premium touring logistics across the United Kingdom and Ireland,
-            designed for international operators who require structure,
-            reliability and consistent delivery.
+            Premium touring logistics across the United Kingdom and Ireland for
+            international operators who require structure, clarity and dependable delivery.
           </p>
 
-          <a href="/contact" style={ctaButton}>
+          <a href="/contact" style={cta}>
             Plan Your Programme
           </a>
         </div>
       </section>
 
-      {/* TRUST */}
-      <section style={statement}>
-        <div style={containerNarrow}>
-          <p style={eyebrow}>Trusted by International Operators</p>
-
-          <h2 style={statementText}>
-            Delivering structured touring programmes across the UK & Ireland.
-          </h2>
-
-          <p style={textLight}>
-            Our service is built around consistency, operational clarity and
-            professional execution — ensuring every departure runs to plan and
-            meets the expectations of both operators and their guests.
-          </p>
-        </div>
+      {/* STATEMENT */}
+      <section style={band}>
+        <h2 style={bandText}>
+          Structured. Reliable. Premium delivery across every programme.
+        </h2>
       </section>
 
-      {/* INTRO */}
+      {/* IMAGE + TEXT */}
       <section style={section}>
         <div style={split}>
-          <h2 style={heading}>
-            A transport partner, not just a supplier.
-          </h2>
+          <div style={imageBox} />
 
           <div>
+            <p style={eyebrow}>Our Approach</p>
+            <h2 style={heading}>
+              A transport partner, not just a supplier.
+            </h2>
+
             <p style={text}>
-              UK Inbound Ground Transport supports international tour operators,
-              DMCs and travel brands with structured transport delivery across
-              England, Scotland, Wales and Ireland.
+              We support international tour operators and DMCs with structured
+              ground transport delivery across England, Scotland, Wales and Ireland.
             </p>
 
             <p style={text}>
-              Our focus is programme flow — ensuring every itinerary runs with
-              consistency, operational clarity and dependable execution.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* OPERATIONAL */}
-      <section style={section}>
-        <div style={container}>
-          <h2 style={heading}>Operational clarity at every stage</h2>
-
-          <div style={{ marginTop: "20px", display: "grid", gap: "16px" }}>
-            <p style={text}>
-              Successful touring programmes depend on more than transport — they
-              require structure, timing accuracy and consistent delivery.
-            </p>
-
-            <p style={text}>
-              Every route, schedule and movement is aligned with your programme
-              objectives, supporting smooth execution across multiple regions.
-            </p>
-
-            <p style={text}>
-              From arrival coordination to final departure, each stage is managed
-              with clear communication and dependable operational control.
+              Every programme is delivered with operational clarity, consistent execution
+              and dependable coordination.
             </p>
           </div>
         </div>
@@ -94,65 +64,41 @@ export default function HomePage() {
 
       {/* SERVICES */}
       <section style={sectionAlt}>
-        <div style={container}>
-          <h2 style={headingCenter}>Services</h2>
+        <h2 style={headingCenter}>Services</h2>
 
-          <div style={services}>
-            <div style={service}>01 — Fixed-Departure Series</div>
-            <div style={service}>02 — Multi-Region UK Touring</div>
-            <div style={service}>03 — UK & Ireland Programmes</div>
+        <div style={services}>
+          <div style={card}>
+            <h3 style={cardTitle}>Fixed-Departure Series</h3>
+            <p style={cardText}>Consistent structured delivery across touring programmes.</p>
+          </div>
+
+          <div style={card}>
+            <h3 style={cardTitle}>Multi-Region UK Touring</h3>
+            <p style={cardText}>Seamless routing across England, Scotland and Wales.</p>
+          </div>
+
+          <div style={card}>
+            <h3 style={cardTitle}>UK & Ireland Programmes</h3>
+            <p style={cardText}>Integrated British Isles touring with full coordination.</p>
           </div>
         </div>
       </section>
 
-      {/* PROGRAMMES */}
-      <section style={section}>
-        <div style={container}>
-          <h2 style={headingCenter}>Programme types we support</h2>
-
-          <div style={services}>
-            <div style={service}>Escorted touring programmes</div>
-            <div style={service}>Fixed departure series</div>
-            <div style={service}>Private group touring</div>
-            <div style={service}>Multi-country itineraries</div>
-          </div>
-        </div>
-      </section>
-
-      {/* FULL STRIP */}
-      <section style={fullBand}>
-        <h2 style={fullText}>
+      {/* FULL IMAGE STRIP */}
+      <section style={imageStrip}>
+        <div style={stripOverlay} />
+        <h2 style={stripText}>
           Reliable delivery across every departure.
         </h2>
       </section>
 
-      {/* WHY US */}
-      <section style={section}>
-        <div style={center}>
-          <h2 style={headingCenter}>Why operators choose us</h2>
-
-          <p style={text}>
-            We focus on structured delivery, clear communication and dependable
-            execution — helping operators protect programme quality and deliver
-            a consistent guest experience.
-          </p>
-
-          <div style={valueList}>
-            <div>Consistent delivery standards</div>
-            <div>Clear operational structure</div>
-            <div>UK & Ireland coverage</div>
-            <div>Professional coordination</div>
-          </div>
-        </div>
-      </section>
-
       {/* CTA */}
-      <section style={cta}>
-        <h2 style={{ margin: 0 }}>
+      <section style={ctaSection}>
+        <h2 style={headingCenter}>
           Plan your next touring programme
         </h2>
 
-        <a href="/contact" style={ctaButton}>
+        <a href="/contact" style={cta}>
           Contact Us
         </a>
       </section>
@@ -171,152 +117,170 @@ export default function HomePage() {
 
 /* STYLES */
 
-const hero = {
-  background: "#050D18",
+const hero: React.CSSProperties = {
+  position: "relative",
+  backgroundImage: "url('/hero.jpg')", // 👉 add image in public folder
+  backgroundSize: "cover",
+  backgroundPosition: "center",
   color: "white",
-  padding: "60px 20px 90px",
+  padding: "100px 20px 120px",
 };
 
-const heroInner = {
+const heroOverlay: React.CSSProperties = {
+  position: "absolute",
+  inset: 0,
+  background: "rgba(5,13,24,0.75)",
+};
+
+const heroInner: React.CSSProperties = {
+  position: "relative",
   maxWidth: "1000px",
   margin: "0 auto",
-  marginTop: "-30px",
 };
 
-const heroTitle = {
-  fontSize: "clamp(54px, 8vw, 92px)",
+const heroTitle: React.CSSProperties = {
+  fontSize: "clamp(56px, 8vw, 96px)",
   lineHeight: 0.9,
   letterSpacing: "-0.05em",
+  fontWeight: 600,
 };
 
-const heroSubtitle = {
+const heroSubtitle: React.CSSProperties = {
   marginTop: "16px",
   maxWidth: "600px",
-  color: "#AFC1D4",
-};
-
-const eyebrow = {
-  color: "#D4AF37",
-  fontSize: "12px",
-  letterSpacing: "0.14em",
-};
-
-const section = {
-  padding: "80px 20px",
-};
-
-const sectionAlt = {
-  padding: "80px 20px",
-  background: "#F8FBFF",
-};
-
-const container = {
-  maxWidth: "1000px",
-  margin: "0 auto",
-};
-
-const containerNarrow = {
-  maxWidth: "900px",
-  margin: "0 auto",
-};
-
-const split = {
-  maxWidth: "1000px",
-  margin: "0 auto",
-  display: "grid",
-  gap: "40px",
-};
-
-const heading = {
-  fontSize: "32px",
-};
-
-const headingCenter = {
-  fontSize: "32px",
-  textAlign: "center",
-};
-
-const text = {
-  color: "#475569",
+  color: "#DCE8F5",
+  fontSize: "18px",
   lineHeight: 1.8,
 };
 
-const textLight = {
-  color: "#AFC1D4",
-  marginTop: "10px",
+const eyebrow: React.CSSProperties = {
+  color: "#D4AF37",
+  fontSize: "12px",
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
 };
 
-const services = {
-  marginTop: "30px",
-  display: "grid",
-  gap: "14px",
-};
-
-const service = {
-  borderBottom: "1px solid rgba(15,23,42,0.08)",
-  paddingBottom: "10px",
-};
-
-const statement = {
+const band: React.CSSProperties = {
   background: "#0B1728",
   padding: "60px 20px",
+  textAlign: "center",
 };
 
-const statementText = {
+const bandText: React.CSSProperties = {
   color: "white",
-  fontSize: "26px",
+  fontSize: "28px",
+};
+
+const section: React.CSSProperties = {
+  padding: "100px 20px",
+};
+
+const sectionAlt: React.CSSProperties = {
+  padding: "100px 20px",
+  background: "#F8FBFF",
+};
+
+const split: React.CSSProperties = {
+  maxWidth: "1100px",
+  margin: "0 auto",
+  display: "grid",
+  gridTemplateColumns: "1fr 1fr",
+  gap: "40px",
+};
+
+const imageBox: React.CSSProperties = {
+  backgroundImage: "url('/coach.jpg')", // 👉 add image
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  borderRadius: "10px",
+  minHeight: "320px",
+};
+
+const heading: React.CSSProperties = {
+  fontSize: "36px",
+  lineHeight: 1.2,
+};
+
+const headingCenter: React.CSSProperties = {
+  fontSize: "36px",
+  textAlign: "center",
+};
+
+const text: React.CSSProperties = {
+  color: "#475569",
+  lineHeight: 1.9,
   marginTop: "10px",
 };
 
-const fullBand = {
-  background: "#07111F",
+const services: React.CSSProperties = {
+  marginTop: "40px",
+  display: "grid",
+  gap: "20px",
+};
+
+const card: React.CSSProperties = {
+  background: "white",
+  padding: "24px",
+  borderRadius: "10px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+};
+
+const cardTitle: React.CSSProperties = {
+  fontSize: "22px",
+};
+
+const cardText: React.CSSProperties = {
+  marginTop: "10px",
+  color: "#475569",
+};
+
+const imageStrip: React.CSSProperties = {
+  position: "relative",
+  backgroundImage: "url('/uk.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  padding: "120px 20px",
+  textAlign: "center",
+};
+
+const stripOverlay: React.CSSProperties = {
+  position: "absolute",
+  inset: 0,
+  background: "rgba(7,17,31,0.75)",
+};
+
+const stripText: React.CSSProperties = {
+  position: "relative",
+  color: "white",
+  fontSize: "36px",
+};
+
+const ctaSection: React.CSSProperties = {
   padding: "100px 20px",
   textAlign: "center",
 };
 
-const fullText = {
-  color: "white",
-  fontSize: "32px",
-};
-
-const center = {
-  maxWidth: "800px",
-  margin: "0 auto",
-  textAlign: "center",
-};
-
-const valueList = {
-  marginTop: "20px",
-  display: "grid",
-  gap: "10px",
-};
-
-const cta = {
-  padding: "80px 20px",
-  textAlign: "center",
-};
-
-const ctaButton = {
+const cta: React.CSSProperties = {
   marginTop: "20px",
   display: "inline-block",
   background: "#D4AF37",
   color: "#07111F",
-  padding: "14px 22px",
-  textDecoration: "none",
+  padding: "14px 24px",
   fontWeight: 700,
+  textDecoration: "none",
 };
 
-const footer = {
+const footer: React.CSSProperties = {
   background: "#050D18",
   color: "#94A3B8",
-  padding: "40px 20px",
+  padding: "50px 20px",
   textAlign: "center",
 };
 
-const footerBrand = {
+const footerBrand: React.CSSProperties = {
   color: "#D4AF37",
 };
 
-const footerText = {
+const footerText: React.CSSProperties = {
   marginTop: "10px",
 };
