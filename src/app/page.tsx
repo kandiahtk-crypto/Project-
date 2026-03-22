@@ -1,3 +1,11 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "UK Inbound Ground Transport | Premium UK & Ireland Touring Logistics",
+  description:
+    "Premium UK & Ireland ground transport solutions for international tour operators, DMCs and travel brands.",
+};
+
 export default function HomePage() {
   return (
     <>
@@ -5,12 +13,10 @@ export default function HomePage() {
       <section style={hero}>
         <div style={heroInner}>
           <h1 style={heroTitle}>
-            UK Inbound
-            <br />
-            Ground Transport
+            UK Inbound Ground Transport
           </h1>
 
-          <p style={heroText}>
+          <p style={heroSubtitle}>
             Premium touring logistics across the United Kingdom and Ireland,
             designed for international operators who require structure,
             reliability and consistent delivery.
@@ -18,66 +24,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* INTRO BAND */}
-      <section style={band}>
-        <p>
-          Supporting international tour operators · UK & Ireland coverage ·
-          Structured programme delivery
-        </p>
-      </section>
-
-      {/* STORY SECTION */}
-      <section style={section}>
-        <div style={split}>
-          <div>
-            <h2 style={heading}>
-              Built for inbound touring at scale
-            </h2>
-          </div>
-
-          <div>
-            <p style={text}>
-              UK Inbound Ground Transport supports global travel brands,
-              destination management companies and tour operators with
-              structured transport delivery across England, Scotland, Wales and
-              Ireland.
-            </p>
-
-            <p style={text}>
-              Our focus is not just movement — but programme flow. We ensure
-              every itinerary runs with clarity, consistency and control.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* FEATURE STRIP (VISITBRITAIN STYLE) */}
-      <section style={featureSection}>
-        <div style={featureGrid}>
-          <div style={featureItem}>
-            <h3>Fixed-Departure Series</h3>
-            <p>Consistent programme delivery across season-long touring.</p>
-          </div>
-
-          <div style={featureItem}>
-            <h3>Multi-Region UK Touring</h3>
-            <p>Seamless routing across England, Scotland and Wales.</p>
-          </div>
-
-          <div style={featureItem}>
-            <h3>UK & Ireland Programmes</h3>
-            <p>Integrated British Isles touring with structured coordination.</p>
-          </div>
-        </div>
-      </section>
-
-      {/* IMAGE STYLE BREAK */}
-      <section style={imageBreak}>
-        <div style={imageOverlay}>
-          <h2 style={imageText}>
-            Reliable delivery across every programme
+      {/* STATEMENT */}
+      <section style={statement}>
+        <div style={statementInner}>
+          <h2 style={statementText}>
+            Built for operators who expect precision, clarity and control across every programme.
           </h2>
         </div>
+      </section>
+
+      {/* INTRO */}
+      <section style={section}>
+        <div style={split}>
+          <h2 style={heading}>
+            A transport partner, not just a supplier.
+          </h2>
+
+          <div>
+            <p style={text}>
+              UK Inbound Ground Transport supports international tour operators,
+              DMCs and travel brands with structured transport delivery across
+              England, Scotland, Wales and Ireland.
+            </p>
+
+            <p style={text}>
+              Our focus is programme flow — ensuring every itinerary runs with
+              consistency, operational clarity and dependable execution.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* SERVICES */}
+      <section style={sectionAlt}>
+        <div style={container}>
+          <h2 style={headingCenter}>
+            Services
+          </h2>
+
+          <div style={services}>
+            <div style={service}>
+              <span style={serviceNumber}>01</span>
+              <h3>Fixed-Departure Series</h3>
+              <p>Consistent delivery across season-long touring programmes.</p>
+            </div>
+
+            <div style={service}>
+              <span style={serviceNumber}>02</span>
+              <h3>Multi-Region UK Touring</h3>
+              <p>Seamless routing across England, Scotland and Wales.</p>
+            </div>
+
+            <div style={service}>
+              <span style={serviceNumber}>03</span>
+              <h3>UK & Ireland Programmes</h3>
+              <p>Integrated British Isles touring with structured coordination.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FULL WIDTH STATEMENT */}
+      <section style={fullBand}>
+        <h2 style={fullText}>
+          Reliable delivery across every departure.
+        </h2>
       </section>
 
       {/* VALUE */}
@@ -87,17 +98,17 @@ export default function HomePage() {
             Structured. Reliable. Premium.
           </h2>
 
-          <div style={valueGrid}>
-            <div>Consistent departures</div>
-            <div>Clear coordination</div>
+          <div style={valueList}>
+            <div>Consistent programme delivery</div>
+            <div>Clear operational structure</div>
             <div>UK & Ireland coverage</div>
-            <div>Operator-focused delivery</div>
+            <div>Professional execution</div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section style={ctaSection}>
+      <section style={cta}>
         <h2 style={{ margin: 0 }}>
           Plan your next touring programme
         </h2>
@@ -112,7 +123,7 @@ export default function HomePage() {
         <div style={footerTop}>
           <h3 style={footerBrand}>UK Inbound Ground Transport</h3>
 
-          <div style={footerLinks}>
+          <div style={footerNav}>
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/services">Services</a>
@@ -132,36 +143,45 @@ export default function HomePage() {
 /* STYLES */
 
 const hero: React.CSSProperties = {
-  background:
-    "linear-gradient(180deg, #06101D 0%, #0B1728 60%, #10233B 100%)",
+  background: "#050D18",
   color: "white",
-  padding: "140px 20px 120px",
+  padding: "160px 20px 120px",
 };
 
 const heroInner: React.CSSProperties = {
-  maxWidth: "1100px",
+  maxWidth: "1000px",
   margin: "0 auto",
 };
 
 const heroTitle: React.CSSProperties = {
-  fontSize: "clamp(50px, 8vw, 90px)",
+  fontSize: "clamp(52px, 8vw, 96px)",
   lineHeight: 0.95,
+  letterSpacing: "-0.04em",
   margin: 0,
 };
 
-const heroText: React.CSSProperties = {
-  marginTop: "24px",
+const heroSubtitle: React.CSSProperties = {
+  marginTop: "28px",
   maxWidth: "600px",
-  color: "#C7D5E5",
+  color: "#AFC1D4",
+  fontSize: "18px",
   lineHeight: 1.8,
 };
 
-const band: React.CSSProperties = {
+const statement: React.CSSProperties = {
   background: "#0B1728",
-  color: "#D4AF37",
-  textAlign: "center",
-  padding: "18px",
-  fontSize: "14px",
+  padding: "60px 20px",
+};
+
+const statementInner: React.CSSProperties = {
+  maxWidth: "900px",
+  margin: "0 auto",
+};
+
+const statementText: React.CSSProperties = {
+  color: "white",
+  fontSize: "28px",
+  lineHeight: 1.4,
 };
 
 const section: React.CSSProperties = {
@@ -169,12 +189,21 @@ const section: React.CSSProperties = {
   background: "#F8FBFF",
 };
 
+const sectionAlt: React.CSSProperties = {
+  padding: "100px 20px",
+  background: "#FFFFFF",
+};
+
+const container: React.CSSProperties = {
+  maxWidth: "1000px",
+  margin: "0 auto",
+};
+
 const split: React.CSSProperties = {
   maxWidth: "1000px",
   margin: "0 auto",
   display: "grid",
   gap: "40px",
-  gridTemplateColumns: "1fr",
 };
 
 const heading: React.CSSProperties = {
@@ -185,60 +214,54 @@ const heading: React.CSSProperties = {
 const text: React.CSSProperties = {
   color: "#475569",
   lineHeight: 1.8,
+  marginBottom: "14px",
 };
 
-const featureSection: React.CSSProperties = {
-  background: "#FFFFFF",
-  padding: "80px 20px",
-};
-
-const featureGrid: React.CSSProperties = {
-  maxWidth: "1100px",
-  margin: "0 auto",
+const services: React.CSSProperties = {
+  marginTop: "40px",
   display: "grid",
   gap: "30px",
 };
 
-const featureItem: React.CSSProperties = {
+const service: React.CSSProperties = {
   borderBottom: "1px solid #E2E8F0",
   paddingBottom: "20px",
 };
 
-const imageBreak: React.CSSProperties = {
-  height: "300px",
-  background:
-    "linear-gradient(135deg, #07111F, #10233B)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
+const serviceNumber: React.CSSProperties = {
+  color: "#D4AF37",
+  fontSize: "12px",
+  letterSpacing: "0.1em",
 };
 
-const imageOverlay: React.CSSProperties = {
-  color: "white",
+const fullBand: React.CSSProperties = {
+  background: "#07111F",
+  padding: "120px 20px",
   textAlign: "center",
 };
 
-const imageText: React.CSSProperties = {
-  fontSize: "28px",
+const fullText: React.CSSProperties = {
+  color: "white",
+  fontSize: "36px",
 };
 
 const center: React.CSSProperties = {
-  maxWidth: "900px",
+  maxWidth: "800px",
   margin: "0 auto",
   textAlign: "center",
 };
 
 const headingCenter: React.CSSProperties = {
-  fontSize: "32px",
+  fontSize: "34px",
 };
 
-const valueGrid: React.CSSProperties = {
+const valueList: React.CSSProperties = {
+  marginTop: "30px",
   display: "grid",
   gap: "16px",
-  marginTop: "30px",
 };
 
-const ctaSection: React.CSSProperties = {
+const cta: React.CSSProperties = {
   padding: "100px 20px",
   textAlign: "center",
 };
@@ -249,19 +272,19 @@ const ctaButton: React.CSSProperties = {
   background: "#D4AF37",
   color: "#07111F",
   padding: "14px 24px",
-  borderRadius: "8px",
+  borderRadius: "6px",
   textDecoration: "none",
   fontWeight: 700,
 };
 
 const footer: React.CSSProperties = {
-  background: "#07111F",
-  color: "#C7D5E5",
+  background: "#050D18",
+  color: "#94A3B8",
   padding: "60px 20px 30px",
 };
 
 const footerTop: React.CSSProperties = {
-  maxWidth: "1100px",
+  maxWidth: "1000px",
   margin: "0 auto",
   display: "flex",
   justifyContent: "space-between",
@@ -273,15 +296,13 @@ const footerBrand: React.CSSProperties = {
   color: "#D4AF37",
 };
 
-const footerLinks: React.CSSProperties = {
+const footerNav: React.CSSProperties = {
   display: "flex",
   gap: "20px",
-  flexWrap: "wrap",
 };
 
 const footerBottom: React.CSSProperties = {
   marginTop: "40px",
   textAlign: "center",
   fontSize: "14px",
-  color: "#94A3B8",
 };
