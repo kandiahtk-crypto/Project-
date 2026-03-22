@@ -1,27 +1,19 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "UK Inbound Ground Transport",
-  description: "Premium UK & Ireland touring logistics",
-};
-
 export default function HomePage() {
   return (
     <>
       {/* HERO */}
       <section style={hero}>
         <div style={overlay} />
-
-        <div style={heroInner}>
+        <div style={container}>
           <p style={eyebrow}>UK & Ireland Touring Logistics</p>
 
-          <h1 style={heroTitle}>
+          <h1 style={title}>
             UK Inbound Ground Transport
           </h1>
 
-          <p style={heroSubtitle}>
+          <p style={subtitle}>
             Premium touring logistics across the United Kingdom and Ireland for
-            international operators who require structure, clarity and dependable delivery.
+            international operators requiring structure, clarity and reliable delivery.
           </p>
 
           <a href="/contact" style={cta}>
@@ -30,93 +22,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* STATEMENT */}
-      <section style={band}>
-        <h2 style={bandText}>
-          Built for operators who expect precision, consistency and control.
-        </h2>
-      </section>
-
-      {/* IMAGE + TEXT */}
+      {/* INTRO */}
       <section style={section}>
-        <div style={split}>
-          <div style={imageBox} />
+        <div style={container}>
+          <h2 style={heading}>
+            A transport partner, not just a supplier.
+          </h2>
 
-          <div>
-            <p style={eyebrow}>Our Approach</p>
+          <p style={text}>
+            We support international tour operators and DMCs with structured
+            ground transport delivery across England, Scotland, Wales and Ireland.
+          </p>
 
-            <h2 style={heading}>
-              A transport partner, not just a supplier.
-            </h2>
-
-            <p style={text}>
-              We support international tour operators and DMCs with structured
-              ground transport delivery across England, Scotland, Wales and Ireland.
-            </p>
-
-            <p style={text}>
-              Every programme is delivered with operational clarity, consistent execution
-              and dependable coordination.
-            </p>
-          </div>
+          <p style={text}>
+            Every programme is delivered with operational clarity, consistency
+            and dependable coordination.
+          </p>
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section style={sectionAlt}>
-        <h2 style={headingCenter}>Services</h2>
-
-        <div style={services}>
-          <div style={service}>01 — Fixed-Departure Series</div>
-          <div style={service}>02 — Multi-Region UK Touring</div>
-          <div style={service}>03 — UK & Ireland Programmes</div>
-        </div>
-      </section>
-
-      {/* FULL IMAGE STRIP */}
+      {/* IMAGE STRIP */}
       <section style={imageStrip}>
         <div style={overlay} />
-
         <h2 style={stripText}>
           Seamless touring across the United Kingdom and Ireland.
         </h2>
       </section>
 
-      {/* VALUE */}
-      <section style={section}>
-        <div style={center}>
-          <h2 style={headingCenter}>Why operators choose us</h2>
+      {/* SERVICES */}
+      <section style={sectionAlt}>
+        <div style={container}>
+          <h2 style={heading}>Services</h2>
 
-          <p style={textCenter}>
-            Structured delivery, clear communication and dependable execution —
-            supporting consistent programme quality and guest experience.
-          </p>
-
-          <div style={valueList}>
-            <div>Consistent delivery standards</div>
-            <div>Clear operational structure</div>
-            <div>UK & Ireland coverage</div>
-            <div>Professional coordination</div>
+          <div style={list}>
+            <div style={item}>Fixed-Departure Series</div>
+            <div style={item}>Multi-Region UK Touring</div>
+            <div style={item}>UK & Ireland Programmes</div>
           </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section style={ctaSection}>
-        <h2 style={headingCenter}>
-          Plan your next touring programme
-        </h2>
+      <section style={section}>
+        <div style={container}>
+          <h2 style={heading}>Plan your next touring programme</h2>
 
-        <a href="/contact" style={cta}>
-          Contact Us
-        </a>
+          <a href="/contact" style={cta}>
+            Contact Us
+          </a>
+        </div>
       </section>
 
       {/* FOOTER */}
       <footer style={footer}>
-        <p style={footerBrand}>UK Inbound Ground Transport</p>
-
-        <p style={footerText}>
+        <p style={brand}>UK Inbound Ground Transport</p>
+        <p>
           Evershine Transport Limited, trading as ukinboundgroundtransport.com
         </p>
       </footer>
@@ -131,8 +91,8 @@ const hero = {
   backgroundImage: "url('/hero.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
+  padding: "70px 18px",
   color: "white",
-  padding: "80px 18px 100px",
 };
 
 const overlay = {
@@ -141,132 +101,26 @@ const overlay = {
   background: "rgba(5,13,24,0.75)",
 };
 
-const heroInner = {
+const container = {
   position: "relative",
   maxWidth: "900px",
   margin: "0 auto",
 };
 
-const heroTitle = {
-  fontSize: "clamp(42px, 10vw, 88px)",
-  lineHeight: 0.92,
-  letterSpacing: "-0.045em",
-  fontWeight: 600,
+const title = {
+  fontSize: "clamp(40px, 10vw, 80px)",
+  lineHeight: 0.95,
 };
 
-const heroSubtitle = {
-  marginTop: "16px",
+const subtitle = {
+  marginTop: "12px",
   color: "#DCE8F5",
-  fontSize: "16px",
-  lineHeight: 1.7,
 };
 
 const eyebrow = {
   color: "#D4AF37",
   fontSize: "11px",
-  letterSpacing: "0.16em",
-  textTransform: "uppercase",
-};
-
-const section = {
-  padding: "60px 18px",
-};
-
-const sectionAlt = {
-  padding: "60px 18px",
-  background: "#F8FBFF",
-};
-
-const split = {
-  maxWidth: "1000px",
-  margin: "0 auto",
-  display: "flex",
-  flexDirection: "column",
-  gap: "24px",
-};
-
-const imageBox = {
-  backgroundImage: "url('/coach.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  borderRadius: "8px",
-  minHeight: "220px",
-};
-
-const heading = {
-  fontSize: "26px",
-};
-
-const headingCenter = {
-  fontSize: "26px",
-  textAlign: "center",
-};
-
-const text = {
-  color: "#475569",
-  lineHeight: 1.7,
-  marginTop: "10px",
-};
-
-const textCenter = {
-  color: "#475569",
-  marginTop: "10px",
-};
-
-const services = {
-  marginTop: "20px",
-  display: "flex",
-  flexDirection: "column",
-  gap: "12px",
-};
-
-const service = {
-  borderBottom: "1px solid rgba(15,23,42,0.08)",
-  paddingBottom: "10px",
-};
-
-const imageStrip = {
-  position: "relative",
-  backgroundImage: "url('/uk.jpg')",
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  padding: "100px 18px",
-  textAlign: "center",
-};
-
-const stripText = {
-  position: "relative",
-  color: "white",
-  fontSize: "24px",
-};
-
-const band = {
-  background: "#0B1728",
-  padding: "40px 18px",
-  textAlign: "center",
-};
-
-const bandText = {
-  color: "white",
-  fontSize: "22px",
-};
-
-const center = {
-  maxWidth: "700px",
-  margin: "0 auto",
-  textAlign: "center",
-};
-
-const valueList = {
-  marginTop: "20px",
-  display: "flex",
-  flexDirection: "column",
-  gap: "8px",
-};
-
-const ctaSection = {
-  padding: "60px 18px",
-  textAlign: "center",
+  letterSpacing: "0.15em",
 };
 
 const cta = {
@@ -274,9 +128,54 @@ const cta = {
   display: "inline-block",
   background: "#D4AF37",
   color: "#07111F",
-  padding: "14px 22px",
+  padding: "12px 20px",
   fontWeight: 700,
   textDecoration: "none",
+};
+
+const section = {
+  padding: "50px 18px",
+};
+
+const sectionAlt = {
+  padding: "50px 18px",
+  background: "#F8FBFF",
+};
+
+const heading = {
+  fontSize: "24px",
+};
+
+const text = {
+  color: "#475569",
+  marginTop: "10px",
+};
+
+const list = {
+  marginTop: "20px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "10px",
+};
+
+const item = {
+  borderBottom: "1px solid rgba(15,23,42,0.08)",
+  paddingBottom: "8px",
+};
+
+const imageStrip = {
+  position: "relative",
+  backgroundImage: "url('/uk.jpg')",
+  backgroundSize: "cover",
+  backgroundPosition: "center",
+  padding: "90px 18px",
+  textAlign: "center",
+};
+
+const stripText = {
+  position: "relative",
+  color: "white",
+  fontSize: "22px",
 };
 
 const footer = {
@@ -286,10 +185,6 @@ const footer = {
   textAlign: "center",
 };
 
-const footerBrand = {
+const brand = {
   color: "#D4AF37",
-};
-
-const footerText = {
-  marginTop: "10px",
 };
