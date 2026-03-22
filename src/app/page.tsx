@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "UK Inbound Ground Transport | Premium UK & Ireland Touring Logistics",
-  description:
-    "Premium UK & Ireland ground transport solutions for international tour operators.",
+  title: "UK Inbound Ground Transport",
+  description: "Premium UK & Ireland touring logistics",
 };
 
 export default function HomePage() {
@@ -11,7 +10,7 @@ export default function HomePage() {
     <>
       {/* HERO */}
       <section style={hero}>
-        <div style={heroOverlay} />
+        <div style={overlay} />
 
         <div style={heroInner}>
           <p style={eyebrow}>UK & Ireland Touring Logistics</p>
@@ -34,7 +33,7 @@ export default function HomePage() {
       {/* STATEMENT */}
       <section style={band}>
         <h2 style={bandText}>
-          Structured. Reliable. Premium delivery across every programme.
+          Built for operators who expect precision, consistency and control.
         </h2>
       </section>
 
@@ -45,6 +44,7 @@ export default function HomePage() {
 
           <div>
             <p style={eyebrow}>Our Approach</p>
+
             <h2 style={heading}>
               A transport partner, not just a supplier.
             </h2>
@@ -67,29 +67,38 @@ export default function HomePage() {
         <h2 style={headingCenter}>Services</h2>
 
         <div style={services}>
-          <div style={card}>
-            <h3 style={cardTitle}>Fixed-Departure Series</h3>
-            <p style={cardText}>Consistent structured delivery across touring programmes.</p>
-          </div>
-
-          <div style={card}>
-            <h3 style={cardTitle}>Multi-Region UK Touring</h3>
-            <p style={cardText}>Seamless routing across England, Scotland and Wales.</p>
-          </div>
-
-          <div style={card}>
-            <h3 style={cardTitle}>UK & Ireland Programmes</h3>
-            <p style={cardText}>Integrated British Isles touring with full coordination.</p>
-          </div>
+          <div style={service}>01 — Fixed-Departure Series</div>
+          <div style={service}>02 — Multi-Region UK Touring</div>
+          <div style={service}>03 — UK & Ireland Programmes</div>
         </div>
       </section>
 
       {/* FULL IMAGE STRIP */}
       <section style={imageStrip}>
-        <div style={stripOverlay} />
+        <div style={overlay} />
+
         <h2 style={stripText}>
-          Reliable delivery across every departure.
+          Seamless touring across the United Kingdom and Ireland.
         </h2>
+      </section>
+
+      {/* VALUE */}
+      <section style={section}>
+        <div style={center}>
+          <h2 style={headingCenter}>Why operators choose us</h2>
+
+          <p style={textCenter}>
+            Structured delivery, clear communication and dependable execution —
+            supporting consistent programme quality and guest experience.
+          </p>
+
+          <div style={valueList}>
+            <div>Consistent delivery standards</div>
+            <div>Clear operational structure</div>
+            <div>UK & Ireland coverage</div>
+            <div>Professional coordination</div>
+          </div>
+        </div>
       </section>
 
       {/* CTA */}
@@ -117,170 +126,170 @@ export default function HomePage() {
 
 /* STYLES */
 
-const hero: React.CSSProperties = {
+const hero = {
   position: "relative",
-  backgroundImage: "url('/hero.jpg')", // 👉 add image in public folder
+  backgroundImage: "url('/hero.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
   color: "white",
-  padding: "100px 20px 120px",
+  padding: "80px 18px 100px",
 };
 
-const heroOverlay: React.CSSProperties = {
+const overlay = {
   position: "absolute",
   inset: 0,
   background: "rgba(5,13,24,0.75)",
 };
 
-const heroInner: React.CSSProperties = {
+const heroInner = {
   position: "relative",
-  maxWidth: "1000px",
+  maxWidth: "900px",
   margin: "0 auto",
 };
 
-const heroTitle: React.CSSProperties = {
-  fontSize: "clamp(56px, 8vw, 96px)",
-  lineHeight: 0.9,
-  letterSpacing: "-0.05em",
+const heroTitle = {
+  fontSize: "clamp(42px, 10vw, 88px)",
+  lineHeight: 0.92,
+  letterSpacing: "-0.045em",
   fontWeight: 600,
 };
 
-const heroSubtitle: React.CSSProperties = {
+const heroSubtitle = {
   marginTop: "16px",
-  maxWidth: "600px",
   color: "#DCE8F5",
-  fontSize: "18px",
-  lineHeight: 1.8,
+  fontSize: "16px",
+  lineHeight: 1.7,
 };
 
-const eyebrow: React.CSSProperties = {
+const eyebrow = {
   color: "#D4AF37",
-  fontSize: "12px",
+  fontSize: "11px",
   letterSpacing: "0.16em",
   textTransform: "uppercase",
 };
 
-const band: React.CSSProperties = {
-  background: "#0B1728",
-  padding: "60px 20px",
-  textAlign: "center",
+const section = {
+  padding: "60px 18px",
 };
 
-const bandText: React.CSSProperties = {
-  color: "white",
-  fontSize: "28px",
-};
-
-const section: React.CSSProperties = {
-  padding: "100px 20px",
-};
-
-const sectionAlt: React.CSSProperties = {
-  padding: "100px 20px",
+const sectionAlt = {
+  padding: "60px 18px",
   background: "#F8FBFF",
 };
 
-const split: React.CSSProperties = {
-  maxWidth: "1100px",
+const split = {
+  maxWidth: "1000px",
   margin: "0 auto",
-  display: "grid",
-  gridTemplateColumns: "1fr 1fr",
-  gap: "40px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "24px",
 };
 
-const imageBox: React.CSSProperties = {
-  backgroundImage: "url('/coach.jpg')", // 👉 add image
+const imageBox = {
+  backgroundImage: "url('/coach.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
-  borderRadius: "10px",
-  minHeight: "320px",
+  borderRadius: "8px",
+  minHeight: "220px",
 };
 
-const heading: React.CSSProperties = {
-  fontSize: "36px",
-  lineHeight: 1.2,
+const heading = {
+  fontSize: "26px",
 };
 
-const headingCenter: React.CSSProperties = {
-  fontSize: "36px",
+const headingCenter = {
+  fontSize: "26px",
   textAlign: "center",
 };
 
-const text: React.CSSProperties = {
+const text = {
   color: "#475569",
-  lineHeight: 1.9,
+  lineHeight: 1.7,
   marginTop: "10px",
 };
 
-const services: React.CSSProperties = {
-  marginTop: "40px",
-  display: "grid",
-  gap: "20px",
-};
-
-const card: React.CSSProperties = {
-  background: "white",
-  padding: "24px",
-  borderRadius: "10px",
-  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
-};
-
-const cardTitle: React.CSSProperties = {
-  fontSize: "22px",
-};
-
-const cardText: React.CSSProperties = {
-  marginTop: "10px",
+const textCenter = {
   color: "#475569",
+  marginTop: "10px",
 };
 
-const imageStrip: React.CSSProperties = {
+const services = {
+  marginTop: "20px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "12px",
+};
+
+const service = {
+  borderBottom: "1px solid rgba(15,23,42,0.08)",
+  paddingBottom: "10px",
+};
+
+const imageStrip = {
   position: "relative",
   backgroundImage: "url('/uk.jpg')",
   backgroundSize: "cover",
   backgroundPosition: "center",
-  padding: "120px 20px",
+  padding: "100px 18px",
   textAlign: "center",
 };
 
-const stripOverlay: React.CSSProperties = {
-  position: "absolute",
-  inset: 0,
-  background: "rgba(7,17,31,0.75)",
-};
-
-const stripText: React.CSSProperties = {
+const stripText = {
   position: "relative",
   color: "white",
-  fontSize: "36px",
+  fontSize: "24px",
 };
 
-const ctaSection: React.CSSProperties = {
-  padding: "100px 20px",
+const band = {
+  background: "#0B1728",
+  padding: "40px 18px",
   textAlign: "center",
 };
 
-const cta: React.CSSProperties = {
+const bandText = {
+  color: "white",
+  fontSize: "22px",
+};
+
+const center = {
+  maxWidth: "700px",
+  margin: "0 auto",
+  textAlign: "center",
+};
+
+const valueList = {
   marginTop: "20px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "8px",
+};
+
+const ctaSection = {
+  padding: "60px 18px",
+  textAlign: "center",
+};
+
+const cta = {
+  marginTop: "18px",
   display: "inline-block",
   background: "#D4AF37",
   color: "#07111F",
-  padding: "14px 24px",
+  padding: "14px 22px",
   fontWeight: 700,
   textDecoration: "none",
 };
 
-const footer: React.CSSProperties = {
+const footer = {
   background: "#050D18",
   color: "#94A3B8",
-  padding: "50px 20px",
+  padding: "40px 18px",
   textAlign: "center",
 };
 
-const footerBrand: React.CSSProperties = {
+const footerBrand = {
   color: "#D4AF37",
 };
 
-const footerText: React.CSSProperties = {
+const footerText = {
   marginTop: "10px",
 };
