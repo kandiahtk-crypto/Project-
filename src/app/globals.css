@@ -18,3 +18,14 @@ img {
   max-width: 100%;
   display: block;
 }
+
+@media (min-width: 900px) {
+  nav[style] {
+    display: flex !important;
+  }
+
+  button[aria-label="Open menu"],
+  button[aria-label="Close menu"] {
+    display: none !important;
+  }
+}
