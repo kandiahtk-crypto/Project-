@@ -8,7 +8,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const checkScreen = () => {
-      const mobile = window.innerWidth < 960;
+      const mobile = window.innerWidth < 900;
       setIsMobile(mobile);
       if (!mobile) setOpen(false);
     };
@@ -24,7 +24,8 @@ export default function Navbar() {
     <header style={header}>
       <div style={container}>
         <a href="/" style={logo}>
-          UK Inbound Ground Transport
+          <span style={logoTop}>UK INBOUND GROUND</span>
+          <span style={logoBottom}>TRANSPORT</span>
         </a>
 
         {isMobile ? (
@@ -64,37 +65,51 @@ const header: React.CSSProperties = {
   top: 0,
   width: "100%",
   zIndex: 1000,
-  background: "rgba(5, 13, 24, 0.92)",
-  backdropFilter: "blur(18px)",
-  WebkitBackdropFilter: "blur(18px)",
+  background: "rgba(5, 13, 24, 0.94)",
+  backdropFilter: "blur(16px)",
+  WebkitBackdropFilter: "blur(16px)",
   borderBottom: "1px solid rgba(255,255,255,0.06)",
 };
 
 const container: React.CSSProperties = {
   maxWidth: "1280px",
   margin: "0 auto",
-  padding: "18px 24px",
+  padding: "14px 18px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
-  gap: "20px",
+  gap: "16px",
 };
 
 const logo: React.CSSProperties = {
   color: "#D4AF37",
   textDecoration: "none",
+  display: "flex",
+  flexDirection: "column",
+  lineHeight: 1.05,
+  whiteSpace: "nowrap",
+  flexShrink: 0,
+};
+
+const logoTop: React.CSSProperties = {
+  fontSize: "12px",
   fontWeight: 700,
-  fontSize: "clamp(12px, 1.5vw, 15px)",
-  letterSpacing: "0.14em",
+  letterSpacing: "0.18em",
   textTransform: "uppercase",
-  lineHeight: 1.2,
-  maxWidth: "70%",
+};
+
+const logoBottom: React.CSSProperties = {
+  fontSize: "12px",
+  fontWeight: 700,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  marginTop: "2px",
 };
 
 const desktopNav: React.CSSProperties = {
   display: "flex",
   alignItems: "center",
-  gap: "30px",
+  gap: "28px",
 };
 
 const link: React.CSSProperties = {
@@ -109,28 +124,28 @@ const cta: React.CSSProperties = {
   background: "#D4AF37",
   color: "#07111F",
   textDecoration: "none",
-  padding: "11px 18px",
-  borderRadius: "2px",
+  padding: "10px 16px",
+  borderRadius: "4px",
   fontWeight: 700,
   fontSize: "14px",
-  letterSpacing: "0.04em",
 };
 
 const menuButton: React.CSSProperties = {
   background: "transparent",
   border: "none",
   color: "#E6EEF7",
-  fontSize: "30px",
+  fontSize: "28px",
   lineHeight: 1,
   cursor: "pointer",
-  padding: 0,
+  padding: "4px 6px",
+  flexShrink: 0,
 };
 
 const mobileMenu: React.CSSProperties = {
   display: "flex",
   flexDirection: "column",
-  gap: "18px",
-  padding: "20px 24px 24px",
+  gap: "16px",
+  padding: "18px 18px 22px",
   background: "rgba(5, 13, 24, 0.98)",
   borderTop: "1px solid rgba(255,255,255,0.05)",
 };
@@ -138,19 +153,17 @@ const mobileMenu: React.CSSProperties = {
 const mobileLink: React.CSSProperties = {
   color: "#E6EEF7",
   textDecoration: "none",
-  fontSize: "18px",
+  fontSize: "17px",
   fontWeight: 500,
-  letterSpacing: "0.02em",
 };
 
 const mobileCta: React.CSSProperties = {
   background: "#D4AF37",
   color: "#07111F",
   textDecoration: "none",
-  padding: "14px 18px",
-  borderRadius: "2px",
+  padding: "12px 18px",
+  borderRadius: "4px",
   fontWeight: 700,
   fontSize: "15px",
   textAlign: "center",
-  letterSpacing: "0.04em",
 };
