@@ -1,20 +1,42 @@
+import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import "./globals.css";
-import Navbar from "../components/Navbar";
+import { Inter, Playfair_Display } from "next/font/google";
 
-export const metadata = {
+const sans = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const serif = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
   title: "UK Inbound Ground Transport",
-  description: "Corporate website",
+  description: "Premium UK & Ireland ground transport solutions.",
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body style={{ margin: 0 }}>
-        <Navbar />
+    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
+      <body
+        style={{
+          margin: 0,
+          fontFamily: "var(--font-sans)",
+          background: "#FFFFFF",
+          color: "#07111F",
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
+        }}
+      >
         {children}
       </body>
     </html>
