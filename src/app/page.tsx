@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
+import SiteHeader from "@/components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "UK Inbound Ground Transport | UK & Ireland Touring Logistics",
@@ -10,28 +11,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <header style={header}>
-        <div style={headerInner}>
-          <a href="/" style={brand}>
-            UK INBOUND GROUND TRANSPORT
-          </a>
-
-          <nav style={nav}>
-            <a href="/about" style={navLink}>
-              About
-            </a>
-            <a href="/services" style={navLink}>
-              Services
-            </a>
-            <a href="/programmes" style={navLink}>
-              Programmes
-            </a>
-            <a href="/contact" style={navCta}>
-              Contact
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main>
         {/* HERO */}
@@ -41,19 +21,20 @@ export default function HomePage() {
 
           <div style={container}>
             <div style={heroContent}>
-              <p style={heroEyebrow}>UK & Ireland Touring Logistics</p>
+              <p style={heroEyebrow}>Plan Your Next Programme</p>
 
-              <h1 style={heroTitle}>Premium delivery across every programme.</h1>
+              <h1 style={heroTitle}>
+                Premium UK & Ireland touring logistics, delivered properly.
+              </h1>
 
               <p style={heroText}>
-                Premium ground transport solutions across the United Kingdom and
-                Ireland for international tour operators, DMCs and travel brands
-                requiring structured, reliable programme delivery.
+                For international tour operators, DMCs and travel brands that
+                require dependable, programme-led transport delivery.
               </p>
 
               <div style={heroActions}>
                 <a href="/contact" style={ctaPrimary}>
-                  Plan Your Programme
+                  Contact Us
                 </a>
                 <a href="/services" style={ctaGhost}>
                   Explore Services
@@ -240,58 +221,6 @@ export default function HomePage() {
 }
 
 /* STYLES */
-
-const header: CSSProperties = {
-  position: "sticky",
-  top: 0,
-  zIndex: 50,
-  background: "rgba(5,13,24,0.96)",
-  backdropFilter: "blur(10px)",
-  borderBottom: "1px solid rgba(255,255,255,0.06)",
-};
-
-const headerInner: CSSProperties = {
-  maxWidth: "1120px",
-  margin: "0 auto",
-  padding: "18px 20px",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "center",
-  gap: "20px",
-};
-
-const brand: CSSProperties = {
-  color: "#D4AF37",
-  textDecoration: "none",
-  fontSize: "12px",
-  letterSpacing: "0.22em",
-  textTransform: "uppercase",
-  fontWeight: 600,
-};
-
-const nav: CSSProperties = {
-  display: "flex",
-  alignItems: "center",
-  gap: "18px",
-  flexWrap: "wrap",
-  justifyContent: "flex-end",
-};
-
-const navLink: CSSProperties = {
-  color: "rgba(255,255,255,0.82)",
-  textDecoration: "none",
-  fontSize: "14px",
-};
-
-const navCta: CSSProperties = {
-  color: "#07111F",
-  background: "#D4AF37",
-  textDecoration: "none",
-  fontSize: "14px",
-  fontWeight: 600,
-  padding: "10px 14px",
-  borderRadius: "999px",
-};
 
 const hero: CSSProperties = {
   position: "relative",
@@ -565,8 +494,7 @@ const pointCard: CSSProperties = {
 };
 
 const ctaSection: CSSProperties = {
-  background:
-    "linear-gradient(180deg, #081528 0%, #050D18 100%)",
+  background: "linear-gradient(180deg, #081528 0%, #050D18 100%)",
   color: "white",
   padding: "96px 0",
 };
