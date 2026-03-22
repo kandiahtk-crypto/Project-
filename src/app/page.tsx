@@ -13,7 +13,6 @@ export default function HomePage() {
       {/* HERO */}
       <section style={hero}>
         <div style={heroOverlay} />
-
         <div style={container}>
           <p style={heroEyebrow}>UK Inbound Ground Transport</p>
 
@@ -42,11 +41,13 @@ export default function HomePage() {
 
       {/* OUR APPROACH */}
       <section style={approachSection}>
-        <div style={approachWrap}>
-          <div style={approachLabel}>OUR APPROACH</div>
+        <div style={approachInner}>
+          <p style={approachLabel}>OUR APPROACH</p>
 
           <h2 style={approachHeading}>
-            A transport
+            A
+            <br />
+            transport
             <br />
             partner,
             <br />
@@ -55,16 +56,18 @@ export default function HomePage() {
             supplier.
           </h2>
 
-          <p style={approachText}>
-            We support international tour operators and DMCs with structured
-            ground transport delivery across England, Scotland, Wales and
-            Ireland.
-          </p>
+          <div style={approachBody}>
+            <p style={approachParagraph}>
+              We support international tour operators and DMCs with structured
+              ground transport delivery across England, Scotland, Wales and
+              Ireland.
+            </p>
 
-          <p style={approachText}>
-            Our role is to keep programmes moving clearly, consistently and
-            professionally from arrival through to departure.
-          </p>
+            <p style={approachParagraph}>
+              Every programme is delivered with clarity, coordination and
+              consistent execution from arrival through to departure.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -94,15 +97,15 @@ export default function HomePage() {
             <div style={serviceCard}>
               <h3 style={cardTitle}>UK & Ireland Programmes</h3>
               <p style={cardText}>
-                Ground transport solutions for cross-border itineraries requiring
-                consistency, timing discipline and clear delivery.
+                Ground transport solutions for cross-border itineraries
+                requiring consistency, timing discipline and clear delivery.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SEO / CONTENT */}
+      {/* COVERAGE */}
       <section style={sectionAlt}>
         <div style={container}>
           <p style={sectionLabel}>UK & IRELAND COVERAGE</p>
@@ -276,42 +279,45 @@ const bandText: CSSProperties = {
 };
 
 const approachSection: CSSProperties = {
-  background: "#F4F4F4",
-  padding: "88px 20px 84px",
+  background: "#F3F3F3",
+  padding: "120px 20px",
 };
 
-const approachWrap: CSSProperties = {
-  maxWidth: "880px",
+const approachInner: CSSProperties = {
+  maxWidth: "520px",
   margin: "0 auto",
+  textAlign: "center",
 };
 
 const approachLabel: CSSProperties = {
   color: "#C9A640",
   fontSize: "12px",
-  letterSpacing: "0.18em",
+  letterSpacing: "0.22em",
   textTransform: "uppercase",
-  marginBottom: "30px",
+  marginTop: 0,
+  marginBottom: "40px",
   fontWeight: 500,
 };
 
 const approachHeading: CSSProperties = {
   margin: 0,
-  color: "#000000",
-  fontSize: "clamp(52px, 11vw, 96px)",
-  lineHeight: 0.96,
+  fontSize: "clamp(48px, 12vw, 72px)",
+  lineHeight: 1.05,
   fontWeight: 700,
-  letterSpacing: "-0.03em",
-  maxWidth: "700px",
+  letterSpacing: "-0.02em",
+  color: "#000000",
 };
 
-const approachText: CSSProperties = {
-  marginTop: "34px",
-  marginBottom: 0,
-  maxWidth: "520px",
+const approachBody: CSSProperties = {
+  marginTop: "40px",
+};
+
+const approachParagraph: CSSProperties = {
   color: "#5B6475",
-  fontSize: "clamp(22px, 4.8vw, 32px)",
-  lineHeight: 1.65,
-  fontWeight: 400,
+  fontSize: "clamp(18px, 4.5vw, 22px)",
+  lineHeight: 1.8,
+  marginTop: 0,
+  marginBottom: "28px",
 };
 
 const section: CSSProperties = {
