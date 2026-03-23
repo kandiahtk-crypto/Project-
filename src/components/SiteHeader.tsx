@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState, type CSSProperties } from "react";
 
 export default function SiteHeader() {
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -22,22 +24,37 @@ export default function SiteHeader() {
     };
   }, [menuOpen]);
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <>
       <header style={header}>
         <div style={headerInner}>
           <Link href="/" style={brand}>
-            UK INBOUND GROUND TRANSPORT
+            <span style={brandTop}>UK Inbound Ground Transport</span>
+            <span style={brandBottom}>Premium UK & Ireland movements</span>
           </Link>
 
-          <nav className="desktop-nav" style={desktopNav}>
-            <Link href="/about" style={navLink}>
+          <nav className="desktop-nav site-nav" style={desktopNav}>
+            <Link
+              href="/about"
+              className={pathname === "/about" ? "active" : ""}
+              style={navLink}
+            >
               About
             </Link>
-            <Link href="/services" style={navLink}>
+            <Link
+              href="/services"
+              className={pathname === "/services" ? "active" : ""}
+              style={navLink}
+            >
               Services
             </Link>
-            <Link href="/programmes" style={navLink}>
+            <Link
+              href="/programmes"
+              className={pathname === "/programmes" ? "active" : ""}
+              style={navLink}
+            >
               Programmes
             </Link>
             <Link href="/contact" style={navCta}>
@@ -62,29 +79,26 @@ export default function SiteHeader() {
 
       {menuOpen && (
         <>
-          <div style={backdrop} onClick={() => setMenuOpen(false)} />
+          <div style={backdrop} onClick={closeMenu} />
 
           <div style={mobilePanel}>
             <div style={mobilePanelInner}>
-              <Link href="/" style={mobileBrand} onClick={() => setMenuOpen(false)}>
-                UK INBOUND GROUND TRANSPORT
+              <Link href="/" style={mobileBrand} onClick={closeMenu}>
+                <span style={mobileBrandTop}>UK Inbound Ground Transport</span>
+                <span style={mobileBrandBottom}>Premium UK & Ireland movements</span>
               </Link>
 
               <div style={mobileLinks}>
-                <Link href="/about" style={mobileLink} onClick={() => setMenuOpen(false)}>
+                <Link href="/about" style={mobileLink} onClick={closeMenu}>
                   About
                 </Link>
-                <Link href="/services" style={mobileLink} onClick={() => setMenuOpen(false)}>
+                <Link href="/services" style={mobileLink} onClick={closeMenu}>
                   Services
                 </Link>
-                <Link
-                  href="/programmes"
-                  style={mobileLink}
-                  onClick={() => setMenuOpen(false)}
-                >
+                <Link href="/programmes" style={mobileLink} onClick={closeMenu}>
                   Programmes
                 </Link>
-                <Link href="/contact" style={mobileCta} onClick={() => setMenuOpen(false)}>
+                <Link href="/contact" style={mobileCta} onClick={closeMenu}>
                   Contact
                 </Link>
               </div>
@@ -100,9 +114,9 @@ const header: CSSProperties = {
   position: "sticky",
   top: 0,
   zIndex: 50,
-  background: "rgba(5,13,24,0.96)",
-  backdropFilter: "blur(10px)",
-  borderBottom: "1px solid rgba(255,255,255,0.06)",
+  background: "rgba(255,255,255,0.92)",
+  backdropFilter: "blur(12px)",
+  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
 const headerInner: CSSProperties = {
@@ -116,31 +130,44 @@ const headerInner: CSSProperties = {
 };
 
 const brand: CSSProperties = {
-  color: "#D4AF37",
+  display: "inline-flex",
+  flexDirection: "column",
+  gap: "4px",
   textDecoration: "none",
+  color: "#0B1A2B",
+};
+
+const brandTop: CSSProperties = {
   fontSize: "12px",
-  letterSpacing: "0.22em",
+  letterSpacing: "0.18em",
   textTransform: "uppercase",
   fontWeight: 600,
-  lineHeight: 1.35,
-  maxWidth: "220px",
+  lineHeight: 1.3,
+};
+
+const brandBottom: CSSProperties = {
+  fontSize: "12px",
+  lineHeight: 1.4,
+  color: "rgba(11, 26, 43, 0.6)",
 };
 
 const desktopNav: CSSProperties = {
   display: "none",
   alignItems: "center",
-  gap: "18px",
+  gap: "24px",
 };
 
 const navLink: CSSProperties = {
-  color: "rgba(255,255,255,0.82)",
+  color: "rgba(11, 26, 43, 0.78)",
   textDecoration: "none",
   fontSize: "14px",
+  paddingBottom: "6px",
 };
 
 const navCta: CSSProperties = {
-  color: "#07111F",
-  background: "#D4AF37",
+  color: "#0B1A2B",
+  background: "transparent",
+  border: "1px solid rgba(11, 26, 43, 0.12)",
   textDecoration: "none",
   fontSize: "14px",
   fontWeight: 600,
@@ -151,9 +178,9 @@ const navCta: CSSProperties = {
 const menuButton: CSSProperties = {
   width: "48px",
   height: "48px",
-  border: "1px solid rgba(255,255,255,0.12)",
+  border: "1px solid rgba(11, 26, 43, 0.12)",
   borderRadius: "999px",
-  background: "transparent",
+  background: "#FFFFFF",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -170,7 +197,7 @@ const menuLine = (
     position: "absolute",
     width: "18px",
     height: "2px",
-    background: "#FFFFFF",
+    background: "#0B1A2B",
     borderRadius: "999px",
     transition: "all 0.25s ease",
   };
@@ -198,19 +225,19 @@ const menuLine = (
 const backdrop: CSSProperties = {
   position: "fixed",
   inset: 0,
-  background: "rgba(3,10,24,0.45)",
+  background: "rgba(11, 26, 43, 0.22)",
   zIndex: 59,
 };
 
 const mobilePanel: CSSProperties = {
   position: "fixed",
-  top: "85px",
+  top: "84px",
   left: "16px",
   right: "16px",
-  background: "#07111F",
-  border: "1px solid rgba(255,255,255,0.08)",
+  background: "#F7F5F0",
+  border: "1px solid rgba(11, 26, 43, 0.08)",
   borderRadius: "24px",
-  boxShadow: "0 24px 60px rgba(0,0,0,0.35)",
+  boxShadow: "0 24px 60px rgba(0,0,0,0.12)",
   zIndex: 60,
 };
 
@@ -219,39 +246,51 @@ const mobilePanelInner: CSSProperties = {
 };
 
 const mobileBrand: CSSProperties = {
-  display: "block",
-  color: "#D4AF37",
+  display: "flex",
+  flexDirection: "column",
+  gap: "4px",
   textDecoration: "none",
+};
+
+const mobileBrandTop: CSSProperties = {
+  color: "#0B1A2B",
   fontSize: "11px",
-  letterSpacing: "0.2em",
+  letterSpacing: "0.16em",
   textTransform: "uppercase",
   fontWeight: 600,
-  lineHeight: 1.5,
+  lineHeight: 1.4,
+};
+
+const mobileBrandBottom: CSSProperties = {
+  color: "rgba(11, 26, 43, 0.58)",
+  fontSize: "12px",
+  lineHeight: 1.4,
 };
 
 const mobileLinks: CSSProperties = {
-  marginTop: "22px",
+  marginTop: "24px",
   display: "grid",
   gap: "12px",
 };
 
 const mobileLink: CSSProperties = {
   display: "block",
-  color: "#FFFFFF",
+  color: "#0B1A2B",
   textDecoration: "none",
   fontSize: "28px",
-  lineHeight: 1.1,
+  lineHeight: 1.08,
   fontFamily: "var(--font-serif)",
   padding: "6px 0",
 };
 
 const mobileCta: CSSProperties = {
   display: "inline-block",
-  marginTop: "8px",
-  background: "#D4AF37",
-  color: "#07111F",
+  marginTop: "10px",
+  border: "1px solid rgba(11, 26, 43, 0.12)",
+  background: "#FFFFFF",
+  color: "#0B1A2B",
   textDecoration: "none",
-  fontWeight: 700,
+  fontWeight: 600,
   padding: "14px 20px",
   borderRadius: "999px",
 };
