@@ -59,3 +59,66 @@ h2 {
 .site-nav a.active::after {
   width: 100%;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+
+  .mobile-menu-button {
+    display: none !important;
+  }
+}
+
+h1,
+h2 {
+  text-rendering: optimizeLegibility;
+}
+
+/* header nav only */
+.site-nav a {
+  position: relative;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  opacity: 0.9;
+  background: linear-gradient(90deg, #c9a227 0%, #e3c565 100%);
+  transition: width 0.25s ease;
+}
+
+.site-nav a:hover::after {
+  width: 100%;
+}
+
+.site-nav a.active::after {
+  width: 100%;
+}
+
+/* deploy fix */
