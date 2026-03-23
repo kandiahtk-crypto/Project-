@@ -54,8 +54,6 @@ export default function RootLayout({
           MozOsxFontSmoothing: "grayscale",
         }}
       >
-        <SiteHeader />
-
         <div
           style={{
             minHeight: "100vh",
@@ -63,8 +61,8 @@ export default function RootLayout({
             flexDirection: "column",
           }}
         >
-          <div style={{ flex: 1 }}>{children}</div>
-
+          <SiteHeader />
+          <main style={{ flex: 1 }}>{children}</main>
           <SiteFooter />
         </div>
       </body>
