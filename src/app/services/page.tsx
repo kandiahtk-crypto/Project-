@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import SiteHeader from "@/components/SiteHeader";
+import SiteHeader from "../../components/SiteHeader";
 
 export default function ServicesPage() {
   return (
@@ -7,7 +7,6 @@ export default function ServicesPage() {
       <SiteHeader />
 
       <main>
-        {/* HERO */}
         <section style={hero}>
           <div style={heroOverlay} />
 
@@ -28,7 +27,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* INTRO */}
         <section style={introSection}>
           <div style={introInner}>
             <p style={sectionLabel}>WHAT WE DELIVER</p>
@@ -45,7 +43,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* SERVICES LIST (NEW CLEAN VERSION) */}
         <section style={section}>
           <div style={servicesList}>
             <div style={serviceRow}>
@@ -120,7 +117,6 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* CTA */}
         <section style={ctaSection}>
           <div style={ctaInner}>
             <p style={sectionLabelLight}>READY TO PLAN?</p>
@@ -142,7 +138,6 @@ export default function ServicesPage() {
         </section>
       </main>
 
-      {/* FOOTER */}
       <footer style={footer}>
         <div style={footerTop}>
           <div>
@@ -154,11 +149,21 @@ export default function ServicesPage() {
           </div>
 
           <div style={footerLinks}>
-            <a href="/" style={footerLink}>Home</a>
-            <a href="/about" style={footerLink}>About</a>
-            <a href="/services" style={footerLink}>Services</a>
-            <a href="/programmes" style={footerLink}>Programmes</a>
-            <a href="/contact" style={footerLink}>Contact</a>
+            <a href="/" style={footerLink}>
+              Home
+            </a>
+            <a href="/about" style={footerLink}>
+              About
+            </a>
+            <a href="/services" style={footerLink}>
+              Services
+            </a>
+            <a href="/programmes" style={footerLink}>
+              Programmes
+            </a>
+            <a href="/contact" style={footerLink}>
+              Contact
+            </a>
           </div>
         </div>
 
@@ -169,8 +174,6 @@ export default function ServicesPage() {
     </>
   );
 }
-
-/* STYLES */
 
 const hero: CSSProperties = {
   background: "#07111F",
