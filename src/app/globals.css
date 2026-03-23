@@ -20,12 +20,11 @@ img {
 }
 
 @media (min-width: 900px) {
-  nav[style] {
+  .desktop-nav {
     display: flex !important;
   }
 
-  button[aria-label="Open menu"],
-  button[aria-label="Close menu"] {
+  .mobile-menu-button {
     display: none !important;
   }
 }
