@@ -48,7 +48,7 @@ export default function RootLayout({
         style={{
           margin: 0,
           fontFamily: "var(--font-sans)",
-          background: "#FFFFFF",
+          background: "#FCFAF6",
           color: "#0B1A2B",
           WebkitFontSmoothing: "antialiased",
           MozOsxFontSmoothing: "grayscale",
