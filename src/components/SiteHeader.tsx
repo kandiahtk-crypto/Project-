@@ -96,6 +96,13 @@ export default function SiteHeader() {
                 </Link>
                 <Link href="/services" style={mobileLink} onClick={closeMenu}>
                   Services
+                  <Link
+  href="/markets"
+  className={pathname === "/markets" ? "active" : ""}
+  style={navLink}
+>
+  Markets
+</Link>
                 </Link>
                 <Link href="/programmes" style={mobileLink} onClick={closeMenu}>
                   Programmes
