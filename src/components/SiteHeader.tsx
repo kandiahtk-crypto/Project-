@@ -293,7 +293,8 @@ const mobileLink: CSSProperties = {
   textDecoration: "none",
   fontSize: "30px",
   lineHeight: 1.2,
-  fontFamily: "var(--font-serif)",
+  paddingBottom: "12px",
+  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
 const mobileCta: CSSProperties = {
