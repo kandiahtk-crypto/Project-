@@ -58,26 +58,7 @@ const organizationJsonLd = {
   ],
 };
 
-const programmes = [
-  {
-    title: "Fixed-departure touring series",
-    text: "Consistent transport delivery across repeat departures, with reliable structure maintained throughout the season.",
-  },
-  {
-    title: "Private group itineraries",
-    text: "Flexible support for bespoke programmes requiring timing control, coordination and service continuity.",
-  },
-  {
-    title: "Multi-region UK touring",
-    text: "Structured routing across England, Scotland and Wales for operators managing broader touring coverage.",
-  },
-  {
-    title: "UK & Ireland programmes",
-    text: "Cross-border touring support delivered with clarity across programme stages, timings and regional transitions.",
-  },
-];
-
-const supportList = [
+const supportItems = [
   "Fixed-departure touring series",
   "Private group itineraries",
   "Multi-region UK touring",
@@ -85,24 +66,22 @@ const supportList = [
   "London arrivals, departures and events",
 ];
 
-const imagePanels = [
+const programmeItems = [
   {
-    src: "/images/london-movement.jpg",
-    alt: "Premium vehicle movement in London for inbound travel programmes",
-    title: "London movements",
-    text: "Airport arrivals, hotel transfers, city movements and event-linked transport delivered with precision.",
+    title: "Fixed-departure touring",
+    text: "Consistent transport support across repeat departures, with reliable structure maintained throughout the season.",
   },
   {
-    src: "/images/uk-touring.jpg",
-    alt: "Touring transport through the British countryside",
-    title: "National touring",
-    text: "Structured support for programmes moving through England, Scotland and Wales.",
+    title: "Private group itineraries",
+    text: "Flexible programme support for bespoke travel requiring timing control, coordination and service continuity.",
   },
   {
-    src: "/images/ireland-programme.jpg",
-    alt: "Cross-border touring support across the UK and Ireland",
-    title: "UK & Ireland routing",
-    text: "Cross-border programme coordination with continuity across timings, regions and handovers.",
+    title: "Multi-region UK touring",
+    text: "Structured routing across England, Scotland and Wales for operators managing wider national coverage.",
+  },
+  {
+    title: "UK & Ireland programmes",
+    text: "Cross-border touring support delivered with clarity across programme stages, timings and regional transitions.",
   },
 ];
 
@@ -149,8 +128,8 @@ export default function HomePage() {
           <div style={supportListWrapper}>
             <p style={supportEyebrow}>What we support</p>
 
-            <ul style={supportListStyle}>
-              {supportList.map((item) => (
+            <ul style={supportList}>
+              {supportItems.map((item) => (
                 <li key={item} style={supportItem}>
                   {item}
                 </li>
@@ -162,26 +141,23 @@ export default function HomePage() {
 
       <section style={imageSection}>
         <div style={container}>
-          <div style={imageGrid} className="image-grid">
-            {imagePanels.map((item) => (
-              <article key={item.title} style={imageCard}>
-                <div style={imageWrap}>
-                  <Image
-                    src={item.src}
-                    alt={item.alt}
-                    fill
-                    sizes="(max-width: 899px) 100vw, 33vw"
-                    style={imageStyle}
-                  />
-                </div>
+          <div style={imageFrame}>
+            <Image
+              src="/images/home-triptych.png"
+              alt="Transport support across London, UK touring routes and Ireland coastal programmes"
+              fill
+              priority
+              sizes="100vw"
+              style={heroImage}
+            />
+          </div>
 
-                <div style={imageCardBody}>
-                  <p style={imageCardLabel}>Coverage</p>
-                  <h2 style={imageCardTitle}>{item.title}</h2>
-                  <p style={imageCardText}>{item.text}</p>
-                </div>
-              </article>
-            ))}
+          <div style={imageCaptionWrap}>
+            <p style={imageCaptionLabel}>Coverage</p>
+            <p style={imageCaption}>
+              From London movements to countryside touring and cross-border
+              routing across the UK and Ireland.
+            </p>
           </div>
         </div>
       </section>
@@ -204,7 +180,7 @@ export default function HomePage() {
       <section style={section}>
         <div style={container}>
           <div style={programmesGrid} className="feature-grid">
-            {programmes.map((item) => (
+            {programmeItems.map((item) => (
               <article key={item.title} style={programmeCard}>
                 <div style={accentLine} />
                 <h2 style={programmeTitle}>{item.title}</h2>
@@ -215,12 +191,15 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={featureImageSection}>
+      <section style={sectionSoft}>
         <div style={container}>
-          <div style={featureImageSplit} className="split-grid">
-            <div style={featureImageCopy}>
+          <div style={splitSection} className="split-grid">
+            <div>
               <p style={sectionLabel}>Coverage</p>
               <h2 style={sectionTitle}>From London movements to national touring.</h2>
+            </div>
+
+            <div>
               <p style={sectionText}>
                 We support itineraries spanning London, regional cities,
                 countryside routes, hotel transfers, touring circuits and
@@ -228,16 +207,6 @@ export default function HomePage() {
                 movement or a full touring series, delivery remains structured
                 and commercially focused.
               </p>
-            </div>
-
-            <div style={featureImageWrap}>
-              <Image
-                src="/images/uk-touring.jpg"
-                alt="Luxury touring transport support across the UK"
-                fill
-                sizes="(max-width: 899px) 100vw, 50vw"
-                style={imageStyle}
-              />
             </div>
           </div>
         </div>
@@ -402,7 +371,7 @@ const supportEyebrow: CSSProperties = {
   color: "rgba(11, 26, 43, 0.5)",
 };
 
-const supportListStyle: CSSProperties = {
+const supportList: CSSProperties = {
   margin: 0,
   padding: 0,
   listStyle: "none",
@@ -419,55 +388,36 @@ const supportItem: CSSProperties = {
 };
 
 const imageSection: CSSProperties = {
-  padding: "0 0 100px",
+  padding: "10px 0 100px",
 };
 
-const imageGrid: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr",
-  gap: 24,
-};
-
-const imageCard: CSSProperties = {
-  minWidth: 0,
-};
-
-const imageWrap: CSSProperties = {
+const imageFrame: CSSProperties = {
   position: "relative",
   width: "100%",
-  aspectRatio: "4 / 5",
+  aspectRatio: "3 / 2",
   overflow: "hidden",
-  borderRadius: 28,
+  borderRadius: 32,
   background: "#F4F1EA",
 };
 
-const imageStyle: CSSProperties = {
+const heroImage: CSSProperties = {
   objectFit: "cover",
 };
 
-const imageCardBody: CSSProperties = {
+const imageCaptionWrap: CSSProperties = {
   paddingTop: 18,
+  maxWidth: 720,
 };
 
-const imageCardLabel: CSSProperties = {
+const imageCaptionLabel: CSSProperties = {
   margin: "0 0 8px",
   fontSize: 12,
-  letterSpacing: "0.14em",
+  letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(11, 26, 43, 0.5)",
 };
 
-const imageCardTitle: CSSProperties = {
-  margin: "0 0 10px",
-  fontSize: "clamp(1.5rem, 5vw, 2rem)",
-  lineHeight: 1.12,
-  letterSpacing: "-0.02em",
-  fontFamily: "var(--font-serif)",
-  fontWeight: 400,
-  color: "#0B1A2B",
-};
-
-const imageCardText: CSSProperties = {
+const imageCaption: CSSProperties = {
   margin: 0,
   fontSize: 16,
   lineHeight: 1.75,
@@ -476,6 +426,11 @@ const imageCardText: CSSProperties = {
 
 const section: CSSProperties = {
   padding: "100px 0",
+};
+
+const sectionSoft: CSSProperties = {
+  padding: "100px 0",
+  background: "#FBFAF7",
 };
 
 const sectionLabel: CSSProperties = {
@@ -543,29 +498,11 @@ const programmeText: CSSProperties = {
   color: "rgba(11, 26, 43, 0.72)",
 };
 
-const featureImageSection: CSSProperties = {
-  padding: "100px 0",
-  background: "#FBFAF7",
-};
-
-const featureImageSplit: CSSProperties = {
+const splitSection: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "1fr",
-  gap: 32,
-  alignItems: "center",
-};
-
-const featureImageCopy: CSSProperties = {
-  minWidth: 0,
-};
-
-const featureImageWrap: CSSProperties = {
-  position: "relative",
-  width: "100%",
-  aspectRatio: "4 / 5",
-  overflow: "hidden",
-  borderRadius: 32,
-  background: "#F4F1EA",
+  gap: 22,
+  alignItems: "start",
 };
 
 const ctaSection: CSSProperties = {
