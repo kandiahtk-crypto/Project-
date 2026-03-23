@@ -292,9 +292,8 @@ const mobileLink: CSSProperties = {
   color: "#0B1A2B",
   textDecoration: "none",
   fontSize: "30px",
-  lineHeight: 1.08,
+  lineHeight: 1.2,
   fontFamily: "var(--font-serif)",
-  padding: "6px 0",
 };
 
 const mobileCta: CSSProperties = {
