@@ -279,7 +279,6 @@ const heroTitle: CSSProperties = {
   fontWeight: 500,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
-  textWrap: "balance",
 };
 
 const heroText: CSSProperties = {
@@ -288,8 +287,6 @@ const heroText: CSSProperties = {
   fontSize: 19,
   lineHeight: 1.75,
   color: "rgba(11, 26, 43, 0.74)",
-  wordBreak: "normal",
-  overflowWrap: "normal",
 };
 
 const heroActions: CSSProperties = {
@@ -363,11 +360,11 @@ const heroMeta: CSSProperties = {
 
 const heroPanel: CSSProperties = {
   width: "100%",
+  minWidth: 0,
   background: "#F7F5F0",
   border: "1px solid rgba(11, 26, 43, 0.08)",
   borderRadius: 28,
   padding: 24,
-  minWidth: 0,
 };
 
 const panelEyebrow: CSSProperties = {
@@ -421,7 +418,6 @@ const sectionTitle: CSSProperties = {
   fontWeight: 500,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
-  textWrap: "balance",
 };
 
 const sectionText: CSSProperties = {
@@ -430,8 +426,6 @@ const sectionText: CSSProperties = {
   fontSize: 18,
   lineHeight: 1.8,
   color: "rgba(11, 26, 43, 0.72)",
-  wordBreak: "normal",
-  overflowWrap: "normal",
 };
 
 const featureGrid: CSSProperties = {
@@ -461,7 +455,6 @@ const featureTitle: CSSProperties = {
   letterSpacing: "-0.03em",
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
-  textWrap: "balance",
 };
 
 const featureText: CSSProperties = {
@@ -470,8 +463,6 @@ const featureText: CSSProperties = {
   fontSize: 17,
   lineHeight: 1.75,
   color: "rgba(11, 26, 43, 0.72)",
-  wordBreak: "normal",
-  overflowWrap: "normal",
 };
 
 const splitSection: CSSProperties = {
@@ -509,7 +500,6 @@ const ctaTitle: CSSProperties = {
   fontWeight: 500,
   fontFamily: "var(--font-serif)",
   color: "#FFFFFF",
-  textWrap: "balance",
 };
 
 const ctaText: CSSProperties = {
@@ -518,8 +508,6 @@ const ctaText: CSSProperties = {
   fontSize: 18,
   lineHeight: 1.8,
   color: "rgba(255, 255, 255, 0.76)",
-  wordBreak: "normal",
-  overflowWrap: "normal",
 };
 
 const ctaActions: CSSProperties = {
