@@ -48,21 +48,23 @@ const touringRegions = [
   {
     title: "England heritage touring",
     text: "London, Oxford, Bath, Cambridge, York and the Lake District remain central to classic Britain itineraries.",
+    href: "/england-touring",
   },
   {
     title: "Scotland programmes",
     text: "Edinburgh, Glasgow, Loch Ness and the Highlands require realistic daily planning and operational awareness.",
+    href: "/scotland-programmes",
   },
   {
     title: "Ireland touring circuits",
     text: "Dublin, Galway, Killarney and the Cliffs of Moher continue to feature strongly in Ireland touring routes.",
+    href: "/ireland-touring",
   },
 ];
 
 export default function ProgrammesPage() {
   return (
     <main>
-      {/* HERO */}
       <section style={heroSection}>
         <div style={containerNarrow}>
           <p style={eyebrow}>Programmes</p>
@@ -81,7 +83,6 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      {/* TOURING REGIONS (NEW SECTION) */}
       <section style={section}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Touring regions</p>
@@ -98,16 +99,17 @@ export default function ProgrammesPage() {
 
           <div style={regionCards}>
             {touringRegions.map((region) => (
-              <article key={region.title} style={regionCard}>
-                <h3 style={regionCardTitle}>{region.title}</h3>
-                <p style={regionCardText}>{region.text}</p>
-              </article>
+              <a key={region.title} href={region.href} style={regionCardLink}>
+                <article style={regionCard}>
+                  <h3 style={regionCardTitle}>{region.title}</h3>
+                  <p style={regionCardText}>{region.text}</p>
+                </article>
+              </a>
             ))}
           </div>
         </div>
       </section>
 
-      {/* PROGRAMME TYPES */}
       <section style={sectionSoft}>
         <div style={containerNarrow}>
           <div style={list}>
@@ -124,7 +126,6 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section style={ctaSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Start a conversation</p>
@@ -148,8 +149,6 @@ export default function ProgrammesPage() {
     </main>
   );
 }
-
-/* STYLES */
 
 const containerNarrow: CSSProperties = {
   maxWidth: 760,
@@ -205,6 +204,7 @@ const sectionTitle: CSSProperties = {
   lineHeight: 1.06,
   letterSpacing: "-0.025em",
   fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const ctaTitle: CSSProperties = {
@@ -212,6 +212,7 @@ const ctaTitle: CSSProperties = {
   fontSize: "clamp(2rem, 5vw, 3rem)",
   lineHeight: 1.06,
   fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const divider: CSSProperties = {
@@ -233,12 +234,14 @@ const sectionText: CSSProperties = {
   color: "rgba(11, 26, 43, 0.72)",
 };
 
-/* NEW REGION CARDS */
-
 const regionCards: CSSProperties = {
   marginTop: 40,
   display: "grid",
   gap: 28,
+};
+
+const regionCardLink: CSSProperties = {
+  textDecoration: "none",
 };
 
 const regionCard: CSSProperties = {
@@ -253,6 +256,7 @@ const regionCardTitle: CSSProperties = {
   margin: "0 0 14px",
   fontSize: "clamp(1.7rem, 4vw, 2.2rem)",
   fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const regionCardText: CSSProperties = {
@@ -260,8 +264,6 @@ const regionCardText: CSSProperties = {
   lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
 };
-
-/* PROGRAMME LIST */
 
 const list: CSSProperties = {
   display: "grid",
@@ -284,6 +286,7 @@ const accentLine: CSSProperties = {
 const itemTitle: CSSProperties = {
   fontSize: "clamp(1.5rem, 4vw, 2rem)",
   fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const itemText: CSSProperties = {
@@ -291,8 +294,6 @@ const itemText: CSSProperties = {
   lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
 };
-
-/* CTA */
 
 const ctaActions: CSSProperties = {
   marginTop: 24,
