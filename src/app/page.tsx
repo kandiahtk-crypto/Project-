@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import type { CSSProperties } from "react";
-import SiteHeader from "@/components/SiteHeader";
+import SiteHeader from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "UK Inbound Ground Transport | UK & Ireland Touring Logistics",
