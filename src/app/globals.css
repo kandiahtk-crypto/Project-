@@ -104,4 +104,21 @@ h2 {
   }
 }
 
+.feature-grid,
+.split-grid {
+  grid-template-columns: 1fr !important;
+}
+
+@media (min-width: 900px) {
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 32px !important;
+  }
+
+  .split-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 40px !important;
+  }
+}
+
 
