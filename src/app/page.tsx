@@ -186,8 +186,10 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "100px 0 60px",
+  padding: "clamp(40px, 6vw, 80px) 0 clamp(48px, 6vw, 72px)",
 };
+  
+
 
 const eyebrow: CSSProperties = {
   fontSize: 12,
