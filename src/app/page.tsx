@@ -77,6 +77,8 @@ export default function HomePage() {
                 Premium transport support for UK & Ireland touring programmes.
               </h1>
 
+              <div style={heroDivider} />
+
               <p style={heroText}>
                 We support tour operators, DMCs and travel planners with
                 programme-led transport delivery across fixed-departure series,
@@ -247,7 +249,7 @@ const containerNarrow: CSSProperties = {
 };
 
 const hero: CSSProperties = {
-  padding: "56px 0 48px",
+  padding: "48px 0 40px",
 };
 
 const heroGrid: CSSProperties = {
@@ -279,6 +281,14 @@ const heroTitle: CSSProperties = {
   fontWeight: 500,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
+};
+
+const heroDivider: CSSProperties = {
+  width: 48,
+  height: 2,
+  margin: "18px 0 22px",
+  borderRadius: 999,
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
 };
 
 const heroText: CSSProperties = {
@@ -352,8 +362,8 @@ const heroMeta: CSSProperties = {
   minHeight: 34,
   padding: "0 12px",
   borderRadius: 999,
-  background: "#F7F5F0",
-  border: "1px solid rgba(11, 26, 43, 0.08)",
+  background: "rgba(11, 26, 43, 0.04)",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
   color: "rgba(11, 26, 43, 0.72)",
   fontSize: 13,
 };
@@ -361,10 +371,9 @@ const heroMeta: CSSProperties = {
 const heroPanel: CSSProperties = {
   width: "100%",
   minWidth: 0,
-  background: "#F7F5F0",
-  border: "1px solid rgba(11, 26, 43, 0.08)",
-  borderRadius: 28,
-  padding: 24,
+  background: "transparent",
+  borderTop: "1px solid rgba(11, 26, 43, 0.08)",
+  paddingTop: 20,
 };
 
 const panelEyebrow: CSSProperties = {
@@ -381,12 +390,11 @@ const panelList: CSSProperties = {
   padding: 0,
   listStyle: "none",
   display: "grid",
-  gap: 12,
+  gap: 6,
 };
 
 const panelItem: CSSProperties = {
-  paddingBottom: 12,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  padding: "10px 0",
   fontSize: 16,
   lineHeight: 1.6,
   color: "#0B1A2B",
