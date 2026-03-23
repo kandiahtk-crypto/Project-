@@ -26,6 +26,59 @@ export default function SiteHeader() {
 
   const closeMenu = () => setMenuOpen(false);
 
+  const backdrop: CSSProperties = {
+    position: "fixed",
+    inset: 0,
+    background: "rgba(11, 26, 43, 0.16)",
+    zIndex: 109,
+    opacity: menuOpen ? 1 : 0,
+    transition: "opacity 0.25s ease",
+  };
+
+  const mobilePanel: CSSProperties = {
+    position: "fixed",
+    top: "86px",
+    left: "16px",
+    right: "16px",
+    background: "#F6F2EA",
+    border: "1px solid rgba(11, 26, 43, 0.08)",
+    borderRadius: "28px",
+    boxShadow: "0 24px 60px rgba(0,0,0,0.08)",
+    zIndex: 110,
+    transform: menuOpen ? "translateY(0)" : "translateY(-10px)",
+    opacity: menuOpen ? 1 : 0,
+    transition: "opacity 0.28s ease, transform 0.28s ease",
+  };
+
+  const mobileLink: CSSProperties = {
+    display: "block",
+    color: "#0B1A2B",
+    textDecoration: "none",
+    fontSize: "30px",
+    lineHeight: 1.2,
+    fontFamily: "var(--font-serif)",
+    paddingBottom: "12px",
+    borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+    transform: menuOpen ? "translateY(0)" : "translateY(8px)",
+    opacity: menuOpen ? 1 : 0,
+    transition: "opacity 0.35s ease, transform 0.35s ease",
+  };
+
+  const mobileCta: CSSProperties = {
+    display: "inline-block",
+    marginTop: "12px",
+    border: "1px solid rgba(11, 26, 43, 0.10)",
+    background: "#FFFFFF",
+    color: "#0B1A2B",
+    textDecoration: "none",
+    fontWeight: 600,
+    padding: "14px 20px",
+    borderRadius: "999px",
+    transform: menuOpen ? "translateY(0)" : "translateY(10px)",
+    opacity: menuOpen ? 1 : 0,
+    transition: "opacity 0.4s ease, transform 0.4s ease",
+  };
+
   return (
     <>
       <header style={header}>
@@ -49,6 +102,13 @@ export default function SiteHeader() {
               style={navLink}
             >
               Services
+            </Link>
+            <Link
+              href="/markets"
+              className={pathname === "/markets" ? "active" : ""}
+              style={navLink}
+            >
+              Markets
             </Link>
             <Link
               href="/programmes"
@@ -90,19 +150,15 @@ export default function SiteHeader() {
                 </span>
               </Link>
 
-              <div style={mobileLinks}>
+              <div style={mobileLinks} className="mobile-links">
                 <Link href="/about" style={mobileLink} onClick={closeMenu}>
                   About
                 </Link>
                 <Link href="/services" style={mobileLink} onClick={closeMenu}>
                   Services
-                  <Link
-  href="/markets"
-  className={pathname === "/markets" ? "active" : ""}
-  style={navLink}
->
-  Markets
-</Link>
+                </Link>
+                <Link href="/markets" style={mobileLink} onClick={closeMenu}>
+                  Markets
                 </Link>
                 <Link href="/programmes" style={mobileLink} onClick={closeMenu}>
                   Programmes
@@ -232,25 +288,6 @@ const menuLine = (
   };
 };
 
-const backdrop: CSSProperties = {
-  position: "fixed",
-  inset: 0,
-  background: "rgba(11, 26, 43, 0.16)",
-  zIndex: 109,
-};
-
-const mobilePanel: CSSProperties = {
-  position: "fixed",
-  top: "86px",
-  left: "16px",
-  right: "16px",
-  background: "#F6F2EA",
-  border: "1px solid rgba(11, 26, 43, 0.08)",
-  borderRadius: "28px",
-  boxShadow: "0 24px 60px rgba(0,0,0,0.08)",
-  zIndex: 110,
-};
-
 const mobilePanelInner: CSSProperties = {
   padding: "24px",
 };
@@ -282,29 +319,4 @@ const mobileLinks: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   gap: "18px",
-};
-  
-  
-  
-
-const mobileLink: CSSProperties = {
-  display: "block",
-  color: "#0B1A2B",
-  textDecoration: "none",
-  fontSize: "30px",
-  lineHeight: 1.2,
-  paddingBottom: "12px",
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
-};
-
-const mobileCta: CSSProperties = {
-  display: "inline-block",
-  marginTop: "10px",
-  border: "1px solid rgba(11, 26, 43, 0.10)",
-  background: "#FFFFFF",
-  color: "#0B1A2B",
-  textDecoration: "none",
-  fontWeight: 600,
-  padding: "14px 20px",
-  borderRadius: "999px",
 };
