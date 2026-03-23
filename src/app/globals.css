@@ -116,3 +116,8 @@ button:hover {
   border-bottom: none !important;
 }
 }
+
+a:hover article {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(11, 26, 43, 0.08);
+}
