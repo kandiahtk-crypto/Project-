@@ -278,10 +278,14 @@ const mobileBrandBottom: CSSProperties = {
 };
 
 const mobileLinks: CSSProperties = {
-  marginTop: "24px",
-  display: "grid",
-  gap: "12px",
+  marginTop: "28px",
+  display: "flex",
+  flexDirection: "column",
+  gap: "18px",
 };
+  
+  
+  
 
 const mobileLink: CSSProperties = {
   display: "block",
