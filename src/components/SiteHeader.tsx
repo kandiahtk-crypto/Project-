@@ -30,7 +30,7 @@ export default function SiteHeader() {
     <>
       <header style={header}>
         <div style={headerInner}>
-          <Link href="/" style={brand}>
+          <Link href="/" style={brand} onClick={closeMenu}>
             <span style={brandTop}>UK Inbound Ground Transport</span>
             <span style={brandBottom}>Premium UK &amp; Ireland movements</span>
           </Link>
@@ -116,15 +116,15 @@ const header: CSSProperties = {
   position: "sticky",
   top: 0,
   zIndex: 100,
-  background: "rgba(255,255,255,0.92)",
-  backdropFilter: "blur(12px)",
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  background: "rgba(252, 250, 246, 0.88)",
+  backdropFilter: "blur(14px)",
+  borderBottom: "1px solid rgba(11, 26, 43, 0.06)",
 };
 
 const headerInner: CSSProperties = {
   maxWidth: "1120px",
   margin: "0 auto",
-  padding: "18px 20px",
+  padding: "18px 24px",
   display: "flex",
   justifyContent: "space-between",
   alignItems: "center",
@@ -137,11 +137,12 @@ const brand: CSSProperties = {
   gap: "4px",
   textDecoration: "none",
   color: "#0B1A2B",
+  minWidth: 0,
 };
 
 const brandTop: CSSProperties = {
-  fontSize: "12px",
-  letterSpacing: "0.18em",
+  fontSize: "11px",
+  letterSpacing: "0.22em",
   textTransform: "uppercase",
   fontWeight: 600,
   lineHeight: 1.3,
@@ -150,39 +151,39 @@ const brandTop: CSSProperties = {
 const brandBottom: CSSProperties = {
   fontSize: "12px",
   lineHeight: 1.4,
-  color: "rgba(11, 26, 43, 0.6)",
+  color: "rgba(11, 26, 43, 0.58)",
 };
 
 const desktopNav: CSSProperties = {
   display: "none",
   alignItems: "center",
-  gap: "24px",
+  gap: "28px",
 };
 
 const navLink: CSSProperties = {
-  color: "rgba(11, 26, 43, 0.78)",
+  color: "rgba(11, 26, 43, 0.76)",
   textDecoration: "none",
   fontSize: "14px",
-  paddingBottom: "6px",
+  paddingBottom: "8px",
 };
 
 const navCta: CSSProperties = {
   color: "#0B1A2B",
   background: "transparent",
-  border: "1px solid rgba(11, 26, 43, 0.12)",
+  border: "1px solid rgba(11, 26, 43, 0.10)",
   textDecoration: "none",
   fontSize: "14px",
   fontWeight: 600,
-  padding: "10px 14px",
+  padding: "10px 16px",
   borderRadius: "999px",
 };
 
 const menuButton: CSSProperties = {
-  width: "48px",
-  height: "48px",
-  border: "1px solid rgba(11, 26, 43, 0.12)",
+  width: "52px",
+  height: "52px",
+  border: "1px solid rgba(11, 26, 43, 0.10)",
   borderRadius: "999px",
-  background: "#FFFFFF",
+  background: "transparent",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -227,24 +228,24 @@ const menuLine = (
 const backdrop: CSSProperties = {
   position: "fixed",
   inset: 0,
-  background: "rgba(11, 26, 43, 0.22)",
+  background: "rgba(11, 26, 43, 0.16)",
   zIndex: 109,
 };
 
 const mobilePanel: CSSProperties = {
   position: "fixed",
-  top: "84px",
+  top: "86px",
   left: "16px",
   right: "16px",
-  background: "#F7F5F0",
+  background: "#F6F2EA",
   border: "1px solid rgba(11, 26, 43, 0.08)",
-  borderRadius: "24px",
-  boxShadow: "0 24px 60px rgba(0,0,0,0.12)",
+  borderRadius: "28px",
+  boxShadow: "0 24px 60px rgba(0,0,0,0.08)",
   zIndex: 110,
 };
 
 const mobilePanelInner: CSSProperties = {
-  padding: "22px",
+  padding: "24px",
 };
 
 const mobileBrand: CSSProperties = {
@@ -279,7 +280,7 @@ const mobileLink: CSSProperties = {
   display: "block",
   color: "#0B1A2B",
   textDecoration: "none",
-  fontSize: "28px",
+  fontSize: "30px",
   lineHeight: 1.08,
   fontFamily: "var(--font-serif)",
   padding: "6px 0",
@@ -288,7 +289,7 @@ const mobileLink: CSSProperties = {
 const mobileCta: CSSProperties = {
   display: "inline-block",
   marginTop: "10px",
-  border: "1px solid rgba(11, 26, 43, 0.12)",
+  border: "1px solid rgba(11, 26, 43, 0.10)",
   background: "#FFFFFF",
   color: "#0B1A2B",
   textDecoration: "none",
