@@ -49,15 +49,18 @@ export default function SiteHeader() {
     top: "88px",
     left: "16px",
     right: "16px",
-    background: "#F7F3EC",
+    background: "linear-gradient(180deg, #F8F5EF 0%, #F2EEE6 100%)",
     border: "1px solid rgba(11, 26, 43, 0.08)",
     borderRadius: "30px",
     boxShadow: "0 24px 80px rgba(11, 26, 43, 0.12)",
     zIndex: 110,
-    transform: menuOpen ? "translateY(0) scale(1)" : "translateY(-10px) scale(0.98)",
+    transform: menuOpen
+      ? "translateY(0) scale(1)"
+      : "translateY(-10px) scale(0.98)",
     opacity: menuOpen ? 1 : 0,
     transformOrigin: "top center",
-    transition: "opacity 0.32s ease, transform 0.32s ease",
+    transition:
+      "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.4s cubic-bezier(0.22, 1, 0.36, 1)",
   };
 
   const mobilePanelInner: CSSProperties = {
@@ -79,7 +82,9 @@ export default function SiteHeader() {
     borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
     transform: menuOpen ? "translateY(0)" : "translateY(10px)",
     opacity: menuOpen ? 1 : 0,
-    transition: `opacity 0.34s ease ${index * 0.04}s, transform 0.34s ease ${index * 0.04}s`,
+    transition: `opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1) ${
+      index * 0.05
+    }s, transform 0.42s cubic-bezier(0.22, 1, 0.36, 1) ${index * 0.05}s`,
   });
 
   const mobileCta: CSSProperties = {
@@ -89,16 +94,18 @@ export default function SiteHeader() {
     marginTop: "18px",
     minHeight: 58,
     padding: "0 24px",
-    border: "1px solid rgba(11, 26, 43, 0.10)",
-    background: "#FFFFFF",
+    border: "1px solid rgba(201, 162, 39, 0.25)",
+    background: "linear-gradient(135deg, #F6F2EA 0%, #EFE9DD 100%)",
     color: "#0B1A2B",
     textDecoration: "none",
     fontWeight: 600,
     fontSize: 16,
     borderRadius: "999px",
+    boxShadow: "0 10px 30px rgba(201, 162, 39, 0.12)",
     transform: menuOpen ? "translateY(0)" : "translateY(12px)",
     opacity: menuOpen ? 1 : 0,
-    transition: "opacity 0.4s ease 0.18s, transform 0.4s ease 0.18s",
+    transition:
+      "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.18s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.18s",
   };
 
   return (
@@ -111,19 +118,39 @@ export default function SiteHeader() {
           </Link>
 
           <nav className="desktop-nav site-nav" style={desktopNav}>
-            <Link href="/" className={pathname === "/" ? "active" : ""} style={navLink}>
+            <Link
+              href="/"
+              className={pathname === "/" ? "active" : ""}
+              style={navLink}
+            >
               Home
             </Link>
-            <Link href="/about" className={pathname === "/about" ? "active" : ""} style={navLink}>
+            <Link
+              href="/about"
+              className={pathname === "/about" ? "active" : ""}
+              style={navLink}
+            >
               About
             </Link>
-            <Link href="/services" className={pathname === "/services" ? "active" : ""} style={navLink}>
+            <Link
+              href="/services"
+              className={pathname === "/services" ? "active" : ""}
+              style={navLink}
+            >
               Services
             </Link>
-            <Link href="/markets" className={pathname.startsWith("/markets") ? "active" : ""} style={navLink}>
+            <Link
+              href="/markets"
+              className={pathname.startsWith("/markets") ? "active" : ""}
+              style={navLink}
+            >
               Markets
             </Link>
-            <Link href="/programmes" className={pathname === "/programmes" ? "active" : ""} style={navLink}>
+            <Link
+              href="/programmes"
+              className={pathname === "/programmes" ? "active" : ""}
+              style={navLink}
+            >
               Programmes
             </Link>
             <Link href="/contact" style={navCta}>
@@ -154,10 +181,14 @@ export default function SiteHeader() {
             <div style={mobilePanelInner}>
               <Link href="/" style={mobileBrand} onClick={closeMenu}>
                 <span style={mobileBrandTop}>UK Inbound Ground Transport</span>
-                <span style={mobileBrandBottom}>Premium UK &amp; Ireland movements</span>
+                <span style={mobileBrandBottom}>
+                  Premium UK &amp; Ireland movements
+                </span>
               </Link>
 
-              <div style={mobileLinks}>
+              <div style={mobileAccent} />
+
+              <div style={mobileLinks} className="mobile-links">
                 {MOBILE_LINKS.map((item, index) => (
                   <Link
                     key={item.href}
@@ -317,6 +348,15 @@ const mobileBrandBottom: CSSProperties = {
   lineHeight: 1.4,
 };
 
+const mobileAccent: CSSProperties = {
+  width: 42,
+  height: 2,
+  marginTop: 14,
+  marginBottom: 10,
+  borderRadius: 999,
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+};
+
 const mobileLinks: CSSProperties = {
   marginTop: "24px",
   display: "flex",
@@ -325,7 +365,7 @@ const mobileLinks: CSSProperties = {
 
 const mobileLinkArrow: CSSProperties = {
   fontSize: 18,
-  color: "rgba(11, 26, 43, 0.42)",
+  color: "#C9A227",
   lineHeight: 1,
   paddingTop: 6,
 };
