@@ -133,83 +133,91 @@ export default function ServicesPage() {
 const container: CSSProperties = {
   maxWidth: 1120,
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "0 28px",
 };
 
 const containerNarrow: CSSProperties = {
   maxWidth: 720,
   margin: "0 auto",
-  padding: "0 20px",
+  padding: "0 24px",
 };
 
 const heroSection: CSSProperties = {
-  padding: "100px 0 60px",
+  padding: "120px 0 72px",
 };
 
 const section: CSSProperties = {
-  padding: "100px 0",
+  padding: "96px 0",
 };
 
 const sectionSoft: CSSProperties = {
-  padding: "100px 0",
-  background: "#FBFAF7",
+  padding: "88px 0",
+  background: "#F8F5EF",
 };
 
 const ctaSection: CSSProperties = {
-  padding: "80px 0 40px",
+  padding: "88px 0 48px",
 };
 
 const eyebrow: CSSProperties = {
+  margin: 0,
   fontSize: 12,
-  letterSpacing: "0.16em",
+  letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "rgba(11,26,43,0.5)",
+  color: "rgba(11, 26, 43, 0.52)",
 };
 
 const heroTitle: CSSProperties = {
-  fontSize: "clamp(2.6rem, 8vw, 4.2rem)",
+  margin: "14px 0 16px",
+  maxWidth: 760,
+  fontSize: "clamp(2.7rem, 7vw, 5rem)",
+  lineHeight: 1.01,
+  letterSpacing: "-0.035em",
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
-  lineHeight: 1.05,
-  margin: "12px 0 16px",
   color: "#0B1A2B",
 };
 
 const divider: CSSProperties = {
-  width: 50,
+  width: 48,
   height: 2,
-  background: "#C9A227",
-  margin: "16px 0 24px",
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  margin: "18px 0 24px",
+  borderRadius: 999,
 };
 
 const heroText: CSSProperties = {
-  fontSize: 18,
-  lineHeight: 1.8,
-  color: "rgba(11,26,43,0.7)",
+  margin: 0,
+  maxWidth: 680,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(11, 26, 43, 0.72)",
 };
 
 const servicesGrid: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "1fr",
-  gap: 32,
+  gap: 36,
 };
 
 const serviceCard: CSSProperties = {
   minWidth: 0,
-  paddingBottom: 10,
+  paddingBottom: 18,
+  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
 const accentLine: CSSProperties = {
-  width: 56,
+  width: 48,
   height: 2,
   borderRadius: 999,
-  marginBottom: 16,
+  marginBottom: 14,
   background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
 };
 
 const serviceTitle: CSSProperties = {
   margin: "0 0 10px",
-  fontSize: "clamp(1.55rem, 6vw, 2.2rem)",
-  lineHeight: 1.14,
+  fontSize: "clamp(1.5rem, 4vw, 2.05rem)",
+  lineHeight: 1.12,
   fontWeight: 400,
   letterSpacing: "-0.02em",
   fontFamily: "var(--font-serif)",
@@ -218,64 +226,80 @@ const serviceTitle: CSSProperties = {
 
 const serviceText: CSSProperties = {
   margin: 0,
-  maxWidth: 500,
+  maxWidth: 520,
   fontSize: 16,
-  lineHeight: 1.8,
+  lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
 const sectionLabel: CSSProperties = {
+  margin: "0 0 12px",
   fontSize: 12,
-  letterSpacing: "0.16em",
+  letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "rgba(11,26,43,0.5)",
-  marginBottom: 12,
+  color: "rgba(11, 26, 43, 0.52)",
 };
 
 const sectionTitle: CSSProperties = {
-  fontSize: "clamp(2rem, 7vw, 3.6rem)",
+  margin: "0 0 18px",
+  maxWidth: 760,
+  fontSize: "clamp(2rem, 5vw, 3.4rem)",
+  lineHeight: 1.06,
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
-  lineHeight: 1.1,
-  margin: "0 0 16px",
   color: "#0B1A2B",
 };
 
 const sectionText: CSSProperties = {
-  fontSize: 17,
-  lineHeight: 1.8,
-  color: "rgba(11,26,43,0.7)",
   margin: 0,
+  maxWidth: 680,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(11, 26, 43, 0.72)",
 };
 
 const splitGrid: CSSProperties = {
   display: "grid",
-  gap: 30,
+  gap: 32,
+  alignItems: "start",
 };
 
 const ctaTitle: CSSProperties = {
-  fontSize: "clamp(2.2rem, 7vw, 3.4rem)",
+  margin: "0 0 18px",
+  maxWidth: 760,
+  fontSize: "clamp(2rem, 5vw, 3.2rem)",
+  lineHeight: 1.06,
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
-  margin: "12px 0 18px",
   color: "#0B1A2B",
 };
 
 const ctaActions: CSSProperties = {
-  marginTop: 24,
+  marginTop: 26,
   display: "flex",
   gap: 20,
   flexWrap: "wrap",
+  alignItems: "center",
 };
 
 const primaryButton: CSSProperties = {
-  padding: "14px 22px",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 52,
+  padding: "0 22px",
   borderRadius: 999,
-  background: "#F4F1EA",
+  background: "#F2EEE6",
   color: "#0B1A2B",
   textDecoration: "none",
   fontWeight: 600,
+  border: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
 const linkButton: CSSProperties = {
   textDecoration: "none",
   color: "#0B1A2B",
+  fontWeight: 500,
 };
