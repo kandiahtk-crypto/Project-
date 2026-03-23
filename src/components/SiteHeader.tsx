@@ -32,7 +32,7 @@ export default function SiteHeader() {
         <div style={headerInner}>
           <Link href="/" style={brand}>
             <span style={brandTop}>UK Inbound Ground Transport</span>
-            <span style={brandBottom}>Premium UK & Ireland movements</span>
+            <span style={brandBottom}>Premium UK &amp; Ireland movements</span>
           </Link>
 
           <nav className="desktop-nav site-nav" style={desktopNav}>
@@ -85,7 +85,9 @@ export default function SiteHeader() {
             <div style={mobilePanelInner}>
               <Link href="/" style={mobileBrand} onClick={closeMenu}>
                 <span style={mobileBrandTop}>UK Inbound Ground Transport</span>
-                <span style={mobileBrandBottom}>Premium UK & Ireland movements</span>
+                <span style={mobileBrandBottom}>
+                  Premium UK &amp; Ireland movements
+                </span>
               </Link>
 
               <div style={mobileLinks}>
@@ -113,7 +115,7 @@ export default function SiteHeader() {
 const header: CSSProperties = {
   position: "sticky",
   top: 0,
-  zIndex: 50,
+  zIndex: 100,
   background: "rgba(255,255,255,0.92)",
   backdropFilter: "blur(12px)",
   borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
@@ -226,7 +228,7 @@ const backdrop: CSSProperties = {
   position: "fixed",
   inset: 0,
   background: "rgba(11, 26, 43, 0.22)",
-  zIndex: 59,
+  zIndex: 109,
 };
 
 const mobilePanel: CSSProperties = {
@@ -238,7 +240,7 @@ const mobilePanel: CSSProperties = {
   border: "1px solid rgba(11, 26, 43, 0.08)",
   borderRadius: "24px",
   boxShadow: "0 24px 60px rgba(0,0,0,0.12)",
-  zIndex: 60,
+  zIndex: 110,
 };
 
 const mobilePanelInner: CSSProperties = {
