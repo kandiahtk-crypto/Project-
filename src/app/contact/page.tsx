@@ -122,7 +122,7 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "120px 0 60px",
+  padding: "40px 0 64px",
 };
 
 const section: CSSProperties = {
