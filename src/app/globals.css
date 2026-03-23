@@ -30,3 +30,32 @@ img {
 }
 
 /* deploy fix */
+
+h1,
+h2 {
+  text-rendering: optimizeLegibility;
+}
+
+/* HEADER NAV ONLY */
+.site-nav a {
+  position: relative;
+}
+
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #c9a227 0%, #e3c565 100%);
+  transition: width 0.25s ease;
+}
+
+.site-nav a:hover::after {
+  width: 100%;
+}
+
+.site-nav a.active::after {
+  width: 100%;
+}
