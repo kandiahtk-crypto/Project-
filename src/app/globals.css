@@ -121,4 +121,8 @@ h2 {
   }
 }
 
+const list: CSSProperties = {
+  display: "grid",
+  gap: 28,
+};
 
