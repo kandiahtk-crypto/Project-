@@ -1,240 +1,293 @@
 import type { CSSProperties } from "react";
-import SiteHeader from "../../components/SiteHeader";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Programmes",
+  description:
+    "Programme-led transport support across fixed-departure, private group, UK regional and UK & Ireland touring programmes.",
+};
+
+const programmes = [
+  {
+    title: "Fixed-departure series",
+    description:
+      "Consistent, repeatable transport delivery across scheduled touring departures, with dependable structure maintained throughout the programme.",
+  },
+  {
+    title: "Private group touring",
+    description:
+      "Tailored programme support for private itineraries requiring flexibility, timing control and coordinated delivery.",
+  },
+  {
+    title: "Multi-region UK touring",
+    description:
+      "Structured routing across England, Scotland and Wales for programmes that require broader national coverage.",
+  },
+  {
+    title: "UK & Ireland programmes",
+    description:
+      "Cross-border touring with consistent delivery, clear programme flow and reliable coordination across regional transitions.",
+  },
+];
 
 export default function ProgrammesPage() {
-  const programmes = [
-    {
-      title: "Fixed-departure series",
-      description:
-        "Consistent, repeatable transport delivery across scheduled touring departures.",
-    },
-    {
-      title: "Private group touring",
-      description:
-        "Tailored programme support for private itineraries requiring flexibility and coordination.",
-    },
-    {
-      title: "Multi-region UK touring",
-      description:
-        "Structured routing across England, Scotland and Wales.",
-    },
-    {
-      title: "UK & Ireland programmes",
-      description:
-        "Cross-border touring with consistent delivery, clear programme flow, and reliable coordination.",
-    },
-  ];
-
   return (
-    <>
-      <SiteHeader />
+    <main>
+      <section style={heroSection}>
+        <div style={containerNarrow}>
+          <p style={eyebrow}>Programmes</p>
 
-      <main>
-        <section style={hero}>
-          <div style={container}>
-            <p style={eyebrow}>Programmes</p>
+          <h1 style={heroTitle}>
+            Programme-led transport support across the UK &amp; Ireland.
+          </h1>
 
-            <h1 style={title}>
-              Programme-led transport support across the UK & Ireland.
-            </h1>
+          <div style={divider} />
+
+          <p style={heroText}>
+            We support operators and planners with structured transport delivery
+            across fixed-departure series, private itineraries, regional touring
+            and cross-border programmes.
+          </p>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={containerNarrow}>
+          <div style={list}>
+            {programmes.map((programme) => (
+              <article key={programme.title} style={item}>
+                <div style={accentLine} />
+                <div style={itemContent}>
+                  <h2 style={itemTitle}>{programme.title}</h2>
+                  <p style={itemText}>{programme.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section style={section}>
-          <div style={containerNarrow}>
-            <div style={list}>
-              {programmes.map((programme) => (
-                <article key={programme.title} style={item}>
-                  <div style={accent} />
-                  <div style={itemContent}>
-                    <h2 style={heading}>{programme.title}</h2>
-                    <p style={text}>{programme.description}</p>
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section style={ctaSection}>
-          <div style={container}>
-            <div style={ctaWrap}>
-              <p style={ctaEyebrow}>Planning support</p>
-              <h2 style={ctaTitle}>
-                Need transport coordination for a touring programme?
+      <section style={sectionSoft}>
+        <div style={container}>
+          <div style={splitGrid} className="split-grid">
+            <div>
+              <p style={sectionLabel}>Planning support</p>
+              <h2 style={sectionTitle}>
+                Programmes require more than a standalone movement.
               </h2>
-              <p style={ctaText}>
-                We support operators and planners with structured transport
-                delivery across fixed-departure, private group, and regional
-                touring programmes.
-              </p>
+            </div>
 
-              <div style={ctaActions}>
-                <a href="/contact" style={primaryButton}>
-                  Contact us
-                </a>
-                <a href="/services" style={secondaryButton}>
-                  View services
-                </a>
-              </div>
+            <div>
+              <p style={sectionText}>
+                Our role is to support the transport layer of the programme as a
+                whole. That means aligning routing, timings and operational flow
+                to the wider itinerary so delivery stays clear and dependable.
+              </p>
             </div>
           </div>
-        </section>
-      </main>
-    </>
+        </div>
+      </section>
+
+      <section style={ctaSection}>
+        <div style={containerNarrow}>
+          <p style={sectionLabel}>Start a conversation</p>
+
+          <h2 style={ctaTitle}>
+            Need transport coordination for a touring programme?
+          </h2>
+
+          <p style={sectionText}>
+            Tell us about your timings, routing and programme requirements, and
+            we’ll help shape the right support structure.
+          </p>
+
+          <div style={ctaActions}>
+            <a href="/contact" style={primaryButton}>
+              Contact us
+            </a>
+            <a href="/services" style={secondaryLink}>
+              View services →
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
 
-const hero: CSSProperties = {
-  padding: "72px 24px 32px",
-};
-
-const section: CSSProperties = {
-  padding: "24px 24px 72px",
-};
-
-const ctaSection: CSSProperties = {
-  padding: "0 24px 96px",
-};
-
 const container: CSSProperties = {
-  width: "100%",
   maxWidth: 1120,
   margin: "0 auto",
+  padding: "0 28px",
 };
 
 const containerNarrow: CSSProperties = {
-  width: "100%",
-  maxWidth: 860,
+  maxWidth: 720,
   margin: "0 auto",
+  padding: "0 24px",
+};
+
+const heroSection: CSSProperties = {
+  padding: "120px 0 72px",
+};
+
+const section: CSSProperties = {
+  padding: "96px 0",
+};
+
+const sectionSoft: CSSProperties = {
+  padding: "88px 0",
+  background: "#F8F5EF",
+};
+
+const ctaSection: CSSProperties = {
+  padding: "88px 0 48px",
+};
+
+const splitGrid: CSSProperties = {
+  display: "grid",
+  gap: 36,
+  alignItems: "start",
 };
 
 const eyebrow: CSSProperties = {
+  margin: 0,
+  fontSize: 12,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(11, 26, 43, 0.52)",
+};
+
+const sectionLabel: CSSProperties = {
   margin: "0 0 12px",
-  fontSize: 13,
-  lineHeight: 1.4,
-  letterSpacing: "0.12em",
+  fontSize: 12,
+  letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "rgba(20, 24, 40, 0.62)",
+  color: "rgba(11, 26, 43, 0.52)",
 };
 
-const title: CSSProperties = {
-  margin: 0,
+const heroTitle: CSSProperties = {
+  margin: "14px 0 16px",
   maxWidth: 760,
-  fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
-  lineHeight: 1.02,
-  fontWeight: 600,
-  letterSpacing: "-0.04em",
-  color: "#141828",
+  fontSize: "clamp(2.7rem, 7vw, 5rem)",
+  lineHeight: 1.01,
+  letterSpacing: "-0.035em",
+  fontWeight: 400,
+  fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
-const list: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  gap: 28,
-};
-
-const item: CSSProperties = {
-  display: "flex",
-  alignItems: "flex-start",
-  gap: 20,
-  paddingBottom: 24,
-  borderBottom: "1px solid rgba(20, 24, 40, 0.08)",
-};
-
-const accent: CSSProperties = {
-  width: 4,
-  minWidth: 4,
-  alignSelf: "stretch",
-  borderRadius: 999,
-  background: "#caa437",
-};
-
-const itemContent: CSSProperties = {
-  flex: 1,
-};
-
-const heading: CSSProperties = {
-  margin: "0 0 10px",
-  fontSize: "clamp(1.5rem, 3vw, 2rem)",
-  lineHeight: 1.1,
-  fontWeight: 600,
-  letterSpacing: "-0.03em",
-  color: "#141828",
-};
-
-const text: CSSProperties = {
-  margin: 0,
-  maxWidth: 680,
-  fontSize: 18,
-  lineHeight: 1.7,
-  color: "rgba(20, 24, 40, 0.72)",
-};
-
-const ctaWrap: CSSProperties = {
-  maxWidth: 860,
-  margin: "0 auto",
-  padding: "40px 0 0",
-  borderTop: "1px solid rgba(20, 24, 40, 0.08)",
-};
-
-const ctaEyebrow: CSSProperties = {
-  margin: "0 0 10px",
-  fontSize: 13,
-  lineHeight: 1.4,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  color: "rgba(20, 24, 40, 0.62)",
+const sectionTitle: CSSProperties = {
+  margin: "0 0 18px",
+  maxWidth: 760,
+  fontSize: "clamp(2rem, 5vw, 3.4rem)",
+  lineHeight: 1.06,
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
+  fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const ctaTitle: CSSProperties = {
-  margin: "0 0 14px",
-  fontSize: "clamp(2rem, 4vw, 3rem)",
+  margin: "0 0 18px",
+  maxWidth: 760,
+  fontSize: "clamp(2rem, 5vw, 3.2rem)",
   lineHeight: 1.06,
-  fontWeight: 600,
-  letterSpacing: "-0.04em",
-  color: "#141828",
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
+  fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
-const ctaText: CSSProperties = {
-  margin: "0 0 28px",
-  maxWidth: 700,
-  fontSize: 18,
-  lineHeight: 1.7,
-  color: "rgba(20, 24, 40, 0.72)",
+const divider: CSSProperties = {
+  width: 48,
+  height: 2,
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  margin: "18px 0 24px",
+  borderRadius: 999,
+};
+
+const heroText: CSSProperties = {
+  margin: 0,
+  maxWidth: 680,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(11, 26, 43, 0.72)",
+};
+
+const list: CSSProperties = {
+  display: "grid",
+  gap: 32,
+};
+
+const item: CSSProperties = {
+  display: "grid",
+  gap: 14,
+  paddingBottom: 18,
+  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+};
+
+const accentLine: CSSProperties = {
+  width: 48,
+  height: 2,
+  borderRadius: 999,
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+};
+
+const itemContent: CSSProperties = {
+  minWidth: 0,
+};
+
+const itemTitle: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: "clamp(1.5rem, 4vw, 2rem)",
+  lineHeight: 1.12,
+  fontWeight: 400,
+  letterSpacing: "-0.02em",
+  fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
+};
+
+const itemText: CSSProperties = {
+  margin: 0,
+  maxWidth: 640,
+  fontSize: 16,
+  lineHeight: 1.85,
+  color: "rgba(11, 26, 43, 0.72)",
+};
+
+const sectionText: CSSProperties = {
+  margin: 0,
+  maxWidth: 680,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(11, 26, 43, 0.72)",
 };
 
 const ctaActions: CSSProperties = {
+  marginTop: 26,
   display: "flex",
+  gap: 20,
   flexWrap: "wrap",
-  gap: 14,
+  alignItems: "center",
 };
 
 const primaryButton: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: 48,
-  padding: "0 20px",
+  minHeight: 52,
+  padding: "0 22px",
   borderRadius: 999,
-  background: "#141828",
-  color: "#ffffff",
+  background: "#F2EEE6",
+  color: "#0B1A2B",
   textDecoration: "none",
-  fontSize: 15,
-  fontWeight: 500,
+  fontWeight: 600,
+  border: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
-const secondaryButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 48,
-  padding: "0 20px",
-  borderRadius: 999,
-  border: "1px solid rgba(20, 24, 40, 0.14)",
-  color: "#141828",
+const secondaryLink: CSSProperties = {
   textDecoration: "none",
-  fontSize: 15,
+  color: "#0B1A2B",
   fontWeight: 500,
-  background: "transparent",
 };
