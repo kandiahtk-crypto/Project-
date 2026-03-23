@@ -69,8 +69,8 @@ export default function HomePage() {
 
       <section style={hero}>
         <div style={container}>
-          <div style={heroGrid}>
-            <div>
+          <div style={heroGrid} className="hero-grid">
+            <div style={heroMain}>
               <p style={eyebrow}>UK inbound ground transport</p>
 
               <h1 style={heroTitle}>
@@ -131,7 +131,7 @@ export default function HomePage() {
 
       <section style={section}>
         <div style={container}>
-          <div style={featureGrid}>
+          <div style={featureGrid} className="feature-grid">
             <article style={featureCard}>
               <div style={accentBar} />
               <h2 style={featureTitle}>Fixed-departure series</h2>
@@ -173,7 +173,7 @@ export default function HomePage() {
 
       <section style={sectionSoft}>
         <div style={container}>
-          <div style={splitSection}>
+          <div style={splitSection} className="split-grid">
             <div>
               <p style={sectionLabel}>Coverage</p>
               <h2 style={sectionTitle}>From London movements to national touring.</h2>
@@ -247,14 +247,18 @@ const containerNarrow: CSSProperties = {
 };
 
 const hero: CSSProperties = {
-  padding: "72px 0 56px",
+  padding: "56px 0 48px",
 };
 
 const heroGrid: CSSProperties = {
   display: "grid",
-  gridTemplateColumns: "minmax(0, 1.35fr) minmax(280px, 0.65fr)",
-  gap: 32,
+  gridTemplateColumns: "1fr",
+  gap: 28,
   alignItems: "start",
+};
+
+const heroMain: CSSProperties = {
+  minWidth: 0,
 };
 
 const eyebrow: CSSProperties = {
@@ -269,20 +273,23 @@ const eyebrow: CSSProperties = {
 const heroTitle: CSSProperties = {
   margin: "0 0 18px",
   maxWidth: 820,
-  fontSize: "clamp(3rem, 7vw, 5.6rem)",
+  fontSize: "clamp(2.8rem, 12vw, 5.6rem)",
   lineHeight: 0.98,
   letterSpacing: "-0.045em",
   fontWeight: 500,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
+  textWrap: "balance",
 };
 
 const heroText: CSSProperties = {
   margin: "0 0 28px",
-  maxWidth: 700,
+  maxWidth: 640,
   fontSize: 19,
   lineHeight: 1.75,
   color: "rgba(11, 26, 43, 0.74)",
+  wordBreak: "normal",
+  overflowWrap: "normal",
 };
 
 const heroActions: CSSProperties = {
@@ -355,10 +362,12 @@ const heroMeta: CSSProperties = {
 };
 
 const heroPanel: CSSProperties = {
+  width: "100%",
   background: "#F7F5F0",
   border: "1px solid rgba(11, 26, 43, 0.08)",
   borderRadius: 28,
   padding: 24,
+  minWidth: 0,
 };
 
 const panelEyebrow: CSSProperties = {
@@ -406,29 +415,34 @@ const sectionLabel: CSSProperties = {
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 16px",
-  fontSize: "clamp(2.2rem, 5vw, 3.8rem)",
+  fontSize: "clamp(2.2rem, 9vw, 3.8rem)",
   lineHeight: 1.02,
   letterSpacing: "-0.04em",
   fontWeight: 500,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
+  textWrap: "balance",
 };
 
 const sectionText: CSSProperties = {
   margin: 0,
+  maxWidth: 640,
   fontSize: 18,
   lineHeight: 1.8,
   color: "rgba(11, 26, 43, 0.72)",
+  wordBreak: "normal",
+  overflowWrap: "normal",
 };
 
 const featureGrid: CSSProperties = {
   display: "grid",
-  gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
-  gap: 24,
+  gridTemplateColumns: "1fr",
+  gap: 32,
 };
 
 const featureCard: CSSProperties = {
   padding: "0 0 18px",
+  minWidth: 0,
 };
 
 const accentBar: CSSProperties = {
@@ -441,12 +455,13 @@ const accentBar: CSSProperties = {
 
 const featureTitle: CSSProperties = {
   margin: "0 0 10px",
-  fontSize: "clamp(1.7rem, 3vw, 2.3rem)",
+  fontSize: "clamp(1.7rem, 7vw, 2.3rem)",
   lineHeight: 1.08,
   fontWeight: 500,
   letterSpacing: "-0.03em",
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
+  textWrap: "balance",
 };
 
 const featureText: CSSProperties = {
@@ -455,12 +470,14 @@ const featureText: CSSProperties = {
   fontSize: 17,
   lineHeight: 1.75,
   color: "rgba(11, 26, 43, 0.72)",
+  wordBreak: "normal",
+  overflowWrap: "normal",
 };
 
 const splitSection: CSSProperties = {
   display: "grid",
-  gridTemplateColumns: "minmax(0, 1fr) minmax(0, 1fr)",
-  gap: 32,
+  gridTemplateColumns: "1fr",
+  gap: 20,
   alignItems: "start",
 };
 
@@ -486,12 +503,13 @@ const ctaEyebrow: CSSProperties = {
 
 const ctaTitle: CSSProperties = {
   margin: "0 0 14px",
-  fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
+  fontSize: "clamp(2.2rem, 9vw, 3.4rem)",
   lineHeight: 1.02,
   letterSpacing: "-0.04em",
   fontWeight: 500,
   fontFamily: "var(--font-serif)",
   color: "#FFFFFF",
+  textWrap: "balance",
 };
 
 const ctaText: CSSProperties = {
@@ -500,6 +518,8 @@ const ctaText: CSSProperties = {
   fontSize: 18,
   lineHeight: 1.8,
   color: "rgba(255, 255, 255, 0.76)",
+  wordBreak: "normal",
+  overflowWrap: "normal",
 };
 
 const ctaActions: CSSProperties = {
