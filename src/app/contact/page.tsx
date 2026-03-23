@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main>
+      {/* HERO */}
       <section style={heroSection}>
         <div style={containerNarrow}>
           <p style={eyebrow}>Contact</p>
@@ -28,9 +29,12 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* CONTENT */}
       <section style={section}>
         <div style={container}>
           <div style={splitGrid} className="split-grid">
+
+            {/* LEFT */}
             <div>
               <p style={sectionLabel}>Get in touch</p>
 
@@ -39,7 +43,7 @@ export default function ContactPage() {
               </h2>
 
               <div style={contactList}>
-                <div style={contactItem}>
+                <div>
                   <p style={contactHeading}>Email</p>
                   <a
                     href="mailto:info@ukinboundgroundtransport.com"
@@ -49,127 +53,61 @@ export default function ContactPage() {
                   </a>
                 </div>
 
-                <div style={contactItem}>
+                <div>
                   <p style={contactHeading}>Telephone</p>
                   <a href="tel:+442086292776" style={contactLink}>
                     +44 20 8629 2776
                   </a>
                 </div>
 
-                <div style={contactItem}>
+                <div>
                   <p style={contactHeading}>Coverage</p>
                   <p style={contactText}>UK • Ireland • London movements</p>
                 </div>
 
-                <div style={contactItem}>
+                <div>
                   <p style={contactHeading}>Company</p>
                   <p style={contactText}>
-                    Evershine Transport Limited
-                    <br />
-                    Company Reg: 13507458
-                    <br />
+                    Evershine Transport Limited<br />
+                    Company Reg: 13507458<br />
                     VAT: 388919914
                   </p>
                 </div>
               </div>
             </div>
 
-            <div style={formWrap}>
+            {/* RIGHT (FORM) */}
+            <div>
               <p style={sectionLabel}>Enquiry</p>
 
               <h2 style={sectionTitle}>Send us your programme outline.</h2>
 
-              <p style={sectionText}>
-                Include your dates, routing, group size and any service details
-                that will help us understand the requirement.
-              </p>
-
               <form style={form}>
-                <div style={fieldGrid}>
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Full name</span>
-                    <input type="text" name="name" style={input} />
-                  </label>
+                <input placeholder="Full name" style={input} />
+                <input placeholder="Company" style={input} />
+                <input placeholder="Email" style={input} />
+                <input placeholder="Phone" style={input} />
+                <input placeholder="Arrival date" style={input} />
+                <input placeholder="Departure date" style={input} />
+                <input placeholder="Group size" style={input} />
 
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Company / organisation</span>
-                    <input type="text" name="company" style={input} />
-                  </label>
+                <textarea
+                  placeholder="Programme / itinerary"
+                  style={textarea}
+                />
 
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Email address</span>
-                    <input type="email" name="email" style={input} />
-                  </label>
-
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Phone number</span>
-                    <input type="tel" name="telephone" style={input} />
-                  </label>
-
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Arrival date</span>
-                    <input type="text" name="arrivalDate" style={input} />
-                  </label>
-
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Departure date</span>
-                    <input type="text" name="departureDate" style={input} />
-                  </label>
-
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Group size</span>
-                    <input type="text" name="groupSize" style={input} />
-                  </label>
-
-                  <label style={fieldWrap}>
-                    <span style={fieldLabel}>Regions</span>
-                    <input
-                      type="text"
-                      name="regions"
-                      placeholder="England, Scotland, Wales, Ireland"
-                      style={input}
-                    />
-                  </label>
-                </div>
-
-                <label style={fieldWrap}>
-                  <span style={fieldLabel}>Itinerary / programme outline</span>
-                  <textarea
-                    name="message"
-                    placeholder="Outline your itinerary, routing or programme requirements..."
-                    rows={7}
-                    style={textarea}
-                  />
-                </label>
-
-                <button type="submit" style={primaryButton}>
-                  Submit enquiry
-                </button>
+                <button style={primaryButton}>Submit enquiry</button>
               </form>
             </div>
+
           </div>
-        </div>
-      </section>
-
-      <section style={sectionSoft}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Working with us</p>
-
-          <h2 style={sectionTitle}>
-            Clear information helps us shape the right transport approach.
-          </h2>
-
-          <p style={sectionText}>
-            The most useful starting points are routing, timings, group size,
-            programme type and any service expectations already defined. That
-            helps us respond with a transport approach that fits the wider
-            itinerary.
-          </p>
         </div>
       </section>
     </main>
   );
 }
+
+/* STYLES */
 
 const container: CSSProperties = {
   maxWidth: 1120,
@@ -184,184 +122,105 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "120px 0 72px",
+  padding: "120px 0 60px",
 };
 
 const section: CSSProperties = {
-  padding: "96px 0",
-};
-
-const sectionSoft: CSSProperties = {
-  padding: "88px 0",
-  background: "#F8F5EF",
+  padding: "80px 0",
 };
 
 const eyebrow: CSSProperties = {
-  margin: 0,
   fontSize: 12,
   letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(11,26,43,0.5)",
 };
 
 const heroTitle: CSSProperties = {
-  margin: "14px 0 16px",
-  maxWidth: 760,
-  fontSize: "clamp(2.7rem, 7vw, 5rem)",
-  lineHeight: 1.01,
-  letterSpacing: "-0.035em",
-  fontWeight: 400,
+  fontSize: "clamp(2.6rem, 7vw, 4.5rem)",
   fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  lineHeight: 1.05,
+  margin: "12px 0",
 };
 
 const divider: CSSProperties = {
   width: 48,
   height: 2,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
-  margin: "18px 0 24px",
-  borderRadius: 999,
+  background: "#C9A227",
+  margin: "18px 0",
 };
 
 const heroText: CSSProperties = {
-  margin: 0,
-  maxWidth: 680,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(11,26,43,0.7)",
 };
 
 const splitGrid: CSSProperties = {
   display: "grid",
   gap: 40,
-  alignItems: "start",
 };
 
 const sectionLabel: CSSProperties = {
-  margin: "0 0 12px",
   fontSize: 12,
   letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(11,26,43,0.5)",
 };
 
 const sectionTitle: CSSProperties = {
-  margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 5vw, 3.4rem)",
-  lineHeight: 1.06,
-  letterSpacing: "-0.025em",
-  fontWeight: 400,
+  fontSize: "clamp(2rem, 5vw, 3rem)",
   fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
-};
-
-const sectionText: CSSProperties = {
-  margin: 0,
-  maxWidth: 680,
-  fontSize: 17,
-  lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+  margin: "10px 0 20px",
 };
 
 const contactList: CSSProperties = {
-  marginTop: 32,
   display: "grid",
-  gap: 28,
-};
-
-const contactItem: CSSProperties = {
-  paddingBottom: 18,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  gap: 20,
+  marginTop: 30,
 };
 
 const contactHeading: CSSProperties = {
-  margin: "0 0 8px",
   fontSize: 12,
-  letterSpacing: "0.14em",
+  letterSpacing: "0.12em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.5)",
+  color: "rgba(11,26,43,0.5)",
 };
 
 const contactLink: CSSProperties = {
   fontSize: 18,
-  lineHeight: 1.7,
-  color: "#0B1A2B",
   textDecoration: "none",
+  color: "#0B1A2B",
 };
 
 const contactText: CSSProperties = {
-  margin: 0,
   fontSize: 18,
-  lineHeight: 1.7,
-  color: "rgba(11, 26, 43, 0.75)",
-};
-
-const formWrap: CSSProperties = {
-  minWidth: 0,
+  color: "rgba(11,26,43,0.7)",
 };
 
 const form: CSSProperties = {
-  marginTop: 28,
   display: "grid",
-  gap: 18,
-};
-
-const fieldGrid: CSSProperties = {
-  display: "grid",
-  gap: 16,
-};
-
-const fieldWrap: CSSProperties = {
-  display: "grid",
-  gap: 8,
-};
-
-const fieldLabel: CSSProperties = {
-  fontSize: 12,
-  letterSpacing: "0.12em",
-  textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.5)",
+  gap: 14,
 };
 
 const input: CSSProperties = {
-  width: "100%",
-  minHeight: 54,
-  padding: "0 16px",
-  borderRadius: 18,
-  border: "1px solid rgba(11, 26, 43, 0.10)",
-  background: "#FFFEFB",
-  fontSize: 16,
-  color: "#0B1A2B",
-  outline: "none",
-  boxSizing: "border-box",
+  padding: "14px",
+  borderRadius: 16,
+  border: "1px solid rgba(11,26,43,0.1)",
 };
 
 const textarea: CSSProperties = {
-  width: "100%",
-  padding: "14px 16px",
-  borderRadius: 22,
-  border: "1px solid rgba(11, 26, 43, 0.10)",
-  background: "#FFFEFB",
-  fontSize: 16,
-  color: "#0B1A2B",
-  outline: "none",
-  resize: "vertical",
-  fontFamily: "var(--font-sans)",
-  boxSizing: "border-box",
+  padding: "14px",
+  borderRadius: 16,
+  border: "1px solid rgba(11,26,43,0.1)",
+  minHeight: 120,
 };
 
 const primaryButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 52,
-  padding: "0 22px",
+  marginTop: 10,
+  padding: "14px 20px",
   borderRadius: 999,
   background: "#F2EEE6",
-  color: "#0B1A2B",
-  textDecoration: "none",
+  border: "1px solid rgba(11,26,43,0.08)",
   fontWeight: 600,
-  border: "1px solid rgba(11, 26, 43, 0.08)",
-  cursor: "pointer",
 };
