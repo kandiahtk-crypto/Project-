@@ -101,7 +101,12 @@ export default function ProgrammesPage() {
             {touringRegions.map((region) => (
               <a key={region.title} href={region.href} style={regionCardLink}>
                 <article style={regionCard}>
-                  <h3 style={regionCardTitle}>{region.title}</h3>
+                  <div style={regionCardTopRow}>
+                    <h3 style={regionCardTitle}>{region.title}</h3>
+                    <span style={regionArrow} aria-hidden="true">
+                      →
+                    </span>
+                  </div>
                   <p style={regionCardText}>{region.text}</p>
                 </article>
               </a>
@@ -242,6 +247,7 @@ const regionCards: CSSProperties = {
 
 const regionCardLink: CSSProperties = {
   textDecoration: "none",
+  display: "block",
 };
 
 const regionCard: CSSProperties = {
@@ -250,6 +256,15 @@ const regionCard: CSSProperties = {
   borderRadius: 28,
   padding: "32px 28px",
   boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
+  cursor: "pointer",
+  transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+};
+
+const regionCardTopRow: CSSProperties = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "flex-start",
+  gap: 16,
 };
 
 const regionCardTitle: CSSProperties = {
@@ -257,12 +272,23 @@ const regionCardTitle: CSSProperties = {
   fontSize: "clamp(1.7rem, 4vw, 2.2rem)",
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
+  letterSpacing: "-0.02em",
+  lineHeight: 1.08,
+  flex: 1,
+};
+
+const regionArrow: CSSProperties = {
+  fontSize: 22,
+  lineHeight: 1,
+  color: "rgba(11, 26, 43, 0.5)",
+  paddingTop: 6,
 };
 
 const regionCardText: CSSProperties = {
   fontSize: 16,
   lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
+  margin: 0,
 };
 
 const list: CSSProperties = {
