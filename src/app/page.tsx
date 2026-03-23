@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
+import Image from "next/image";
 
 const siteUrl = "https://www.ukinboundgroundtransport.com";
 
@@ -57,7 +58,26 @@ const organizationJsonLd = {
   ],
 };
 
-const supportItems = [
+const programmes = [
+  {
+    title: "Fixed-departure touring series",
+    text: "Consistent transport delivery across repeat departures, with reliable structure maintained throughout the season.",
+  },
+  {
+    title: "Private group itineraries",
+    text: "Flexible support for bespoke programmes requiring timing control, coordination and service continuity.",
+  },
+  {
+    title: "Multi-region UK touring",
+    text: "Structured routing across England, Scotland and Wales for operators managing broader touring coverage.",
+  },
+  {
+    title: "UK & Ireland programmes",
+    text: "Cross-border touring support delivered with clarity across programme stages, timings and regional transitions.",
+  },
+];
+
+const supportList = [
   "Fixed-departure touring series",
   "Private group itineraries",
   "Multi-region UK touring",
@@ -65,22 +85,24 @@ const supportItems = [
   "London arrivals, departures and events",
 ];
 
-const programmeItems = [
+const imagePanels = [
   {
-    title: "Fixed-departure touring",
-    text: "Consistent transport support across repeat departures, with reliable structure maintained throughout the season.",
+    src: "/images/london-movement.jpg",
+    alt: "Premium vehicle movement in London for inbound travel programmes",
+    title: "London movements",
+    text: "Airport arrivals, hotel transfers, city movements and event-linked transport delivered with precision.",
   },
   {
-    title: "Private group itineraries",
-    text: "Flexible programme support for bespoke travel requiring timing control, coordination and service continuity.",
+    src: "/images/uk-touring.jpg",
+    alt: "Touring transport through the British countryside",
+    title: "National touring",
+    text: "Structured support for programmes moving through England, Scotland and Wales.",
   },
   {
-    title: "Multi-region UK touring",
-    text: "Structured routing across England, Scotland and Wales for operators managing wider national coverage.",
-  },
-  {
-    title: "UK & Ireland programmes",
-    text: "Cross-border touring support delivered with clarity across programme stages, timings and regional transitions.",
+    src: "/images/ireland-programme.jpg",
+    alt: "Cross-border touring support across the UK and Ireland",
+    title: "UK & Ireland routing",
+    text: "Cross-border programme coordination with continuity across timings, regions and handovers.",
   },
 ];
 
@@ -95,48 +117,71 @@ export default function HomePage() {
       />
 
       <section style={heroSection}>
+        <div style={containerNarrow}>
+          <p style={eyebrow}>UK inbound ground transport</p>
+
+          <h1 style={heroTitle}>
+            Premium transport support for UK &amp; Ireland touring programmes.
+          </h1>
+
+          <div style={heroDivider} />
+
+          <p style={heroText}>
+            We support tour operators, DMCs and travel planners with
+            programme-led transport delivery across fixed-departure series,
+            private group touring, London movements and multi-region
+            itineraries.
+          </p>
+
+          <div style={heroActions}>
+            <a href="/contact" style={primaryButton}>
+              Request transport support
+            </a>
+            <a href="/programmes" style={secondaryButton}>
+              Explore programmes
+            </a>
+          </div>
+
+          <div style={heroMetaRow}>
+            <span style={heroMeta}>UK • Ireland • London movements</span>
+          </div>
+
+          <div style={supportListWrapper}>
+            <p style={supportEyebrow}>What we support</p>
+
+            <ul style={supportListStyle}>
+              {supportList.map((item) => (
+                <li key={item} style={supportItem}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section style={imageSection}>
         <div style={container}>
-          <div style={heroGrid} className="hero-grid">
-            <div style={heroMain}>
-              <p style={eyebrow}>UK inbound ground transport</p>
+          <div style={imageGrid} className="image-grid">
+            {imagePanels.map((item) => (
+              <article key={item.title} style={imageCard}>
+                <div style={imageWrap}>
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    sizes="(max-width: 899px) 100vw, 33vw"
+                    style={imageStyle}
+                  />
+                </div>
 
-              <h1 style={heroTitle}>
-                Premium transport support for UK & Ireland touring programmes.
-              </h1>
-
-              <div style={heroDivider} />
-
-              <p style={heroText}>
-                We support tour operators, DMCs and travel planners with
-                programme-led transport delivery across fixed-departure series,
-                private group touring, London movements and multi-region
-                itineraries.
-              </p>
-
-              <div style={heroActions}>
-                <a href="/contact" style={primaryButton}>
-                  Request transport support
-                </a>
-                <a href="/programmes" style={secondaryButton}>
-                  Explore programmes
-                </a>
-              </div>
-
-              <div style={heroMetaRow}>
-                <span style={heroMeta}>UK • Ireland • London movements</span>
-              </div>
-            </div>
-
-            <aside style={heroPanel} aria-label="What we support">
-              <p style={panelEyebrow}>What we support</p>
-              <ul style={panelList}>
-                {supportItems.map((item) => (
-                  <li key={item} style={panelItem}>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </aside>
+                <div style={imageCardBody}>
+                  <p style={imageCardLabel}>Coverage</p>
+                  <h2 style={imageCardTitle}>{item.title}</h2>
+                  <p style={imageCardText}>{item.text}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -159,7 +204,7 @@ export default function HomePage() {
       <section style={section}>
         <div style={container}>
           <div style={programmesGrid} className="feature-grid">
-            {programmeItems.map((item) => (
+            {programmes.map((item) => (
               <article key={item.title} style={programmeCard}>
                 <div style={accentLine} />
                 <h2 style={programmeTitle}>{item.title}</h2>
@@ -170,15 +215,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={sectionSoft}>
+      <section style={featureImageSection}>
         <div style={container}>
-          <div style={splitSection} className="split-grid">
-            <div>
+          <div style={featureImageSplit} className="split-grid">
+            <div style={featureImageCopy}>
               <p style={sectionLabel}>Coverage</p>
               <h2 style={sectionTitle}>From London movements to national touring.</h2>
-            </div>
-
-            <div>
               <p style={sectionText}>
                 We support itineraries spanning London, regional cities,
                 countryside routes, hotel transfers, touring circuits and
@@ -186,6 +228,16 @@ export default function HomePage() {
                 movement or a full touring series, delivery remains structured
                 and commercially focused.
               </p>
+            </div>
+
+            <div style={featureImageWrap}>
+              <Image
+                src="/images/uk-touring.jpg"
+                alt="Luxury touring transport support across the UK"
+                fill
+                sizes="(max-width: 899px) 100vw, 50vw"
+                style={imageStyle}
+              />
             </div>
           </div>
         </div>
@@ -205,26 +257,27 @@ export default function HomePage() {
       </section>
 
       <section style={ctaSection}>
-        <div style={container}>
-          <div style={ctaBox}>
-            <p style={ctaEyebrow}>Start a conversation</p>
-            <h2 style={ctaTitle}>
-              Planning a UK or Ireland programme that needs transport support?
-            </h2>
-            <p style={ctaText}>
-              Tell us about your routing, timings and service requirements. We
-              will help shape a structured transport approach around the
-              programme.
-            </p>
+        <div style={containerNarrow}>
+          <p style={ctaEyebrow}>Start a conversation</p>
 
-            <div style={ctaActions}>
-              <a href="/contact" style={ctaPrimaryButton}>
-                Contact us
-              </a>
-              <a href="/services" style={ctaSecondaryButton}>
-                View services
-              </a>
-            </div>
+          <h2 style={ctaTitle}>
+            Planning a UK or Ireland programme that needs transport support?
+          </h2>
+
+          <p style={ctaText}>
+            Tell us about your routing, timings and service requirements. We
+            will help shape a structured transport approach around the
+            programme.
+          </p>
+
+          <div style={ctaActions}>
+            <a href="/contact" style={ctaPrimaryButton}>
+              Contact us
+            </a>
+
+            <a href="/services" style={ctaLink}>
+              View services →
+            </a>
           </div>
         </div>
       </section>
@@ -241,24 +294,13 @@ const container: CSSProperties = {
 
 const containerNarrow: CSSProperties = {
   width: "100%",
-  maxWidth: 820,
+  maxWidth: 720,
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "0 20px",
 };
 
 const heroSection: CSSProperties = {
-  padding: "36px 0 44px",
-};
-
-const heroGrid: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr",
-  gap: 32,
-  alignItems: "start",
-};
-
-const heroMain: CSSProperties = {
-  minWidth: 0,
+  padding: "100px 0 60px",
 };
 
 const eyebrow: CSSProperties = {
@@ -271,36 +313,34 @@ const eyebrow: CSSProperties = {
 };
 
 const heroTitle: CSSProperties = {
-  margin: 0,
-  maxWidth: 700,
-  fontSize: "clamp(2rem, 7.4vw, 4.4rem)",
-  lineHeight: 1.12,
-  letterSpacing: "-0.02em",
-  fontWeight: 400,
+  margin: "0 0 18px",
+  fontSize: "clamp(2.6rem, 8vw, 4.2rem)",
+  lineHeight: 1.02,
+  letterSpacing: "-0.03em",
   fontFamily: "var(--font-serif)",
+  fontWeight: 400,
   color: "#0B1A2B",
 };
 
 const heroDivider: CSSProperties = {
-  width: 48,
+  width: 56,
   height: 2,
+  background: "#C9A227",
   margin: "18px 0 22px",
   borderRadius: 999,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
 };
 
 const heroText: CSSProperties = {
-  margin: "0 0 28px",
-  maxWidth: 640,
-  fontSize: 17,
-  lineHeight: 1.85,
-  color: "rgba(11, 26, 43, 0.74)",
+  margin: "0 0 30px",
+  fontSize: 18,
+  lineHeight: 1.8,
+  color: "rgba(11, 26, 43, 0.72)",
 };
 
 const heroActions: CSSProperties = {
   display: "flex",
   flexWrap: "wrap",
-  gap: 14,
+  gap: 16,
   marginBottom: 20,
 };
 
@@ -311,11 +351,11 @@ const primaryButton: CSSProperties = {
   minHeight: 52,
   padding: "0 22px",
   borderRadius: 999,
-  background: "#071A34",
-  color: "#FFFFFF",
+  background: "#F4F1EA",
+  color: "#0B1A2B",
   textDecoration: "none",
-  fontSize: 15,
   fontWeight: 600,
+  border: "1px solid rgba(11,26,43,0.08)",
 };
 
 const secondaryButton: CSSProperties = {
@@ -325,12 +365,11 @@ const secondaryButton: CSSProperties = {
   minHeight: 52,
   padding: "0 22px",
   borderRadius: 999,
-  border: "1px solid rgba(11, 26, 43, 0.12)",
-  background: "transparent",
-  color: "#0B1A2B",
+  border: "1px solid rgba(11,26,43,0.12)",
   textDecoration: "none",
-  fontSize: 15,
-  fontWeight: 600,
+  color: "#0B1A2B",
+  fontWeight: 500,
+  background: "transparent",
 };
 
 const heroMetaRow: CSSProperties = {
@@ -351,47 +390,92 @@ const heroMeta: CSSProperties = {
   fontSize: 13,
 };
 
-const heroPanel: CSSProperties = {
-  width: "100%",
-  minWidth: 0,
-  background: "#F7F5F0",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
-  borderRadius: 32,
-  padding: "28px 24px",
+const supportListWrapper: CSSProperties = {
+  marginTop: 36,
 };
 
-const panelEyebrow: CSSProperties = {
+const supportEyebrow: CSSProperties = {
   margin: "0 0 16px",
   fontSize: 12,
-  lineHeight: 1.4,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.56)",
+  color: "rgba(11, 26, 43, 0.5)",
 };
 
-const panelList: CSSProperties = {
+const supportListStyle: CSSProperties = {
   margin: 0,
   padding: 0,
   listStyle: "none",
   display: "grid",
-  gap: 0,
+  gap: 14,
 };
 
-const panelItem: CSSProperties = {
-  padding: "18px 0",
-  fontSize: 16,
-  lineHeight: 1.55,
+const supportItem: CSSProperties = {
+  fontSize: 18,
+  lineHeight: 1.5,
   color: "#0B1A2B",
   borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  paddingBottom: 10,
+};
+
+const imageSection: CSSProperties = {
+  padding: "0 0 100px",
+};
+
+const imageGrid: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "1fr",
+  gap: 24,
+};
+
+const imageCard: CSSProperties = {
+  minWidth: 0,
+};
+
+const imageWrap: CSSProperties = {
+  position: "relative",
+  width: "100%",
+  aspectRatio: "4 / 5",
+  overflow: "hidden",
+  borderRadius: 28,
+  background: "#F4F1EA",
+};
+
+const imageStyle: CSSProperties = {
+  objectFit: "cover",
+};
+
+const imageCardBody: CSSProperties = {
+  paddingTop: 18,
+};
+
+const imageCardLabel: CSSProperties = {
+  margin: "0 0 8px",
+  fontSize: 12,
+  letterSpacing: "0.14em",
+  textTransform: "uppercase",
+  color: "rgba(11, 26, 43, 0.52)",
+};
+
+const imageCardTitle: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: "clamp(1.5rem, 5vw, 2rem)",
+  lineHeight: 1.12,
+  letterSpacing: "-0.02em",
+  fontFamily: "var(--font-serif)",
+  fontWeight: 400,
+  color: "#0B1A2B",
+};
+
+const imageCardText: CSSProperties = {
+  margin: 0,
+  fontSize: 16,
+  lineHeight: 1.75,
+  color: "rgba(11, 26, 43, 0.7)",
 };
 
 const section: CSSProperties = {
-  padding: "56px 0",
-};
-
-const sectionSoft: CSSProperties = {
-  padding: "56px 0",
-  background: "#FBFAF7",
+  padding: "100px 0",
 };
 
 const sectionLabel: CSSProperties = {
@@ -459,83 +543,79 @@ const programmeText: CSSProperties = {
   color: "rgba(11, 26, 43, 0.72)",
 };
 
-const splitSection: CSSProperties = {
+const featureImageSection: CSSProperties = {
+  padding: "100px 0",
+  background: "#FBFAF7",
+};
+
+const featureImageSplit: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "1fr",
-  gap: 22,
-  alignItems: "start",
+  gap: 32,
+  alignItems: "center",
+};
+
+const featureImageCopy: CSSProperties = {
+  minWidth: 0,
+};
+
+const featureImageWrap: CSSProperties = {
+  position: "relative",
+  width: "100%",
+  aspectRatio: "4 / 5",
+  overflow: "hidden",
+  borderRadius: 32,
+  background: "#F4F1EA",
 };
 
 const ctaSection: CSSProperties = {
-  padding: "56px 0 24px",
-};
-
-const ctaBox: CSSProperties = {
-  background: "#0B1A2B",
-  color: "#FFFFFF",
-  borderRadius: 32,
-  padding: "36px 24px",
+  padding: "80px 0 40px",
 };
 
 const ctaEyebrow: CSSProperties = {
   margin: "0 0 12px",
   fontSize: 12,
-  lineHeight: 1.4,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(255, 255, 255, 0.64)",
+  color: "rgba(11, 26, 43, 0.5)",
 };
 
 const ctaTitle: CSSProperties = {
-  margin: "0 0 14px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 7.8vw, 3.4rem)",
-  lineHeight: 1.08,
+  margin: "0 0 18px",
+  fontSize: "clamp(2.2rem, 7vw, 3.6rem)",
+  lineHeight: 1.05,
   letterSpacing: "-0.025em",
-  fontWeight: 400,
   fontFamily: "var(--font-serif)",
-  color: "#FFFFFF",
+  fontWeight: 400,
+  color: "#0B1A2B",
 };
 
 const ctaText: CSSProperties = {
-  margin: "0 0 24px",
-  maxWidth: 760,
+  margin: "0 0 26px",
   fontSize: 17,
-  lineHeight: 1.85,
-  color: "rgba(255, 255, 255, 0.76)",
+  lineHeight: 1.8,
+  color: "rgba(11, 26, 43, 0.7)",
 };
 
 const ctaActions: CSSProperties = {
   display: "flex",
   flexWrap: "wrap",
-  gap: 14,
+  gap: 18,
+  alignItems: "center",
 };
 
 const ctaPrimaryButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 52,
-  padding: "0 22px",
+  padding: "14px 22px",
   borderRadius: 999,
-  background: "#FFFFFF",
+  background: "#F4F1EA",
   color: "#0B1A2B",
   textDecoration: "none",
-  fontSize: 15,
   fontWeight: 600,
+  border: "1px solid rgba(11,26,43,0.08)",
 };
 
-const ctaSecondaryButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 52,
-  padding: "0 22px",
-  borderRadius: 999,
-  border: "1px solid rgba(255, 255, 255, 0.18)",
-  background: "transparent",
-  color: "#FFFFFF",
-  textDecoration: "none",
+const ctaLink: CSSProperties = {
   fontSize: 15,
-  fontWeight: 600,
+  color: "#0B1A2B",
+  textDecoration: "none",
 };
