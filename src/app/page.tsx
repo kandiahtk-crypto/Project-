@@ -34,18 +34,22 @@ const supportItems = [
 const regions = [
   {
     title: "United States",
+    href: "/markets/usa",
     text: "Supporting US-based tour operators and travel planners delivering structured UK and Ireland touring programmes.",
   },
   {
     title: "Europe",
+    href: "/markets/europe",
     text: "Working with European partners managing inbound programmes requiring reliable, multi-region coordination.",
   },
   {
     title: "China",
+    href: "/markets/china",
     text: "Supporting Chinese outbound travel specialists with structured touring logistics and programme delivery.",
   },
   {
     title: "India",
+    href: "/markets/india",
     text: "Working with Indian travel companies delivering premium UK and Ireland itineraries with clear operational flow.",
   },
 ];
@@ -142,7 +146,11 @@ export default function HomePage() {
           <div style={regionGrid}>
             {regions.map((region) => (
               <article key={region.title} style={regionItem}>
-                <h3 style={regionTitle}>{region.title}</h3>
+                <h3 style={regionTitle}>
+                  <a href={region.href} style={regionLink}>
+                    {region.title}
+                  </a>
+                </h3>
                 <p style={regionText}>{region.text}</p>
               </article>
             ))}
@@ -193,8 +201,8 @@ export default function HomePage() {
             <div>
               <p style={sectionText}>
                 We support itineraries spanning London, regional cities,
-                countryside routes, hotel transfers, cruise-related movements and
-                cross-country touring. Whether the requirement is a single
+                countryside routes, hotel transfers, cruise-related movements
+                and cross-country touring. Whether the requirement is a single
                 movement or a full touring series, delivery remains structured
                 and commercially focused.
               </p>
@@ -441,6 +449,12 @@ const regionTitle: CSSProperties = {
   letterSpacing: "-0.02em",
   color: "#0B1A2B",
   fontWeight: 400,
+};
+
+const regionLink: CSSProperties = {
+  textDecoration: "none",
+  color: "#0B1A2B",
+  display: "inline-block",
 };
 
 const regionText: CSSProperties = {
