@@ -4,6 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, type CSSProperties } from "react";
 
+const MOBILE_LINKS = [
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/services", label: "Services" },
+  { href: "/markets", label: "Markets" },
+  { href: "/programmes", label: "Programmes" },
+];
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -29,54 +37,68 @@ export default function SiteHeader() {
   const backdrop: CSSProperties = {
     position: "fixed",
     inset: 0,
-    background: "rgba(11, 26, 43, 0.16)",
+    background: "rgba(11, 26, 43, 0.18)",
+    backdropFilter: "blur(4px)",
     zIndex: 109,
     opacity: menuOpen ? 1 : 0,
-    transition: "opacity 0.25s ease",
+    transition: "opacity 0.28s ease",
   };
 
   const mobilePanel: CSSProperties = {
     position: "fixed",
-    top: "86px",
+    top: "88px",
     left: "16px",
     right: "16px",
-    background: "#F6F2EA",
+    background: "#F7F3EC",
     border: "1px solid rgba(11, 26, 43, 0.08)",
-    borderRadius: "28px",
-    boxShadow: "0 24px 60px rgba(0,0,0,0.08)",
+    borderRadius: "30px",
+    boxShadow: "0 24px 80px rgba(11, 26, 43, 0.12)",
     zIndex: 110,
-    transform: menuOpen ? "translateY(0)" : "translateY(-10px)",
+    transform: menuOpen ? "translateY(0) scale(1)" : "translateY(-10px) scale(0.98)",
     opacity: menuOpen ? 1 : 0,
-    transition: "opacity 0.28s ease, transform 0.28s ease",
+    transformOrigin: "top center",
+    transition: "opacity 0.32s ease, transform 0.32s ease",
   };
 
-  const mobileLink: CSSProperties = {
-    display: "block",
+  const mobilePanelInner: CSSProperties = {
+    padding: "26px 24px 24px",
+  };
+
+  const mobileLink = (index: number): CSSProperties => ({
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    gap: 16,
     color: "#0B1A2B",
     textDecoration: "none",
-    fontSize: "30px",
-    lineHeight: 1.2,
+    fontSize: "31px",
+    lineHeight: 1.06,
     fontFamily: "var(--font-serif)",
-    paddingBottom: "12px",
+    letterSpacing: "-0.02em",
+    padding: "14px 0",
     borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
-    transform: menuOpen ? "translateY(0)" : "translateY(8px)",
+    transform: menuOpen ? "translateY(0)" : "translateY(10px)",
     opacity: menuOpen ? 1 : 0,
-    transition: "opacity 0.35s ease, transform 0.35s ease",
-  };
+    transition: `opacity 0.34s ease ${index * 0.04}s, transform 0.34s ease ${index * 0.04}s`,
+  });
 
   const mobileCta: CSSProperties = {
-    display: "inline-block",
-    marginTop: "12px",
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "18px",
+    minHeight: 58,
+    padding: "0 24px",
     border: "1px solid rgba(11, 26, 43, 0.10)",
     background: "#FFFFFF",
     color: "#0B1A2B",
     textDecoration: "none",
     fontWeight: 600,
-    padding: "14px 20px",
+    fontSize: 16,
     borderRadius: "999px",
-    transform: menuOpen ? "translateY(0)" : "translateY(10px)",
+    transform: menuOpen ? "translateY(0)" : "translateY(12px)",
     opacity: menuOpen ? 1 : 0,
-    transition: "opacity 0.4s ease, transform 0.4s ease",
+    transition: "opacity 0.4s ease 0.18s, transform 0.4s ease 0.18s",
   };
 
   return (
@@ -89,32 +111,19 @@ export default function SiteHeader() {
           </Link>
 
           <nav className="desktop-nav site-nav" style={desktopNav}>
-            <Link
-              href="/about"
-              className={pathname === "/about" ? "active" : ""}
-              style={navLink}
-            >
+            <Link href="/" className={pathname === "/" ? "active" : ""} style={navLink}>
+              Home
+            </Link>
+            <Link href="/about" className={pathname === "/about" ? "active" : ""} style={navLink}>
               About
             </Link>
-            <Link
-              href="/services"
-              className={pathname === "/services" ? "active" : ""}
-              style={navLink}
-            >
+            <Link href="/services" className={pathname === "/services" ? "active" : ""} style={navLink}>
               Services
             </Link>
-            <Link
-              href="/markets"
-              className={pathname === "/markets" ? "active" : ""}
-              style={navLink}
-            >
+            <Link href="/markets" className={pathname.startsWith("/markets") ? "active" : ""} style={navLink}>
               Markets
             </Link>
-            <Link
-              href="/programmes"
-              className={pathname === "/programmes" ? "active" : ""}
-              style={navLink}
-            >
+            <Link href="/programmes" className={pathname === "/programmes" ? "active" : ""} style={navLink}>
               Programmes
             </Link>
             <Link href="/contact" style={navCta}>
@@ -145,24 +154,22 @@ export default function SiteHeader() {
             <div style={mobilePanelInner}>
               <Link href="/" style={mobileBrand} onClick={closeMenu}>
                 <span style={mobileBrandTop}>UK Inbound Ground Transport</span>
-                <span style={mobileBrandBottom}>
-                  Premium UK &amp; Ireland movements
-                </span>
+                <span style={mobileBrandBottom}>Premium UK &amp; Ireland movements</span>
               </Link>
 
-              <div style={mobileLinks} className="mobile-links">
-                <Link href="/about" style={mobileLink} onClick={closeMenu}>
-                  About
-                </Link>
-                <Link href="/services" style={mobileLink} onClick={closeMenu}>
-                  Services
-                </Link>
-                <Link href="/markets" style={mobileLink} onClick={closeMenu}>
-                  Markets
-                </Link>
-                <Link href="/programmes" style={mobileLink} onClick={closeMenu}>
-                  Programmes
-                </Link>
+              <div style={mobileLinks}>
+                {MOBILE_LINKS.map((item, index) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    style={mobileLink(index)}
+                    onClick={closeMenu}
+                  >
+                    <span>{item.label}</span>
+                    <span style={mobileLinkArrow}>↗</span>
+                  </Link>
+                ))}
+
                 <Link href="/contact" style={mobileCta} onClick={closeMenu}>
                   Contact
                 </Link>
@@ -179,8 +186,8 @@ const header: CSSProperties = {
   position: "sticky",
   top: 0,
   zIndex: 100,
-  background: "rgba(252, 250, 246, 0.88)",
-  backdropFilter: "blur(14px)",
+  background: "rgba(252, 250, 246, 0.9)",
+  backdropFilter: "blur(16px)",
   borderBottom: "1px solid rgba(11, 26, 43, 0.06)",
 };
 
@@ -288,21 +295,17 @@ const menuLine = (
   };
 };
 
-const mobilePanelInner: CSSProperties = {
-  padding: "24px",
-};
-
 const mobileBrand: CSSProperties = {
   display: "flex",
   flexDirection: "column",
-  gap: "4px",
+  gap: "6px",
   textDecoration: "none",
 };
 
 const mobileBrandTop: CSSProperties = {
   color: "#0B1A2B",
   fontSize: "11px",
-  letterSpacing: "0.16em",
+  letterSpacing: "0.18em",
   textTransform: "uppercase",
   fontWeight: 600,
   lineHeight: 1.4,
@@ -315,8 +318,14 @@ const mobileBrandBottom: CSSProperties = {
 };
 
 const mobileLinks: CSSProperties = {
-  marginTop: "28px",
+  marginTop: "24px",
   display: "flex",
   flexDirection: "column",
-  gap: "18px",
+};
+
+const mobileLinkArrow: CSSProperties = {
+  fontSize: 18,
+  color: "rgba(11, 26, 43, 0.42)",
+  lineHeight: 1,
+  paddingTop: 6,
 };
