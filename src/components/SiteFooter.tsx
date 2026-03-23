@@ -9,9 +9,11 @@ export default function SiteFooter() {
         <div style={topRow}>
           <div style={brandBlock}>
             <p style={eyebrow}>UK inbound ground transport</p>
+
             <h2 style={brandTitle}>
               Programme-led transport across the UK &amp; Ireland.
             </h2>
+
             <p style={brandText}>
               Supporting fixed-departure series, private group touring and
               multi-region programmes with structured, dependable delivery.
@@ -67,7 +69,7 @@ export default function SiteFooter() {
 
 const footer: CSSProperties = {
   marginTop: 96,
-  padding: "0 24px 32px",
+  padding: "0 24px 40px",
 };
 
 const accentBar: CSSProperties = {
@@ -82,10 +84,10 @@ const accentBar: CSSProperties = {
 const container: CSSProperties = {
   maxWidth: 1120,
   margin: "0 auto",
-  background: "#F7F5F0",
-  border: "1px solid rgba(20, 24, 40, 0.08)",
-  borderRadius: 28,
-  padding: "40px 24px 24px",
+  background: "#F6F2EA",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  borderRadius: 32,
+  padding: "48px 28px 28px",
 };
 
 const topRow: CSSProperties = {
@@ -112,10 +114,10 @@ const eyebrow: CSSProperties = {
 
 const brandTitle: CSSProperties = {
   margin: "0 0 14px",
-  fontSize: "clamp(2.2rem, 4vw, 3.2rem)",
-  lineHeight: 1.02,
+  fontSize: "clamp(2rem, 4vw, 3rem)",
+  lineHeight: 1.04,
   letterSpacing: "-0.03em",
-  fontWeight: 500,
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
 };
@@ -124,7 +126,7 @@ const brandText: CSSProperties = {
   margin: 0,
   maxWidth: 520,
   fontSize: 17,
-  lineHeight: 1.75,
+  lineHeight: 1.8,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
@@ -188,8 +190,8 @@ const legalBlock: CSSProperties = {
 const smallText: CSSProperties = {
   margin: 0,
   fontSize: 13,
-  lineHeight: 1.5,
-  color: "rgba(11, 26, 43, 0.56)",
+  lineHeight: 1.6,
+  color: "rgba(11, 26, 43, 0.54)",
 };
 
 const contactLink: CSSProperties = {
