@@ -97,8 +97,8 @@ export default function HomePage() {
 
               <div style={heroMetaRow}>
                 <span style={heroMeta}>UK • Ireland • London movements</span>
-                <span style={heroMeta}>Company Reg: 13507458</span>
-                <span style={heroMeta}>VAT: 388919914</span>
+                
+                
               </div>
             </div>
 
