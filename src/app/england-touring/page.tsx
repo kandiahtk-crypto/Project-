@@ -35,10 +35,13 @@ export default function EnglandTouringPage() {
       <section style={heroSection}>
         <div style={containerNarrow}>
           <p style={eyebrow}>England touring</p>
+
           <h1 style={heroTitle}>
             Transport support for England heritage and regional touring.
           </h1>
+
           <div style={divider} />
+
           <p style={heroText}>
             We support England itineraries linking London with heritage cities,
             countryside routes and multi-stop touring circuits used by tour
@@ -50,10 +53,12 @@ export default function EnglandTouringPage() {
       <section style={section}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Common programme structure</p>
+
           <h2 style={sectionTitle}>
             England itineraries often combine gateway cities with heritage
             touring.
           </h2>
+
           <p style={sectionText}>
             London, Oxford, Bath, Cambridge, York and the Lake District remain
             central to classic Britain itineraries. Transport planning needs to
@@ -74,9 +79,11 @@ export default function EnglandTouringPage() {
       <section style={sectionSoft}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Operational focus</p>
+
           <h2 style={sectionTitle}>
             Structured delivery matters as routes become more layered.
           </h2>
+
           <p style={sectionText}>
             Our role is to support timing, sequencing and service continuity
             across England touring programmes so transport strengthens the wider
@@ -88,13 +95,16 @@ export default function EnglandTouringPage() {
       <section style={ctaSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Start a conversation</p>
+
           <h2 style={ctaTitle}>
             Planning an England touring programme?
           </h2>
+
           <p style={sectionText}>
             Tell us about your route structure, timings and service
             requirements, and we’ll help shape the right transport support.
           </p>
+
           <div style={ctaActions}>
             <a href="/contact" style={primaryButton}>
               Contact us
@@ -115,13 +125,22 @@ const containerNarrow: CSSProperties = {
   padding: "0 24px",
 };
 
-const heroSection: CSSProperties = { padding: "40px 0 64px" };
-const section: CSSProperties = { padding: "88px 0" };
+const heroSection: CSSProperties = {
+  padding: "40px 0 64px",
+};
+
+const section: CSSProperties = {
+  padding: "88px 0",
+};
+
 const sectionSoft: CSSProperties = {
   padding: "80px 0",
   background: "#F8F5EF",
 };
-const ctaSection: CSSProperties = { padding: "72px 0 48px" };
+
+const ctaSection: CSSProperties = {
+  padding: "72px 0 48px",
+};
 
 const eyebrow: CSSProperties = {
   margin: 0,
