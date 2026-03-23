@@ -1,20 +1,19 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
-const siteUrl = "https://www.ukinboundgroundtransport.com";
+const siteUrl = "https://www.ukinboundgroundtransport.com/programmes";
 
 export const metadata: Metadata = {
-  title: "Home",
+  title: "Programme-led UK & Ireland Touring Transport",
   description:
-    "Premium UK & Ireland ground transport for tour operators, DMCs and travel planners. Fixed-departure touring, private groups, cruise port support, London movements and multi-region programmes across England, Scotland and Ireland.",
+    "Programme-led transport support across England, Scotland and Ireland. Fixed-departure touring, private groups, regional routing and cross-border UK & Ireland programme delivery.",
   alternates: {
-    canonical: "/",
+    canonical: "/programmes",
   },
   openGraph: {
-    title:
-      "UK Inbound Ground Transport | Premium UK & Ireland Touring Support",
+    title: "Programme-led Touring Transport | UK & Ireland",
     description:
-      "Programme-led transport support across England, Scotland and Ireland for tour operators, DMCs and travel planners.",
+      "Structured transport delivery across UK & Ireland touring programmes for operators, DMCs and planners.",
     url: siteUrl,
     siteName: "UK Inbound Ground Transport",
     locale: "en_GB",
@@ -22,226 +21,126 @@ export const metadata: Metadata = {
   },
 };
 
-const supportItems = [
-  "Fixed-departure touring series",
-  "Private group itineraries",
-  "Cruise port support",
-  "London arrivals, departures and events",
-  "England, Scotland and Ireland programmes",
-  "Multi-region UK & Ireland touring",
-];
-
-const regions = [
+const programmes = [
   {
-    title: "United States",
-    href: "/markets/usa",
-    text: "Supporting US-based tour operators and travel planners delivering structured UK and Ireland touring programmes.",
+    title: "Fixed-departure series",
+    description:
+      "Consistent, repeatable transport delivery across scheduled touring departures, with dependable structure maintained throughout the programme lifecycle.",
   },
   {
-    title: "Europe",
-    href: "/markets/europe",
-    text: "Working with European partners managing inbound programmes requiring reliable, multi-region coordination.",
+    title: "Private group touring",
+    description:
+      "Tailored support for private itineraries requiring flexibility, timing control and coordinated delivery.",
   },
   {
-    title: "China",
-    href: "/markets/china",
-    text: "Supporting Chinese outbound travel specialists with structured touring logistics and programme delivery.",
+    title: "Multi-region UK touring",
+    description:
+      "Structured routing across England, Scotland and Wales for programmes requiring broader national coverage.",
   },
   {
-    title: "India",
-    href: "/markets/india",
-    text: "Working with Indian travel companies delivering premium UK and Ireland itineraries with clear operational flow.",
+    title: "UK & Ireland programmes",
+    description:
+      "Cross-border touring with consistent delivery and reliable coordination across regional transitions.",
   },
 ];
 
-const sectors = [
+const touringRegions = [
   {
-    title: "Cruise port support",
-    text: "Transport coordination for cruise-related arrivals, departures, shore-side touring and onward programme movements.",
-  },
-  {
-    title: "England programmes",
-    text: "Structured touring support across London, regional cities, countryside routes and wider England itineraries.",
+    title: "England heritage touring",
+    text: "London, Oxford, Bath, Cambridge, York and the Lake District remain central to classic Britain itineraries.",
   },
   {
     title: "Scotland programmes",
-    text: "Programme-led transport delivery for Scotland touring, regional sequencing and multi-stop itineraries.",
+    text: "Edinburgh, Glasgow, Loch Ness and the Highlands require realistic daily planning and operational awareness.",
   },
   {
-    title: "Ireland programmes",
-    text: "Reliable support for Ireland itineraries, including cross-border touring and wider UK & Ireland programme flow.",
+    title: "Ireland touring circuits",
+    text: "Dublin, Galway, Killarney and the Cliffs of Moher continue to feature strongly in Ireland touring routes.",
   },
 ];
 
-export default function HomePage() {
+export default function ProgrammesPage() {
   return (
     <main>
+      {/* HERO */}
       <section style={heroSection}>
         <div style={containerNarrow}>
-          <p style={eyebrow}>UK inbound ground transport</p>
+          <p style={eyebrow}>Programmes</p>
 
           <h1 style={heroTitle}>
-            Premium transport support for UK &amp; Ireland touring programmes.
+            Programme-led transport support across the UK &amp; Ireland.
           </h1>
 
           <div style={divider} />
 
           <p style={heroText}>
-            We support tour operators, DMCs and travel planners with
-            programme-led transport delivery across fixed-departure series,
-            private groups, cruise port support, London movements and
-            multi-region itineraries across England, Scotland and Ireland.
+            We support operators and planners with structured transport delivery
+            across fixed-departure series, private itineraries, regional touring
+            and cross-border programmes.
           </p>
-
-          <div style={heroActions}>
-            <a href="/contact" style={primaryButton}>
-              Request transport support
-            </a>
-            <a href="/programmes" style={secondaryButton}>
-              Explore programmes
-            </a>
-          </div>
-
-          <div style={metaRow}>
-            <span style={metaPill}>
-              UK • Ireland • Cruise ports • London movements
-            </span>
-          </div>
         </div>
       </section>
 
+      {/* TOURING REGIONS (NEW SECTION) */}
       <section style={section}>
         <div style={containerNarrow}>
-          <p style={sectionLabel}>What we support</p>
+          <p style={sectionLabel}>Touring regions</p>
 
-          <ul style={supportList}>
-            {supportItems.map((item) => (
-              <li key={item} style={supportItem}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section style={sectionSoft}>
-        <div style={container}>
-          <div style={splitGrid} className="split-grid">
-            <div>
-              <p style={sectionLabel}>International</p>
-              <h2 style={sectionTitle}>
-                Supporting international partners across key inbound markets.
-              </h2>
-            </div>
-
-            <div>
-              <p style={sectionText}>
-                We work with tour operators, DMCs and travel planners globally,
-                supporting inbound UK and Ireland programmes from major source
-                markets including the United States, Europe, China and India.
-              </p>
-            </div>
-          </div>
-
-          <div style={regionGrid}>
-            {regions.map((region) => (
-              <article key={region.title} style={regionItem}>
-                <h3 style={regionTitle}>
-                  <a href={region.href} style={regionLink}>
-                    {region.title}
-                  </a>
-                </h3>
-                <p style={regionText}>{region.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section style={section}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Why operators choose us</p>
           <h2 style={sectionTitle}>
-            Structured delivery, clear coordination, dependable execution.
+            Destinations commonly included in UK and Ireland programmes.
           </h2>
-          <p style={sectionText}>
-            Our focus is not generic transport booking. We support programme
-            delivery by aligning vehicles, routing and operational planning to
-            the pace, shape and service expectations of inbound touring across
-            the UK and Ireland.
-          </p>
-        </div>
-      </section>
 
-      <section style={sectionSoft}>
-        <div style={container}>
-          <div style={featureGrid} className="feature-grid">
-            {sectors.map((item) => (
-              <article key={item.title} style={featureCard}>
-                <div style={accentLine} />
-                <h2 style={featureTitle}>{item.title}</h2>
-                <p style={featureText}>{item.text}</p>
+          <p style={sectionText}>
+            Our services support programmes linking major gateway cities with
+            heritage destinations, scenic routes and regional touring circuits
+            used by international operators and DMC teams.
+          </p>
+
+          <div style={regionCards}>
+            {touringRegions.map((region) => (
+              <article key={region.title} style={regionCard}>
+                <h3 style={regionCardTitle}>{region.title}</h3>
+                <p style={regionCardText}>{region.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={section}>
-        <div style={container}>
-          <div style={splitGrid} className="split-grid">
-            <div>
-              <p style={sectionLabel}>Coverage</p>
-              <h2 style={sectionTitle}>
-                From London and cruise ports to wider England, Scotland and
-                Ireland touring.
-              </h2>
-            </div>
-
-            <div>
-              <p style={sectionText}>
-                We support itineraries spanning London, regional cities,
-                countryside routes, hotel transfers, cruise-related movements
-                and cross-country touring. Whether the requirement is a single
-                movement or a full touring series, delivery remains structured
-                and commercially focused.
-              </p>
-            </div>
+      {/* PROGRAMME TYPES */}
+      <section style={sectionSoft}>
+        <div style={containerNarrow}>
+          <div style={list}>
+            {programmes.map((programme) => (
+              <article key={programme.title} style={item}>
+                <div style={accentLine} />
+                <div>
+                  <h2 style={itemTitle}>{programme.title}</h2>
+                  <p style={itemText}>{programme.description}</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
 
-      <section style={sectionSoft}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Who we work with</p>
-          <h2 style={sectionTitle}>Built for professional travel buyers.</h2>
-          <p style={sectionText}>
-            We are positioned for tour operators, destination management
-            companies, cruise specialists, travel planners and programme
-            managers who need transport support that fits a wider operational
-            plan, not just a standalone vehicle booking.
-          </p>
-        </div>
-      </section>
-
+      {/* CTA */}
       <section style={ctaSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Start a conversation</p>
+
           <h2 style={ctaTitle}>
-            Planning a UK or Ireland programme that needs transport support?
+            Need transport coordination for a touring programme?
           </h2>
+
           <p style={sectionText}>
-            Tell us about your routing, timings, port calls and programme
-            requirements. We will help shape a structured transport approach
-            around your itinerary.
+            Tell us about your routing, timings and programme requirements, and
+            we’ll help shape the right support structure.
           </p>
 
           <div style={ctaActions}>
             <a href="/contact" style={primaryButton}>
               Contact us
-            </a>
-            <a href="/services" style={linkButton}>
-              View services →
             </a>
           </div>
         </div>
@@ -250,11 +149,7 @@ export default function HomePage() {
   );
 }
 
-const container: CSSProperties = {
-  maxWidth: 1120,
-  margin: "0 auto",
-  padding: "0 28px",
-};
+/* STYLES */
 
 const containerNarrow: CSSProperties = {
   maxWidth: 760,
@@ -263,7 +158,7 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "40px 0 64px",
+  padding: "64px 0 64px",
 };
 
 const section: CSSProperties = {
@@ -277,18 +172,6 @@ const sectionSoft: CSSProperties = {
 
 const ctaSection: CSSProperties = {
   padding: "72px 0 48px",
-};
-
-const splitGrid: CSSProperties = {
-  display: "grid",
-  gap: 40,
-  alignItems: "start",
-};
-
-const featureGrid: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "1fr",
-  gap: 36,
 };
 
 const eyebrow: CSSProperties = {
@@ -309,35 +192,26 @@ const sectionLabel: CSSProperties = {
 
 const heroTitle: CSSProperties = {
   margin: "14px 0 16px",
-  maxWidth: 760,
   fontSize: "clamp(2.6rem, 7vw, 5rem)",
   lineHeight: 1.02,
   letterSpacing: "-0.04em",
-  fontWeight: 400,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
 };
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 5vw, 3.4rem)",
+  fontSize: "clamp(2rem, 5vw, 3.2rem)",
   lineHeight: 1.06,
   letterSpacing: "-0.025em",
-  fontWeight: 400,
   fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
 };
 
 const ctaTitle: CSSProperties = {
   margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 5vw, 3.2rem)",
+  fontSize: "clamp(2rem, 5vw, 3rem)",
   lineHeight: 1.06,
-  letterSpacing: "-0.025em",
-  fontWeight: 400,
   fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
 };
 
 const divider: CSSProperties = {
@@ -345,168 +219,90 @@ const divider: CSSProperties = {
   height: 2,
   background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
   margin: "18px 0 24px",
-  borderRadius: 999,
 };
 
 const heroText: CSSProperties = {
-  margin: 0,
-  maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
 const sectionText: CSSProperties = {
-  margin: 0,
-  maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
-const heroActions: CSSProperties = {
-  marginTop: 28,
-  display: "flex",
-  gap: 16,
-  flexWrap: "wrap",
-};
+/* NEW REGION CARDS */
 
-const primaryButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 52,
-  padding: "0 22px",
-  borderRadius: 999,
-  background: "#F2EEE6",
-  color: "#0B1A2B",
-  textDecoration: "none",
-  fontWeight: 600,
-  border: "1px solid rgba(11, 26, 43, 0.08)",
-};
-
-const secondaryButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 52,
-  padding: "0 22px",
-  borderRadius: 999,
-  background: "transparent",
-  color: "#0B1A2B",
-  textDecoration: "none",
-  fontWeight: 500,
-  border: "1px solid rgba(11, 26, 43, 0.10)",
-};
-
-const metaRow: CSSProperties = {
-  marginTop: 20,
-};
-
-const metaPill: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  minHeight: 34,
-  padding: "0 12px",
-  borderRadius: 999,
-  background: "#F2EEE6",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
-  fontSize: 13,
-  color: "rgba(11, 26, 43, 0.72)",
-};
-
-const supportList: CSSProperties = {
-  listStyle: "none",
-  padding: 0,
-  margin: 0,
-  display: "grid",
-  gap: 16,
-};
-
-const supportItem: CSSProperties = {
-  fontSize: 20,
-  lineHeight: 1.5,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
-  paddingBottom: 12,
-  color: "#0B1A2B",
-};
-
-const regionGrid: CSSProperties = {
-  marginTop: 48,
+const regionCards: CSSProperties = {
+  marginTop: 40,
   display: "grid",
   gap: 28,
 };
 
-const regionItem: CSSProperties = {
-  paddingBottom: 20,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+const regionCard: CSSProperties = {
+  background: "#FBFAF7",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  borderRadius: 28,
+  padding: "32px 28px",
+  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
 };
 
-const regionTitle: CSSProperties = {
-  margin: "0 0 8px",
-  fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
+const regionCardTitle: CSSProperties = {
+  margin: "0 0 14px",
+  fontSize: "clamp(1.7rem, 4vw, 2.2rem)",
   fontFamily: "var(--font-serif)",
-  letterSpacing: "-0.02em",
-  color: "#0B1A2B",
-  fontWeight: 400,
 };
 
-const regionLink: CSSProperties = {
-  textDecoration: "none",
-  color: "#0B1A2B",
-  display: "inline-block",
-};
-
-const regionText: CSSProperties = {
-  margin: 0,
-  maxWidth: 520,
+const regionCardText: CSSProperties = {
   fontSize: 16,
-  lineHeight: 1.8,
+  lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
-const featureCard: CSSProperties = {
-  minWidth: 0,
-  paddingBottom: 18,
+/* PROGRAMME LIST */
+
+const list: CSSProperties = {
+  display: "grid",
+  gap: 30,
+};
+
+const item: CSSProperties = {
+  display: "grid",
+  gap: 14,
+  paddingBottom: 20,
   borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
 const accentLine: CSSProperties = {
   width: 48,
   height: 2,
-  borderRadius: 999,
-  marginBottom: 14,
   background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
 };
 
-const featureTitle: CSSProperties = {
-  margin: "0 0 10px",
+const itemTitle: CSSProperties = {
   fontSize: "clamp(1.5rem, 4vw, 2rem)",
-  lineHeight: 1.12,
-  fontWeight: 400,
-  letterSpacing: "-0.02em",
   fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
 };
 
-const featureText: CSSProperties = {
-  margin: 0,
-  maxWidth: 520,
+const itemText: CSSProperties = {
   fontSize: 16,
   lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
+/* CTA */
+
 const ctaActions: CSSProperties = {
-  marginTop: 26,
-  display: "flex",
-  gap: 20,
-  flexWrap: "wrap",
-  alignItems: "center",
+  marginTop: 24,
 };
 
-const linkButton: CSSProperties = {
+const primaryButton: CSSProperties = {
+  padding: "14px 20px",
+  borderRadius: 999,
+  background: "#F2EEE6",
   textDecoration: "none",
   color: "#0B1A2B",
-  fontWeight: 500,
+  fontWeight: 600,
 };
