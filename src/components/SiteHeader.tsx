@@ -30,7 +30,7 @@ export default function SiteHeader() {
             UK INBOUND GROUND TRANSPORT
           </Link>
 
-          <nav style={desktopNav}>
+          <nav className="desktop-nav" style={desktopNav}>
             <Link href="/about" style={navLink}>
               About
             </Link>
@@ -47,6 +47,7 @@ export default function SiteHeader() {
 
           <button
             type="button"
+            className="mobile-menu-button"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
