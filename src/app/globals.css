@@ -338,3 +338,19 @@ summary::-webkit-details-marker {
   }
 }
 
+.luxury-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.luxury-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(11, 26, 43, 0.08);
+  border-color: rgba(201, 162, 39, 0.22);
+}
+
+a {
+  transition: opacity 180ms ease, transform 180ms ease;
+}
