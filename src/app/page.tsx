@@ -1,7 +1,7 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-import ProgrammeEnquiryForm from "@/components/ProgrammeEnquiryForm";
 
+import ProgrammeEnquiryForm from "../components/ProgrammeEnquiryForm";
 const siteUrl = "https://www.ukinboundgroundtransport.com";
 
 export const metadata: Metadata = {
