@@ -234,17 +234,19 @@ export default function HomePage() {
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Airports</p>
 
-              <div style={gatewayRichItem}>
-              <a href="/heathrow-group-transfers" style={{ textDecoration: "none" }}>
-              <p style={gatewayName}>London Heathrow</p>
-              <p style={gatewayMeta}>
-               Primary long-haul arrival gateway → Heathrow group transfers
-             </p>
-            </a>
-          </div>
-              
-                  
-              
+              <div style={gatewayRichList}>
+                <div style={gatewayRichItem}>
+                  <a
+                    href="/heathrow-group-transfers"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <p style={gatewayName}>London Heathrow</p>
+                    <p style={gatewayMeta}>
+                      Primary long-haul arrival gateway → Heathrow group
+                      transfers
+                    </p>
+                  </a>
+                </div>
 
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>London Gatwick</p>
@@ -277,15 +279,18 @@ export default function HomePage() {
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Cruise ports</p>
 
-              <div style={gatewayRichItem}>
-              <a href="/southampton-cruise-transfers" style={{ textDecoration: "none" }}>
-              <p style={gatewayName}>Southampton</p>
-              <p style={gatewayMeta}>
-                Turnaround and pre/post-cruise → Southampton transfers
-             </p>
-            </a>
-          </div>
-                
+              <div style={gatewayRichList}>
+                <div style={gatewayRichItem}>
+                  <a
+                    href="/southampton-cruise-transfers"
+                    style={{ textDecoration: "none" }}
+                  >
+                    <p style={gatewayName}>Southampton</p>
+                    <p style={gatewayMeta}>
+                      Turnaround and pre/post-cruise → Southampton transfers
+                    </p>
+                  </a>
+                </div>
 
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>Dover</p>
