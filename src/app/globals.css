@@ -293,3 +293,25 @@ summary::-webkit-details-marker {
   }
 }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.hero-image {
+  height: 320px !important;
+}
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(340px, 0.92fr);
+    gap: 56px;
+  }
+
+  .hero-image {
+    height: 460px !important;
+  }
+}
+
