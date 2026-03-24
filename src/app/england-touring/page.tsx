@@ -10,6 +10,44 @@ export const metadata: Metadata = {
   },
 };
 
+const itinerary = [
+  {
+    day: "Day 1",
+    title: "London arrival & programme start",
+    text: "Airport arrivals, hotel transfers and initial programme staging across central London.",
+  },
+  {
+    day: "Day 2",
+    title: "London touring",
+    text: "Full-day city programme including major landmarks, requiring coordinated routing and timed stops.",
+  },
+  {
+    day: "Day 3",
+    title: "London → Oxford → Bath",
+    text: "Transition from London to regional touring with structured routing through Oxford into Bath.",
+  },
+  {
+    day: "Day 4",
+    title: "Bath → Cotswolds → Stratford-upon-Avon",
+    text: "Short-distance touring through rural routes requiring realistic timing and road awareness.",
+  },
+  {
+    day: "Day 5",
+    title: "Stratford → Cambridge → York",
+    text: "Longer routing day linking central England to northern destinations with operational planning.",
+  },
+  {
+    day: "Day 6",
+    title: "York → Lake District",
+    text: "Scenic touring into the Lake District with rural road conditions and pacing considerations.",
+  },
+  {
+    day: "Day 7",
+    title: "Return routing / departure",
+    text: "Final positioning for onward travel, airport departures or programme continuation.",
+  },
+];
+
 export default function EnglandTouringPage() {
   return (
     <main>
@@ -89,6 +127,35 @@ export default function EnglandTouringPage() {
       </section>
 
       <section style={sectionSoft}>
+        <div style={container}>
+          <p style={sectionLabel}>Example itinerary</p>
+
+          <h2 style={sectionTitle}>
+            Typical 7-day England touring programme structure.
+          </h2>
+
+          <p style={sectionText}>
+            The outline below reflects a common England touring itinerary used
+            by international operators. Transport delivery must align closely
+            with routing, pacing and service expectations at each stage of the
+            programme.
+          </p>
+
+          <div style={itineraryList}>
+            {itinerary.map((day) => (
+              <div key={day.title} style={itineraryItem}>
+                <div style={itineraryDay}>{day.day}</div>
+                <div>
+                  <h3 style={itineraryTitle}>{day.title}</h3>
+                  <p style={itineraryText}>{day.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
         <div style={container}>
           <p style={sectionLabel}>How we support</p>
 
@@ -243,6 +310,7 @@ const sectionText: CSSProperties = {
   fontSize: 17,
   lineHeight: 1.8,
   color: "rgba(11,26,43,0.7)",
+  margin: 0,
 };
 
 const heroActions: CSSProperties = {
@@ -301,6 +369,43 @@ const cardText: CSSProperties = {
   margin: 0,
   fontSize: 16,
   lineHeight: 1.7,
+  color: "rgba(11,26,43,0.7)",
+};
+
+const itineraryList: CSSProperties = {
+  marginTop: 40,
+  display: "grid",
+  gap: 28,
+};
+
+const itineraryItem: CSSProperties = {
+  display: "grid",
+  gridTemplateColumns: "80px 1fr",
+  gap: 20,
+  paddingBottom: 20,
+  borderBottom: "1px solid rgba(11,26,43,0.08)",
+};
+
+const itineraryDay: CSSProperties = {
+  fontSize: 12,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(11,26,43,0.5)",
+  paddingTop: 6,
+};
+
+const itineraryTitle: CSSProperties = {
+  margin: "0 0 6px",
+  fontSize: "clamp(1.3rem, 3vw, 1.6rem)",
+  fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
+  fontWeight: 400,
+};
+
+const itineraryText: CSSProperties = {
+  margin: 0,
+  fontSize: 16,
+  lineHeight: 1.8,
   color: "rgba(11,26,43,0.7)",
 };
 
