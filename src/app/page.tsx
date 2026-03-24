@@ -277,13 +277,15 @@ export default function HomePage() {
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Cruise ports</p>
 
-              <div style={gatewayRichList}>
-                <div style={gatewayRichItem}>
-                  <p style={gatewayName}>Southampton Cruise Terminal</p>
-                  <p style={gatewayMeta}>
-                    Turnaround and pre/post-cruise movements
-                  </p>
-                </div>
+              <div style={gatewayRichItem}>
+              <a href="/southampton-cruise-transfers" style={{ textDecoration: "none" }}>
+              <p style={gatewayName}>Southampton</p>
+              <p style={gatewayMeta}>
+                Turnaround and pre/post-cruise → Southampton transfers
+             </p>
+            </a>
+          </div>
+                
 
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>Dover</p>
