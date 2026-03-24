@@ -2,6 +2,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
 import ProgrammeEnquiryForm from "../components/ProgrammeEnquiryForm";
+
 const siteUrl = "https://www.ukinboundgroundtransport.com";
 
 export const metadata: Metadata = {
@@ -341,6 +342,56 @@ export default function HomePage() {
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
+              <p style={sectionLabel}>Operational elegance</p>
+              <h2 style={sectionTitle}>
+                Built for programmes that need calm delivery and commercial
+                clarity.
+              </h2>
+              <div style={luxuryRule} />
+              <p style={sectionText}>
+                We support travel professionals who need transport delivery to
+                feel structured, dependable and well judged across the full
+                itinerary, from gateway arrival through to regional touring and
+                final departure.
+              </p>
+            </div>
+
+            <div style={planningGrid} className="feature-grid">
+              <article style={planningCard} className="luxury-card">
+                <div style={cardAccent} />
+                <h3 style={cardTitle}>Structured routing</h3>
+                <p style={cardText}>
+                  Journey flow aligned to itinerary pace, hotel positioning and
+                  realistic regional transitions.
+                </p>
+              </article>
+
+              <article style={planningCard} className="luxury-card">
+                <div style={cardAccent} />
+                <h3 style={cardTitle}>Calm execution</h3>
+                <p style={cardText}>
+                  Delivery shaped around consistency, timing discipline and a
+                  smooth on-the-ground experience for operators and guests.
+                </p>
+              </article>
+
+              <article style={planningCard} className="luxury-card">
+                <div style={cardAccent} />
+                <h3 style={cardTitle}>Professional partner mindset</h3>
+                <p style={cardText}>
+                  Built for tour operators, DMCs and planners who need clarity
+                  rather than generic transport supply.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={sectionSoft}>
+        <div style={containerWide}>
+          <div style={sectionSplit} className="split-grid">
+            <div>
               <p style={sectionLabel}>Planning</p>
               <h2 style={sectionTitle}>
                 What type of programme are you planning?
@@ -570,6 +621,8 @@ const containerNarrow: CSSProperties = {
 
 const heroSection: CSSProperties = {
   padding: "40px 0 72px",
+  background:
+    "radial-gradient(circle at top left, rgba(201,162,39,0.10), transparent 34%), linear-gradient(180deg, #FCFAF6 0%, #F8F4EC 100%)",
 };
 
 const heroShell: CSSProperties = {
@@ -617,12 +670,13 @@ const section: CSSProperties = {
 
 const sectionSoft: CSSProperties = {
   padding: "96px 0",
-  background: "#F8F5EF",
+  background: "linear-gradient(180deg, #F8F5EF 0%, #F3EEE4 100%)",
 };
 
 const leadSection: CSSProperties = {
   padding: "104px 0",
-  background: "#FCFAF6",
+  background:
+    "radial-gradient(circle at top right, rgba(201,162,39,0.08), transparent 30%), linear-gradient(180deg, #FCFAF6 0%, #F7F3EC 100%)",
 };
 
 const ctaSection: CSSProperties = {
@@ -637,18 +691,18 @@ const sectionSplit: CSSProperties = {
 
 const eyebrow: CSSProperties = {
   margin: 0,
-  fontSize: 12,
-  letterSpacing: "0.18em",
+  fontSize: 11,
+  letterSpacing: "0.22em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(11, 26, 43, 0.48)",
 };
 
 const sectionLabel: CSSProperties = {
   margin: "0 0 12px",
-  fontSize: 12,
-  letterSpacing: "0.18em",
+  fontSize: 11,
+  letterSpacing: "0.22em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(11, 26, 43, 0.48)",
 };
 
 const heroTitle: CSSProperties = {
@@ -692,6 +746,13 @@ const divider: CSSProperties = {
   background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
 };
 
+const luxuryRule: CSSProperties = {
+  width: 76,
+  height: 1,
+  margin: "20px 0 24px",
+  background: "linear-gradient(90deg, #C9A227 0%, rgba(201,162,39,0.18) 100%)",
+};
+
 const heroText: CSSProperties = {
   margin: 0,
   maxWidth: 720,
@@ -723,11 +784,12 @@ const primaryButton: CSSProperties = {
   minHeight: 54,
   padding: "0 24px",
   borderRadius: 999,
-  background: "#F2EEE6",
+  background: "linear-gradient(180deg, #F4F0E8 0%, #ECE5D8 100%)",
   color: "#0B1A2B",
   textDecoration: "none",
   fontWeight: 600,
   border: "1px solid rgba(11, 26, 43, 0.08)",
+  boxShadow: "0 10px 22px rgba(11, 26, 43, 0.05)",
 };
 
 const secondaryLink: CSSProperties = {
@@ -737,14 +799,16 @@ const secondaryLink: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   gap: 6,
+  paddingBottom: 2,
+  borderBottom: "1px solid rgba(201,162,39,0.35)",
 };
 
 const heroPanel: CSSProperties = {
-  padding: "28px",
-  borderRadius: 30,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F6F1E8 100%)",
+  padding: "30px",
+  borderRadius: 32,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F5EFE4 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
-  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
+  boxShadow: "0 18px 40px rgba(11, 26, 43, 0.06)",
   minHeight: "100%",
 };
 
@@ -801,11 +865,11 @@ const gatewayEditorialGrid: CSSProperties = {
 const gatewayEditorialCard: CSSProperties = {
   display: "grid",
   gap: 18,
-  padding: "30px 28px",
-  borderRadius: 30,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F3EC 100%)",
+  padding: "32px 30px",
+  borderRadius: 32,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F6F0E6 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
-  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
+  boxShadow: "0 18px 40px rgba(11, 26, 43, 0.06)",
 };
 
 const gatewayAccent: CSSProperties = {
@@ -881,32 +945,32 @@ const regionsGrid: CSSProperties = {
 
 const planningCard: CSSProperties = {
   display: "block",
-  padding: "26px",
-  borderRadius: 28,
-  background: "#FBFAF7",
+  padding: "28px",
+  borderRadius: 30,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F2E9 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
   textDecoration: "none",
-  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
+  boxShadow: "0 12px 30px rgba(11, 26, 43, 0.04)",
 };
 
 const marketCard: CSSProperties = {
   display: "block",
-  padding: "28px 26px",
-  borderRadius: 28,
-  background: "#FBFAF7",
+  padding: "30px 28px",
+  borderRadius: 30,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F2E9 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
   textDecoration: "none",
-  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
+  boxShadow: "0 12px 30px rgba(11, 26, 43, 0.04)",
 };
 
 const regionCard: CSSProperties = {
   display: "block",
-  padding: "28px 26px",
-  borderRadius: 28,
-  background: "#FBFAF7",
+  padding: "30px 28px",
+  borderRadius: 30,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F2E9 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
   textDecoration: "none",
-  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
+  boxShadow: "0 12px 30px rgba(11, 26, 43, 0.04)",
 };
 
 const cardAccent: CSSProperties = {
@@ -952,11 +1016,11 @@ const cardArrow: CSSProperties = {
 
 const editorialPanel: CSSProperties = {
   marginTop: 34,
-  padding: "30px 28px",
-  borderRadius: 30,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F3EC 100%)",
+  padding: "32px 30px",
+  borderRadius: 32,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F5EFE4 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
-  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
+  boxShadow: "0 18px 40px rgba(11, 26, 43, 0.06)",
 };
 
 const panelText: CSSProperties = {
@@ -1031,6 +1095,7 @@ const leadIntroPill: CSSProperties = {
   border: "1px solid rgba(201, 162, 39, 0.16)",
   fontSize: 13,
   color: "rgba(11, 26, 43, 0.72)",
+  boxShadow: "0 6px 16px rgba(11, 26, 43, 0.03)",
 };
 
 const leadIntroNote: CSSProperties = {
