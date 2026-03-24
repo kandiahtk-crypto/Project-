@@ -315,3 +315,14 @@ summary::-webkit-details-marker {
   }
 }
 
+.gateway-grid {
+  display: grid;
+  gap: 28px;
+}
+
+@media (min-width: 900px) {
+  .gateway-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
