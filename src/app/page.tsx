@@ -1,5 +1,6 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
+import ProgrammeEnquiryForm from "@/components/ProgrammeEnquiryForm";
 
 const siteUrl = "https://www.ukinboundgroundtransport.com";
 
@@ -272,7 +273,9 @@ export default function HomePage() {
               <div style={gatewayRichList}>
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>Southampton Cruise Terminal</p>
-                  <p style={gatewayMeta}>Turnaround and pre/post-cruise movements</p>
+                  <p style={gatewayMeta}>
+                    Turnaround and pre/post-cruise movements
+                  </p>
                 </div>
 
                 <div style={gatewayRichItem}>
@@ -282,7 +285,9 @@ export default function HomePage() {
 
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>Liverpool</p>
-                  <p style={gatewayMeta}>Northern England and regional touring</p>
+                  <p style={gatewayMeta}>
+                    Northern England and regional touring
+                  </p>
                 </div>
 
                 <div style={gatewayRichItem}>
@@ -294,12 +299,16 @@ export default function HomePage() {
 
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>Belfast</p>
-                  <p style={gatewayMeta}>Ireland and Northern Ireland routing</p>
+                  <p style={gatewayMeta}>
+                    Ireland and Northern Ireland routing
+                  </p>
                 </div>
 
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>Cobh</p>
-                  <p style={gatewayMeta}>Southern Ireland cruise-linked touring</p>
+                  <p style={gatewayMeta}>
+                    Southern Ireland cruise-linked touring
+                  </p>
                 </div>
               </div>
             </div>
@@ -494,6 +503,33 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section style={leadSection}>
+        <div style={containerNarrow}>
+          <p style={sectionLabel}>Programme enquiry</p>
+
+          <h2 style={sectionTitle}>
+            Tell us about your programme requirements.
+          </h2>
+
+          <p style={sectionText}>
+            Share your routing, travel window, group size and programme
+            structure. We respond with a clear, commercially focused transport
+            approach aligned to your itinerary.
+          </p>
+
+          <div style={leadIntroBar}>
+            <span style={leadIntroPill}>Tour operators</span>
+            <span style={leadIntroPill}>DMCs</span>
+            <span style={leadIntroPill}>Travel planners</span>
+            <span style={leadIntroNote}>
+              Structured responses for professional travel buyers.
+            </span>
+          </div>
+
+          <ProgrammeEnquiryForm />
+        </div>
+      </section>
+
       <section style={ctaSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Start a conversation</p>
@@ -582,6 +618,11 @@ const section: CSSProperties = {
 const sectionSoft: CSSProperties = {
   padding: "96px 0",
   background: "#F8F5EF",
+};
+
+const leadSection: CSSProperties = {
+  padding: "104px 0",
+  background: "#FCFAF6",
 };
 
 const ctaSection: CSSProperties = {
@@ -970,4 +1011,29 @@ const faqAnswer: CSSProperties = {
   fontSize: 15,
   lineHeight: 1.7,
   color: "rgba(11, 26, 43, 0.72)",
+};
+
+const leadIntroBar: CSSProperties = {
+  marginTop: 28,
+  display: "flex",
+  gap: 10,
+  flexWrap: "wrap",
+  alignItems: "center",
+};
+
+const leadIntroPill: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  minHeight: 34,
+  padding: "0 12px",
+  borderRadius: 999,
+  background: "linear-gradient(180deg, #F4F0E8 0%, #EEE7DB 100%)",
+  border: "1px solid rgba(201, 162, 39, 0.16)",
+  fontSize: 13,
+  color: "rgba(11, 26, 43, 0.72)",
+};
+
+const leadIntroNote: CSSProperties = {
+  fontSize: 13,
+  color: "rgba(11, 26, 43, 0.62)",
 };
