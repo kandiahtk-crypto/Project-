@@ -29,6 +29,16 @@ export default function EnglandTouringPage() {
             the Lake District, with structured transport aligned to itinerary
             flow and operational realities.
           </p>
+
+          <div style={heroActions}>
+            <a href="/contact" style={primaryButton}>
+              Contact us
+            </a>
+
+            <a href="/programmes" style={heroLink}>
+              View programmes →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -184,21 +194,33 @@ const sectionLabel: CSSProperties = {
 };
 
 const heroTitle: CSSProperties = {
-  margin: "12px 0",
-  fontSize: "clamp(2.4rem, 6vw, 4rem)",
+  margin: "14px 0 16px",
+  fontSize: "clamp(2.6rem, 7vw, 5rem)",
+  lineHeight: 1.02,
+  letterSpacing: "-0.04em",
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const sectionTitle: CSSProperties = {
   marginBottom: 24,
   fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
+  lineHeight: 1.08,
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const ctaTitle: CSSProperties = {
   marginBottom: 16,
   fontSize: "clamp(1.8rem, 4vw, 2.6rem)",
+  lineHeight: 1.08,
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
 };
 
 const divider: CSSProperties = {
@@ -206,18 +228,53 @@ const divider: CSSProperties = {
   height: 2,
   margin: "16px 0 24px",
   background: "linear-gradient(90deg, #C9A227, #E3C565)",
+  borderRadius: 999,
 };
 
 const heroText: CSSProperties = {
   fontSize: 17,
   lineHeight: 1.8,
   color: "rgba(11,26,43,0.7)",
+  margin: 0,
+  maxWidth: 720,
 };
 
 const sectionText: CSSProperties = {
   fontSize: 17,
   lineHeight: 1.8,
   color: "rgba(11,26,43,0.7)",
+};
+
+const heroActions: CSSProperties = {
+  marginTop: 28,
+  display: "flex",
+  gap: 18,
+  alignItems: "center",
+  flexWrap: "wrap",
+};
+
+const primaryButton: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 52,
+  padding: "0 22px",
+  borderRadius: 999,
+  background: "#F2EEE6",
+  color: "#0B1A2B",
+  textDecoration: "none",
+  fontWeight: 600,
+  border: "1px solid rgba(11, 26, 43, 0.08)",
+};
+
+const heroLink: CSSProperties = {
+  fontSize: 16,
+  fontWeight: 500,
+  color: "#0B1A2B",
+  textDecoration: "none",
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
 };
 
 const grid: CSSProperties = {
@@ -233,12 +290,15 @@ const card: CSSProperties = {
 };
 
 const cardTitle: CSSProperties = {
-  marginBottom: 10,
+  margin: "0 0 10px",
   fontFamily: "var(--font-serif)",
   fontSize: 22,
+  fontWeight: 400,
+  color: "#0B1A2B",
 };
 
 const cardText: CSSProperties = {
+  margin: 0,
   fontSize: 16,
   lineHeight: 1.7,
   color: "rgba(11,26,43,0.7)",
@@ -260,9 +320,11 @@ const accentLine: CSSProperties = {
   height: 2,
   marginTop: 10,
   background: "linear-gradient(90deg, #C9A227, #E3C565)",
+  borderRadius: 999,
 };
 
 const itemText: CSSProperties = {
+  margin: 0,
   fontSize: 16,
   lineHeight: 1.7,
   color: "rgba(11,26,43,0.7)",
