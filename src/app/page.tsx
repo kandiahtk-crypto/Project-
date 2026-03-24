@@ -234,11 +234,17 @@ export default function HomePage() {
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Airports</p>
 
-              <div style={gatewayRichList}>
-                <div style={gatewayRichItem}>
-                  <p style={gatewayName}>London Heathrow</p>
-                  <p style={gatewayMeta}>Primary long-haul arrival gateway</p>
-                </div>
+              <div style={gatewayRichItem}>
+              <a href="/heathrow-group-transfers" style={{ textDecoration: "none" }}>
+              <p style={gatewayName}>London Heathrow</p>
+              <p style={gatewayMeta}>
+               Primary long-haul arrival gateway → Heathrow group transfers
+             </p>
+            </a>
+          </div>
+              
+                  
+              
 
                 <div style={gatewayRichItem}>
                   <p style={gatewayName}>London Gatwick</p>
