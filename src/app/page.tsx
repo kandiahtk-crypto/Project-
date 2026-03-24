@@ -178,7 +178,12 @@ export default function HomePage() {
 
           <div style={plannerGrid}>
             {plannerItems.map((item) => (
-              <a key={item.title} href={item.href} style={plannerCard}>
+              <a
+                key={item.title}
+                href={item.href}
+                style={plannerCard}
+                className="luxury-card"
+              >
                 <div style={plannerTitleRow}>
                   <h3 style={plannerTitle}>{item.title}</h3>
                   <span style={plannerArrow}>→</span>
@@ -308,7 +313,7 @@ export default function HomePage() {
             delivery.
           </p>
 
-          <div style={itineraryTeaser}>
+          <div style={itineraryTeaser} className="luxury-card">
             <p style={teaserEyebrow}>Example England itinerary</p>
             <p style={teaserText}>
               London arrivals, Oxford, Bath, Cambridge, York and the Lake
@@ -332,7 +337,10 @@ export default function HomePage() {
           <div style={faqList}>
             {faqs.map((faq) => (
               <details key={faq.q} style={faqItem}>
-                <summary style={faqQuestion}>{faq.q}</summary>
+                <summary style={faqQuestion}>
+                  <span>{faq.q}</span>
+                  <span style={faqPlus}>+</span>
+                </summary>
                 <p style={faqAnswer}>{faq.a}</p>
               </details>
             ))}
@@ -522,13 +530,14 @@ const metaRow: CSSProperties = {
 const metaPill: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
-  minHeight: 34,
-  padding: "0 12px",
+  minHeight: 36,
+  padding: "0 14px",
   borderRadius: 999,
-  background: "#F2EEE6",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
+  background: "linear-gradient(180deg, #F4F0E8 0%, #EEE7DB 100%)",
+  border: "1px solid rgba(201, 162, 39, 0.16)",
   fontSize: 13,
   color: "rgba(11, 26, 43, 0.72)",
+  boxShadow: "0 6px 18px rgba(11, 26, 43, 0.04)",
 };
 
 const supportList: CSSProperties = {
@@ -560,6 +569,7 @@ const plannerCard: CSSProperties = {
   background: "#FBFAF7",
   border: "1px solid rgba(11, 26, 43, 0.06)",
   textDecoration: "none",
+  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
 };
 
 const plannerTitleRow: CSSProperties = {
@@ -587,7 +597,8 @@ const plannerText: CSSProperties = {
 
 const plannerArrow: CSSProperties = {
   fontSize: 20,
-  color: "rgba(11, 26, 43, 0.5)",
+  color: "#C9A227",
+  lineHeight: 1,
 };
 
 const regionGrid: CSSProperties = {
@@ -631,9 +642,10 @@ const featureCardLink: CSSProperties = {
 
 const featureCard: CSSProperties = {
   minWidth: 0,
-  paddingBottom: 18,
+  padding: "24px 0 18px",
   borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
   cursor: "pointer",
+  boxShadow: "none",
 };
 
 const featureTitleRow: CSSProperties = {
@@ -665,7 +677,7 @@ const featureTitle: CSSProperties = {
 const featureArrow: CSSProperties = {
   fontSize: 22,
   lineHeight: 1,
-  color: "rgba(11, 26, 43, 0.5)",
+  color: "#C9A227",
   paddingTop: 6,
 };
 
@@ -679,10 +691,11 @@ const featureText: CSSProperties = {
 
 const itineraryTeaser: CSSProperties = {
   marginTop: 32,
-  padding: "28px 24px",
-  borderRadius: 24,
-  background: "#FBFAF7",
+  padding: "30px 26px",
+  borderRadius: 28,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F3EC 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
+  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
 };
 
 const teaserEyebrow: CSSProperties = {
@@ -704,6 +717,9 @@ const teaserLink: CSSProperties = {
   textDecoration: "none",
   color: "#0B1A2B",
   fontWeight: 500,
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
 };
 
 const faqList: CSSProperties = {
@@ -713,7 +729,7 @@ const faqList: CSSProperties = {
 };
 
 const faqItem: CSSProperties = {
-  paddingBottom: 14,
+  padding: "0 0 16px",
   borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
@@ -722,6 +738,19 @@ const faqQuestion: CSSProperties = {
   fontWeight: 500,
   cursor: "pointer",
   color: "#0B1A2B",
+  listStyle: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: 16,
+  padding: "4px 0",
+};
+
+const faqPlus: CSSProperties = {
+  fontSize: 22,
+  lineHeight: 1,
+  color: "#C9A227",
+  fontWeight: 400,
 };
 
 const faqAnswer: CSSProperties = {
