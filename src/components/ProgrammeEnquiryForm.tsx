@@ -21,13 +21,11 @@ export default function ProgrammeEnquiryForm() {
 
   return (
     <form onSubmit={handleSubmit} style={form}>
-      {/* Row 1 */}
       <div style={grid} className="lead-form-two">
         <input placeholder="Company name" required style={input} />
         <input placeholder="Contact name" required style={input} />
       </div>
 
-      {/* Row 2 */}
       <div style={grid} className="lead-form-two">
         <input
           type="email"
@@ -38,7 +36,6 @@ export default function ProgrammeEnquiryForm() {
         <input placeholder="Travel window (e.g. May 2026)" style={input} />
       </div>
 
-      {/* Row 3 */}
       <div style={grid} className="lead-form-two">
         <input placeholder="Group size" style={input} />
         <input
@@ -47,22 +44,18 @@ export default function ProgrammeEnquiryForm() {
         />
       </div>
 
-      {/* Message */}
       <textarea
         placeholder="Outline itinerary, routing, gateways or operational requirements"
         rows={5}
         style={textarea}
       />
 
-      {/* CTA */}
       <button type="submit" style={button}>
         Submit programme enquiry
       </button>
     </form>
   );
 }
-
-/* STYLES */
 
 const form: CSSProperties = {
   marginTop: 32,
