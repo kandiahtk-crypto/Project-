@@ -1,252 +1,112 @@
 "use client";
 
-import { useState, type CSSProperties, type FormEvent } from "react";
+import { useState, type FormEvent, type CSSProperties } from "react";
 
 export default function ProgrammeEnquiryForm() {
-  const [form, setForm] = useState({
-    company: "",
-    name: "",
-    email: "",
-    market: "",
-    programmeType: "",
-    groupSize: "",
-    travelDates: "",
-    regions: "",
-    itinerary: "",
-  });
+  const [submitted, setSubmitted] = useState(false);
 
-  const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handleSubmit = async (e: FormEvent) => {
+  function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setStatus("loading");
+    setSubmitted(true);
+  }
 
-    try {
-      const res = await fetch("/api/enquiry", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(form),
-      });
-
-      if (!res.ok) {
-        throw new Error("Failed to send enquiry");
-      }
-
-      setStatus("success");
-      setForm({
-        company: "",
-        name: "",
-        email: "",
-        market: "",
-        programmeType: "",
-        groupSize: "",
-        travelDates: "",
-        regions: "",
-        itinerary: "",
-      });
-    } catch (error) {
-      console.error(error);
-      setStatus("error");
-    }
-  };
+  if (submitted) {
+    return (
+      <div style={successBox}>
+        Thank you. A member of our team will respond shortly with a structured
+        transport approach aligned to your programme.
+      </div>
+    );
+  }
 
   return (
-    <form style={leadFormCard} onSubmit={handleSubmit}>
-      <div style={formGrid}>
-        <div style={formRowTwo} className="lead-form-two">
-          <input
-            name="company"
-            value={form.company}
-            onChange={handleChange}
-            placeholder="Company name"
-            style={input}
-            aria-label="Company name"
-            required
-          />
-          <input
-            name="name"
-            value={form.name}
-            onChange={handleChange}
-            placeholder="Contact name"
-            style={input}
-            aria-label="Contact name"
-            required
-          />
-        </div>
-
-        <div style={formRowTwo} className="lead-form-two">
-          <input
-            name="email"
-            type="email"
-            value={form.email}
-            onChange={handleChange}
-            placeholder="Email address"
-            style={input}
-            aria-label="Email address"
-            required
-          />
-          <input
-            name="market"
-            value={form.market}
-            onChange={handleChange}
-            placeholder="Source market (USA, Europe, China, India)"
-            style={input}
-            aria-label="Source market"
-          />
-        </div>
-
-        <div style={formRowTwo} className="lead-form-two">
-          <input
-            name="programmeType"
-            value={form.programmeType}
-            onChange={handleChange}
-            placeholder="Programme type (series, private group, cruise, etc.)"
-            style={input}
-            aria-label="Programme type"
-            required
-          />
-          <input
-            name="groupSize"
-            value={form.groupSize}
-            onChange={handleChange}
-            placeholder="Estimated group size"
-            style={input}
-            aria-label="Estimated group size"
-          />
-        </div>
-
-        <div style={formRowTwo} className="lead-form-two">
-          <input
-            name="travelDates"
-            value={form.travelDates}
-            onChange={handleChange}
-            placeholder="Travel dates / season"
-            style={input}
-            aria-label="Travel dates or season"
-          />
-          <input
-            name="regions"
-            value={form.regions}
-            onChange={handleChange}
-            placeholder="Regions (England, Scotland, Ireland)"
-            style={input}
-            aria-label="Regions"
-          />
-        </div>
-
-        <textarea
-          name="itinerary"
-          value={form.itinerary}
-          onChange={handleChange}
-          placeholder="Outline the itinerary, gateways, cruise ports, timings or any operational priorities"
-          style={textarea}
-          aria-label="Itinerary details"
-          required
-        />
-
-        <div style={leadFooter}>
-          <button type="submit" style={leadButton} disabled={status === "loading"}>
-            {status === "loading"
-              ? "Sending..."
-              : "Request programme support"}
-          </button>
-
-          <p style={leadResponseNote}>
-            {status === "success" &&
-              "Your enquiry has been sent. We aim to respond within 24 hours."}
-            {status === "error" &&
-              "Something went wrong. Please try again."}
-            {status === "idle" &&
-              "We aim to respond with a structured outline within 24 hours."}
-          </p>
-        </div>
+    <form onSubmit={handleSubmit} style={form}>
+      {/* Row 1 */}
+      <div style={grid} className="lead-form-two">
+        <input placeholder="Company name" required style={input} />
+        <input placeholder="Contact name" required style={input} />
       </div>
+
+      {/* Row 2 */}
+      <div style={grid} className="lead-form-two">
+        <input
+          type="email"
+          placeholder="Email address"
+          required
+          style={input}
+        />
+        <input placeholder="Travel window (e.g. May 2026)" style={input} />
+      </div>
+
+      {/* Row 3 */}
+      <div style={grid} className="lead-form-two">
+        <input placeholder="Group size" style={input} />
+        <input
+          placeholder="Programme type (Series / Private / FIT)"
+          style={input}
+        />
+      </div>
+
+      {/* Message */}
+      <textarea
+        placeholder="Outline itinerary, routing, gateways or operational requirements"
+        rows={5}
+        style={textarea}
+      />
+
+      {/* CTA */}
+      <button type="submit" style={button}>
+        Submit programme enquiry
+      </button>
     </form>
   );
 }
 
-const leadFormCard: CSSProperties = {
-  marginTop: 30,
-  padding: "30px 28px",
-  borderRadius: 30,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F3EC 100%)",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
-  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
-};
+/* STYLES */
 
-const formGrid: CSSProperties = {
+const form: CSSProperties = {
+  marginTop: 32,
   display: "grid",
-  gap: 16,
+  gap: 18,
 };
 
-const formRowTwo: CSSProperties = {
+const grid: CSSProperties = {
   display: "grid",
   gap: 16,
 };
 
 const input: CSSProperties = {
-  width: "100%",
-  height: 54,
+  height: 56,
   padding: "0 16px",
-  borderRadius: 16,
-  border: "1px solid rgba(11,26,43,0.10)",
-  background: "#FFFFFF",
-  color: "#0B1A2B",
+  borderRadius: 14,
+  border: "1px solid rgba(11,26,43,0.12)",
   fontSize: 15,
-  outline: "none",
+  background: "#fff",
 };
 
 const textarea: CSSProperties = {
-  width: "100%",
-  minHeight: 150,
   padding: "16px",
-  borderRadius: 16,
-  border: "1px solid rgba(11,26,43,0.10)",
-  background: "#FFFFFF",
-  color: "#0B1A2B",
+  borderRadius: 14,
+  border: "1px solid rgba(11,26,43,0.12)",
   fontSize: 15,
-  outline: "none",
-  resize: "vertical",
+  background: "#fff",
 };
 
-const leadFooter: CSSProperties = {
-  marginTop: 6,
-  display: "flex",
-  gap: 16,
-  alignItems: "center",
-  justifyContent: "space-between",
-  flexWrap: "wrap",
-};
-
-const leadButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 54,
-  padding: "0 24px",
+const button: CSSProperties = {
+  height: 56,
   borderRadius: 999,
-  background: "#F2EEE6",
-  color: "#0B1A2B",
-  border: "1px solid rgba(11, 26, 43, 0.08)",
+  background: "#0B1A2B",
+  color: "#fff",
   fontWeight: 600,
-  fontSize: 15,
+  border: "none",
   cursor: "pointer",
 };
 
-const leadResponseNote: CSSProperties = {
-  margin: 0,
-  fontSize: 13,
-  lineHeight: 1.6,
-  color: "rgba(11,26,43,0.62)",
+const successBox: CSSProperties = {
+  marginTop: 28,
+  padding: "22px",
+  borderRadius: 18,
+  background: "#F4F0E8",
+  color: "#0B1A2B",
+  fontSize: 15,
 };
