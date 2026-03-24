@@ -77,6 +77,48 @@ const sectors = [
   },
 ];
 
+const plannerItems = [
+  {
+    title: "Fixed-departure touring",
+    text: "Structured, repeatable programme delivery across scheduled series.",
+    href: "/programmes",
+  },
+  {
+    title: "Private group itineraries",
+    text: "Flexible transport support aligned to tailored programme flow.",
+    href: "/programmes",
+  },
+  {
+    title: "UK & Ireland touring",
+    text: "Multi-region routing across England, Scotland and Ireland.",
+    href: "/programmes",
+  },
+  {
+    title: "Cruise port movements",
+    text: "Arrival, departure and shore-side transport coordination.",
+    href: "/services",
+  },
+];
+
+const faqs = [
+  {
+    q: "Do you work with individual travellers?",
+    a: "We are positioned for tour operators, DMCs and travel planners managing structured programmes rather than individual bookings.",
+  },
+  {
+    q: "Can you support UK and Ireland programmes?",
+    a: "Yes. We support multi-region programmes across England, Scotland and Ireland with consistent delivery.",
+  },
+  {
+    q: "Do you handle fixed-departure touring series?",
+    a: "We support structured, repeatable touring programmes with consistent routing and operational coordination.",
+  },
+  {
+    q: "Do you provide vehicles only or full coordination?",
+    a: "Our focus is programme delivery, aligning vehicles, routing and timing with the wider itinerary.",
+  },
+];
+
 export default function HomePage() {
   return (
     <main>
@@ -125,6 +167,26 @@ export default function HomePage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      <section style={sectionSoft}>
+        <div style={containerNarrow}>
+          <p style={sectionLabel}>Planning</p>
+
+          <h2 style={sectionTitle}>What type of programme are you planning?</h2>
+
+          <div style={plannerGrid}>
+            {plannerItems.map((item) => (
+              <a key={item.title} href={item.href} style={plannerCard}>
+                <div style={plannerTitleRow}>
+                  <h3 style={plannerTitle}>{item.title}</h3>
+                  <span style={plannerArrow}>→</span>
+                </div>
+                <p style={plannerText}>{item.text}</p>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -237,9 +299,7 @@ export default function HomePage() {
         <div style={containerNarrow}>
           <p style={sectionLabel}>Programme structure</p>
 
-          <h2 style={sectionTitle}>
-            Typical touring routes and itinerary flow.
-          </h2>
+          <h2 style={sectionTitle}>Typical touring routes and itinerary flow.</h2>
 
           <p style={sectionText}>
             Our work supports established touring structures used by
@@ -257,6 +317,25 @@ export default function HomePage() {
             <a href="/england-touring" style={teaserLink}>
               View example programme →
             </a>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={containerNarrow}>
+          <p style={sectionLabel}>Frequently asked questions</p>
+
+          <h2 style={sectionTitle}>
+            Common questions from operators and planners.
+          </h2>
+
+          <div style={faqList}>
+            {faqs.map((faq) => (
+              <details key={faq.q} style={faqItem}>
+                <summary style={faqQuestion}>{faq.q}</summary>
+                <p style={faqAnswer}>{faq.a}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
@@ -468,6 +547,49 @@ const supportItem: CSSProperties = {
   color: "#0B1A2B",
 };
 
+const plannerGrid: CSSProperties = {
+  marginTop: 36,
+  display: "grid",
+  gap: 24,
+};
+
+const plannerCard: CSSProperties = {
+  display: "block",
+  padding: "24px",
+  borderRadius: 24,
+  background: "#FBFAF7",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  textDecoration: "none",
+};
+
+const plannerTitleRow: CSSProperties = {
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  marginBottom: 10,
+  gap: 16,
+};
+
+const plannerTitle: CSSProperties = {
+  margin: 0,
+  fontSize: "clamp(1.3rem, 3vw, 1.6rem)",
+  fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
+  fontWeight: 400,
+};
+
+const plannerText: CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.7,
+  color: "rgba(11, 26, 43, 0.72)",
+};
+
+const plannerArrow: CSSProperties = {
+  fontSize: 20,
+  color: "rgba(11, 26, 43, 0.5)",
+};
+
 const regionGrid: CSSProperties = {
   marginTop: 48,
   display: "grid",
@@ -582,6 +704,31 @@ const teaserLink: CSSProperties = {
   textDecoration: "none",
   color: "#0B1A2B",
   fontWeight: 500,
+};
+
+const faqList: CSSProperties = {
+  marginTop: 32,
+  display: "grid",
+  gap: 16,
+};
+
+const faqItem: CSSProperties = {
+  paddingBottom: 14,
+  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+};
+
+const faqQuestion: CSSProperties = {
+  fontSize: 16,
+  fontWeight: 500,
+  cursor: "pointer",
+  color: "#0B1A2B",
+};
+
+const faqAnswer: CSSProperties = {
+  marginTop: 8,
+  fontSize: 15,
+  lineHeight: 1.7,
+  color: "rgba(11, 26, 43, 0.72)",
 };
 
 const ctaActions: CSSProperties = {
