@@ -505,3 +505,32 @@ hr,
   );
   border-radius: 10px;
 }
+
+/* ===== DARK MODE ===== */
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #0b1a2b;
+    color: #f5f1e8;
+  }
+
+  .luxury-card {
+    background: linear-gradient(
+      180deg,
+      #111f33 0%,
+      #0b1a2b 100%
+    ) !important;
+    border-color: rgba(255,255,255,0.06) !important;
+  }
+
+  input,
+  textarea {
+    background: #0f2238 !important;
+    color: #fff;
+    border-color: rgba(255,255,255,0.1) !important;
+  }
+
+  .glass-nav {
+    background: rgba(11, 26, 43, 0.7);
+  }
+}
