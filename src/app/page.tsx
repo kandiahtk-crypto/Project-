@@ -34,41 +34,69 @@ const supportItems = [
 const markets = [
   {
     title: "United States",
-    text: "Supporting US-based tour operators and travel planners delivering structured UK and Ireland programmes.",
     href: "/markets/usa",
+    text: "Supporting US-based tour operators and travel planners delivering structured UK and Ireland programmes.",
   },
   {
     title: "Europe",
-    text: "Working with European partners managing inbound programmes requiring reliable, multi-region coordination.",
     href: "/markets/europe",
+    text: "Working with European partners managing inbound programmes requiring reliable, multi-region coordination.",
   },
   {
     title: "China",
-    text: "Supporting Chinese outbound travel specialists with structured touring logistics and programme delivery.",
     href: "/markets/china",
+    text: "Supporting Chinese outbound travel specialists with structured touring logistics and programme delivery.",
   },
   {
     title: "India",
-    text: "Working with Indian travel companies delivering premium UK and Ireland itineraries with clear operational flow.",
     href: "/markets/india",
+    text: "Working with Indian travel companies delivering premium UK and Ireland itineraries with clear operational flow.",
   },
 ];
 
-const regions = [
+const regionCards = [
   {
     title: "England heritage touring",
-    text: "London, Oxford, Bath, Cambridge, York and the Lake District remain central to classic Britain itineraries.",
     href: "/england-touring",
+    text: "London, Oxford, Bath, Cambridge, York and the Lake District remain central to classic Britain itineraries.",
   },
   {
     title: "Scotland programmes",
-    text: "Edinburgh, Glasgow, Loch Ness and the Highlands require realistic daily planning and operational awareness.",
     href: "/scotland-programmes",
+    text: "Edinburgh, Glasgow, Loch Ness and the Highlands require realistic daily planning and operational awareness.",
   },
   {
     title: "Ireland touring circuits",
-    text: "Dublin, Galway, Killarney and the Cliffs of Moher continue to feature strongly in Ireland touring routes.",
     href: "/ireland-touring",
+    text: "Dublin, Galway, Killarney and the Cliffs of Moher continue to feature strongly in Ireland touring routes.",
+  },
+  {
+    title: "Cruise port support",
+    href: "/services",
+    text: "Transport coordination for cruise-related arrivals, departures, shore-side touring and onward programme movements.",
+  },
+];
+
+const planningCards = [
+  {
+    title: "Fixed-departure touring",
+    href: "/programmes",
+    text: "Structured, repeatable programme delivery across scheduled series.",
+  },
+  {
+    title: "Private group itineraries",
+    href: "/programmes",
+    text: "Flexible transport support aligned to tailored programme flow.",
+  },
+  {
+    title: "UK & Ireland touring",
+    href: "/programmes",
+    text: "Multi-region routing across England, Scotland and Ireland.",
+  },
+  {
+    title: "Cruise port movements",
+    href: "/services",
+    text: "Arrival, departure and shore-side transport coordination.",
   },
 ];
 
@@ -96,72 +124,136 @@ export default function HomePage() {
     <main>
       <section style={heroSection}>
         <div style={containerWide}>
-          <div style={heroGrid} className="split-grid">
-            <div>
-              <p style={eyebrow}>UK inbound ground transport</p>
+          <div style={heroShell}>
+            <div style={heroGrid} className="hero-grid">
+              <div>
+                <p style={eyebrow}>UK inbound ground transport</p>
 
-              <h1 style={heroTitle}>
-                Premium transport support for UK &amp; Ireland touring
-                programmes.
-              </h1>
+                <h1 style={heroTitle}>
+                  Premium transport support for UK &amp; Ireland touring
+                  programmes.
+                </h1>
 
-              <div style={divider} />
+                <div style={divider} />
 
-              <p style={heroText}>
-                We support tour operators, DMCs and travel planners with
-                programme-led transport delivery across fixed-departure series,
-                private groups, cruise port support, London movements and
-                multi-region itineraries across England, Scotland and Ireland.
-              </p>
+                <p style={heroText}>
+                  We support tour operators, DMCs and travel planners with
+                  programme-led transport delivery across fixed-departure
+                  series, private groups, cruise port support, London movements
+                  and multi-region itineraries across England, Scotland and
+                  Ireland.
+                </p>
 
-              <div style={heroActions}>
-                <a href="/contact" style={primaryButton}>
-                  Request transport support
-                </a>
-                <a href="/programmes" style={heroLink}>
-                  Explore programmes →
-                </a>
+                <div style={heroActions}>
+                  <a href="/contact" style={primaryButton}>
+                    Request transport support
+                  </a>
+                  <a href="/programmes" style={secondaryLink}>
+                    Explore programmes →
+                  </a>
+                </div>
               </div>
-            </div>
 
-            <div style={heroAside}>
-              <p style={asideLabel}>Coverage</p>
-              <p style={asideText}>
-                UK • Ireland • Cruise ports • London movements
-              </p>
+              <div style={heroPanel} className="luxury-card">
+                <p style={panelEyebrow}>Coverage</p>
+                <h2 style={heroPanelTitle}>
+                  Structured support across gateway cities, cruise ports and
+                  regional touring routes.
+                </h2>
 
-              <div style={asideDivider} />
+                <div style={heroPanelDivider} />
 
-              <p style={asideLabel}>Built for</p>
-              <p style={asideText}>
-                Tour operators, DMCs, programme planners and group travel
-                specialists.
-              </p>
+                <div style={heroPanelGrid}>
+                  <div>
+                    <p style={metaHeading}>Regions</p>
+                    <p style={metaText}>England • Scotland • Ireland</p>
+                  </div>
+
+                  <div>
+                    <p style={metaHeading}>Programme types</p>
+                    <p style={metaText}>
+                      Fixed-departure • Private groups • Cruise-linked touring
+                    </p>
+                  </div>
+
+                  <div>
+                    <p style={metaHeading}>Built for</p>
+                    <p style={metaText}>
+                      Tour operators • DMCs • Travel planners
+                    </p>
+                  </div>
+
+                  <div>
+                    <p style={metaHeading}>Focus</p>
+                    <p style={metaText}>
+                      Delivery clarity • Routing • Timing • Coordination
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>What we support</p>
-          <h2 style={sectionTitle}>
-            Transport aligned to programme flow, not isolated movements.
-          </h2>
+        <div style={containerWide}>
+          <div style={sectionSplit} className="split-grid">
+            <div>
+              <p style={sectionLabel}>What we support</p>
+              <h2 style={sectionTitle}>
+                Programme-led transport aligned to the rhythm of touring.
+              </h2>
+            </div>
 
-          <div style={supportList}>
-            {supportItems.map((item) => (
-              <div key={item} style={supportItem}>
-                {item}
-              </div>
-            ))}
+            <div style={supportGrid}>
+              {supportItems.map((item) => (
+                <div key={item} style={supportItem}>
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
       <section style={sectionSoft}>
         <div style={containerWide}>
-          <div style={splitIntro} className="split-grid">
+          <div style={sectionSplit} className="split-grid">
+            <div>
+              <p style={sectionLabel}>Planning</p>
+              <h2 style={sectionTitle}>
+                What type of programme are you planning?
+              </h2>
+              <p style={sectionText}>
+                Select the structure closest to your requirement and explore the
+                relevant support model.
+              </p>
+            </div>
+
+            <div style={planningGrid} className="feature-grid">
+              {planningCards.map((item) => (
+                <a
+                  key={item.title}
+                  href={item.href}
+                  style={planningCard}
+                  className="luxury-card"
+                >
+                  <div style={cardTopRow}>
+                    <h3 style={cardTitle}>{item.title}</h3>
+                    <span style={cardArrow}>→</span>
+                  </div>
+                  <p style={cardText}>{item.text}</p>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={containerWide}>
+          <div style={sectionSplit} className="split-grid">
             <div>
               <p style={sectionLabel}>International markets</p>
               <h2 style={sectionTitle}>
@@ -178,7 +270,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={marketGrid}>
+          <div style={marketsGrid}>
             {markets.map((market) => (
               <a
                 key={market.title}
@@ -187,21 +279,21 @@ export default function HomePage() {
                 className="luxury-card"
               >
                 <div style={cardTopRow}>
-                  <h3 style={marketTitle}>{market.title}</h3>
+                  <h3 style={cardTitle}>{market.title}</h3>
                   <span style={cardArrow}>→</span>
                 </div>
-                <p style={marketText}>{market.text}</p>
+                <p style={cardText}>{market.text}</p>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={section}>
+      <section style={sectionSoft}>
         <div style={containerWide}>
-          <div style={splitIntro} className="split-grid">
+          <div style={sectionSplit} className="split-grid">
             <div>
-              <p style={sectionLabel}>Signature touring regions</p>
+              <p style={sectionLabel}>Touring regions</p>
               <h2 style={sectionTitle}>
                 Established programme structures across England, Scotland and
                 Ireland.
@@ -217,51 +309,60 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={regionGrid}>
-            {regions.map((region) => (
+          <div style={regionsGrid} className="feature-grid">
+            {regionCards.map((item) => (
               <a
-                key={region.title}
-                href={region.href}
+                key={item.title}
+                href={item.href}
                 style={regionCard}
                 className="luxury-card"
               >
+                <div style={cardAccent} />
                 <div style={cardTopRow}>
-                  <h3 style={regionTitle}>{region.title}</h3>
+                  <h3 style={cardTitle}>{item.title}</h3>
                   <span style={cardArrow}>→</span>
                 </div>
-                <p style={regionText}>{region.text}</p>
+                <p style={cardText}>{item.text}</p>
               </a>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={sectionSoft}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Programme structure</p>
-          <h2 style={sectionTitle}>
-            Typical touring routes and itinerary flow.
-          </h2>
-          <p style={sectionText}>
-            We support established programme structures used by international
-            operators across England, Scotland and Ireland, from gateway
-            arrivals and regional routing to multi-stop programme delivery.
-          </p>
+      <section style={section}>
+        <div style={containerWide}>
+          <div style={sectionSplit} className="split-grid">
+            <div>
+              <p style={sectionLabel}>Programme structure</p>
+              <h2 style={sectionTitle}>
+                Typical touring routes and itinerary flow.
+              </h2>
+            </div>
 
-          <div style={editorialPanel} className="luxury-card">
-            <p style={panelEyebrow}>Example England itinerary</p>
-            <p style={panelText}>
-              London arrivals, Oxford, Bath, Cambridge, York and the Lake
-              District remain central to many England touring programmes.
-            </p>
-            <a href="/england-touring" style={panelLink}>
-              View example programme →
-            </a>
+            <div>
+              <p style={sectionText}>
+                We support established programme structures used by
+                international operators across England, Scotland and Ireland,
+                from gateway arrivals and regional routing to multi-stop
+                programme delivery.
+              </p>
+
+              <div style={editorialPanel} className="luxury-card">
+                <p style={panelEyebrow}>Example England itinerary</p>
+                <p style={panelText}>
+                  London arrivals, Oxford, Bath, Cambridge, York and the Lake
+                  District remain central to many England touring programmes.
+                </p>
+                <a href="/england-touring" style={panelLink}>
+                  View example programme →
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section style={section}>
+      <section style={sectionSoft}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Frequently asked questions</p>
           <h2 style={sectionTitle}>
@@ -298,7 +399,7 @@ export default function HomePage() {
             <a href="/contact" style={primaryButton}>
               Contact us
             </a>
-            <a href="/services" style={heroLink}>
+            <a href="/services" style={secondaryLink}>
               View services →
             </a>
           </div>
@@ -309,7 +410,7 @@ export default function HomePage() {
 }
 
 const containerWide: CSSProperties = {
-  maxWidth: 1120,
+  maxWidth: 1200,
   margin: "0 auto",
   padding: "0 28px",
 };
@@ -321,31 +422,35 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "48px 0 72px",
+  padding: "40px 0 72px",
 };
 
-const section: CSSProperties = {
-  padding: "96px 0",
-};
-
-const sectionSoft: CSSProperties = {
-  padding: "88px 0",
-  background: "#F8F5EF",
-};
-
-const ctaSection: CSSProperties = {
-  padding: "88px 0 48px",
+const heroShell: CSSProperties = {
+  padding: "26px 0 0",
 };
 
 const heroGrid: CSSProperties = {
   display: "grid",
-  gap: 48,
-  alignItems: "end",
+  gap: 40,
+  alignItems: "stretch",
 };
 
-const splitIntro: CSSProperties = {
+const section: CSSProperties = {
+  padding: "104px 0",
+};
+
+const sectionSoft: CSSProperties = {
+  padding: "96px 0",
+  background: "#F8F5EF",
+};
+
+const ctaSection: CSSProperties = {
+  padding: "92px 0 48px",
+};
+
+const sectionSplit: CSSProperties = {
   display: "grid",
-  gap: 40,
+  gap: 42,
   alignItems: "start",
 };
 
@@ -366,11 +471,11 @@ const sectionLabel: CSSProperties = {
 };
 
 const heroTitle: CSSProperties = {
-  margin: "14px 0 16px",
+  margin: "14px 0 18px",
   maxWidth: 760,
-  fontSize: "clamp(3rem, 7vw, 5.6rem)",
-  lineHeight: 0.98,
-  letterSpacing: "-0.045em",
+  fontSize: "clamp(3rem, 6.5vw, 6rem)",
+  lineHeight: 0.96,
+  letterSpacing: "-0.05em",
   fontWeight: 400,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
@@ -378,9 +483,9 @@ const heroTitle: CSSProperties = {
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2.1rem, 5vw, 3.7rem)",
-  lineHeight: 1.04,
+  maxWidth: 780,
+  fontSize: "clamp(2.1rem, 4vw, 3.9rem)",
+  lineHeight: 1.03,
   letterSpacing: "-0.03em",
   fontWeight: 400,
   fontFamily: "var(--font-serif)",
@@ -390,7 +495,7 @@ const sectionTitle: CSSProperties = {
 const ctaTitle: CSSProperties = {
   margin: "0 0 18px",
   maxWidth: 760,
-  fontSize: "clamp(2.1rem, 5vw, 3.4rem)",
+  fontSize: "clamp(2.1rem, 4vw, 3.4rem)",
   lineHeight: 1.04,
   letterSpacing: "-0.03em",
   fontWeight: 400,
@@ -399,18 +504,18 @@ const ctaTitle: CSSProperties = {
 };
 
 const divider: CSSProperties = {
-  width: 52,
+  width: 54,
   height: 2,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
-  margin: "18px 0 26px",
+  margin: "18px 0 28px",
   borderRadius: 999,
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
 };
 
 const heroText: CSSProperties = {
   margin: 0,
   maxWidth: 720,
   fontSize: 18,
-  lineHeight: 1.9,
+  lineHeight: 1.92,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
@@ -444,7 +549,7 @@ const primaryButton: CSSProperties = {
   border: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
-const heroLink: CSSProperties = {
+const secondaryLink: CSSProperties = {
   textDecoration: "none",
   color: "#0B1A2B",
   fontWeight: 500,
@@ -453,36 +558,62 @@ const heroLink: CSSProperties = {
   gap: 6,
 };
 
-const heroAside: CSSProperties = {
-  padding: "24px 0 0",
-  borderTop: "1px solid rgba(11, 26, 43, 0.08)",
+const heroPanel: CSSProperties = {
+  padding: "28px",
+  borderRadius: 30,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F6F1E8 100%)",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
+  minHeight: "100%",
 };
 
-const asideLabel: CSSProperties = {
-  margin: "0 0 8px",
+const panelEyebrow: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(11, 26, 43, 0.5)",
+};
+
+const heroPanelTitle: CSSProperties = {
+  margin: 0,
+  fontSize: "clamp(1.8rem, 3vw, 2.6rem)",
+  lineHeight: 1.08,
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
+  fontFamily: "var(--font-serif)",
+  color: "#0B1A2B",
+};
+
+const heroPanelDivider: CSSProperties = {
+  height: 1,
+  margin: "22px 0",
+  background: "rgba(11, 26, 43, 0.08)",
+};
+
+const heroPanelGrid: CSSProperties = {
+  display: "grid",
+  gap: 20,
+};
+
+const metaHeading: CSSProperties = {
+  margin: "0 0 6px",
   fontSize: 11,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
   color: "rgba(11, 26, 43, 0.5)",
 };
 
-const asideText: CSSProperties = {
+const metaText: CSSProperties = {
   margin: 0,
   fontSize: 15,
   lineHeight: 1.7,
   color: "rgba(11, 26, 43, 0.74)",
 };
 
-const asideDivider: CSSProperties = {
-  height: 1,
-  margin: "18px 0",
-  background: "rgba(11, 26, 43, 0.08)",
-};
-
-const supportList: CSSProperties = {
+const supportGrid: CSSProperties = {
   display: "grid",
   gap: 18,
-  marginTop: 36,
 };
 
 const supportItem: CSSProperties = {
@@ -493,16 +624,31 @@ const supportItem: CSSProperties = {
   color: "#0B1A2B",
 };
 
-const marketGrid: CSSProperties = {
+const planningGrid: CSSProperties = {
+  display: "grid",
+  gap: 24,
+};
+
+const marketsGrid: CSSProperties = {
   marginTop: 48,
   display: "grid",
   gap: 24,
 };
 
-const regionGrid: CSSProperties = {
+const regionsGrid: CSSProperties = {
   marginTop: 48,
   display: "grid",
   gap: 24,
+};
+
+const planningCard: CSSProperties = {
+  display: "block",
+  padding: "26px",
+  borderRadius: 28,
+  background: "#FBFAF7",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  textDecoration: "none",
+  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
 };
 
 const marketCard: CSSProperties = {
@@ -525,42 +671,34 @@ const regionCard: CSSProperties = {
   boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
 };
 
+const cardAccent: CSSProperties = {
+  width: 48,
+  height: 2,
+  borderRadius: 999,
+  marginBottom: 16,
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+};
+
 const cardTopRow: CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
   alignItems: "flex-start",
   gap: 18,
-  marginBottom: 12,
+  marginBottom: 10,
 };
 
-const marketTitle: CSSProperties = {
+const cardTitle: CSSProperties = {
   margin: 0,
-  fontSize: "clamp(1.5rem, 3vw, 2rem)",
+  fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
   lineHeight: 1.08,
-  fontWeight: 400,
   letterSpacing: "-0.02em",
+  fontWeight: 400,
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
+  flex: 1,
 };
 
-const regionTitle: CSSProperties = {
-  margin: 0,
-  fontSize: "clamp(1.5rem, 3vw, 2rem)",
-  lineHeight: 1.08,
-  fontWeight: 400,
-  letterSpacing: "-0.02em",
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
-};
-
-const marketText: CSSProperties = {
-  margin: 0,
-  fontSize: 16,
-  lineHeight: 1.85,
-  color: "rgba(11, 26, 43, 0.72)",
-};
-
-const regionText: CSSProperties = {
+const cardText: CSSProperties = {
   margin: 0,
   fontSize: 16,
   lineHeight: 1.85,
@@ -581,14 +719,6 @@ const editorialPanel: CSSProperties = {
   background: "linear-gradient(180deg, #FBFAF7 0%, #F7F3EC 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
   boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
-};
-
-const panelEyebrow: CSSProperties = {
-  margin: "0 0 10px",
-  fontSize: 12,
-  letterSpacing: "0.16em",
-  textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
 };
 
 const panelText: CSSProperties = {
