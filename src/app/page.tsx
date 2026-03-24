@@ -154,40 +154,51 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div style={heroPanel} className="luxury-card">
-                <p style={panelEyebrow}>Coverage</p>
-                <h2 style={heroPanelTitle}>
-                  Structured support across gateway cities, cruise ports and
-                  regional touring routes.
-                </h2>
+              <div>
+                <div style={heroImageWrap} className="luxury-card">
+                  <img
+                    src="/hero-coach.png"
+                    alt="Luxury UK touring coach"
+                    style={heroImage}
+                  />
+                  <div style={heroImageOverlay} />
+                </div>
 
-                <div style={heroPanelDivider} />
+                <div style={heroPanel} className="luxury-card">
+                  <p style={panelEyebrow}>Coverage</p>
+                  <h2 style={heroPanelTitle}>
+                    Structured support across gateway cities, cruise ports and
+                    regional touring routes.
+                  </h2>
 
-                <div style={heroPanelGrid}>
-                  <div>
-                    <p style={metaHeading}>Regions</p>
-                    <p style={metaText}>England • Scotland • Ireland</p>
-                  </div>
+                  <div style={heroPanelDivider} />
 
-                  <div>
-                    <p style={metaHeading}>Programme types</p>
-                    <p style={metaText}>
-                      Fixed-departure • Private groups • Cruise-linked touring
-                    </p>
-                  </div>
+                  <div style={heroPanelGrid}>
+                    <div>
+                      <p style={metaHeading}>Regions</p>
+                      <p style={metaText}>England • Scotland • Ireland</p>
+                    </div>
 
-                  <div>
-                    <p style={metaHeading}>Built for</p>
-                    <p style={metaText}>
-                      Tour operators • DMCs • Travel planners
-                    </p>
-                  </div>
+                    <div>
+                      <p style={metaHeading}>Programme types</p>
+                      <p style={metaText}>
+                        Fixed-departure • Private groups • Cruise-linked touring
+                      </p>
+                    </div>
 
-                  <div>
-                    <p style={metaHeading}>Focus</p>
-                    <p style={metaText}>
-                      Delivery clarity • Routing • Timing • Coordination
-                    </p>
+                    <div>
+                      <p style={metaHeading}>Built for</p>
+                      <p style={metaText}>
+                        Tour operators • DMCs • Travel planners
+                      </p>
+                    </div>
+
+                    <div>
+                      <p style={metaHeading}>Focus</p>
+                      <p style={metaText}>
+                        Delivery clarity • Routing • Timing • Coordination
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -433,6 +444,29 @@ const heroGrid: CSSProperties = {
   display: "grid",
   gap: 40,
   alignItems: "stretch",
+};
+
+const heroImageWrap: CSSProperties = {
+  position: "relative",
+  height: "460px",
+  borderRadius: "32px",
+  overflow: "hidden",
+  marginBottom: 24,
+  boxShadow: "0 30px 80px rgba(11,26,43,0.12)",
+};
+
+const heroImage: CSSProperties = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  transform: "scale(1.02)",
+};
+
+const heroImageOverlay: CSSProperties = {
+  position: "absolute",
+  inset: 0,
+  background:
+    "linear-gradient(180deg, rgba(11,26,43,0.05) 0%, rgba(11,26,43,0.35) 100%)",
 };
 
 const section: CSSProperties = {
