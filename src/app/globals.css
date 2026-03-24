@@ -191,3 +191,37 @@ a[href]:hover article {
   }
 }
 
+a[href],
+details,
+summary {
+  transition:
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.2s ease;
+}
+
+a[href]:hover article,
+a[href]:hover .luxury-card {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(11, 26, 43, 0.08);
+  border-color: rgba(201, 162, 39, 0.22);
+}
+
+details[open] summary {
+  color: #0b1a2b;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@media (hover: none) {
+  a[href]:hover article,
+  a[href]:hover .luxury-card {
+    transform: none;
+    box-shadow: none;
+  }
+}
+
