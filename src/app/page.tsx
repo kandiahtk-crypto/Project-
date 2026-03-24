@@ -233,6 +233,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section style={section}>
+        <div style={containerNarrow}>
+          <p style={sectionLabel}>Programme structure</p>
+
+          <h2 style={sectionTitle}>
+            Typical touring routes and itinerary flow.
+          </h2>
+
+          <p style={sectionText}>
+            Our work supports established touring structures used by
+            international operators across England, Scotland and Ireland, from
+            gateway arrivals and regional routing to multi-stop programme
+            delivery.
+          </p>
+
+          <div style={itineraryTeaser}>
+            <p style={teaserEyebrow}>Example England itinerary</p>
+            <p style={teaserText}>
+              London arrivals, Oxford, Bath, Cambridge, York and the Lake
+              District remain central to many England touring programmes.
+            </p>
+            <a href="/england-touring" style={teaserLink}>
+              View example programme →
+            </a>
+          </div>
+        </div>
+      </section>
+
       <section style={ctaSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Start a conversation</p>
@@ -525,6 +553,35 @@ const featureText: CSSProperties = {
   fontSize: 16,
   lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
+};
+
+const itineraryTeaser: CSSProperties = {
+  marginTop: 32,
+  padding: "28px 24px",
+  borderRadius: 24,
+  background: "#FBFAF7",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+};
+
+const teaserEyebrow: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(11, 26, 43, 0.52)",
+};
+
+const teaserText: CSSProperties = {
+  margin: "0 0 14px",
+  fontSize: 16,
+  lineHeight: 1.8,
+  color: "rgba(11, 26, 43, 0.72)",
+};
+
+const teaserLink: CSSProperties = {
+  textDecoration: "none",
+  color: "#0B1A2B",
+  fontWeight: 500,
 };
 
 const ctaActions: CSSProperties = {
