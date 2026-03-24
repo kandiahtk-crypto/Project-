@@ -354,3 +354,154 @@ summary::-webkit-details-marker {
 a {
   transition: opacity 180ms ease, transform 180ms ease;
 }
+
+/* ===== PREMIUM BACKGROUND DEPTH ===== */
+
+body {
+  background: linear-gradient(
+      180deg,
+      #ffffff 0%,
+      #faf7f2 40%,
+      #f5f1e8 100%
+    );
+}
+
+/* subtle radial luxury glow */
+body::before {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1200px;
+  height: 800px;
+  background: radial-gradient(
+    circle,
+    rgba(201, 162, 39, 0.08) 0%,
+    rgba(201, 162, 39, 0.04) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ===== LUXURY CARD ENHANCEMENT ===== */
+
+.luxury-card {
+  position: relative;
+  backdrop-filter: blur(6px);
+}
+
+/* subtle gold top edge */
+.luxury-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 24px;
+  right: 24px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 162, 39, 0.4),
+    transparent
+  );
+}
+
+/* ===== PREMIUM BUTTON FEEL ===== */
+
+button,
+a[style*="border-radius: 999"] {
+  position: relative;
+  overflow: hidden;
+}
+
+/* shine effect */
+button::after,
+a[style*="border-radius: 999"]::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: all 0.6s ease;
+}
+
+button:hover::after,
+a[style*="border-radius: 999"]:hover::after {
+  left: 120%;
+}
+
+/* ===== TYPOGRAPHY POLISH ===== */
+
+body {
+  letter-spacing: -0.01em;
+}
+
+p {
+  max-width: 70ch;
+}
+
+/* ===== SMOOTH SECTION FADE ===== */
+
+section {
+  animation: fadeUp 0.7s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== PREMIUM FORM FEEL ===== */
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: rgba(201, 162, 39, 0.6);
+  box-shadow: 0 0 0 3px rgba(201, 162, 39, 0.12);
+}
+
+/* ===== GOLD MICRO-DETAIL ===== */
+
+hr,
+.divider {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c9a227,
+    transparent
+  );
+}
+
+/* ===== SCROLLBAR (PREMIUM TOUCH) ===== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f1e8;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(
+    180deg,
+    #c9a227,
+    #e3c565
+  );
+  border-radius: 10px;
+}
