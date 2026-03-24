@@ -227,56 +227,80 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={gatewayGrid} className="gateway-grid">
-            <div style={gatewayColumn} className="luxury-card">
+          <div style={gatewayEditorialGrid} className="gateway-grid">
+            <div style={gatewayEditorialCard} className="luxury-card">
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Airports</p>
 
-              <div style={gatewayList}>
-                <a href="/contact" style={gatewayLink}>
-                  London Heathrow
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  London Gatwick
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Manchester
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Edinburgh
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Glasgow
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Dublin
-                </a>
+              <div style={gatewayRichList}>
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>London Heathrow</p>
+                  <p style={gatewayMeta}>Primary long-haul arrival gateway</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>London Gatwick</p>
+                  <p style={gatewayMeta}>London access and touring starts</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Manchester</p>
+                  <p style={gatewayMeta}>Northern England programme access</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Edinburgh</p>
+                  <p style={gatewayMeta}>Scotland arrivals and touring flow</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Glasgow</p>
+                  <p style={gatewayMeta}>West Scotland routing and arrivals</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Dublin</p>
+                  <p style={gatewayMeta}>Ireland gateway and onward touring</p>
+                </div>
               </div>
             </div>
 
-            <div style={gatewayColumn} className="luxury-card">
+            <div style={gatewayEditorialCard} className="luxury-card">
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Cruise ports</p>
 
-              <div style={gatewayList}>
-                <a href="/contact" style={gatewayLink}>
-                  Southampton Cruise Terminal
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Dover
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Liverpool
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Greenock
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Belfast
-                </a>
-                <a href="/contact" style={gatewayLink}>
-                  Cobh
-                </a>
+              <div style={gatewayRichList}>
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Southampton Cruise Terminal</p>
+                  <p style={gatewayMeta}>Turnaround and pre/post-cruise movements</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Dover</p>
+                  <p style={gatewayMeta}>South East access and cruise touring</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Liverpool</p>
+                  <p style={gatewayMeta}>Northern England and regional touring</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Greenock</p>
+                  <p style={gatewayMeta}>
+                    Scotland cruise arrivals and shore touring
+                  </p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Belfast</p>
+                  <p style={gatewayMeta}>Ireland and Northern Ireland routing</p>
+                </div>
+
+                <div style={gatewayRichItem}>
+                  <p style={gatewayName}>Cobh</p>
+                  <p style={gatewayMeta}>Southern Ireland cruise-linked touring</p>
+                </div>
               </div>
             </div>
           </div>
@@ -727,17 +751,17 @@ const metaText: CSSProperties = {
   color: "rgba(11, 26, 43, 0.74)",
 };
 
-const gatewayGrid: CSSProperties = {
-  marginTop: 40,
+const gatewayEditorialGrid: CSSProperties = {
+  marginTop: 42,
   display: "grid",
   gap: 28,
 };
 
-const gatewayColumn: CSSProperties = {
+const gatewayEditorialCard: CSSProperties = {
   display: "grid",
-  gap: 16,
-  padding: "28px 26px",
-  borderRadius: 28,
+  gap: 18,
+  padding: "30px 28px",
+  borderRadius: 30,
   background: "linear-gradient(180deg, #FBFAF7 0%, #F7F3EC 100%)",
   border: "1px solid rgba(11, 26, 43, 0.06)",
   boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
@@ -758,22 +782,30 @@ const gatewayHeading: CSSProperties = {
   color: "rgba(11,26,43,0.5)",
 };
 
-const gatewayList: CSSProperties = {
+const gatewayRichList: CSSProperties = {
   display: "grid",
-  gap: 12,
+  gap: 16,
 };
 
-const gatewayLink: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "space-between",
-  gap: 12,
-  fontSize: 20,
-  lineHeight: 1.5,
-  color: "#0B1A2B",
-  paddingBottom: 10,
+const gatewayRichItem: CSSProperties = {
+  paddingBottom: 14,
   borderBottom: "1px solid rgba(11,26,43,0.08)",
-  textDecoration: "none",
+};
+
+const gatewayName: CSSProperties = {
+  margin: "0 0 4px",
+  fontSize: 22,
+  lineHeight: 1.25,
+  color: "#0B1A2B",
+  fontFamily: "var(--font-serif)",
+  fontWeight: 400,
+};
+
+const gatewayMeta: CSSProperties = {
+  margin: 0,
+  fontSize: 14,
+  lineHeight: 1.7,
+  color: "rgba(11,26,43,0.62)",
 };
 
 const supportGrid: CSSProperties = {
