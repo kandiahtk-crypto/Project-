@@ -6,22 +6,14 @@ const pageUrl = "https://www.ukinboundgroundtransport.com/markets/usa";
 export const metadata: Metadata = {
   title: "USA Market | UK Inbound Ground Transport",
   description:
-    "Specialist UK & Ireland ground transport support for US tour operators, DMCs and travel planners. Fixed-departure touring, private groups, cruise port support, London movements and multi-region itineraries.",
-  keywords: [
-    "UK transport for US tour operators",
-    "UK inbound transport USA market",
-    "UK and Ireland touring transport for American clients",
-    "UK DMC transport support",
-    "UK coach transport for groups",
-    "cruise port transport UK",
-  ],
+    "Premium UK & Ireland ground transport support for US tour operators, DMCs and travel planners. Fixed-departure touring, private groups, airport arrivals, cruise port support and multi-region UK & Ireland programmes.",
   alternates: {
     canonical: "/markets/usa",
   },
   openGraph: {
     title: "USA Market | UK Inbound Ground Transport",
     description:
-      "Programme-led UK & Ireland transport support for US tour operators, DMCs and travel planners.",
+      "Structured transport support for US-based tour operators and travel planners delivering UK & Ireland programmes.",
     url: pageUrl,
     siteName: "UK Inbound Ground Transport",
     locale: "en_GB",
@@ -29,109 +21,147 @@ export const metadata: Metadata = {
   },
 };
 
-const supportItems = [
-  "Fixed-departure series for US operators",
-  "Private group touring and bespoke itineraries",
-  "Cruise port arrivals, departures and onward touring",
-  "London hotel, event and airport movements",
-  "England, Scotland and Ireland touring",
-  "Multi-region programme coordination",
-];
-
-const sectors = [
+const programmeTypes = [
   {
-    title: "Tour operators",
-    text: "Structured transport support for escorted touring, fixed-departure programmes and wider group series serving the US market.",
+    title: "Escorted touring series",
+    text: "Support for structured departures requiring consistent delivery, reliable sequencing and clear operational planning across multiple dates and routes.",
   },
   {
-    title: "DMCs and receptive partners",
-    text: "Clear movement planning and dependable operational delivery aligned to the pace and complexity of inbound programmes.",
+    title: "Private group itineraries",
+    text: "Transport aligned to customised UK and Ireland itineraries for private groups, affinity travel, student programmes and special-interest touring.",
   },
   {
-    title: "Private group planners",
-    text: "Tailored support for custom itineraries requiring flexibility, timing control and premium programme flow.",
+    title: "Cruise-linked programmes",
+    text: "Support around embarkation, disembarkation, shore-side touring and onward routing where port timing and coordination are central to delivery.",
   },
   {
-    title: "Cruise-linked itineraries",
-    text: "Transport coordination around port calls, shore-side touring, hotel stays and onward regional touring.",
+    title: "UK & Ireland combinations",
+    text: "Multi-region support for programmes linking England, Scotland and Ireland through commercially realistic routing and well-managed transitions.",
   },
 ];
 
-const usaJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  name: "UK and Ireland ground transport support for US travel partners",
-  provider: {
-    "@type": "Organization",
-    name: "Evershine Transport Limited",
-    alternateName: "UK Inbound Ground Transport",
-    url: "https://www.ukinboundgroundtransport.com",
-  },
-  areaServed: ["United States", "United Kingdom", "Ireland"],
-  serviceType: [
-    "UK inbound transport services",
-    "UK and Ireland touring transport",
-    "Cruise port transport support",
-    "Group transport coordination",
-  ],
-  url: pageUrl,
-};
+const gateways = [
+  "London Heathrow",
+  "London Gatwick",
+  "Manchester",
+  "Edinburgh",
+  "Glasgow",
+  "Dublin",
+  "Shannon",
+  "Belfast",
+];
 
-export default function USAMarketPage() {
+const ports = [
+  "Southampton",
+  "Dover",
+  "Liverpool",
+  "Greenock",
+  "Invergordon",
+  "Belfast",
+  "Dublin",
+  "Cobh",
+];
+
+const benefits = [
+  "Transport support aligned to the pace and structure of escorted touring.",
+  "Clear handling of airport arrivals, hotel positioning and onward routing.",
+  "Support for premium private groups and customised itinerary flow.",
+  "Operational awareness across regional touring, cruise ports and cross-border programmes.",
+];
+
+export default function UsaMarketPage() {
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(usaJsonLd) }}
-      />
-
       <section style={heroSection}>
-        <div style={containerNarrow}>
-          <p style={eyebrow}>United States</p>
+        <div style={containerWide}>
+          <div style={heroGrid} className="split-grid">
+            <div>
+              <p style={eyebrow}>USA market</p>
 
-          <h1 style={heroTitle}>
-            UK &amp; Ireland transport support for US tour operators, DMCs and
-            travel planners.
-          </h1>
+              <h1 style={heroTitle}>
+                Premium UK &amp; Ireland transport support for US tour operators
+                and travel planners.
+              </h1>
 
-          <div style={divider} />
+              <div style={divider} />
 
-          <p style={heroText}>
-            We support American travel partners with programme-led ground
-            transport across England, Scotland and Ireland, covering
-            fixed-departure touring, private groups, cruise port support,
-            London movements and wider regional itineraries.
-          </p>
+              <p style={heroText}>
+                We support US-based operators, DMCs and travel planners
+                delivering structured UK and Ireland programmes across
+                fixed-departure touring, private groups, cruise-linked
+                itineraries, airport arrivals and multi-region touring.
+              </p>
 
-          <div style={heroActions}>
-            <a href="/contact" style={primaryButton}>
-              Request transport support
-            </a>
-            <a href="/programmes" style={secondaryButton}>
-              Explore programmes
-            </a>
+              <div style={heroActions}>
+                <a href="/contact" style={primaryButton}>
+                  Request transport support
+                </a>
+                <a href="/programmes" style={secondaryLink}>
+                  Explore programmes →
+                </a>
+              </div>
+            </div>
+
+            <div style={heroPanel} className="luxury-card">
+              <p style={panelEyebrow}>Built for</p>
+              <h2 style={heroPanelTitle}>
+                US-origin programmes that require dependable execution,
+                realistic routing and strong itinerary flow.
+              </h2>
+
+              <div style={heroPanelDivider} />
+
+              <div style={heroPanelGrid}>
+                <div>
+                  <p style={metaHeading}>Typical buyers</p>
+                  <p style={metaText}>
+                    Tour operators • DMCs • Travel planners
+                  </p>
+                </div>
+
+                <div>
+                  <p style={metaHeading}>Programme types</p>
+                  <p style={metaText}>
+                    Escorted touring • Private groups • Cruise-linked touring
+                  </p>
+                </div>
+
+                <div>
+                  <p style={metaHeading}>Coverage</p>
+                  <p style={metaText}>
+                    England • Scotland • Ireland • London gateway movements
+                  </p>
+                </div>
+
+                <div>
+                  <p style={metaHeading}>Focus</p>
+                  <p style={metaText}>
+                    Airport arrivals • Routing • Timing • Coordination
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <div style={container}>
-          <div style={splitGrid} className="split-grid">
+        <div style={containerWide}>
+          <div style={introSplit} className="split-grid">
             <div>
-              <p style={sectionLabel}>USA market focus</p>
+              <p style={sectionLabel}>Market overview</p>
               <h2 style={sectionTitle}>
-                Built for American buyers managing structured UK and Ireland
-                programmes.
+                Supporting US-origin touring across the UK &amp; Ireland.
               </h2>
             </div>
 
             <div>
               <p style={sectionText}>
-                We work with US-based tour operators, destination management
-                companies and travel planners who need transport support that
-                fits into a wider operational plan. Our role is to align
-                routing, timings and delivery to the structure of the
-                programme, not treat transport as a disconnected booking.
+                The US market often demands clear service standards, efficient
+                arrival handling, dependable day-to-day delivery and well-paced
+                routing across multiple destinations. Our role is to support the
+                operational structure of the programme so that transport fits
+                the itinerary, rather than disrupting it.
               </p>
             </div>
           </div>
@@ -139,54 +169,119 @@ export default function USAMarketPage() {
       </section>
 
       <section style={sectionSoft}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>What we support</p>
+        <div style={containerWide}>
+          <div style={introSplit} className="split-grid">
+            <div>
+              <p style={sectionLabel}>Programme types</p>
+              <h2 style={sectionTitle}>
+                Transport support across the programme formats commonly used by
+                US buyers.
+              </h2>
+            </div>
 
-          <ul style={supportList}>
-            {supportItems.map((item) => (
-              <li key={item} style={supportItem}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+            <div>
+              <p style={sectionText}>
+                From escorted departures to private custom groups, transport
+                requirements vary by route shape, timing sensitivity and service
+                expectations. Delivery needs to remain commercially realistic,
+                operationally clear and well coordinated throughout the
+                programme.
+              </p>
+            </div>
+          </div>
 
-      <section style={section}>
-        <div style={container}>
-          <p style={sectionLabel}>Who we work with</p>
-
-          <div style={featureGrid} className="feature-grid">
-            {sectors.map((item) => (
-              <article key={item.title} style={featureCard}>
-                <div style={accentLine} />
-                <h2 style={featureTitle}>{item.title}</h2>
-                <p style={featureText}>{item.text}</p>
+          <div style={cardGrid}>
+            {programmeTypes.map((item) => (
+              <article key={item.title} style={card} className="luxury-card">
+                <div style={cardAccent} />
+                <h3 style={cardTitle}>{item.title}</h3>
+                <p style={cardText}>{item.text}</p>
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section style={sectionSoft}>
-        <div style={container}>
-          <div style={splitGrid} className="split-grid">
+      <section style={section}>
+        <div style={containerWide}>
+          <div style={introSplit} className="split-grid">
             <div>
-              <p style={sectionLabel}>Why this matters</p>
+              <p style={sectionLabel}>Gateway airports</p>
               <h2 style={sectionTitle}>
-                A touring programme is only as strong as the reliability of its
-                movements.
+                Major airport gateways commonly used for US arrivals and
+                departures.
               </h2>
             </div>
 
             <div>
               <p style={sectionText}>
-                American itineraries in the UK and Ireland often involve
-                multiple regions, tight timing and high service expectations.
-                We help support that complexity through structured routing,
-                dependable sequencing and clear programme-level transport
-                coordination.
+                Airport handling is often the first operational touchpoint of
+                the programme. Transfer timing, hotel positioning and onward
+                routing need to support recovery from long-haul arrivals while
+                maintaining the wider shape of the itinerary.
               </p>
+            </div>
+          </div>
+
+          <div style={listGrid}>
+            {gateways.map((item) => (
+              <div key={item} style={listItem}>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={sectionSoft}>
+        <div style={containerWide}>
+          <div style={introSplit} className="split-grid">
+            <div>
+              <p style={sectionLabel}>Cruise ports</p>
+              <h2 style={sectionTitle}>
+                Cruise ports commonly used within UK &amp; Ireland itineraries.
+              </h2>
+            </div>
+
+            <div>
+              <p style={sectionText}>
+                Cruise-related work requires strong timing control around
+                embarkation, disembarkation and shore-side touring, especially
+                where programmes continue inland or connect with wider regional
+                touring.
+              </p>
+            </div>
+          </div>
+
+          <div style={listGrid}>
+            {ports.map((item) => (
+              <div key={item} style={listItem}>
+                {item}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={containerWide}>
+          <div style={introSplit} className="split-grid">
+            <div>
+              <p style={sectionLabel}>Why operators choose us</p>
+              <h2 style={sectionTitle}>
+                Structured delivery for programmes that need clarity and
+                dependability.
+              </h2>
+            </div>
+
+            <div>
+              <div style={benefitList}>
+                {benefits.map((item) => (
+                  <div key={item} style={benefitItem}>
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -197,20 +292,22 @@ export default function USAMarketPage() {
           <p style={sectionLabel}>Start a conversation</p>
 
           <h2 style={ctaTitle}>
-            Planning a UK or Ireland programme for American clients?
+            Planning a UK or Ireland programme for the US market?
           </h2>
 
           <p style={sectionText}>
-            Tell us about your route structure, timings, port calls and service
-            requirements, and we’ll help shape the right transport support.
+            Tell us about your routing, arrival airports, cruise port
+            requirements, programme type and delivery priorities. We will help
+            shape a transport approach that fits the structure of your
+            itinerary.
           </p>
 
           <div style={ctaActions}>
             <a href="/contact" style={primaryButton}>
               Contact us
             </a>
-            <a href="/services" style={linkButton}>
-              View services →
+            <a href="/markets" style={secondaryLink}>
+              View all markets →
             </a>
           </div>
         </div>
@@ -219,7 +316,7 @@ export default function USAMarketPage() {
   );
 }
 
-const container: CSSProperties = {
+const containerWide: CSSProperties = {
   maxWidth: 1120,
   margin: "0 auto",
   padding: "0 28px",
@@ -232,32 +329,32 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "40px 0 64px",
+  padding: "48px 0 72px",
 };
 
 const section: CSSProperties = {
-  padding: "88px 0",
+  padding: "96px 0",
 };
 
 const sectionSoft: CSSProperties = {
-  padding: "80px 0",
+  padding: "88px 0",
   background: "#F8F5EF",
 };
 
 const ctaSection: CSSProperties = {
-  padding: "72px 0 48px",
+  padding: "88px 0 48px",
 };
 
-const splitGrid: CSSProperties = {
+const heroGrid: CSSProperties = {
   display: "grid",
   gap: 40,
   alignItems: "start",
 };
 
-const featureGrid: CSSProperties = {
+const introSplit: CSSProperties = {
   display: "grid",
-  gridTemplateColumns: "1fr",
-  gap: 36,
+  gap: 40,
+  alignItems: "start",
 };
 
 const eyebrow: CSSProperties = {
@@ -279,8 +376,8 @@ const sectionLabel: CSSProperties = {
 const heroTitle: CSSProperties = {
   margin: "14px 0 16px",
   maxWidth: 760,
-  fontSize: "clamp(2.6rem, 7vw, 5rem)",
-  lineHeight: 1.02,
+  fontSize: "clamp(2.7rem, 7vw, 5.2rem)",
+  lineHeight: 1.01,
   letterSpacing: "-0.04em",
   fontWeight: 400,
   fontFamily: "var(--font-serif)",
@@ -291,7 +388,7 @@ const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
   maxWidth: 760,
   fontSize: "clamp(2rem, 5vw, 3.4rem)",
-  lineHeight: 1.06,
+  lineHeight: 1.05,
   letterSpacing: "-0.025em",
   fontWeight: 400,
   fontFamily: "var(--font-serif)",
@@ -302,7 +399,7 @@ const ctaTitle: CSSProperties = {
   margin: "0 0 18px",
   maxWidth: 760,
   fontSize: "clamp(2rem, 5vw, 3.2rem)",
-  lineHeight: 1.06,
+  lineHeight: 1.05,
   letterSpacing: "-0.025em",
   fontWeight: 400,
   fontFamily: "var(--font-serif)",
@@ -319,7 +416,7 @@ const divider: CSSProperties = {
 
 const heroText: CSSProperties = {
   margin: 0,
-  maxWidth: 700,
+  maxWidth: 720,
   fontSize: 17,
   lineHeight: 1.9,
   color: "rgba(11, 26, 43, 0.72)",
@@ -336,8 +433,17 @@ const sectionText: CSSProperties = {
 const heroActions: CSSProperties = {
   marginTop: 28,
   display: "flex",
-  gap: 16,
+  gap: 18,
   flexWrap: "wrap",
+  alignItems: "center",
+};
+
+const ctaActions: CSSProperties = {
+  marginTop: 26,
+  display: "flex",
+  gap: 18,
+  flexWrap: "wrap",
+  alignItems: "center",
 };
 
 const primaryButton: CSSProperties = {
@@ -354,78 +460,129 @@ const primaryButton: CSSProperties = {
   border: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
-const secondaryButton: CSSProperties = {
+const secondaryLink: CSSProperties = {
+  textDecoration: "none",
+  color: "#0B1A2B",
+  fontWeight: 500,
   display: "inline-flex",
   alignItems: "center",
-  justifyContent: "center",
-  minHeight: 52,
-  padding: "0 22px",
-  borderRadius: 999,
-  background: "transparent",
-  color: "#0B1A2B",
-  textDecoration: "none",
-  fontWeight: 500,
-  border: "1px solid rgba(11, 26, 43, 0.10)",
+  gap: 6,
 };
 
-const supportList: CSSProperties = {
-  listStyle: "none",
-  padding: 0,
+const heroPanel: CSSProperties = {
+  padding: "28px",
+  borderRadius: 30,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F6F1E8 100%)",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
+};
+
+const panelEyebrow: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(11, 26, 43, 0.5)",
+};
+
+const heroPanelTitle: CSSProperties = {
   margin: 0,
-  display: "grid",
-  gap: 16,
-};
-
-const supportItem: CSSProperties = {
-  fontSize: 20,
-  lineHeight: 1.5,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
-  paddingBottom: 12,
+  fontSize: "clamp(1.8rem, 3vw, 2.5rem)",
+  lineHeight: 1.08,
+  letterSpacing: "-0.025em",
+  fontWeight: 400,
+  fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
 };
 
-const featureCard: CSSProperties = {
-  minWidth: 0,
-  paddingBottom: 18,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+const heroPanelDivider: CSSProperties = {
+  height: 1,
+  margin: "22px 0",
+  background: "rgba(11, 26, 43, 0.08)",
 };
 
-const accentLine: CSSProperties = {
+const heroPanelGrid: CSSProperties = {
+  display: "grid",
+  gap: 20,
+};
+
+const metaHeading: CSSProperties = {
+  margin: "0 0 6px",
+  fontSize: 11,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(11, 26, 43, 0.5)",
+};
+
+const metaText: CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.7,
+  color: "rgba(11, 26, 43, 0.74)",
+};
+
+const cardGrid: CSSProperties = {
+  marginTop: 44,
+  display: "grid",
+  gap: 24,
+};
+
+const card: CSSProperties = {
+  padding: "28px 26px",
+  borderRadius: 28,
+  background: "#FBFAF7",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
+};
+
+const cardAccent: CSSProperties = {
   width: 48,
   height: 2,
   borderRadius: 999,
-  marginBottom: 14,
+  marginBottom: 16,
   background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
 };
 
-const featureTitle: CSSProperties = {
+const cardTitle: CSSProperties = {
   margin: "0 0 10px",
-  fontSize: "clamp(1.5rem, 4vw, 2rem)",
-  lineHeight: 1.12,
+  fontSize: "clamp(1.6rem, 3vw, 2rem)",
+  lineHeight: 1.08,
   fontWeight: 400,
   letterSpacing: "-0.02em",
   fontFamily: "var(--font-serif)",
   color: "#0B1A2B",
 };
 
-const featureText: CSSProperties = {
+const cardText: CSSProperties = {
   margin: 0,
-  maxWidth: 520,
   fontSize: 16,
   lineHeight: 1.85,
   color: "rgba(11, 26, 43, 0.72)",
 };
 
-const ctaActions: CSSProperties = {
-  marginTop: 26,
-  display: "flex",
-  gap: 20,
-  flexWrap: "wrap",
-  alignItems: "center",
+const listGrid: CSSProperties = {
+  marginTop: 42,
+  display: "grid",
+  gap: 16,
 };
 
-const linkButton: CSSProperties = {
-  textDecoration: "none",
+const listItem: CSSProperties = {
+  paddingBottom: 14,
+  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  fontSize: 20,
+  lineHeight: 1.5,
   color: "#0B1A2B",
-  fontWeight: 500,
+};
+
+const benefitList: CSSProperties = {
+  display: "grid",
+  gap: 18,
+};
+
+const benefitItem: CSSProperties = {
+  paddingBottom: 14,
+  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  fontSize: 18,
+  lineHeight: 1.7,
+  color: "#0B1A2B",
 };
