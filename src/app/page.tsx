@@ -154,8 +154,8 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div>
-                <div style={heroImageWrap} className="luxury-card">
+              <div style={heroVisualWrap}>
+                <div style={heroImageWrap} className="hero-image luxury-card">
                   <img
                     src="/hero-coach.png"
                     alt="Luxury UK touring coach"
@@ -442,16 +442,22 @@ const heroShell: CSSProperties = {
 
 const heroGrid: CSSProperties = {
   display: "grid",
-  gap: 40,
-  alignItems: "stretch",
+  gridTemplateColumns: "1fr",
+  gap: 32,
+  alignItems: "start",
+};
+
+const heroVisualWrap: CSSProperties = {
+  display: "flex",
+  flexDirection: "column",
+  gap: 24,
 };
 
 const heroImageWrap: CSSProperties = {
   position: "relative",
-  height: "460px",
-  borderRadius: "32px",
+  height: 320,
+  borderRadius: "28px",
   overflow: "hidden",
-  marginBottom: 24,
   boxShadow: "0 30px 80px rgba(11,26,43,0.12)",
 };
 
@@ -505,10 +511,10 @@ const sectionLabel: CSSProperties = {
 };
 
 const heroTitle: CSSProperties = {
-  margin: "14px 0 18px",
+  margin: "14px 0 24px",
   maxWidth: 760,
-  fontSize: "clamp(3rem, 6.5vw, 6rem)",
-  lineHeight: 0.96,
+  fontSize: "clamp(2.7rem, 10vw, 6rem)",
+  lineHeight: 0.98,
   letterSpacing: "-0.05em",
   fontWeight: 400,
   fontFamily: "var(--font-serif)",
