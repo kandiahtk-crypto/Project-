@@ -207,6 +207,82 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section style={sectionSoft}>
+        <div style={containerWide}>
+          <div style={sectionSplit} className="split-grid">
+            <div>
+              <p style={sectionLabel}>Key gateways</p>
+
+              <h2 style={sectionTitle}>
+                Major UK &amp; Ireland arrival points we regularly support.
+              </h2>
+            </div>
+
+            <div>
+              <p style={sectionText}>
+                We support airport arrivals, cruise terminal movements and
+                onward touring across the UK and Ireland, aligning transport
+                with programme flow from the first point of entry.
+              </p>
+            </div>
+          </div>
+
+          <div style={gatewayGrid} className="gateway-grid">
+            <div style={gatewayColumn} className="luxury-card">
+              <div style={gatewayAccent} />
+              <p style={gatewayHeading}>Airports</p>
+
+              <div style={gatewayList}>
+                <a href="/contact" style={gatewayLink}>
+                  London Heathrow
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  London Gatwick
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Manchester
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Edinburgh
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Glasgow
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Dublin
+                </a>
+              </div>
+            </div>
+
+            <div style={gatewayColumn} className="luxury-card">
+              <div style={gatewayAccent} />
+              <p style={gatewayHeading}>Cruise ports</p>
+
+              <div style={gatewayList}>
+                <a href="/contact" style={gatewayLink}>
+                  Southampton Cruise Terminal
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Dover
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Liverpool
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Greenock
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Belfast
+                </a>
+                <a href="/contact" style={gatewayLink}>
+                  Cobh
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section style={section}>
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
@@ -649,6 +725,55 @@ const metaText: CSSProperties = {
   fontSize: 15,
   lineHeight: 1.7,
   color: "rgba(11, 26, 43, 0.74)",
+};
+
+const gatewayGrid: CSSProperties = {
+  marginTop: 40,
+  display: "grid",
+  gap: 28,
+};
+
+const gatewayColumn: CSSProperties = {
+  display: "grid",
+  gap: 16,
+  padding: "28px 26px",
+  borderRadius: 28,
+  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F3EC 100%)",
+  border: "1px solid rgba(11, 26, 43, 0.06)",
+  boxShadow: "0 10px 30px rgba(11, 26, 43, 0.04)",
+};
+
+const gatewayAccent: CSSProperties = {
+  width: 48,
+  height: 2,
+  borderRadius: 999,
+  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+};
+
+const gatewayHeading: CSSProperties = {
+  margin: 0,
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(11,26,43,0.5)",
+};
+
+const gatewayList: CSSProperties = {
+  display: "grid",
+  gap: 12,
+};
+
+const gatewayLink: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "space-between",
+  gap: 12,
+  fontSize: 20,
+  lineHeight: 1.5,
+  color: "#0B1A2B",
+  paddingBottom: 10,
+  borderBottom: "1px solid rgba(11,26,43,0.08)",
+  textDecoration: "none",
 };
 
 const supportGrid: CSSProperties = {
