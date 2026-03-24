@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 export default function EnglandTouringPage() {
   return (
     <main>
-      {/* HERO */}
       <section style={heroSection}>
         <div style={container}>
           <p style={eyebrow}>England touring</p>
@@ -33,7 +32,6 @@ export default function EnglandTouringPage() {
         </div>
       </section>
 
-      {/* CORE ROUTES */}
       <section style={section}>
         <div style={container}>
           <p style={sectionLabel}>Core touring routes</p>
@@ -44,7 +42,7 @@ export default function EnglandTouringPage() {
 
           <div style={grid}>
             <article style={card}>
-              <h3 style={cardTitle}>London & gateway arrivals</h3>
+              <h3 style={cardTitle}>London &amp; gateway arrivals</h3>
               <p style={cardText}>
                 Airport arrivals, hotel positioning and early programme staging
                 across London remain central to most England itineraries.
@@ -52,15 +50,16 @@ export default function EnglandTouringPage() {
             </article>
 
             <article style={card}>
-              <h3 style={cardTitle}>Oxford, Bath & Cambridge</h3>
+              <h3 style={cardTitle}>Oxford, Bath &amp; Cambridge</h3>
               <p style={cardText}>
-                Classic heritage cities requiring careful routing, timing control
-                and realistic scheduling across short-distance touring days.
+                Classic heritage cities requiring careful routing, timing
+                control and realistic scheduling across short-distance touring
+                days.
               </p>
             </article>
 
             <article style={card}>
-              <h3 style={cardTitle}>York & northern England</h3>
+              <h3 style={cardTitle}>York &amp; northern England</h3>
               <p style={cardText}>
                 Longer routing days linking central England to northern
                 destinations with structured sequencing and operational
@@ -79,7 +78,6 @@ export default function EnglandTouringPage() {
         </div>
       </section>
 
-      {/* HOW WE SUPPORT */}
       <section style={sectionSoft}>
         <div style={container}>
           <p style={sectionLabel}>How we support</p>
@@ -124,7 +122,6 @@ export default function EnglandTouringPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section style={ctaSection}>
         <div style={container}>
           <p style={sectionLabel}>Start a conversation</p>
@@ -147,8 +144,6 @@ export default function EnglandTouringPage() {
     </main>
   );
 }
-
-/* STYLES */
 
 const container: CSSProperties = {
   maxWidth: 900,
