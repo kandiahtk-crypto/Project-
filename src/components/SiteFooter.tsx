@@ -24,6 +24,10 @@ export default function SiteFooter() {
             <div style={navColumn}>
               <p style={navHeading}>Explore</p>
 
+              <a href="/tour-operator-transport-uk" style={link}>
+                 Tour Operator Transport UK
+              </a>
+
               <a href="/uk-ireland-touring" style={link}>
                  UK & Ireland Touring
               </a>
