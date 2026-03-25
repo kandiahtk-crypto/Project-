@@ -654,3 +654,41 @@ textarea:focus {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 }
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.06fr) minmax(340px, 0.94fr) !important;
+    gap: 54px !important;
+  }
+
+  .hero-image {
+    min-height: 500px !important;
+  }
+
+  .split-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 44px !important;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 28px !important;
+  }
+
+  .gateway-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+.premium-card {
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease,
+    border-color 220ms ease;
+}
+
+.premium-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(18, 36, 56, 0.10);
+  border-color: rgba(91, 124, 153, 0.22);
+}
