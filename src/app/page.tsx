@@ -1,9 +1,93 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
-
 import ProgrammeEnquiryForm from "../components/ProgrammeEnquiryForm";
 
 const siteUrl = "https://www.ukinboundgroundtransport.com";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "UK Inbound Ground Transport",
+  url: siteUrl,
+  logo: `${siteUrl}/logo.png`,
+  sameAs: [],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      areaServed: ["GB", "IE"],
+      availableLanguage: ["English"],
+      url: `${siteUrl}/contact`,
+    },
+  ],
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "UK Inbound Ground Transport",
+  url: siteUrl,
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "UK & Ireland Group Ground Transport",
+  provider: {
+    "@type": "Organization",
+    name: "UK Inbound Ground Transport",
+    url: siteUrl,
+  },
+  areaServed: [
+    { "@type": "Country", name: "United Kingdom" },
+    { "@type": "Country", name: "Ireland" },
+  ],
+  serviceType:
+    "Group ground transport for tour operators, DMCs and travel planners",
+  audience: {
+    "@type": "BusinessAudience",
+    audienceType: "Tour operators, DMCs, travel planners",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do you work with individual travellers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We are positioned for tour operators, DMCs and travel planners managing structured programmes rather than individual bookings.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can you support UK and Ireland programmes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We support multi-region programmes across England, Scotland and Ireland with consistent delivery.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you handle fixed-departure touring series?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "We support structured, repeatable touring programmes with consistent routing and operational coordination.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you provide vehicles only or full coordination?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Our focus is programme delivery, aligning vehicles, routing and timing with the wider itinerary.",
+      },
+    },
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Home",
@@ -124,6 +208,18 @@ const faqs = [
 export default function HomePage() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            organizationSchema,
+            websiteSchema,
+            serviceSchema,
+            faqSchema,
+          ]),
+        }}
+      />
+
       <section style={heroSection}>
         <div style={containerWide}>
           <div style={heroShell}>
@@ -132,16 +228,16 @@ export default function HomePage() {
                 <p style={eyebrow}>UK inbound ground transport</p>
 
                 <h1 style={heroTitle}>
-                  UK &amp; Ireland group transport for tour operators, DMCs and
-                  travel planners.
+                  Premium UK &amp; Ireland transport for tour operators, DMCs
+                  and travel planners.
                 </h1>
 
                 <div style={divider} />
 
                 <p style={heroText}>
-                  Structured transport delivery for Heathrow arrivals, cruise
-                  movements, London operations and multi-region touring across
-                  England, Scotland and Ireland.
+                  Structured delivery for Heathrow arrivals, cruise movements,
+                  London operations and multi-region touring across England,
+                  Scotland and Ireland.
                 </p>
 
                 <p style={heroSubText}>
@@ -238,7 +334,6 @@ export default function HomePage() {
           <div style={sectionSplit} className="split-grid">
             <div>
               <p style={sectionLabel}>Key gateways</p>
-
               <h2 style={sectionTitle}>
                 Major UK &amp; Ireland arrival points we regularly support.
               </h2>
