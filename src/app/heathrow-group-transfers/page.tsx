@@ -82,6 +82,14 @@ export default function HeathrowPage() {
           Ireland.
         </p>
 
+        <div style={heroImageWrap}>
+          <img
+            src="/heathrow-terminal.png"
+            alt="Heathrow International Airport terminal exterior"
+            style={heroImage}
+          />
+        </div>
+
         <div style={ctaRow}>
           <a href="/contact" style={primaryButton}>
             Request Heathrow transport
@@ -299,4 +307,16 @@ const linkCard: CSSProperties = {
   textDecoration: "none",
   color: "#10263C",
   fontWeight: 600,
+};
+
+const heroImageWrap: CSSProperties = {
+  marginTop: 32,
+  borderRadius: 20,
+  overflow: "hidden",
+};
+
+const heroImage: CSSProperties = {
+  width: "100%",
+  height: "auto",
+  display: "block",
 };
