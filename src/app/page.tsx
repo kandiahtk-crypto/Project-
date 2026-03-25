@@ -10,7 +10,6 @@ const organizationSchema = {
   name: "UK Inbound Ground Transport",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
-  sameAs: [],
   contactPoint: [
     {
       "@type": "ContactPoint",
@@ -44,10 +43,6 @@ const serviceSchema = {
   ],
   serviceType:
     "Group ground transport for tour operators, DMCs and travel planners",
-  audience: {
-    "@type": "BusinessAudience",
-    audienceType: "Tour operators, DMCs, travel planners",
-  },
 };
 
 const faqSchema = {
@@ -267,17 +262,16 @@ export default function HomePage() {
               </div>
 
               <div style={heroVisualStack}>
-                <div style={heroImageFrame} className="hero-image luxury-card">
+                <div style={heroImageFrame} className="hero-image premium-card">
                   <img
                     src="/hero-coach.png"
                     alt="Luxury UK touring coach"
                     style={heroImage}
                   />
                   <div style={heroImageOverlay} />
-                  <div style={heroImageGlow} />
                 </div>
 
-                <div style={heroFloatingCard} className="luxury-card">
+                <div style={heroFloatingCard} className="premium-card">
                   <p style={floatingEyebrow}>Operational focus</p>
 
                   <div style={floatingGrid}>
@@ -313,18 +307,12 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      <section style={proofStripSection}>
-        <div style={containerWide}>
           <div style={proofStrip}>
-            <span style={proofItem}>✔ UK &amp; Ireland coverage</span>
-            <span style={proofItem}>✔ Airport &amp; cruise coordination</span>
-            <span style={proofItem}>
-              ✔ Built for tour operators &amp; DMCs
-            </span>
-            <span style={proofItem}>✔ Structured programme delivery</span>
+            <span style={proofItem}>UK &amp; Ireland coverage</span>
+            <span style={proofItem}>Airport &amp; cruise coordination</span>
+            <span style={proofItem}>Built for tour operators &amp; DMCs</span>
+            <span style={proofItem}>Structured programme delivery</span>
           </div>
         </div>
       </section>
@@ -349,7 +337,7 @@ export default function HomePage() {
           </div>
 
           <div style={gatewayEditorialGrid} className="gateway-grid">
-            <div style={gatewayEditorialCard} className="luxury-card">
+            <div style={gatewayEditorialCard} className="premium-card">
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Airports</p>
 
@@ -394,7 +382,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div style={gatewayEditorialCard} className="luxury-card">
+            <div style={gatewayEditorialCard} className="premium-card">
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Cruise ports</p>
 
@@ -471,7 +459,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={sectionSoft}>
+      <section style={sectionTint}>
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
@@ -490,7 +478,7 @@ export default function HomePage() {
             </div>
 
             <div style={planningGrid} className="feature-grid">
-              <article style={planningCard} className="luxury-card">
+              <article style={planningCard} className="premium-card">
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Programme-first approach</h3>
                 <p style={cardText}>
@@ -499,7 +487,7 @@ export default function HomePage() {
                 </p>
               </article>
 
-              <article style={planningCard} className="luxury-card">
+              <article style={planningCard} className="premium-card">
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Multi-region coordination</h3>
                 <p style={cardText}>
@@ -508,7 +496,7 @@ export default function HomePage() {
                 </p>
               </article>
 
-              <article style={planningCard} className="luxury-card">
+              <article style={planningCard} className="premium-card">
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Reliable delivery</h3>
                 <p style={cardText}>
@@ -541,7 +529,7 @@ export default function HomePage() {
                   key={item.title}
                   href={item.href}
                   style={planningCard}
-                  className="luxury-card"
+                  className="premium-card"
                 >
                   <div style={cardTopRow}>
                     <h3 style={cardTitle}>{item.title}</h3>
@@ -580,7 +568,7 @@ export default function HomePage() {
                 key={market.title}
                 href={market.href}
                 style={marketCard}
-                className="luxury-card"
+                className="premium-card"
               >
                 <div style={cardTopRow}>
                   <h3 style={cardTitle}>{market.title}</h3>
@@ -619,7 +607,7 @@ export default function HomePage() {
                 key={item.title}
                 href={item.href}
                 style={regionCard}
-                className="luxury-card"
+                className="premium-card"
               >
                 <div style={cardAccent} />
                 <div style={cardTopRow}>
@@ -651,7 +639,7 @@ export default function HomePage() {
                 programme delivery.
               </p>
 
-              <div style={editorialPanel} className="luxury-card">
+              <div style={editorialPanel} className="premium-card">
                 <p style={panelEyebrow}>Example England itinerary</p>
                 <p style={panelText}>
                   London arrivals, Oxford, Bath, Cambridge, York and the Lake
@@ -690,7 +678,6 @@ export default function HomePage() {
       <section style={leadSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Programme enquiry</p>
-
           <h2 style={sectionTitle}>
             Tell us about your programme requirements.
           </h2>
@@ -750,29 +737,36 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "44px 0 82px",
+  padding: "46px 0 78px",
   background:
-    "radial-gradient(circle at top left, rgba(201,162,39,0.12), transparent 34%), radial-gradient(circle at 85% 12%, rgba(11,26,43,0.06), transparent 22%), linear-gradient(180deg, #FCFAF6 0%, #F8F4EC 100%)",
+    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 52%, #FFFFFF 100%)",
 };
 
-const proofStripSection: CSSProperties = {
-  padding: "22px 0 8px",
+const section: CSSProperties = {
+  padding: "100px 0",
 };
 
-const proofStrip: CSSProperties = {
-  display: "flex",
-  flexWrap: "wrap",
-  gap: 24,
-  alignItems: "center",
+const sectionSoft: CSSProperties = {
+  padding: "94px 0",
+  background: "linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 100%)",
 };
 
-const proofItem: CSSProperties = {
-  fontSize: 14,
-  color: "rgba(11,26,43,0.68)",
+const sectionTint: CSSProperties = {
+  padding: "94px 0",
+  background: "linear-gradient(180deg, #F2F5F9 0%, #E8EEF4 100%)",
+};
+
+const leadSection: CSSProperties = {
+  padding: "100px 0",
+  background: "linear-gradient(180deg, #F6F8FB 0%, #EDF2F6 100%)",
+};
+
+const ctaSection: CSSProperties = {
+  padding: "90px 0 48px",
 };
 
 const heroShell: CSSProperties = {
-  padding: "24px 0 0",
+  paddingTop: 10,
 };
 
 const heroGrid: CSSProperties = {
@@ -784,7 +778,6 @@ const heroGrid: CSSProperties = {
 
 const heroContent: CSSProperties = {
   position: "relative",
-  zIndex: 2,
 };
 
 const heroVisualStack: CSSProperties = {
@@ -796,96 +789,56 @@ const heroVisualStack: CSSProperties = {
 
 const heroImageFrame: CSSProperties = {
   position: "relative",
-  minHeight: 360,
-  borderRadius: 34,
+  minHeight: 320,
+  borderRadius: 28,
   overflow: "hidden",
-  border: "1px solid rgba(255,255,255,0.35)",
-  boxShadow:
-    "0 24px 70px rgba(11,26,43,0.14), 0 12px 30px rgba(11,26,43,0.06)",
+  boxShadow: "0 24px 60px rgba(18, 36, 56, 0.14)",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
 };
 
 const heroImage: CSSProperties = {
   width: "100%",
   height: "100%",
-  minHeight: 360,
+  minHeight: 320,
   objectFit: "cover",
-  transform: "scale(1.03)",
 };
 
 const heroImageOverlay: CSSProperties = {
   position: "absolute",
   inset: 0,
   background:
-    "linear-gradient(180deg, rgba(11,26,43,0.04) 0%, rgba(11,26,43,0.38) 100%)",
-};
-
-const heroImageGlow: CSSProperties = {
-  position: "absolute",
-  inset: 0,
-  background:
-    "radial-gradient(circle at 20% 20%, rgba(255,255,255,0.20), transparent 26%)",
-  pointerEvents: "none",
+    "linear-gradient(180deg, rgba(10,29,48,0.04) 0%, rgba(10,29,48,0.34) 100%)",
 };
 
 const heroFloatingCard: CSSProperties = {
   position: "relative",
-  marginTop: -54,
+  marginTop: -42,
   marginLeft: "auto",
-  width: "min(92%, 440px)",
-  padding: "26px 24px",
-  borderRadius: 28,
-  background: "linear-gradient(180deg, #FFFCF8 0%, #F4EEDF 100%)",
-  border: "1px solid rgba(11,26,43,0.06)",
-  boxShadow: "0 20px 50px rgba(11,26,43,0.10)",
-  zIndex: 3,
+  width: "min(92%, 420px)",
+  padding: "24px",
+  borderRadius: 24,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
+  boxShadow: "0 18px 40px rgba(18, 36, 56, 0.10)",
 };
 
-const floatingEyebrow: CSSProperties = {
-  margin: "0 0 14px",
-  fontSize: 11,
-  letterSpacing: "0.18em",
-  textTransform: "uppercase",
-  color: "rgba(11,26,43,0.48)",
+const proofStrip: CSSProperties = {
+  marginTop: 28,
+  display: "flex",
+  flexWrap: "wrap",
+  gap: 12,
 };
 
-const floatingGrid: CSSProperties = {
-  display: "grid",
-  gap: 16,
-};
-
-const floatingValue: CSSProperties = {
-  margin: "0 0 4px",
-  fontSize: 20,
-  lineHeight: 1.2,
-  color: "#0B1A2B",
-  fontFamily: "var(--font-serif)",
-  fontWeight: 400,
-};
-
-const floatingLabel: CSSProperties = {
-  margin: 0,
-  fontSize: 14,
-  lineHeight: 1.7,
-  color: "rgba(11,26,43,0.66)",
-};
-
-const section: CSSProperties = {
-  padding: "104px 0",
-};
-
-const sectionSoft: CSSProperties = {
-  padding: "96px 0",
-  background: "linear-gradient(180deg, #F8F5EF 0%, #F3EEE4 100%)",
-};
-
-const leadSection: CSSProperties = {
-  padding: "104px 0",
-  background:
-    "radial-gradient(circle at top right, rgba(201,162,39,0.08), transparent 30%), linear-gradient(180deg, #FCFAF6 0%, #F7F3EC 100%)",
-};
-
-const ctaSection: CSSProperties = {
-  padding: "92px 0 48px",
+const proofItem: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  minHeight: 34,
+  padding: "0 12px",
+  borderRadius: 999,
+  background: "#E8EEF4",
+  border: "1px solid rgba(18,36,56,0.08)",
+  fontSize: 13,
+  color: "rgba(18, 36, 56, 0.76)",
 };
 
 const sectionSplit: CSSProperties = {
@@ -897,81 +850,82 @@ const sectionSplit: CSSProperties = {
 const eyebrow: CSSProperties = {
   margin: 0,
   fontSize: 11,
-  letterSpacing: "0.22em",
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.48)",
+  color: "rgba(18, 36, 56, 0.52)",
 };
 
 const sectionLabel: CSSProperties = {
   margin: "0 0 12px",
   fontSize: 11,
-  letterSpacing: "0.22em",
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.48)",
+  color: "rgba(18, 36, 56, 0.52)",
 };
 
 const heroTitle: CSSProperties = {
-  margin: "14px 0 24px",
-  maxWidth: 820,
-  fontSize: "clamp(2.9rem, 8vw, 6.2rem)",
-  lineHeight: 0.95,
-  letterSpacing: "-0.055em",
-  fontWeight: 400,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  margin: "12px 0 18px",
+  maxWidth: 760,
+  fontSize: "clamp(2.2rem, 5.8vw, 4.8rem)",
+  lineHeight: 1.03,
+  letterSpacing: "-0.04em",
+  fontWeight: 700,
+  fontFamily: "var(--font-sans)",
+  color: "#10263C",
 };
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
   maxWidth: 780,
-  fontSize: "clamp(2.1rem, 4vw, 3.9rem)",
-  lineHeight: 1.03,
+  fontSize: "clamp(2rem, 4vw, 3.6rem)",
+  lineHeight: 1.04,
   letterSpacing: "-0.03em",
-  fontWeight: 400,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontWeight: 650,
+  fontFamily: "var(--font-sans)",
+  color: "#10263C",
 };
 
 const ctaTitle: CSSProperties = {
   margin: "0 0 18px",
   maxWidth: 760,
-  fontSize: "clamp(2.1rem, 4vw, 3.4rem)",
-  lineHeight: 1.04,
+  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+  lineHeight: 1.05,
   letterSpacing: "-0.03em",
-  fontWeight: 400,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontWeight: 650,
+  fontFamily: "var(--font-sans)",
+  color: "#10263C",
 };
 
 const divider: CSSProperties = {
-  width: 54,
-  height: 2,
-  margin: "18px 0 28px",
+  width: 64,
+  height: 3,
+  margin: "18px 0 26px",
   borderRadius: 999,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
 };
 
 const luxuryRule: CSSProperties = {
-  width: 76,
-  height: 1,
+  width: 80,
+  height: 2,
   margin: "20px 0 24px",
-  background: "linear-gradient(90deg, #C9A227 0%, rgba(201,162,39,0.18) 100%)",
+  borderRadius: 999,
+  background: "linear-gradient(90deg, #5B7C99 0%, rgba(91,124,153,0.18) 100%)",
 };
 
 const heroText: CSSProperties = {
   margin: 0,
-  maxWidth: 720,
-  fontSize: 18,
-  lineHeight: 1.92,
-  color: "rgba(11, 26, 43, 0.74)",
+  maxWidth: 680,
+  fontSize: 16,
+  lineHeight: 1.8,
+  color: "rgba(18, 36, 56, 0.78)",
 };
 
 const heroSubText: CSSProperties = {
-  margin: "16px 0 0",
-  maxWidth: 640,
-  fontSize: 14,
-  lineHeight: 1.8,
-  color: "rgba(11,26,43,0.58)",
+  margin: "14px 0 0",
+  maxWidth: 620,
+  fontSize: 13,
+  lineHeight: 1.7,
+  color: "rgba(18,36,56,0.58)",
 };
 
 const sectionText: CSSProperties = {
@@ -979,13 +933,13 @@ const sectionText: CSSProperties = {
   maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18, 36, 56, 0.74)",
 };
 
 const heroActions: CSSProperties = {
-  marginTop: 30,
+  marginTop: 28,
   display: "flex",
-  gap: 16,
+  gap: 14,
   flexWrap: "wrap",
   alignItems: "center",
 };
@@ -994,30 +948,30 @@ const primaryButton: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: 56,
-  padding: "0 26px",
+  minHeight: 54,
+  padding: "0 24px",
   borderRadius: 999,
-  background: "linear-gradient(180deg, #F4F0E8 0%, #ECE5D8 100%)",
-  color: "#0B1A2B",
+  background: "#10263C",
+  color: "#FFFFFF",
   textDecoration: "none",
   fontWeight: 600,
-  border: "1px solid rgba(11, 26, 43, 0.08)",
-  boxShadow: "0 12px 24px rgba(11, 26, 43, 0.06)",
+  border: "1px solid rgba(16,38,60,0.10)",
+  boxShadow: "0 10px 24px rgba(16,38,60,0.16)",
 };
 
 const secondaryLink: CSSProperties = {
   textDecoration: "none",
-  color: "#0B1A2B",
-  fontWeight: 500,
+  color: "#10263C",
+  fontWeight: 600,
   display: "inline-flex",
   alignItems: "center",
   gap: 6,
   paddingBottom: 2,
-  borderBottom: "1px solid rgba(201,162,39,0.35)",
+  borderBottom: "1px solid rgba(91,124,153,0.34)",
 };
 
 const heroMiniPoints: CSSProperties = {
-  marginTop: 22,
+  marginTop: 20,
   display: "flex",
   flexWrap: "wrap",
   gap: 10,
@@ -1029,10 +983,38 @@ const heroMiniPill: CSSProperties = {
   minHeight: 34,
   padding: "0 12px",
   borderRadius: 999,
-  background: "linear-gradient(180deg, #F4F0E8 0%, #EEE7DB 100%)",
-  border: "1px solid rgba(201, 162, 39, 0.16)",
+  background: "#EAF0F5",
+  border: "1px solid rgba(18,36,56,0.08)",
   fontSize: 13,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18, 36, 56, 0.74)",
+};
+
+const floatingEyebrow: CSSProperties = {
+  margin: "0 0 14px",
+  fontSize: 11,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(18,36,56,0.48)",
+};
+
+const floatingGrid: CSSProperties = {
+  display: "grid",
+  gap: 14,
+};
+
+const floatingValue: CSSProperties = {
+  margin: "0 0 4px",
+  fontSize: 18,
+  lineHeight: 1.2,
+  color: "#10263C",
+  fontWeight: 700,
+};
+
+const floatingLabel: CSSProperties = {
+  margin: 0,
+  fontSize: 14,
+  lineHeight: 1.7,
+  color: "rgba(18,36,56,0.66)",
 };
 
 const gatewayEditorialGrid: CSSProperties = {
@@ -1044,18 +1026,18 @@ const gatewayEditorialGrid: CSSProperties = {
 const gatewayEditorialCard: CSSProperties = {
   display: "grid",
   gap: 18,
-  padding: "32px 30px",
-  borderRadius: 32,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F6F0E6 100%)",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
-  boxShadow: "0 18px 40px rgba(11, 26, 43, 0.06)",
+  padding: "30px 28px",
+  borderRadius: 28,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
+  boxShadow: "0 12px 32px rgba(18, 36, 56, 0.06)",
 };
 
 const gatewayAccent: CSSProperties = {
   width: 48,
-  height: 2,
+  height: 3,
   borderRadius: 999,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
 };
 
 const gatewayHeading: CSSProperties = {
@@ -1063,7 +1045,7 @@ const gatewayHeading: CSSProperties = {
   fontSize: 12,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(11,26,43,0.5)",
+  color: "rgba(18,36,56,0.5)",
 };
 
 const gatewayRichList: CSSProperties = {
@@ -1073,23 +1055,22 @@ const gatewayRichList: CSSProperties = {
 
 const gatewayRichItem: CSSProperties = {
   paddingBottom: 14,
-  borderBottom: "1px solid rgba(11,26,43,0.08)",
+  borderBottom: "1px solid rgba(18,36,56,0.08)",
 };
 
 const gatewayName: CSSProperties = {
   margin: "0 0 4px",
   fontSize: 22,
   lineHeight: 1.25,
-  color: "#0B1A2B",
-  fontFamily: "var(--font-serif)",
-  fontWeight: 400,
+  color: "#10263C",
+  fontWeight: 700,
 };
 
 const gatewayMeta: CSSProperties = {
   margin: 0,
   fontSize: 14,
   lineHeight: 1.7,
-  color: "rgba(11,26,43,0.62)",
+  color: "rgba(18,36,56,0.64)",
 };
 
 const supportGrid: CSSProperties = {
@@ -1099,10 +1080,10 @@ const supportGrid: CSSProperties = {
 
 const supportItem: CSSProperties = {
   paddingBottom: 14,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  borderBottom: "1px solid rgba(18,36,56,0.08)",
   fontSize: 20,
   lineHeight: 1.5,
-  color: "#0B1A2B",
+  color: "#10263C",
 };
 
 const planningGrid: CSSProperties = {
@@ -1125,39 +1106,39 @@ const regionsGrid: CSSProperties = {
 const planningCard: CSSProperties = {
   display: "block",
   padding: "28px",
-  borderRadius: 30,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F2E9 100%)",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
+  borderRadius: 26,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
   textDecoration: "none",
-  boxShadow: "0 12px 30px rgba(11, 26, 43, 0.04)",
+  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
 };
 
 const marketCard: CSSProperties = {
   display: "block",
-  padding: "30px 28px",
-  borderRadius: 30,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F2E9 100%)",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
+  padding: "28px",
+  borderRadius: 26,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
   textDecoration: "none",
-  boxShadow: "0 12px 30px rgba(11, 26, 43, 0.04)",
+  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
 };
 
 const regionCard: CSSProperties = {
   display: "block",
-  padding: "30px 28px",
-  borderRadius: 30,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F7F2E9 100%)",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
+  padding: "28px",
+  borderRadius: 26,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
   textDecoration: "none",
-  boxShadow: "0 12px 30px rgba(11, 26, 43, 0.04)",
+  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
 };
 
 const cardAccent: CSSProperties = {
   width: 48,
-  height: 2,
+  height: 3,
   borderRadius: 999,
   marginBottom: 16,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
 };
 
 const cardTopRow: CSSProperties = {
@@ -1170,12 +1151,11 @@ const cardTopRow: CSSProperties = {
 
 const cardTitle: CSSProperties = {
   margin: 0,
-  fontSize: "clamp(1.5rem, 2.4vw, 2rem)",
-  lineHeight: 1.08,
+  fontSize: "clamp(1.35rem, 2.2vw, 1.9rem)",
+  lineHeight: 1.1,
   letterSpacing: "-0.02em",
-  fontWeight: 400,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontWeight: 700,
+  color: "#10263C",
   flex: 1,
 };
 
@@ -1183,23 +1163,23 @@ const cardText: CSSProperties = {
   margin: 0,
   fontSize: 16,
   lineHeight: 1.85,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18, 36, 56, 0.72)",
 };
 
 const cardArrow: CSSProperties = {
   fontSize: 22,
   lineHeight: 1,
-  color: "#C9A227",
-  paddingTop: 6,
+  color: "#5B7C99",
+  paddingTop: 4,
 };
 
 const editorialPanel: CSSProperties = {
   marginTop: 34,
-  padding: "32px 30px",
-  borderRadius: 32,
-  background: "linear-gradient(180deg, #FBFAF7 0%, #F5EFE4 100%)",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
-  boxShadow: "0 18px 40px rgba(11, 26, 43, 0.06)",
+  padding: "30px 28px",
+  borderRadius: 28,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
+  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
 };
 
 const panelEyebrow: CSSProperties = {
@@ -1207,20 +1187,20 @@ const panelEyebrow: CSSProperties = {
   fontSize: 12,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.5)",
+  color: "rgba(18, 36, 56, 0.5)",
 };
 
 const panelText: CSSProperties = {
   margin: "0 0 14px",
   fontSize: 16,
   lineHeight: 1.8,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18, 36, 56, 0.72)",
 };
 
 const panelLink: CSSProperties = {
   textDecoration: "none",
-  color: "#0B1A2B",
-  fontWeight: 500,
+  color: "#10263C",
+  fontWeight: 600,
   display: "inline-flex",
   alignItems: "center",
   gap: 6,
@@ -1234,14 +1214,14 @@ const faqList: CSSProperties = {
 
 const faqItem: CSSProperties = {
   padding: "0 0 16px",
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  borderBottom: "1px solid rgba(18, 36, 56, 0.08)",
 };
 
 const faqQuestion: CSSProperties = {
   fontSize: 16,
-  fontWeight: 500,
+  fontWeight: 600,
   cursor: "pointer",
-  color: "#0B1A2B",
+  color: "#10263C",
   listStyle: "none",
   display: "flex",
   alignItems: "center",
@@ -1253,15 +1233,15 @@ const faqQuestion: CSSProperties = {
 const faqPlus: CSSProperties = {
   fontSize: 22,
   lineHeight: 1,
-  color: "#C9A227",
-  fontWeight: 400,
+  color: "#5B7C99",
+  fontWeight: 500,
 };
 
 const faqAnswer: CSSProperties = {
   marginTop: 8,
   fontSize: 15,
   lineHeight: 1.7,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18, 36, 56, 0.72)",
 };
 
 const leadIntroBar: CSSProperties = {
@@ -1278,14 +1258,13 @@ const leadIntroPill: CSSProperties = {
   minHeight: 34,
   padding: "0 12px",
   borderRadius: 999,
-  background: "linear-gradient(180deg, #F4F0E8 0%, #EEE7DB 100%)",
-  border: "1px solid rgba(201, 162, 39, 0.16)",
+  background: "#EAF0F5",
+  border: "1px solid rgba(18,36,56,0.08)",
   fontSize: 13,
-  color: "rgba(11, 26, 43, 0.72)",
-  boxShadow: "0 6px 16px rgba(11, 26, 43, 0.03)",
+  color: "rgba(18, 36, 56, 0.72)",
 };
 
 const leadIntroNote: CSSProperties = {
   fontSize: 13,
-  color: "rgba(11, 26, 43, 0.62)",
+  color: "rgba(18, 36, 56, 0.62)",
 };
