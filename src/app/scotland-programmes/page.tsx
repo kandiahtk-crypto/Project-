@@ -1,228 +1,336 @@
 import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
-const pageUrl =
-  "https://www.ukinboundgroundtransport.com/scotland-programmes";
+const siteUrl = "https://www.ukinboundgroundtransport.com";
 
 export const metadata: Metadata = {
-  title: "Scotland Touring Programmes",
+  title:
+    "Scotland Touring Programmes | Group Transport for Tour Operators & DMCs",
   description:
-    "Programme-led transport support for Scotland itineraries including Edinburgh, Glasgow, Loch Ness and the Highlands.",
+    "Scotland touring programmes for tour operators, DMCs and travel planners. Structured group transport across Edinburgh, Glasgow, the Highlands, Loch Ness and wider Scotland itineraries.",
   alternates: {
     canonical: "/scotland-programmes",
   },
   openGraph: {
     title: "Scotland Touring Programmes | UK Inbound Ground Transport",
     description:
-      "Structured transport support for Scotland touring and regional sequencing.",
-    url: pageUrl,
+      "Structured Scotland touring transport for tour operators, DMCs and travel planners across Edinburgh, Glasgow and Highland itineraries.",
+    url: `${siteUrl}/scotland-programmes`,
     siteName: "UK Inbound Ground Transport",
     locale: "en_GB",
     type: "website",
   },
 };
 
-const highlights = [
-  "Edinburgh and Glasgow gateway movements",
-  "Highlands routing and realistic day planning",
-  "Loch Ness and scenic touring support",
-  "Multi-stop Scotland touring programmes",
-  "Private groups and fixed-departure series",
-];
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do you support Scotland touring programmes for groups?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We support structured Scotland touring programmes for tour operators, DMCs and travel planners managing organised group itineraries.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can you support Edinburgh and Highland touring routes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We support routing across Edinburgh, Glasgow, Loch Ness, Inverness, the Highlands and wider Scotland touring flows.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you connect Scotland with wider UK and Ireland programmes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. Scotland can be delivered as a standalone programme or as part of wider England, Scotland and Ireland touring structures.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you work with individual travellers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Our Scotland programme support is positioned for tour operators, DMCs and travel planners managing structured group programmes rather than individual bookings.",
+      },
+    },
+  ],
+};
 
 export default function ScotlandProgrammesPage() {
   return (
-    <main>
-      <section style={heroSection}>
-        <div style={containerNarrow}>
-          <p style={eyebrow}>Scotland programmes</p>
-          <h1 style={heroTitle}>
-            Transport support for Scotland touring and regional sequencing.
-          </h1>
-          <div style={divider} />
-          <p style={heroText}>
-            We support Scotland itineraries linking major cities with Highlands
-            touring, scenic routes and multi-stop programmes that require clear
-            timing control and dependable delivery.
-          </p>
+    <main style={container}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <section style={hero}>
+        <p style={eyebrow}>Scotland touring programmes</p>
+
+        <h1 style={title}>
+          Scotland group transport for high-value touring programmes.
+        </h1>
+
+        <p style={text}>
+          Structured programme transport across Edinburgh, Glasgow, Loch Ness,
+          Inverness, the Highlands and wider Scotland touring itineraries for
+          tour operators, DMCs and travel planners.
+        </p>
+
+        <div style={imageWrap}>
+          <img
+            src="/scotland.jpeg"
+            alt="Scotland touring landscape for group travel programmes"
+            style={image}
+          />
         </div>
-      </section>
 
-      <section style={section}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Common programme structure</p>
-          <h2 style={sectionTitle}>
-            Scotland programmes need realistic daily planning.
-          </h2>
-          <p style={sectionText}>
-            Edinburgh, Glasgow, Loch Ness and the Highlands require realistic
-            daily planning and operational awareness. Travel times, sequencing
-            and service continuity need to be aligned carefully across the wider
-            itinerary.
-          </p>
-
-          <ul style={list}>
-            {highlights.map((item) => (
-              <li key={item} style={listItem}>
-                {item}
-              </li>
-            ))}
-          </ul>
+        <div style={ctaRow}>
+          <a href="/contact" style={primaryButton}>
+            Request Scotland transport
+          </a>
+          <a href="/programmes" style={secondaryLink}>
+            View programmes →
+          </a>
         </div>
       </section>
 
       <section style={sectionSoft}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Operational focus</p>
-          <h2 style={sectionTitle}>
-            Programme flow matters more as routes become longer and more scenic.
-          </h2>
-          <p style={sectionText}>
-            Our role is to help support realistic movement planning and
-            structured delivery so Scotland touring programmes remain clear,
-            dependable and commercially workable.
-          </p>
+        <h2 style={heading}>Scotland touring transport support</h2>
+
+        <p style={text}>
+          Scotland programmes require realistic journey planning, regional
+          awareness and dependable timing across longer touring distances. We
+          support structured group movements aligned to the pace and commercial
+          realities of Scotland itineraries.
+        </p>
+
+        <ul style={list}>
+          <li>Edinburgh and Glasgow arrival and departure support</li>
+          <li>Highlands touring logistics and multi-day routing</li>
+          <li>Loch Ness, Inverness and scenic touring movements</li>
+          <li>Multi-stop programme transport across Scotland</li>
+          <li>Group transport aligned to escorted and fixed-departure touring</li>
+        </ul>
+      </section>
+
+      <section style={section}>
+        <h2 style={heading}>Typical Scotland touring routes</h2>
+
+        <p style={text}>
+          Many Scotland programmes combine city arrivals with broader scenic
+          touring. Routing often needs to balance guest experience, coach
+          timings and realistic overnight sequencing.
+        </p>
+
+        <ul style={list}>
+          <li>Edinburgh to Inverness and Loch Ness touring</li>
+          <li>Edinburgh to Glasgow and west Scotland routing</li>
+          <li>Highlands circuits with scenic multi-day touring</li>
+          <li>Scotland extensions within wider UK itineraries</li>
+          <li>Scotland combined with England and Ireland touring programmes</li>
+        </ul>
+      </section>
+
+      <section style={sectionSoft}>
+        <h2 style={heading}>Built for organised group travel</h2>
+
+        <p style={text}>
+          Our Scotland support is designed for professional travel buyers who
+          need programme transport to feel structured, commercially aware and
+          operationally calm from first arrival through final departure.
+        </p>
+
+        <ul style={list}>
+          <li>Tour operators managing escorted and series touring</li>
+          <li>DMCs coordinating premium Scotland itineraries</li>
+          <li>Travel planners building structured group programmes</li>
+        </ul>
+      </section>
+
+      <section style={section}>
+        <h2 style={heading}>Scotland within wider UK programme flow</h2>
+
+        <p style={text}>
+          Scotland often sits within broader UK and Ireland itineraries. We help
+          shape transport flow between Scotland gateways, regional touring
+          points and onward programme stages to maintain continuity across the
+          full itinerary.
+        </p>
+
+        <ul style={list}>
+          <li>Scotland with England heritage touring routes</li>
+          <li>Scotland linked to London arrival and departure programmes</li>
+          <li>Scotland extensions connected to Ireland touring circuits</li>
+          <li>Northbound and southbound programme sequencing support</li>
+        </ul>
+      </section>
+
+      <section style={sectionSoft}>
+        <h2 style={heading}>Related transport services</h2>
+
+        <div style={linkGrid}>
+          <a href="/programmes" style={linkCard}>
+            Touring programmes →
+          </a>
+
+          <a href="/england-touring" style={linkCard}>
+            England touring →
+          </a>
+
+          <a href="/heathrow-group-transfers" style={linkCard}>
+            Heathrow group transfers →
+          </a>
+
+          <a href="/services" style={linkCard}>
+            UK transport services →
+          </a>
         </div>
       </section>
 
-      <section style={ctaSection}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Start a conversation</p>
-          <h2 style={ctaTitle}>
-            Planning a Scotland touring programme?
-          </h2>
-          <p style={sectionText}>
-            Tell us about your timings, route structure and service
-            requirements, and we’ll help shape the right transport support.
-          </p>
-          <div style={ctaActions}>
-            <a href="/contact" style={primaryButton}>
-              Contact us
-            </a>
-            <a href="/programmes" style={linkButton}>
-              View programmes →
-            </a>
-          </div>
+      <section style={cta}>
+        <h2 style={heading}>Planning a Scotland programme?</h2>
+
+        <p style={text}>
+          Share your routing, travel dates, group size and programme structure.
+          We’ll help shape a clear Scotland transport plan aligned to your wider
+          itinerary.
+        </p>
+
+        <div style={ctaRow}>
+          <a href="/contact" style={primaryButton}>
+            Request proposal
+          </a>
+          <a href="/" style={secondaryLink}>
+            Return to homepage →
+          </a>
         </div>
       </section>
     </main>
   );
 }
 
-const containerNarrow: CSSProperties = {
-  maxWidth: 760,
+const container: CSSProperties = {
+  maxWidth: 900,
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "40px 24px 80px",
 };
 
-const heroSection: CSSProperties = { padding: "40px 0 64px" };
-const section: CSSProperties = { padding: "88px 0" };
-const sectionSoft: CSSProperties = {
-  padding: "80px 0",
-  background: "#F8F5EF",
+const hero: CSSProperties = {
+  marginBottom: 80,
 };
-const ctaSection: CSSProperties = { padding: "72px 0 48px" };
+
+const section: CSSProperties = {
+  marginBottom: 80,
+};
+
+const sectionSoft: CSSProperties = {
+  marginBottom: 80,
+  padding: "32px",
+  background: "#F2F5F9",
+  borderRadius: 20,
+};
 
 const eyebrow: CSSProperties = {
-  margin: 0,
   fontSize: 12,
-  letterSpacing: "0.18em",
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "#5B7C99",
 };
 
-const sectionLabel: CSSProperties = {
-  margin: "0 0 12px",
-  fontSize: 12,
-  letterSpacing: "0.18em",
-  textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
-};
-
-const heroTitle: CSSProperties = {
-  margin: "14px 0 16px",
-  fontSize: "clamp(2.6rem, 7vw, 5rem)",
-  lineHeight: 1.02,
-  letterSpacing: "-0.04em",
-  fontFamily: "var(--font-serif)",
-  fontWeight: 400,
-  color: "#0B1A2B",
-};
-
-const sectionTitle: CSSProperties = {
-  margin: "0 0 18px",
-  fontSize: "clamp(2rem, 5vw, 3.2rem)",
+const title: CSSProperties = {
+  fontSize: "clamp(2.1rem, 5vw, 3.4rem)",
   lineHeight: 1.06,
-  letterSpacing: "-0.025em",
-  fontFamily: "var(--font-serif)",
-  fontWeight: 400,
-  color: "#0B1A2B",
+  margin: "12px 0 20px",
+  fontWeight: 700,
+  color: "#10263C",
+  letterSpacing: "-0.03em",
 };
 
-const ctaTitle: CSSProperties = {
-  margin: "0 0 18px",
-  fontSize: "clamp(2rem, 5vw, 3rem)",
-  lineHeight: 1.06,
-  fontFamily: "var(--font-serif)",
-  fontWeight: 400,
-  color: "#0B1A2B",
+const heading: CSSProperties = {
+  fontSize: "clamp(1.5rem, 3vw, 2rem)",
+  marginBottom: 16,
+  fontWeight: 700,
+  color: "#10263C",
+  letterSpacing: "-0.02em",
 };
 
-const divider: CSSProperties = {
-  width: 48,
-  height: 2,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
-  margin: "18px 0 24px",
-};
-
-const heroText: CSSProperties = {
-  fontSize: 17,
-  lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
-};
-
-const sectionText: CSSProperties = {
-  margin: 0,
-  fontSize: 17,
-  lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+const text: CSSProperties = {
+  fontSize: 16,
+  lineHeight: 1.8,
+  color: "rgba(18,36,56,0.75)",
 };
 
 const list: CSSProperties = {
-  listStyle: "none",
-  padding: 0,
-  margin: "28px 0 0",
-  display: "grid",
-  gap: 14,
+  marginTop: 16,
+  paddingLeft: 18,
+  lineHeight: 1.8,
+  color: "rgba(18,36,56,0.78)",
 };
 
-const listItem: CSSProperties = {
-  paddingBottom: 12,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
-  fontSize: 18,
-  lineHeight: 1.6,
-  color: "#0B1A2B",
+const imageWrap: CSSProperties = {
+  marginTop: 28,
+  borderRadius: 22,
+  overflow: "hidden",
+  boxShadow: "0 18px 40px rgba(16, 38, 60, 0.12)",
 };
 
-const ctaActions: CSSProperties = {
-  marginTop: 24,
+const image: CSSProperties = {
+  width: "100%",
+  height: "auto",
+  display: "block",
+};
+
+const cta: CSSProperties = {
+  padding: "40px",
+  background: "#EEF3F8",
+  borderRadius: 24,
+  textAlign: "center",
+};
+
+const ctaRow: CSSProperties = {
+  marginTop: 20,
   display: "flex",
-  gap: 20,
+  gap: 12,
   flexWrap: "wrap",
 };
 
 const primaryButton: CSSProperties = {
-  padding: "14px 20px",
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "14px 24px",
   borderRadius: 999,
-  background: "#F2EEE6",
+  background: "#10263C",
+  color: "#fff",
   textDecoration: "none",
-  color: "#0B1A2B",
   fontWeight: 600,
-  border: "1px solid rgba(11, 26, 43, 0.08)",
 };
 
-const linkButton: CSSProperties = {
+const secondaryLink: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
   textDecoration: "none",
-  color: "#0B1A2B",
-  fontWeight: 500,
+  color: "#10263C",
+  fontWeight: 600,
+};
+
+const linkGrid: CSSProperties = {
+  display: "grid",
+  gap: 12,
+};
+
+const linkCard: CSSProperties = {
+  padding: 16,
+  borderRadius: 14,
+  background: "#fff",
+  border: "1px solid rgba(18,36,56,0.1)",
+  textDecoration: "none",
+  color: "#10263C",
+  fontWeight: 600,
 };
