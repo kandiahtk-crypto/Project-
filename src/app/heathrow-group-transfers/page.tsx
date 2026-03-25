@@ -1,37 +1,142 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
+const siteUrl = "https://www.ukinboundgroundtransport.com";
+
 export const metadata: Metadata = {
-  title: "Heathrow Group Transfers | UK Inbound Ground Transport",
+  title:
+    "Heathrow Group Transfers | Heathrow Transport for Tour Operators & DMCs",
   description:
-    "Structured Heathrow group transfers for tour operators, DMCs and travel planners. Reliable airport arrivals, departures and onward UK & Ireland touring transport.",
+    "Heathrow group transfers for tour operators, DMCs and travel planners. Structured airport transport from Heathrow for arrivals, departures and UK touring programmes.",
+  alternates: {
+    canonical: "/heathrow-group-transfers",
+  },
+  openGraph: {
+    title: "Heathrow Group Transfers | UK Inbound Ground Transport",
+    description:
+      "Structured Heathrow airport transfers for tour operators, DMCs and travel planners across UK and Ireland touring programmes.",
+    url: `${siteUrl}/heathrow-group-transfers`,
+    siteName: "UK Inbound Ground Transport",
+    locale: "en_GB",
+    type: "website",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Do you provide Heathrow group transfers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We provide Heathrow group transport for tour operators, DMCs and travel planners managing structured arrivals, departures and onward touring programmes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Can you collect groups from different Heathrow terminals?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We can support group arrivals across Heathrow terminals, including coordinated collections aligned to flight schedules and programme flow.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you connect Heathrow arrivals to wider UK touring routes?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes. We support onward transport from Heathrow into London, England, Scotland and Ireland touring programmes.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Do you work with individual travellers?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "No. Our Heathrow services are positioned for tour operators, DMCs and travel planners managing structured group programmes rather than individual bookings.",
+      },
+    },
+  ],
 };
 
 export default function HeathrowPage() {
   return (
     <main style={container}>
-      <section style={section}>
-        <p style={eyebrow}>London Heathrow transport</p>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      <section style={hero}>
+        <p style={eyebrow}>Heathrow airport transport</p>
 
         <h1 style={title}>
           Heathrow group transfers for UK &amp; Ireland touring programmes.
         </h1>
 
         <p style={text}>
-          We support tour operators, DMCs and travel planners with structured
-          Heathrow airport transfers for group arrivals, departures and onward
-          touring across England, Scotland and Ireland.
+          Structured group transport from Heathrow for arrivals, departures,
+          hotel transfers and onward touring across England, Scotland and
+          Ireland.
         </p>
+
+        <div style={ctaRow}>
+          <a href="/contact" style={primaryButton}>
+            Request Heathrow transport
+          </a>
+          <a href="/southampton-cruise-transfers" style={secondaryLink}>
+            Southampton cruise transfers →
+          </a>
+        </div>
       </section>
 
       <section style={sectionSoft}>
-        <h2 style={heading}>What we support at Heathrow</h2>
+        <h2 style={heading}>Heathrow group transport support</h2>
+
+        <p style={text}>
+          Heathrow is the UK’s main international gateway for inbound touring.
+          Group transport here requires timing discipline, terminal awareness
+          and clear coordination with the onward programme.
+        </p>
 
         <ul style={list}>
-          <li>Group airport arrivals and meet &amp; greet coordination</li>
-          <li>Hotel transfers across London and surrounding areas</li>
-          <li>Direct departures to regional touring routes</li>
-          <li>Multi-coach coordination for large programmes</li>
-          <li>Cruise transfer connections including Southampton and Dover</li>
+          <li>Airport arrivals and departures for organised groups</li>
+          <li>Terminal collections aligned to flight schedules</li>
+          <li>Heathrow to London hotel transfers</li>
+          <li>Heathrow to direct touring departures</li>
+          <li>Multi-coach coordination for larger movements</li>
+        </ul>
+      </section>
+
+      <section style={section}>
+        <h2 style={heading}>Heathrow terminals and group coordination</h2>
+
+        <p style={text}>
+          We support structured programme movements across Heathrow’s major
+          terminals, aligning collection timing, vehicle planning and onward
+          routing with the operational realities of inbound group travel.
+        </p>
+
+        <ul style={list}>
+          <li>Terminal 2 group arrivals</li>
+          <li>Terminal 3 group arrivals</li>
+          <li>Terminal 4 group arrivals</li>
+          <li>Terminal 5 group arrivals</li>
+          <li>Staggered flight arrival coordination where required</li>
+        </ul>
+      </section>
+
+      <section style={sectionSoft}>
+        <h2 style={heading}>Typical Heathrow routes</h2>
+
+        <ul style={list}>
+          <li>Heathrow to Central London hotels</li>
+          <li>Heathrow to Windsor, Oxford and Bath touring starts</li>
+          <li>Heathrow to direct long-distance UK touring departures</li>
+          <li>Heathrow to cruise connections and regional gateways</li>
+          <li>Heathrow to wider England, Scotland and Ireland programmes</li>
         </ul>
       </section>
 
@@ -39,132 +144,159 @@ export default function HeathrowPage() {
         <h2 style={heading}>Who we work with</h2>
 
         <p style={text}>
-          Our Heathrow transfer services are designed for professional travel
-          buyers managing structured programmes.
+          Our Heathrow transport services are built for professional travel
+          buyers managing commercially sensitive itineraries and structured
+          group operations.
         </p>
 
         <ul style={list}>
-          <li>Tour operators running fixed-departure series</li>
-          <li>DMCs coordinating UK arrivals and logistics</li>
-          <li>Travel planners managing private group itineraries</li>
+          <li>Tour operators running fixed-departure and escorted touring</li>
+          <li>DMCs managing airport arrivals and programme flow</li>
+          <li>Travel planners coordinating premium group itineraries</li>
         </ul>
       </section>
 
       <section style={sectionSoft}>
-        <h2 style={heading}>Typical Heathrow routing</h2>
+        <h2 style={heading}>Related transport services</h2>
 
-        <p style={text}>
-          Heathrow is one of the main gateways for UK touring programmes. We
-          align transport with itinerary flow from arrival to onward routing.
-        </p>
+        <div style={linkGrid}>
+          <a href="/southampton-cruise-transfers" style={linkCard}>
+            Southampton cruise transfers →
+          </a>
 
-        <ul style={list}>
-          <li>Heathrow to Central London hotels</li>
-          <li>Heathrow to Oxford to Bath to South West England</li>
-          <li>Heathrow to Cambridge to York to Northern England</li>
-          <li>Heathrow to direct long-distance touring departures</li>
-        </ul>
-      </section>
+          <a href="/services" style={linkCard}>
+            UK transport services →
+          </a>
 
-      <section style={section}>
-        <h2 style={heading}>Structured programme delivery</h2>
-
-        <p style={text}>
-          Heathrow requires precise coordination, particularly for long-haul
-          arrivals and group movements. We focus on timing, routing clarity and
-          operational consistency across your full programme.
-        </p>
-
-        <ul style={list}>
-          <li>Clear arrival coordination and scheduling</li>
-          <li>Experienced handling of international groups</li>
-          <li>Alignment with full UK and Ireland itineraries</li>
-        </ul>
+          <a href="/programmes" style={linkCard}>
+            Touring programmes →
+          </a>
+        </div>
       </section>
 
       <section style={cta}>
-        <h2 style={heading}>Planning Heathrow arrivals for your programme?</h2>
+        <h2 style={heading}>Planning a Heathrow arrival or departure?</h2>
 
         <p style={text}>
-          Tell us your travel dates, group size and itinerary outline. We will
-          structure a clear Heathrow transfer solution aligned to your full
-          touring programme.
+          Share your flight schedule, group size and onward itinerary. We’ll
+          structure a clear and reliable Heathrow transport plan around your
+          programme.
         </p>
 
-        <a href="/contact" style={button}>
-          Request Heathrow transport support
-        </a>
+        <div style={ctaRow}>
+          <a href="/contact" style={primaryButton}>
+            Request proposal
+          </a>
+          <a href="/" style={secondaryLink}>
+            Return to homepage →
+          </a>
+        </div>
       </section>
     </main>
   );
 }
 
-const container = {
+const container: CSSProperties = {
   maxWidth: 900,
   margin: "0 auto",
   padding: "40px 24px 80px",
 };
 
-const section = {
+const hero: CSSProperties = {
   marginBottom: 80,
 };
 
-const sectionSoft = {
+const section: CSSProperties = {
+  marginBottom: 80,
+};
+
+const sectionSoft: CSSProperties = {
   marginBottom: 80,
   padding: "32px",
-  background: "#F8F5EF",
+  background: "#F2F5F9",
   borderRadius: 20,
 };
 
-const eyebrow = {
+const eyebrow: CSSProperties = {
   fontSize: 12,
-  letterSpacing: "0.18em",
-  textTransform: "uppercase" as const,
-  color: "rgba(11,26,43,0.5)",
+  letterSpacing: "0.2em",
+  textTransform: "uppercase",
+  color: "#5B7C99",
 };
 
-const title = {
-  fontSize: "clamp(2.4rem, 5vw, 3.8rem)",
+const title: CSSProperties = {
+  fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
   lineHeight: 1.05,
-  fontFamily: "var(--font-serif)",
   margin: "12px 0 20px",
-  color: "#0B1A2B",
+  fontWeight: 700,
+  color: "#10263C",
 };
 
-const heading = {
-  fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
+const heading: CSSProperties = {
+  fontSize: "clamp(1.5rem, 3vw, 2rem)",
   marginBottom: 16,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontWeight: 700,
+  color: "#10263C",
 };
 
-const text = {
+const text: CSSProperties = {
   fontSize: 16,
   lineHeight: 1.8,
-  color: "rgba(11,26,43,0.75)",
-  maxWidth: 640,
+  color: "rgba(18,36,56,0.75)",
 };
 
-const list = {
+const list: CSSProperties = {
   marginTop: 16,
   paddingLeft: 18,
   lineHeight: 1.8,
+  color: "rgba(18,36,56,0.78)",
 };
 
-const cta = {
+const cta: CSSProperties = {
   padding: "40px",
-  background: "#FCFAF6",
+  background: "#EEF3F8",
   borderRadius: 24,
-  textAlign: "center" as const,
+  textAlign: "center",
 };
 
-const button = {
-  display: "inline-block",
+const ctaRow: CSSProperties = {
   marginTop: 20,
+  display: "flex",
+  gap: 12,
+  flexWrap: "wrap",
+};
+
+const primaryButton: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
   padding: "14px 24px",
   borderRadius: 999,
-  background: "#0B1A2B",
+  background: "#10263C",
   color: "#fff",
   textDecoration: "none",
+  fontWeight: 600,
+};
+
+const secondaryLink: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  textDecoration: "none",
+  color: "#10263C",
+  fontWeight: 600,
+};
+
+const linkGrid: CSSProperties = {
+  display: "grid",
+  gap: 12,
+};
+
+const linkCard: CSSProperties = {
+  padding: 16,
+  borderRadius: 14,
+  background: "#fff",
+  border: "1px solid rgba(18,36,56,0.1)",
+  textDecoration: "none",
+  color: "#10263C",
   fontWeight: 600,
 };
