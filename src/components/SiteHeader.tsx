@@ -37,8 +37,8 @@ export default function SiteHeader() {
   const backdrop: CSSProperties = {
     position: "fixed",
     inset: 0,
-    background: "rgba(11, 26, 43, 0.18)",
-    backdropFilter: "blur(4px)",
+    background: "rgba(16, 38, 60, 0.20)",
+    backdropFilter: "blur(6px)",
     zIndex: 109,
     opacity: menuOpen ? 1 : 0,
     transition: "opacity 0.28s ease",
@@ -49,10 +49,10 @@ export default function SiteHeader() {
     top: "88px",
     left: "16px",
     right: "16px",
-    background: "linear-gradient(180deg, #F8F5EF 0%, #F2EEE6 100%)",
-    border: "1px solid rgba(11, 26, 43, 0.08)",
-    borderRadius: "30px",
-    boxShadow: "0 24px 80px rgba(11, 26, 43, 0.12)",
+    background: "linear-gradient(180deg, #F7FAFD 0%, #EEF3F8 100%)",
+    border: "1px solid rgba(16, 38, 60, 0.08)",
+    borderRadius: "28px",
+    boxShadow: "0 24px 70px rgba(16, 38, 60, 0.12)",
     zIndex: 110,
     transform: menuOpen
       ? "translateY(0) scale(1)"
@@ -64,7 +64,7 @@ export default function SiteHeader() {
   };
 
   const mobilePanelInner: CSSProperties = {
-    padding: "26px 24px 24px",
+    padding: "24px 22px 22px",
   };
 
   const mobileLink = (index: number): CSSProperties => ({
@@ -72,14 +72,15 @@ export default function SiteHeader() {
     alignItems: "center",
     justifyContent: "space-between",
     gap: 16,
-    color: "#0B1A2B",
+    color: "#10263C",
     textDecoration: "none",
-    fontSize: "31px",
-    lineHeight: 1.06,
-    fontFamily: "var(--font-serif)",
-    letterSpacing: "-0.02em",
+    fontSize: "24px",
+    lineHeight: 1.1,
+    fontFamily: "var(--font-sans)",
+    fontWeight: 700,
+    letterSpacing: "-0.03em",
     padding: "14px 0",
-    borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+    borderBottom: "1px solid rgba(16, 38, 60, 0.08)",
     transform: menuOpen ? "translateY(0)" : "translateY(10px)",
     opacity: menuOpen ? 1 : 0,
     transition: `opacity 0.42s cubic-bezier(0.22, 1, 0.36, 1) ${
@@ -92,16 +93,16 @@ export default function SiteHeader() {
     alignItems: "center",
     justifyContent: "center",
     marginTop: "18px",
-    minHeight: 58,
-    padding: "0 24px",
-    border: "1px solid rgba(201, 162, 39, 0.25)",
-    background: "linear-gradient(135deg, #F6F2EA 0%, #EFE9DD 100%)",
-    color: "#0B1A2B",
+    minHeight: 54,
+    padding: "0 22px",
+    border: "1px solid rgba(16, 38, 60, 0.10)",
+    background: "#10263C",
+    color: "#FFFFFF",
     textDecoration: "none",
     fontWeight: 600,
-    fontSize: 16,
+    fontSize: 15,
     borderRadius: "999px",
-    boxShadow: "0 10px 30px rgba(201, 162, 39, 0.12)",
+    boxShadow: "0 10px 24px rgba(16, 38, 60, 0.16)",
     transform: menuOpen ? "translateY(0)" : "translateY(12px)",
     opacity: menuOpen ? 1 : 0,
     transition:
@@ -113,7 +114,7 @@ export default function SiteHeader() {
       <header style={header}>
         <div style={headerInner}>
           <Link href="/" style={brand} onClick={closeMenu}>
-            <span style={brandTop}>UK Inbound Ground Transport</span>
+            <span style={brandTop}>UK INBOUND GROUND TRANSPORT</span>
             <span style={brandBottom}>Premium UK &amp; Ireland movements</span>
           </Link>
 
@@ -180,7 +181,7 @@ export default function SiteHeader() {
           <div style={mobilePanel}>
             <div style={mobilePanelInner}>
               <Link href="/" style={mobileBrand} onClick={closeMenu}>
-                <span style={mobileBrandTop}>UK Inbound Ground Transport</span>
+                <span style={mobileBrandTop}>UK INBOUND GROUND TRANSPORT</span>
                 <span style={mobileBrandBottom}>
                   Premium UK &amp; Ireland movements
                 </span>
@@ -217,9 +218,9 @@ const header: CSSProperties = {
   position: "sticky",
   top: 0,
   zIndex: 100,
-  background: "rgba(252, 250, 246, 0.9)",
+  background: "rgba(255, 255, 255, 0.86)",
   backdropFilter: "blur(16px)",
-  borderBottom: "1px solid rgba(11, 26, 43, 0.06)",
+  borderBottom: "1px solid rgba(16, 38, 60, 0.08)",
 };
 
 const headerInner: CSSProperties = {
@@ -237,7 +238,7 @@ const brand: CSSProperties = {
   flexDirection: "column",
   gap: "4px",
   textDecoration: "none",
-  color: "#0B1A2B",
+  color: "#10263C",
   minWidth: 0,
 };
 
@@ -245,14 +246,14 @@ const brandTop: CSSProperties = {
   fontSize: "11px",
   letterSpacing: "0.22em",
   textTransform: "uppercase",
-  fontWeight: 600,
+  fontWeight: 700,
   lineHeight: 1.3,
 };
 
 const brandBottom: CSSProperties = {
   fontSize: "12px",
   lineHeight: 1.4,
-  color: "rgba(11, 26, 43, 0.58)",
+  color: "rgba(16, 38, 60, 0.58)",
 };
 
 const desktopNav: CSSProperties = {
@@ -262,29 +263,30 @@ const desktopNav: CSSProperties = {
 };
 
 const navLink: CSSProperties = {
-  color: "rgba(11, 26, 43, 0.76)",
+  color: "rgba(16, 38, 60, 0.78)",
   textDecoration: "none",
   fontSize: "14px",
+  fontWeight: 500,
   paddingBottom: "8px",
 };
 
 const navCta: CSSProperties = {
-  color: "#0B1A2B",
-  background: "transparent",
-  border: "1px solid rgba(11, 26, 43, 0.10)",
+  color: "#FFFFFF",
+  background: "#10263C",
   textDecoration: "none",
   fontSize: "14px",
   fontWeight: 600,
   padding: "10px 16px",
   borderRadius: "999px",
+  boxShadow: "0 8px 20px rgba(16, 38, 60, 0.14)",
 };
 
 const menuButton: CSSProperties = {
   width: "52px",
   height: "52px",
-  border: "1px solid rgba(11, 26, 43, 0.10)",
+  border: "1px solid rgba(16, 38, 60, 0.10)",
   borderRadius: "999px",
-  background: "transparent",
+  background: "#FFFFFF",
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
@@ -301,7 +303,7 @@ const menuLine = (
     position: "absolute",
     width: "18px",
     height: "2px",
-    background: "#0B1A2B",
+    background: "#10263C",
     borderRadius: "999px",
     transition: "all 0.25s ease",
   };
@@ -334,16 +336,16 @@ const mobileBrand: CSSProperties = {
 };
 
 const mobileBrandTop: CSSProperties = {
-  color: "#0B1A2B",
+  color: "#10263C",
   fontSize: "11px",
   letterSpacing: "0.18em",
   textTransform: "uppercase",
-  fontWeight: 600,
+  fontWeight: 700,
   lineHeight: 1.4,
 };
 
 const mobileBrandBottom: CSSProperties = {
-  color: "rgba(11, 26, 43, 0.58)",
+  color: "rgba(16, 38, 60, 0.58)",
   fontSize: "12px",
   lineHeight: 1.4,
 };
@@ -354,7 +356,7 @@ const mobileAccent: CSSProperties = {
   marginTop: 14,
   marginBottom: 10,
   borderRadius: 999,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
 };
 
 const mobileLinks: CSSProperties = {
@@ -365,7 +367,7 @@ const mobileLinks: CSSProperties = {
 
 const mobileLinkArrow: CSSProperties = {
   fontSize: 18,
-  color: "#C9A227",
+  color: "#5B7C99",
   lineHeight: 1,
-  paddingTop: 6,
+  paddingTop: 4,
 };
