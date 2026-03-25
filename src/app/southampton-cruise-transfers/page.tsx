@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
 const siteUrl = "https://www.ukinboundgroundtransport.com";
@@ -55,13 +56,11 @@ const faqSchema = {
 export default function SouthamptonPage() {
   return (
     <main style={container}>
-      {/* SCHEMA */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      {/* HERO */}
       <section style={hero}>
         <p style={eyebrow}>Southampton cruise transport</p>
 
@@ -71,7 +70,7 @@ export default function SouthamptonPage() {
 
         <p style={text}>
           Structured group transport for cruise arrivals, departures and
-          pre/post cruise touring across England, Scotland and Ireland.
+          pre/post-cruise touring across England, Scotland and Ireland.
         </p>
 
         <div style={ctaRow}>
@@ -84,39 +83,53 @@ export default function SouthamptonPage() {
         </div>
       </section>
 
-      {/* CONTENT BLOCK */}
       <section style={sectionSoft}>
         <h2 style={heading}>Southampton cruise transport support</h2>
 
         <p style={text}>
-          Southampton is the UK’s primary cruise gateway, requiring precise
-          coordination between port schedules, group movements and onward
-          touring programmes.
+          Southampton is a major UK cruise gateway, requiring clear coordination
+          between port schedules, group movements and onward touring
+          programmes.
         </p>
 
         <ul style={list}>
           <li>Turnaround day arrivals and departures</li>
-          <li>Pre and post cruise touring logistics</li>
-          <li>Southampton to London, Heathrow and UK regions</li>
-          <li>Multi-coach coordination for large groups</li>
+          <li>Pre and post-cruise touring logistics</li>
+          <li>Southampton to London, Heathrow and regional destinations</li>
+          <li>Multi-coach coordination for larger groups</li>
           <li>Shore excursion transport planning</li>
         </ul>
       </section>
 
-      {/* ROUTING */}
       <section style={section}>
         <h2 style={heading}>Typical Southampton routes</h2>
 
         <ul style={list}>
-          <li>Southampton → London hotels</li>
-          <li>Southampton → Heathrow Airport</li>
-          <li>Southampton → Oxford → Bath touring routes</li>
-          <li>Southampton → multi-day UK touring programmes</li>
+          <li>Southampton to Central London hotels</li>
+          <li>Southampton to Heathrow Airport</li>
+          <li>Southampton to Gatwick Airport</li>
+          <li>Southampton to Oxford and Bath touring routes</li>
+          <li>Southampton to wider UK and Ireland touring programmes</li>
         </ul>
       </section>
 
-      {/* INTERNAL LINKS (VERY IMPORTANT FOR SEO) */}
       <section style={sectionSoft}>
+        <h2 style={heading}>Who we work with</h2>
+
+        <p style={text}>
+          Our Southampton cruise support is structured for professional travel
+          buyers managing organised group movements and commercial programme
+          delivery.
+        </p>
+
+        <ul style={list}>
+          <li>Tour operators running cruise-linked itineraries</li>
+          <li>DMCs managing port logistics and regional touring flow</li>
+          <li>Travel planners coordinating group arrivals and departures</li>
+        </ul>
+      </section>
+
+      <section style={section}>
         <h2 style={heading}>Related transport services</h2>
 
         <div style={linkGrid}>
@@ -134,94 +147,101 @@ export default function SouthamptonPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section style={cta}>
-        <h2 style={heading}>Planning a cruise programme?</h2>
+        <h2 style={heading}>Planning a Southampton cruise programme?</h2>
 
         <p style={text}>
-          Tell us your cruise schedule, group size and itinerary. We’ll structure
-          a clear and reliable transport plan.
+          Share your cruise schedule, group size and onward itinerary. We’ll
+          structure a clear and reliable transport plan around your programme.
         </p>
 
-        <a href="/contact" style={primaryButton}>
-          Request proposal
-        </a>
+        <div style={ctaRow}>
+          <a href="/contact" style={primaryButton}>
+            Request proposal
+          </a>
+          <a href="/" style={secondaryLink}>
+            Return to homepage →
+          </a>
+        </div>
       </section>
     </main>
   );
 }
 
-/* STYLES */
-
-const container = {
+const container: CSSProperties = {
   maxWidth: 900,
   margin: "0 auto",
   padding: "40px 24px 80px",
 };
 
-const hero = {
+const hero: CSSProperties = {
   marginBottom: 80,
 };
 
-const section = {
+const section: CSSProperties = {
   marginBottom: 80,
 };
 
-const sectionSoft = {
+const sectionSoft: CSSProperties = {
   marginBottom: 80,
-  padding: 32,
+  padding: "32px",
   background: "#F2F5F9",
   borderRadius: 20,
 };
 
-const eyebrow = {
+const eyebrow: CSSProperties = {
   fontSize: 12,
   letterSpacing: "0.2em",
-  textTransform: "uppercase" as const,
+  textTransform: "uppercase",
   color: "#5B7C99",
 };
 
-const title = {
+const title: CSSProperties = {
   fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
+  lineHeight: 1.05,
   margin: "12px 0 20px",
   fontWeight: 700,
   color: "#10263C",
 };
 
-const heading = {
+const heading: CSSProperties = {
   fontSize: "clamp(1.5rem, 3vw, 2rem)",
   marginBottom: 16,
   fontWeight: 700,
   color: "#10263C",
 };
 
-const text = {
+const text: CSSProperties = {
   fontSize: 16,
   lineHeight: 1.8,
   color: "rgba(18,36,56,0.75)",
 };
 
-const list = {
+const list: CSSProperties = {
   marginTop: 16,
   paddingLeft: 18,
   lineHeight: 1.8,
+  color: "rgba(18,36,56,0.78)",
 };
 
-const cta = {
-  padding: 40,
+const cta: CSSProperties = {
+  padding: "40px",
   background: "#EEF3F8",
   borderRadius: 24,
-  textAlign: "center" as const,
+  textAlign: "center",
 };
 
-const ctaRow = {
+const ctaRow: CSSProperties = {
   marginTop: 20,
   display: "flex",
   gap: 12,
   flexWrap: "wrap",
 };
 
-const primaryButton = {
+const primaryButton: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
   padding: "14px 24px",
   borderRadius: 999,
   background: "#10263C",
@@ -230,18 +250,20 @@ const primaryButton = {
   fontWeight: 600,
 };
 
-const secondaryLink = {
+const secondaryLink: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
   textDecoration: "none",
   color: "#10263C",
   fontWeight: 600,
 };
 
-const linkGrid = {
+const linkGrid: CSSProperties = {
   display: "grid",
   gap: 12,
 };
 
-const linkCard = {
+const linkCard: CSSProperties = {
   padding: 16,
   borderRadius: 14,
   background: "#fff",
