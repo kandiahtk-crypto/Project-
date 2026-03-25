@@ -73,6 +73,14 @@ export default function SouthamptonPage() {
           pre/post-cruise touring across England, Scotland and Ireland.
         </p>
 
+        <div style={imageWrap}>
+          <img
+            src="/southamption-cruise.jpg"
+            alt="Southampton cruise terminal and transport operations"
+            style={image}
+          />
+        </div>
+
         <div style={ctaRow}>
           <a href="/contact" style={primaryButton}>
             Request cruise transport
@@ -271,4 +279,17 @@ const linkCard: CSSProperties = {
   textDecoration: "none",
   color: "#10263C",
   fontWeight: 600,
+};
+
+const imageWrap: CSSProperties = {
+  marginTop: 28,
+  borderRadius: 20,
+  overflow: "hidden",
+  boxShadow: "0 18px 40px rgba(16, 38, 60, 0.12)",
+};
+
+const image: CSSProperties = {
+  width: "100%",
+  height: "auto",
+  display: "block",
 };
