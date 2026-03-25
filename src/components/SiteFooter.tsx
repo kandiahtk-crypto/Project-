@@ -23,6 +23,11 @@ export default function SiteFooter() {
           <nav style={nav} aria-label="Footer">
             <div style={navColumn}>
               <p style={navHeading}>Explore</p>
+
+              <a href="/uk-ireland-touring" style={link}>
+                 UK & Ireland Touring
+              </a>
+              
               <a href="/programmes" style={link}>
                 Programmes
               </a>
