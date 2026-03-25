@@ -618,3 +618,14 @@ textarea:focus {
   background: linear-gradient(180deg, #c9a227, #e3c565);
   border-radius: 10px;
 }
+
+@media (min-width: 900px) {
+  .hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(360px, 0.92fr) !important;
+    gap: 56px !important;
+  }
+
+  .hero-image {
+    min-height: 520px !important;
+  }
+}
