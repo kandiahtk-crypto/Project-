@@ -12,6 +12,9 @@ const MOBILE_LINKS = [
   { href: "/programmes", label: "Programmes" },
 ];
 
+const WHATSAPP_URL =
+  "https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement.";
+
 export default function SiteHeader() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -109,6 +112,27 @@ export default function SiteHeader() {
       "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.18s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.18s",
   };
 
+  const mobileWhatsApp: CSSProperties = {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: "12px",
+    minHeight: 54,
+    padding: "0 22px",
+    border: "1px solid rgba(37, 211, 102, 0.25)",
+    background: "linear-gradient(135deg, #E8F8EF 0%, #DFF5E8 100%)",
+    color: "#10263C",
+    textDecoration: "none",
+    fontWeight: 600,
+    fontSize: 15,
+    borderRadius: "999px",
+    boxShadow: "0 10px 24px rgba(37, 211, 102, 0.12)",
+    transform: menuOpen ? "translateY(0)" : "translateY(12px)",
+    opacity: menuOpen ? 1 : 0,
+    transition:
+      "opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.22s, transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) 0.22s",
+  };
+
   return (
     <>
       <header style={header}>
@@ -154,6 +178,16 @@ export default function SiteHeader() {
             >
               Programmes
             </Link>
+
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={navWhatsApp}
+            >
+              WhatsApp
+            </a>
+
             <Link href="/contact" style={navCta}>
               Contact
             </Link>
@@ -205,6 +239,16 @@ export default function SiteHeader() {
                 <Link href="/contact" style={mobileCta} onClick={closeMenu}>
                   Contact
                 </Link>
+
+                <a
+                  href={WHATSAPP_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={mobileWhatsApp}
+                  onClick={closeMenu}
+                >
+                  WhatsApp
+                </a>
               </div>
             </div>
           </div>
@@ -268,6 +312,21 @@ const navLink: CSSProperties = {
   fontSize: "14px",
   fontWeight: 500,
   paddingBottom: "8px",
+};
+
+const navWhatsApp: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  padding: "10px 16px",
+  borderRadius: "999px",
+  fontSize: "14px",
+  fontWeight: 600,
+  textDecoration: "none",
+  color: "#10263C",
+  background: "linear-gradient(135deg, #E8F8EF 0%, #DFF5E8 100%)",
+  border: "1px solid rgba(37, 211, 102, 0.25)",
+  boxShadow: "0 6px 18px rgba(37, 211, 102, 0.15)",
 };
 
 const navCta: CSSProperties = {
