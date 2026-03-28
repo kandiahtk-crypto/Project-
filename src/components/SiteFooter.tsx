@@ -1,4 +1,5 @@
 import type { CSSProperties } from "react";
+import StickyEnquiryBar from "./StickyEnquiryBar";
 
 export default function SiteFooter() {
   return (
@@ -67,7 +68,6 @@ export default function SiteFooter() {
                 +44 20 8629 2776
               </a>
 
-              {/* ✅ WHATSAPP ADDED */}
               <a
                 href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
                 target="_blank"
@@ -116,6 +116,8 @@ export default function SiteFooter() {
           </a>
         </div>
       </div>
+
+      <StickyEnquiryBar />
     </footer>
   );
 }
