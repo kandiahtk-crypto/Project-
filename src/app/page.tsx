@@ -333,6 +333,15 @@ export default function HomePage() {
                 onward touring across the UK and Ireland, aligning transport
                 with programme flow from the first point of entry.
               </p>
+
+              <div style={heroActions}>
+                <a href="/heathrow-group-transfers" style={secondaryLink}>
+                  Heathrow group transfers →
+                </a>
+                <a href="/southampton-cruise-transfers" style={secondaryLink}>
+                  Southampton cruise transfers →
+                </a>
+              </div>
             </div>
           </div>
 
@@ -475,6 +484,15 @@ export default function HomePage() {
                 itinerary, from gateway arrival through to regional touring and
                 final departure.
               </p>
+
+              <div style={heroActions}>
+                <a href="/dmc-transport-uk" style={secondaryLink}>
+                  DMC transport UK →
+                </a>
+                <a href="/uk-ireland-touring" style={secondaryLink}>
+                  UK &amp; Ireland touring →
+                </a>
+              </div>
             </div>
 
             <div style={planningGrid} className="feature-grid">
@@ -521,6 +539,15 @@ export default function HomePage() {
                 Select the structure closest to your requirement and explore the
                 relevant support model.
               </p>
+
+              <div style={heroActions}>
+                <a href="/coach-hire-uk" style={secondaryLink}>
+                  Coach hire UK →
+                </a>
+                <a href="/tour-operator-transport-uk" style={secondaryLink}>
+                  Tour operator transport UK →
+                </a>
+              </div>
             </div>
 
             <div style={planningGrid} className="feature-grid">
@@ -559,6 +586,15 @@ export default function HomePage() {
                 supporting inbound UK and Ireland programmes from major source
                 markets including the United States, Europe, China and India.
               </p>
+
+              <div style={heroActions}>
+                <a href="/markets/usa" style={secondaryLink}>
+                  USA market →
+                </a>
+                <a href="/markets/china" style={secondaryLink}>
+                  China market →
+                </a>
+              </div>
             </div>
           </div>
 
@@ -697,6 +733,15 @@ export default function HomePage() {
             </span>
           </div>
 
+          <div style={heroActions}>
+            <a href="/dmc-transport-uk" style={secondaryLink}>
+              DMC transport UK →
+            </a>
+            <a href="/coach-hire-uk" style={secondaryLink}>
+              Coach hire UK →
+            </a>
+          </div>
+
           <ProgrammeEnquiryForm />
         </div>
       </section>
@@ -713,6 +758,9 @@ export default function HomePage() {
           <div style={heroActions}>
             <a href="/contact" style={primaryButton}>
               Contact us
+            </a>
+            <a href="/coach-hire-uk" style={secondaryLink}>
+              Coach hire UK →
             </a>
             <a href="/services" style={secondaryLink}>
               View services →
