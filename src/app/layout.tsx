@@ -60,6 +60,49 @@ export default function RootLayout({
           <main style={{ flex: 1 }}>{children}</main>
           <SiteFooter />
         </div>
+
+        <a
+          href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Chat on WhatsApp"
+          style={{
+            position: "fixed",
+            right: "18px",
+            bottom: "18px",
+            zIndex: 120,
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "10px",
+            minHeight: "56px",
+            padding: "0 18px",
+            borderRadius: "999px",
+            background: "linear-gradient(135deg, #25D366 0%, #1EBE5B 100%)",
+            color: "#FFFFFF",
+            textDecoration: "none",
+            fontWeight: 700,
+            fontSize: "15px",
+            boxShadow: "0 14px 34px rgba(0,0,0,0.18)",
+            border: "1px solid rgba(255,255,255,0.18)",
+          }}
+        >
+          <span
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: "28px",
+              height: "28px",
+              borderRadius: "999px",
+              background: "rgba(255,255,255,0.16)",
+              fontSize: "15px",
+              lineHeight: 1,
+            }}
+          >
+            💬
+          </span>
+          WhatsApp
+        </a>
       </body>
     </html>
   );
