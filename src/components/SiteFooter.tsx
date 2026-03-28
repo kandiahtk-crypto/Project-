@@ -1,5 +1,4 @@
 import type { CSSProperties } from "react";
-import StickyEnquiryBar from "./StickyEnquiryBar";
 
 export default function SiteFooter() {
   return (
@@ -116,8 +115,6 @@ export default function SiteFooter() {
           </a>
         </div>
       </div>
-
-      <StickyEnquiryBar />
     </footer>
   );
 }
