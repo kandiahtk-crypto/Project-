@@ -21,25 +21,26 @@ export default function SiteFooter() {
           </div>
 
           <nav style={nav} aria-label="Footer">
+            {/* EXPLORE */}
             <div style={navColumn}>
               <p style={navHeading}>Explore</p>
 
               <a href="/tour-operator-transport-uk" style={link}>
-                 Tour Operator Transport UK
+                Tour Operator Transport UK
               </a>
 
               <a href="/coach-hire-uk" style={link}>
-                 Coach Hire UK
+                Coach Hire UK
               </a>
 
               <a href="/dmc-transport-uk" style={link}>
-                 DMC Transport UK
+                DMC Transport UK
               </a>
 
               <a href="/uk-ireland-touring" style={link}>
-                 UK & Ireland Touring
+                UK & Ireland Touring
               </a>
-              
+
               <a href="/programmes" style={link}>
                 Programmes
               </a>
@@ -54,15 +55,50 @@ export default function SiteFooter() {
               </a>
             </div>
 
+            {/* CONTACT */}
             <div style={navColumn}>
               <p style={navHeading}>Contact</p>
+
               <a href="mailto:info@ukinboundgroundtransport.com" style={link}>
                 info@ukinboundgroundtransport.com
               </a>
+
               <a href="tel:+442086292776" style={link}>
                 +44 20 8629 2776
               </a>
+
+              {/* ✅ WHATSAPP ADDED */}
+              <a
+                href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={link}
+              >
+                WhatsApp us →
+              </a>
+
               <p style={metaText}>UK • Ireland • London movements</p>
+            </div>
+
+            {/* LEGAL */}
+            <div style={navColumn}>
+              <p style={navHeading}>Legal</p>
+
+              <a href="/gdpr-data-protection" style={link}>
+                GDPR & Data Protection
+              </a>
+
+              <a href="/modern-slavery-statement" style={link}>
+                Modern Slavery Statement
+              </a>
+
+              <a href="/privacy-policy" style={link}>
+                Privacy Policy
+              </a>
+
+              <a href="/terms-and-conditions" style={link}>
+                Terms & Conditions
+              </a>
             </div>
           </nav>
         </div>
