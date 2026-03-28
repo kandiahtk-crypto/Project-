@@ -28,6 +28,10 @@ export default function SiteFooter() {
                  Tour Operator Transport UK
               </a>
 
+              <a href="/coach-hire-uk" style={link}>
+                 Coach Hire UK
+              </a>
+
               <a href="/dmc-transport-uk" style={link}>
                  DMC Transport UK
               </a>
