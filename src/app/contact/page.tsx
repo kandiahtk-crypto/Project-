@@ -281,13 +281,15 @@ export default function ContactPage() {
 const containerWide: CSSProperties = {
   maxWidth: 1200,
   margin: "0 auto",
-  padding: "0 28px",
+  padding: "0 20px",
+  width: "100%",
 };
 
 const containerNarrow: CSSProperties = {
   maxWidth: 760,
   margin: "0 auto",
-  padding: "0 24px",
+  padding: "0 20px",
+  width: "100%",
 };
 
 const heroSection: CSSProperties = {
@@ -314,18 +316,21 @@ const heroGrid: CSSProperties = {
   gridTemplateColumns: "1fr",
   gap: 34,
   alignItems: "start",
+  width: "100%",
 };
 
 const sectionSplit: CSSProperties = {
   display: "grid",
   gap: 42,
   alignItems: "start",
+  width: "100%",
 };
 
 const formShell: CSSProperties = {
   display: "grid",
   gap: 34,
   alignItems: "start",
+  width: "100%",
 };
 
 const eyebrow: CSSProperties = {
@@ -346,35 +351,38 @@ const sectionLabel: CSSProperties = {
 
 const heroTitle: CSSProperties = {
   margin: "12px 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2.2rem, 5.8vw, 4.8rem)",
-  lineHeight: 1.03,
+  maxWidth: "100%",
+  fontSize: "clamp(2rem, 9vw, 4.8rem)",
+  lineHeight: 1.02,
   letterSpacing: "-0.04em",
   fontWeight: 700,
   fontFamily: "var(--font-sans)",
   color: "#10263C",
+  wordBreak: "break-word",
 };
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
-  maxWidth: 780,
-  fontSize: "clamp(2rem, 4vw, 3.6rem)",
+  maxWidth: "100%",
+  fontSize: "clamp(1.8rem, 7vw, 3.6rem)",
   lineHeight: 1.04,
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
   color: "#10263C",
+  wordBreak: "break-word",
 };
 
 const ctaTitle: CSSProperties = {
   margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+  maxWidth: "100%",
+  fontSize: "clamp(1.8rem, 7vw, 3.2rem)",
   lineHeight: 1.05,
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
   color: "#10263C",
+  wordBreak: "break-word",
 };
 
 const divider: CSSProperties = {
@@ -502,6 +510,7 @@ const contactValue: CSSProperties = {
   fontSize: 20,
   lineHeight: 1.4,
   fontWeight: 700,
+  wordBreak: "break-word",
 };
 
 const contactMeta: CSSProperties = {
