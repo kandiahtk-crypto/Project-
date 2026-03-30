@@ -13,93 +13,269 @@ export default function ProgrammeEnquiryForm() {
   if (submitted) {
     return (
       <div style={successBox}>
-        Thank you. A member of our team will respond shortly with a structured
-        transport approach aligned to your programme.
+        <p style={successEyebrow}>Enquiry received</p>
+        <p style={successText}>
+          Thank you. A member of our team will respond shortly with a structured
+          transport approach aligned to your programme.
+        </p>
       </div>
     );
   }
 
   return (
     <form onSubmit={handleSubmit} style={form}>
-      <div style={grid} className="lead-form-two">
-        <input placeholder="Company name" required style={input} />
-        <input placeholder="Contact name" required style={input} />
+      <div style={introBlock}>
+        <p style={formEyebrow}>Programme enquiry</p>
+        <h3 style={formTitle}>Share your programme details</h3>
+        <p style={formText}>
+          Give us the core outline and we’ll come back with a clear transport
+          approach.
+        </p>
       </div>
 
-      <div style={grid} className="lead-form-two">
-        <input
-          type="email"
-          placeholder="Email address"
-          required
-          style={input}
-        />
-        <input placeholder="Travel window (e.g. May 2026)" style={input} />
+      <div style={section}>
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="companyName">
+              Company name
+            </label>
+            <input
+              id="companyName"
+              name="companyName"
+              placeholder="Your company"
+              required
+              style={input}
+            />
+          </div>
+
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="contactName">
+              Contact name
+            </label>
+            <input
+              id="contactName"
+              name="contactName"
+              placeholder="Your full name"
+              required
+              style={input}
+            />
+          </div>
+        </div>
+
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="emailAddress">
+              Email address
+            </label>
+            <input
+              id="emailAddress"
+              name="emailAddress"
+              type="email"
+              placeholder="name@company.com"
+              required
+              style={input}
+            />
+          </div>
+
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="travelWindow">
+              Travel window
+            </label>
+            <input
+              id="travelWindow"
+              name="travelWindow"
+              placeholder="e.g. May 2026"
+              style={input}
+            />
+          </div>
+        </div>
+
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="groupSize">
+              Group size
+            </label>
+            <input
+              id="groupSize"
+              name="groupSize"
+              placeholder="Approximate passenger count"
+              style={input}
+            />
+          </div>
+
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="programmeType">
+              Programme type
+            </label>
+            <input
+              id="programmeType"
+              name="programmeType"
+              placeholder="Series / Private / FIT"
+              style={input}
+            />
+          </div>
+        </div>
+
+        <div style={fieldWrap}>
+          <label style={label} htmlFor="programmeDetails">
+            Itinerary and requirements
+          </label>
+          <textarea
+            id="programmeDetails"
+            name="programmeDetails"
+            placeholder="Outline itinerary, routing, gateways, hotels, cruise movements or any operational requirements"
+            rows={6}
+            style={textarea}
+          />
+        </div>
       </div>
 
-      <div style={grid} className="lead-form-two">
-        <input placeholder="Group size" style={input} />
-        <input
-          placeholder="Programme type (Series / Private / FIT)"
-          style={input}
-        />
+      <div style={footerRow}>
+        <button type="submit" style={button}>
+          Submit programme enquiry
+        </button>
+        <p style={microText}>
+          For urgent movements, you can also call or WhatsApp us directly.
+        </p>
       </div>
-
-      <textarea
-        placeholder="Outline itinerary, routing, gateways or operational requirements"
-        rows={5}
-        style={textarea}
-      />
-
-      <button type="submit" style={button}>
-        Submit programme enquiry
-      </button>
     </form>
   );
 }
 
 const form: CSSProperties = {
-  marginTop: 32,
+  display: "grid",
+  gap: 28,
+};
+
+const introBlock: CSSProperties = {
+  display: "grid",
+  gap: 8,
+};
+
+const formEyebrow: CSSProperties = {
+  margin: 0,
+  fontSize: 11,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(22,33,43,0.54)",
+};
+
+const formTitle: CSSProperties = {
+  margin: 0,
+  fontSize: "clamp(1.35rem, 3vw, 1.8rem)",
+  lineHeight: 1.15,
+  letterSpacing: "-0.03em",
+  color: "#16212B",
+  fontWeight: 650,
+};
+
+const formText: CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.8,
+  color: "rgba(22,33,43,0.70)",
+};
+
+const section: CSSProperties = {
   display: "grid",
   gap: 18,
 };
 
-const grid: CSSProperties = {
+const gridTwo: CSSProperties = {
   display: "grid",
-  gap: 16,
+  gap: 18,
+};
+
+const fieldWrap: CSSProperties = {
+  display: "grid",
+  gap: 9,
+};
+
+const label: CSSProperties = {
+  fontSize: 13,
+  lineHeight: 1.4,
+  fontWeight: 600,
+  color: "#16212B",
 };
 
 const input: CSSProperties = {
-  height: 56,
-  padding: "0 16px",
-  borderRadius: 14,
-  border: "1px solid rgba(11,26,43,0.12)",
+  width: "100%",
+  minHeight: 58,
+  padding: "0 18px",
+  borderRadius: 16,
+  border: "1px solid rgba(22,33,43,0.12)",
+  background: "#FFFFFF",
+  color: "#16212B",
   fontSize: 15,
-  background: "#fff",
+  lineHeight: 1.4,
+  outline: "none",
+  boxShadow: "inset 0 1px 2px rgba(22,33,43,0.03)",
 };
 
 const textarea: CSSProperties = {
-  padding: "16px",
-  borderRadius: 14,
-  border: "1px solid rgba(11,26,43,0.12)",
+  width: "100%",
+  minHeight: 150,
+  padding: "16px 18px",
+  borderRadius: 16,
+  border: "1px solid rgba(22,33,43,0.12)",
+  background: "#FFFFFF",
+  color: "#16212B",
   fontSize: 15,
-  background: "#fff",
+  lineHeight: 1.7,
+  outline: "none",
+  resize: "vertical",
+  boxShadow: "inset 0 1px 2px rgba(22,33,43,0.03)",
+};
+
+const footerRow: CSSProperties = {
+  display: "grid",
+  gap: 12,
+  alignItems: "start",
 };
 
 const button: CSSProperties = {
-  height: 56,
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 58,
+  padding: "0 28px",
   borderRadius: 999,
-  background: "#0B1A2B",
-  color: "#fff",
-  fontWeight: 600,
   border: "none",
+  background: "linear-gradient(135deg, #C9A961 0%, #B58A3B 100%)",
+  color: "#0C1A27",
+  fontWeight: 700,
+  fontSize: 15,
   cursor: "pointer",
+  boxShadow: "0 14px 30px rgba(0,0,0,0.12)",
+};
+
+const microText: CSSProperties = {
+  margin: 0,
+  fontSize: 13,
+  lineHeight: 1.7,
+  color: "rgba(22,33,43,0.58)",
 };
 
 const successBox: CSSProperties = {
-  marginTop: 28,
-  padding: "22px",
-  borderRadius: 18,
-  background: "#F4F0E8",
-  color: "#0B1A2B",
+  marginTop: 8,
+  padding: "24px 22px",
+  borderRadius: 22,
+  background: "linear-gradient(180deg, #FBF7F1 0%, #F4ECE0 100%)",
+  border: "1px solid rgba(22,33,43,0.08)",
+  boxShadow: "0 12px 28px rgba(22,33,43,0.05)",
+};
+
+const successEyebrow: CSSProperties = {
+  margin: "0 0 8px",
+  fontSize: 11,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(22,33,43,0.54)",
+};
+
+const successText: CSSProperties = {
+  margin: 0,
   fontSize: 15,
+  lineHeight: 1.8,
+  color: "#16212B",
 };
