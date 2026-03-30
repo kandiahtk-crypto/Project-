@@ -202,7 +202,7 @@ const faqs = [
 
 export default function HomePage() {
   return (
-    <main>
+    <main style={pageShell}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -216,6 +216,7 @@ export default function HomePage() {
       />
 
       <section style={heroSection}>
+        <div style={heroOverlay} />
         <div style={containerWide}>
           <div style={heroShell}>
             <div style={heroGrid} className="hero-grid">
@@ -245,8 +246,8 @@ export default function HomePage() {
                   <a href="/contact" style={primaryButton}>
                     Request programme support
                   </a>
-                  <a href="/heathrow-group-transfers" style={secondaryLink}>
-                    Heathrow transfers →
+                  <a href="/heathrow-group-transfers" style={secondaryButton}>
+                    Heathrow transfers
                   </a>
                 </div>
 
@@ -262,7 +263,7 @@ export default function HomePage() {
               </div>
 
               <div style={heroVisualStack}>
-                <div style={heroImageFrame} className="hero-image premium-card">
+                <div style={heroImageFrame}>
                   <img
                     src="/hero-coach.png"
                     alt="Luxury UK touring coach"
@@ -271,7 +272,7 @@ export default function HomePage() {
                   <div style={heroImageOverlay} />
                 </div>
 
-                <div style={heroFloatingCard} className="premium-card">
+                <div style={heroFloatingCard}>
                   <p style={floatingEyebrow}>Operational focus</p>
 
                   <div style={floatingGrid}>
@@ -334,11 +335,11 @@ export default function HomePage() {
                 with programme flow from the first point of entry.
               </p>
 
-              <div style={heroActions}>
-                <a href="/heathrow-group-transfers" style={secondaryLink}>
+              <div style={inlineLinks}>
+                <a href="/heathrow-group-transfers" style={softInlineLink}>
                   Heathrow group transfers →
                 </a>
-                <a href="/southampton-cruise-transfers" style={secondaryLink}>
+                <a href="/southampton-cruise-transfers" style={softInlineLink}>
                   Southampton cruise transfers →
                 </a>
               </div>
@@ -346,7 +347,7 @@ export default function HomePage() {
           </div>
 
           <div style={gatewayEditorialGrid} className="gateway-grid">
-            <div style={gatewayEditorialCard} className="premium-card">
+            <div style={gatewayEditorialCard}>
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Airports</p>
 
@@ -354,7 +355,7 @@ export default function HomePage() {
                 <div style={gatewayRichItem}>
                   <a
                     href="/heathrow-group-transfers"
-                    style={{ textDecoration: "none" }}
+                    style={gatewayLinkWrap}
                   >
                     <p style={gatewayName}>London Heathrow</p>
                     <p style={gatewayMeta}>
@@ -384,14 +385,14 @@ export default function HomePage() {
                   <p style={gatewayMeta}>West Scotland routing and arrivals</p>
                 </div>
 
-                <div style={gatewayRichItem}>
+                <div style={gatewayRichItemLast}>
                   <p style={gatewayName}>Dublin</p>
                   <p style={gatewayMeta}>Ireland gateway and onward touring</p>
                 </div>
               </div>
             </div>
 
-            <div style={gatewayEditorialCard} className="premium-card">
+            <div style={gatewayEditorialCard}>
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Cruise ports</p>
 
@@ -399,7 +400,7 @@ export default function HomePage() {
                 <div style={gatewayRichItem}>
                   <a
                     href="/southampton-cruise-transfers"
-                    style={{ textDecoration: "none" }}
+                    style={gatewayLinkWrap}
                   >
                     <p style={gatewayName}>Southampton Cruise Terminal</p>
                     <p style={gatewayMeta}>
@@ -435,7 +436,7 @@ export default function HomePage() {
                   </p>
                 </div>
 
-                <div style={gatewayRichItem}>
+                <div style={gatewayRichItemLast}>
                   <p style={gatewayName}>Cobh</p>
                   <p style={gatewayMeta}>
                     Southern Ireland cruise-linked touring
@@ -485,18 +486,18 @@ export default function HomePage() {
                 final departure.
               </p>
 
-              <div style={heroActions}>
-                <a href="/dmc-transport-uk" style={secondaryLink}>
+              <div style={inlineLinks}>
+                <a href="/dmc-transport-uk" style={softInlineLink}>
                   DMC transport UK →
                 </a>
-                <a href="/uk-ireland-touring" style={secondaryLink}>
+                <a href="/uk-ireland-touring" style={softInlineLink}>
                   UK &amp; Ireland touring →
                 </a>
               </div>
             </div>
 
             <div style={planningGrid} className="feature-grid">
-              <article style={planningCard} className="premium-card">
+              <article style={planningCard}>
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Programme-first approach</h3>
                 <p style={cardText}>
@@ -505,7 +506,7 @@ export default function HomePage() {
                 </p>
               </article>
 
-              <article style={planningCard} className="premium-card">
+              <article style={planningCard}>
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Multi-region coordination</h3>
                 <p style={cardText}>
@@ -514,7 +515,7 @@ export default function HomePage() {
                 </p>
               </article>
 
-              <article style={planningCard} className="premium-card">
+              <article style={planningCard}>
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Reliable delivery</h3>
                 <p style={cardText}>
@@ -527,7 +528,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={sectionSoft}>
+      <section style={sectionSoftAlt}>
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
@@ -540,11 +541,11 @@ export default function HomePage() {
                 relevant support model.
               </p>
 
-              <div style={heroActions}>
-                <a href="/coach-hire-uk" style={secondaryLink}>
+              <div style={inlineLinks}>
+                <a href="/coach-hire-uk" style={softInlineLink}>
                   Coach hire UK →
                 </a>
-                <a href="/tour-operator-transport-uk" style={secondaryLink}>
+                <a href="/tour-operator-transport-uk" style={softInlineLink}>
                   Tour operator transport UK →
                 </a>
               </div>
@@ -552,12 +553,7 @@ export default function HomePage() {
 
             <div style={planningGrid} className="feature-grid">
               {planningCards.map((item) => (
-                <a
-                  key={item.title}
-                  href={item.href}
-                  style={planningCard}
-                  className="premium-card"
-                >
+                <a key={item.title} href={item.href} style={planningCard}>
                   <div style={cardTopRow}>
                     <h3 style={cardTitle}>{item.title}</h3>
                     <span style={cardArrow}>→</span>
@@ -587,11 +583,11 @@ export default function HomePage() {
                 markets including the United States, Europe, China and India.
               </p>
 
-              <div style={heroActions}>
-                <a href="/markets/usa" style={secondaryLink}>
+              <div style={inlineLinks}>
+                <a href="/markets/usa" style={softInlineLink}>
                   USA market →
                 </a>
-                <a href="/markets/china" style={secondaryLink}>
+                <a href="/markets/china" style={softInlineLink}>
                   China market →
                 </a>
               </div>
@@ -600,12 +596,7 @@ export default function HomePage() {
 
           <div style={marketsGrid}>
             {markets.map((market) => (
-              <a
-                key={market.title}
-                href={market.href}
-                style={marketCard}
-                className="premium-card"
-              >
+              <a key={market.title} href={market.href} style={marketCard}>
                 <div style={cardTopRow}>
                   <h3 style={cardTitle}>{market.title}</h3>
                   <span style={cardArrow}>→</span>
@@ -639,12 +630,7 @@ export default function HomePage() {
 
           <div style={regionsGrid} className="feature-grid">
             {regionCards.map((item) => (
-              <a
-                key={item.title}
-                href={item.href}
-                style={regionCard}
-                className="premium-card"
-              >
+              <a key={item.title} href={item.href} style={regionCard}>
                 <div style={cardAccent} />
                 <div style={cardTopRow}>
                   <h3 style={cardTitle}>{item.title}</h3>
@@ -675,7 +661,7 @@ export default function HomePage() {
                 programme delivery.
               </p>
 
-              <div style={editorialPanel} className="premium-card">
+              <div style={editorialPanel}>
                 <p style={panelEyebrow}>Example England itinerary</p>
                 <p style={panelText}>
                   London arrivals, Oxford, Bath, Cambridge, York and the Lake
@@ -690,7 +676,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section style={sectionSoft}>
+      <section style={sectionSoftAlt}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Frequently asked questions</p>
           <h2 style={sectionTitle}>
@@ -733,37 +719,39 @@ export default function HomePage() {
             </span>
           </div>
 
-          <div style={heroActions}>
-            <a href="/dmc-transport-uk" style={secondaryLink}>
+          <div style={inlineLinks}>
+            <a href="/dmc-transport-uk" style={softInlineLink}>
               DMC transport UK →
             </a>
-            <a href="/coach-hire-uk" style={secondaryLink}>
+            <a href="/coach-hire-uk" style={softInlineLink}>
               Coach hire UK →
             </a>
           </div>
 
-          <ProgrammeEnquiryForm />
+          <div style={leadFormWrap}>
+            <ProgrammeEnquiryForm />
+          </div>
         </div>
       </section>
 
       <section style={ctaSection}>
         <div style={containerNarrow}>
-          <p style={sectionLabel}>Start a conversation</p>
+          <p style={ctaEyebrow}>Start a conversation</p>
           <h2 style={ctaTitle}>Planning a UK or Ireland programme?</h2>
-          <p style={sectionText}>
+          <p style={ctaText}>
             Tell us your routing, timings and group size. We’ll structure the
             transport around your programme.
           </p>
 
-          <div style={heroActions}>
+          <div style={heroActionsCentered}>
             <a href="/contact" style={primaryButton}>
               Contact us
             </a>
-            <a href="/coach-hire-uk" style={secondaryLink}>
-              Coach hire UK →
+            <a href="/coach-hire-uk" style={secondaryButton}>
+              Coach hire UK
             </a>
-            <a href="/services" style={secondaryLink}>
-              View services →
+            <a href="/services" style={secondaryButton}>
+              View services
             </a>
           </div>
         </div>
@@ -772,45 +760,74 @@ export default function HomePage() {
   );
 }
 
+const pageShell: CSSProperties = {
+  background: "#F6F1E8",
+};
+
 const containerWide: CSSProperties = {
   maxWidth: 1200,
   margin: "0 auto",
   padding: "0 28px",
+  width: "100%",
+  position: "relative",
+  zIndex: 2,
 };
 
 const containerNarrow: CSSProperties = {
   maxWidth: 760,
   margin: "0 auto",
   padding: "0 24px",
+  width: "100%",
+  position: "relative",
+  zIndex: 2,
 };
 
 const heroSection: CSSProperties = {
-  padding: "46px 0 78px",
+  position: "relative",
+  overflow: "hidden",
+  padding: "56px 0 92px",
   background:
-    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 52%, #FFFFFF 100%)",
+    "radial-gradient(circle at top right, rgba(201,169,97,0.16), transparent 24%), linear-gradient(135deg, #0C1A27 0%, #13293D 46%, #1B344A 100%)",
+};
+
+const heroOverlay: CSSProperties = {
+  position: "absolute",
+  inset: 0,
+  background:
+    "radial-gradient(circle at top right, rgba(201,169,97,0.16), transparent 30%), radial-gradient(circle at bottom left, rgba(255,255,255,0.05), transparent 28%)",
+  pointerEvents: "none",
 };
 
 const section: CSSProperties = {
-  padding: "100px 0",
+  padding: "108px 0",
+  background: "linear-gradient(180deg, #F6F1E8 0%, #F3EDE4 100%)",
 };
 
 const sectionSoft: CSSProperties = {
-  padding: "94px 0",
-  background: "linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 100%)",
+  padding: "96px 0",
+  background: "linear-gradient(180deg, #F0E8DE 0%, #ECE3D7 100%)",
+};
+
+const sectionSoftAlt: CSSProperties = {
+  padding: "96px 0",
+  background: "linear-gradient(180deg, #EEE6DB 0%, #F6F1E8 100%)",
 };
 
 const sectionTint: CSSProperties = {
-  padding: "94px 0",
-  background: "linear-gradient(180deg, #F2F5F9 0%, #E8EEF4 100%)",
+  padding: "96px 0",
+  background: "linear-gradient(180deg, #F3ECE3 0%, #EAE1D4 100%)",
 };
 
 const leadSection: CSSProperties = {
-  padding: "100px 0",
-  background: "linear-gradient(180deg, #F6F8FB 0%, #EDF2F6 100%)",
+  padding: "108px 0",
+  background: "linear-gradient(180deg, #F8F3EB 0%, #F1E8DC 100%)",
 };
 
 const ctaSection: CSSProperties = {
-  padding: "90px 0 48px",
+  padding: "96px 0 72px",
+  background:
+    "linear-gradient(135deg, #0C1A27 0%, #13293D 46%, #1B344A 100%)",
+  textAlign: "center",
 };
 
 const heroShell: CSSProperties = {
@@ -820,7 +837,7 @@ const heroShell: CSSProperties = {
 const heroGrid: CSSProperties = {
   display: "grid",
   gridTemplateColumns: "1fr",
-  gap: 34,
+  gap: 36,
   alignItems: "center",
 };
 
@@ -837,17 +854,17 @@ const heroVisualStack: CSSProperties = {
 
 const heroImageFrame: CSSProperties = {
   position: "relative",
-  minHeight: 320,
-  borderRadius: 28,
+  minHeight: 340,
+  borderRadius: 30,
   overflow: "hidden",
-  boxShadow: "0 24px 60px rgba(18, 36, 56, 0.14)",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
+  boxShadow: "0 24px 60px rgba(0, 0, 0, 0.24)",
+  border: "1px solid rgba(255,255,255,0.10)",
 };
 
 const heroImage: CSSProperties = {
   width: "100%",
   height: "100%",
-  minHeight: 320,
+  minHeight: 340,
   objectFit: "cover",
 };
 
@@ -855,7 +872,7 @@ const heroImageOverlay: CSSProperties = {
   position: "absolute",
   inset: 0,
   background:
-    "linear-gradient(180deg, rgba(10,29,48,0.04) 0%, rgba(10,29,48,0.34) 100%)",
+    "linear-gradient(180deg, rgba(10,29,48,0.08) 0%, rgba(10,29,48,0.48) 100%)",
 };
 
 const heroFloatingCard: CSSProperties = {
@@ -864,14 +881,16 @@ const heroFloatingCard: CSSProperties = {
   marginLeft: "auto",
   width: "min(92%, 420px)",
   padding: "24px",
-  borderRadius: 24,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 18px 40px rgba(18, 36, 56, 0.10)",
+  borderRadius: 26,
+  background:
+    "linear-gradient(180deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.10) 100%)",
+  border: "1px solid rgba(255,255,255,0.14)",
+  boxShadow: "0 18px 40px rgba(0,0,0,0.22)",
+  backdropFilter: "blur(12px)",
 };
 
 const proofStrip: CSSProperties = {
-  marginTop: 28,
+  marginTop: 30,
   display: "flex",
   flexWrap: "wrap",
   gap: 12,
@@ -880,13 +899,13 @@ const proofStrip: CSSProperties = {
 const proofItem: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
-  minHeight: 34,
-  padding: "0 12px",
+  minHeight: 36,
+  padding: "0 14px",
   borderRadius: 999,
-  background: "#E8EEF4",
-  border: "1px solid rgba(18,36,56,0.08)",
+  background: "rgba(255,255,255,0.08)",
+  border: "1px solid rgba(255,255,255,0.12)",
   fontSize: 13,
-  color: "rgba(18, 36, 56, 0.76)",
+  color: "rgba(248,244,238,0.82)",
 };
 
 const sectionSplit: CSSProperties = {
@@ -898,9 +917,9 @@ const sectionSplit: CSSProperties = {
 const eyebrow: CSSProperties = {
   margin: 0,
   fontSize: 11,
-  letterSpacing: "0.2em",
+  letterSpacing: "0.22em",
   textTransform: "uppercase",
-  color: "rgba(18, 36, 56, 0.52)",
+  color: "rgba(248,244,238,0.74)",
 };
 
 const sectionLabel: CSSProperties = {
@@ -908,29 +927,37 @@ const sectionLabel: CSSProperties = {
   fontSize: 11,
   letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(18, 36, 56, 0.52)",
+  color: "rgba(22,33,43,0.54)",
+};
+
+const ctaEyebrow: CSSProperties = {
+  margin: "0 0 12px",
+  fontSize: 11,
+  letterSpacing: "0.22em",
+  textTransform: "uppercase",
+  color: "rgba(248,244,238,0.68)",
 };
 
 const heroTitle: CSSProperties = {
   margin: "12px 0 18px",
   maxWidth: 760,
-  fontSize: "clamp(2.2rem, 5.8vw, 4.8rem)",
-  lineHeight: 1.03,
-  letterSpacing: "-0.04em",
+  fontSize: "clamp(2.2rem, 5.8vw, 5rem)",
+  lineHeight: 1,
+  letterSpacing: "-0.045em",
   fontWeight: 700,
   fontFamily: "var(--font-sans)",
-  color: "#10263C",
+  color: "#F8F4EE",
 };
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
   maxWidth: 780,
-  fontSize: "clamp(2rem, 4vw, 3.6rem)",
+  fontSize: "clamp(2rem, 4vw, 3.7rem)",
   lineHeight: 1.04,
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
-  color: "#10263C",
+  color: "#16212B",
 };
 
 const ctaTitle: CSSProperties = {
@@ -941,15 +968,16 @@ const ctaTitle: CSSProperties = {
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
-  color: "#10263C",
+  color: "#F8F4EE",
+  textAlign: "center",
 };
 
 const divider: CSSProperties = {
-  width: 64,
-  height: 3,
-  margin: "18px 0 26px",
+  width: 72,
+  height: 2,
+  margin: "18px 0 28px",
   borderRadius: 999,
-  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
+  background: "linear-gradient(90deg, #C9A961 0%, #E5C98C 100%)",
 };
 
 const luxuryRule: CSSProperties = {
@@ -957,23 +985,23 @@ const luxuryRule: CSSProperties = {
   height: 2,
   margin: "20px 0 24px",
   borderRadius: 999,
-  background: "linear-gradient(90deg, #5B7C99 0%, rgba(91,124,153,0.18) 100%)",
+  background: "linear-gradient(90deg, #C9A961 0%, rgba(201,169,97,0.16) 100%)",
 };
 
 const heroText: CSSProperties = {
   margin: 0,
-  maxWidth: 680,
-  fontSize: 16,
-  lineHeight: 1.8,
-  color: "rgba(18, 36, 56, 0.78)",
+  maxWidth: 700,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(248,244,238,0.88)",
 };
 
 const heroSubText: CSSProperties = {
   margin: "14px 0 0",
-  maxWidth: 620,
-  fontSize: 13,
-  lineHeight: 1.7,
-  color: "rgba(18,36,56,0.58)",
+  maxWidth: 640,
+  fontSize: 14,
+  lineHeight: 1.8,
+  color: "rgba(248,244,238,0.68)",
 };
 
 const sectionText: CSSProperties = {
@@ -981,13 +1009,38 @@ const sectionText: CSSProperties = {
   maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(18, 36, 56, 0.74)",
+  color: "rgba(22,33,43,0.76)",
+};
+
+const ctaText: CSSProperties = {
+  margin: "0 auto",
+  maxWidth: 720,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(248,244,238,0.78)",
 };
 
 const heroActions: CSSProperties = {
-  marginTop: 28,
+  marginTop: 30,
   display: "flex",
   gap: 14,
+  flexWrap: "wrap",
+  alignItems: "center",
+};
+
+const heroActionsCentered: CSSProperties = {
+  marginTop: 30,
+  display: "flex",
+  gap: 14,
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
+const inlineLinks: CSSProperties = {
+  marginTop: 24,
+  display: "flex",
+  gap: 18,
   flexWrap: "wrap",
   alignItems: "center",
 };
@@ -996,30 +1049,45 @@ const primaryButton: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: 54,
-  padding: "0 24px",
+  minHeight: 58,
+  padding: "0 28px",
   borderRadius: 999,
-  background: "#10263C",
-  color: "#FFFFFF",
+  background: "linear-gradient(135deg, #C9A961 0%, #B58A3B 100%)",
+  color: "#0C1A27",
   textDecoration: "none",
-  fontWeight: 600,
-  border: "1px solid rgba(16,38,60,0.10)",
-  boxShadow: "0 10px 24px rgba(16,38,60,0.16)",
+  fontWeight: 700,
+  border: "1px solid rgba(255,255,255,0.08)",
+  boxShadow: "0 14px 30px rgba(0,0,0,0.18)",
 };
 
-const secondaryLink: CSSProperties = {
+const secondaryButton: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 58,
+  padding: "0 24px",
+  borderRadius: 999,
+  background: "rgba(255,255,255,0.08)",
+  color: "#F8F4EE",
   textDecoration: "none",
-  color: "#10263C",
+  fontWeight: 600,
+  border: "1px solid rgba(255,255,255,0.14)",
+  backdropFilter: "blur(10px)",
+};
+
+const softInlineLink: CSSProperties = {
+  textDecoration: "none",
+  color: "#16212B",
   fontWeight: 600,
   display: "inline-flex",
   alignItems: "center",
   gap: 6,
   paddingBottom: 2,
-  borderBottom: "1px solid rgba(91,124,153,0.34)",
+  borderBottom: "1px solid rgba(201,169,97,0.38)",
 };
 
 const heroMiniPoints: CSSProperties = {
-  marginTop: 20,
+  marginTop: 22,
   display: "flex",
   flexWrap: "wrap",
   gap: 10,
@@ -1028,13 +1096,13 @@ const heroMiniPoints: CSSProperties = {
 const heroMiniPill: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
-  minHeight: 34,
-  padding: "0 12px",
+  minHeight: 36,
+  padding: "0 13px",
   borderRadius: 999,
-  background: "#EAF0F5",
-  border: "1px solid rgba(18,36,56,0.08)",
+  background: "rgba(255,255,255,0.08)",
+  border: "1px solid rgba(255,255,255,0.12)",
   fontSize: 13,
-  color: "rgba(18, 36, 56, 0.74)",
+  color: "rgba(248,244,238,0.82)",
 };
 
 const floatingEyebrow: CSSProperties = {
@@ -1042,7 +1110,7 @@ const floatingEyebrow: CSSProperties = {
   fontSize: 11,
   letterSpacing: "0.18em",
   textTransform: "uppercase",
-  color: "rgba(18,36,56,0.48)",
+  color: "rgba(248,244,238,0.64)",
 };
 
 const floatingGrid: CSSProperties = {
@@ -1054,7 +1122,7 @@ const floatingValue: CSSProperties = {
   margin: "0 0 4px",
   fontSize: 18,
   lineHeight: 1.2,
-  color: "#10263C",
+  color: "#FFFFFF",
   fontWeight: 700,
 };
 
@@ -1062,11 +1130,11 @@ const floatingLabel: CSSProperties = {
   margin: 0,
   fontSize: 14,
   lineHeight: 1.7,
-  color: "rgba(18,36,56,0.66)",
+  color: "rgba(248,244,238,0.78)",
 };
 
 const gatewayEditorialGrid: CSSProperties = {
-  marginTop: 42,
+  marginTop: 46,
   display: "grid",
   gap: 28,
 };
@@ -1074,18 +1142,18 @@ const gatewayEditorialGrid: CSSProperties = {
 const gatewayEditorialCard: CSSProperties = {
   display: "grid",
   gap: 18,
-  padding: "30px 28px",
+  padding: "32px 28px",
   borderRadius: 28,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 12px 32px rgba(18, 36, 56, 0.06)",
+  background: "#FCF9F4",
+  border: "1px solid rgba(22,33,43,0.08)",
+  boxShadow: "0 14px 32px rgba(22,33,43,0.06)",
 };
 
 const gatewayAccent: CSSProperties = {
   width: 48,
-  height: 3,
+  height: 2,
   borderRadius: 999,
-  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
+  background: "linear-gradient(90deg, #C9A961 0%, #E5C98C 100%)",
 };
 
 const gatewayHeading: CSSProperties = {
@@ -1093,7 +1161,7 @@ const gatewayHeading: CSSProperties = {
   fontSize: 12,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(18,36,56,0.5)",
+  color: "rgba(22,33,43,0.52)",
 };
 
 const gatewayRichList: CSSProperties = {
@@ -1103,14 +1171,24 @@ const gatewayRichList: CSSProperties = {
 
 const gatewayRichItem: CSSProperties = {
   paddingBottom: 14,
-  borderBottom: "1px solid rgba(18,36,56,0.08)",
+  borderBottom: "1px solid rgba(22,33,43,0.08)",
+};
+
+const gatewayRichItemLast: CSSProperties = {
+  paddingBottom: 0,
+  borderBottom: "none",
+};
+
+const gatewayLinkWrap: CSSProperties = {
+  textDecoration: "none",
+  display: "block",
 };
 
 const gatewayName: CSSProperties = {
   margin: "0 0 4px",
   fontSize: 22,
   lineHeight: 1.25,
-  color: "#10263C",
+  color: "#16212B",
   fontWeight: 700,
 };
 
@@ -1118,7 +1196,7 @@ const gatewayMeta: CSSProperties = {
   margin: 0,
   fontSize: 14,
   lineHeight: 1.7,
-  color: "rgba(18,36,56,0.64)",
+  color: "rgba(22,33,43,0.64)",
 };
 
 const supportGrid: CSSProperties = {
@@ -1128,10 +1206,10 @@ const supportGrid: CSSProperties = {
 
 const supportItem: CSSProperties = {
   paddingBottom: 14,
-  borderBottom: "1px solid rgba(18,36,56,0.08)",
+  borderBottom: "1px solid rgba(22,33,43,0.08)",
   fontSize: 20,
-  lineHeight: 1.5,
-  color: "#10263C",
+  lineHeight: 1.55,
+  color: "#16212B",
 };
 
 const planningGrid: CSSProperties = {
@@ -1153,40 +1231,40 @@ const regionsGrid: CSSProperties = {
 
 const planningCard: CSSProperties = {
   display: "block",
-  padding: "28px",
+  padding: "30px",
   borderRadius: 26,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
+  background: "#FCF9F4",
+  border: "1px solid rgba(22,33,43,0.08)",
   textDecoration: "none",
-  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
+  boxShadow: "0 14px 30px rgba(22,33,43,0.05)",
 };
 
 const marketCard: CSSProperties = {
   display: "block",
-  padding: "28px",
+  padding: "30px",
   borderRadius: 26,
   background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
+  border: "1px solid rgba(22,33,43,0.08)",
   textDecoration: "none",
-  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
+  boxShadow: "0 14px 30px rgba(22,33,43,0.05)",
 };
 
 const regionCard: CSSProperties = {
   display: "block",
-  padding: "28px",
+  padding: "30px",
   borderRadius: 26,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
+  background: "#FCF9F4",
+  border: "1px solid rgba(22,33,43,0.08)",
   textDecoration: "none",
-  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
+  boxShadow: "0 14px 30px rgba(22,33,43,0.05)",
 };
 
 const cardAccent: CSSProperties = {
   width: 48,
-  height: 3,
+  height: 2,
   borderRadius: 999,
   marginBottom: 16,
-  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
+  background: "linear-gradient(90deg, #C9A961 0%, #E5C98C 100%)",
 };
 
 const cardTopRow: CSSProperties = {
@@ -1203,7 +1281,7 @@ const cardTitle: CSSProperties = {
   lineHeight: 1.1,
   letterSpacing: "-0.02em",
   fontWeight: 700,
-  color: "#10263C",
+  color: "#16212B",
   flex: 1,
 };
 
@@ -1211,23 +1289,23 @@ const cardText: CSSProperties = {
   margin: 0,
   fontSize: 16,
   lineHeight: 1.85,
-  color: "rgba(18, 36, 56, 0.72)",
+  color: "rgba(22,33,43,0.72)",
 };
 
 const cardArrow: CSSProperties = {
   fontSize: 22,
   lineHeight: 1,
-  color: "#5B7C99",
+  color: "#B58A3B",
   paddingTop: 4,
 };
 
 const editorialPanel: CSSProperties = {
   marginTop: 34,
-  padding: "30px 28px",
+  padding: "32px 28px",
   borderRadius: 28,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
+  background: "#FBF7F1",
+  border: "1px solid rgba(22,33,43,0.08)",
+  boxShadow: "0 14px 30px rgba(22,33,43,0.05)",
 };
 
 const panelEyebrow: CSSProperties = {
@@ -1235,19 +1313,19 @@ const panelEyebrow: CSSProperties = {
   fontSize: 12,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(18, 36, 56, 0.5)",
+  color: "rgba(22,33,43,0.52)",
 };
 
 const panelText: CSSProperties = {
   margin: "0 0 14px",
   fontSize: 16,
   lineHeight: 1.8,
-  color: "rgba(18, 36, 56, 0.72)",
+  color: "rgba(22,33,43,0.72)",
 };
 
 const panelLink: CSSProperties = {
   textDecoration: "none",
-  color: "#10263C",
+  color: "#16212B",
   fontWeight: 600,
   display: "inline-flex",
   alignItems: "center",
@@ -1262,14 +1340,14 @@ const faqList: CSSProperties = {
 
 const faqItem: CSSProperties = {
   padding: "0 0 16px",
-  borderBottom: "1px solid rgba(18, 36, 56, 0.08)",
+  borderBottom: "1px solid rgba(22,33,43,0.08)",
 };
 
 const faqQuestion: CSSProperties = {
   fontSize: 16,
   fontWeight: 600,
   cursor: "pointer",
-  color: "#10263C",
+  color: "#16212B",
   listStyle: "none",
   display: "flex",
   alignItems: "center",
@@ -1281,15 +1359,15 @@ const faqQuestion: CSSProperties = {
 const faqPlus: CSSProperties = {
   fontSize: 22,
   lineHeight: 1,
-  color: "#5B7C99",
+  color: "#B58A3B",
   fontWeight: 500,
 };
 
 const faqAnswer: CSSProperties = {
   marginTop: 8,
   fontSize: 15,
-  lineHeight: 1.7,
-  color: "rgba(18, 36, 56, 0.72)",
+  lineHeight: 1.75,
+  color: "rgba(22,33,43,0.72)",
 };
 
 const leadIntroBar: CSSProperties = {
@@ -1303,16 +1381,25 @@ const leadIntroBar: CSSProperties = {
 const leadIntroPill: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
-  minHeight: 34,
+  minHeight: 36,
   padding: "0 12px",
   borderRadius: 999,
-  background: "#EAF0F5",
-  border: "1px solid rgba(18,36,56,0.08)",
+  background: "#EFE7DA",
+  border: "1px solid rgba(22,33,43,0.08)",
   fontSize: 13,
-  color: "rgba(18, 36, 56, 0.72)",
+  color: "rgba(22,33,43,0.72)",
 };
 
 const leadIntroNote: CSSProperties = {
   fontSize: 13,
-  color: "rgba(18, 36, 56, 0.62)",
+  color: "rgba(22,33,43,0.62)",
+};
+
+const leadFormWrap: CSSProperties = {
+  marginTop: 28,
+  padding: "28px",
+  borderRadius: 30,
+  background: "linear-gradient(180deg, #FFFDF9 0%, #F8F2E9 100%)",
+  border: "1px solid rgba(22,33,43,0.10)",
+  boxShadow: "0 16px 34px rgba(22,33,43,0.08)",
 };
