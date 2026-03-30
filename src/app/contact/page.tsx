@@ -55,7 +55,7 @@ const supportItems = [
 
 export default function ContactPage() {
   return (
-    <main>
+    <main style={pageShell}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
@@ -95,7 +95,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   style={secondaryLink}
                 >
-                  WhatsApp →
+                  WhatsApp
                 </a>
               </div>
 
@@ -106,42 +106,42 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={contactPanel} className="premium-card">
-              <p style={panelEyebrow}>Direct contact</p>
+            <div style={contactPanel}>
+              <p style={panelEyebrowOnDark}>Direct contact</p>
 
               <div style={contactStack}>
-                <div style={contactItem}>
-                  <p style={contactLabel}>Email</p>
+                <div style={contactItemOnDark}>
+                  <p style={contactLabelOnDark}>Email</p>
                   <a
                     href="mailto:info@ukinboundgroundtransport.com"
-                    style={contactValue}
+                    style={contactValueOnDark}
                   >
                     info@ukinboundgroundtransport.com
                   </a>
                 </div>
 
-                <div style={contactItem}>
-                  <p style={contactLabel}>Phone</p>
-                  <a href="tel:+442086292776" style={contactValue}>
+                <div style={contactItemOnDark}>
+                  <p style={contactLabelOnDark}>Phone</p>
+                  <a href="tel:+442086292776" style={contactValueOnDark}>
                     +44 20 8629 2776
                   </a>
                 </div>
 
-                <div style={contactItem}>
-                  <p style={contactLabel}>WhatsApp</p>
+                <div style={contactItemOnDark}>
+                  <p style={contactLabelOnDark}>WhatsApp</p>
                   <a
                     href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={contactValue}
+                    style={contactValueOnDark}
                   >
                     Message us directly
                   </a>
                 </div>
 
-                <div style={contactItem}>
-                  <p style={contactLabel}>Coverage</p>
-                  <p style={contactMeta}>
+                <div style={contactItemLastOnDark}>
+                  <p style={contactLabelOnDark}>Coverage</p>
+                  <p style={contactMetaOnDark}>
                     England • Scotland • Ireland • London • Airports • Cruise
                     ports
                   </p>
@@ -181,7 +181,7 @@ export default function ContactPage() {
 
           <div style={cardGrid} className="feature-grid">
             {supportItems.map((item) => (
-              <div key={item} style={supportCard} className="premium-card">
+              <div key={item} style={supportCard}>
                 <div style={cardAccent} />
                 <p style={supportCardText}>{item}</p>
               </div>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                 a clear transport approach aligned to your programme.
               </p>
 
-              <div style={infoPanel} className="premium-card">
+              <div style={infoPanel}>
                 <p style={panelEyebrow}>Helpful enquiry details</p>
 
                 <div style={lineList}>
@@ -215,14 +215,14 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={formPanel} className="premium-card">
+            <div style={formPanel}>
               <ProgrammeEnquiryForm />
             </div>
           </div>
         </div>
       </section>
 
-      <section style={sectionSoft}>
+      <section style={sectionSoftAlt}>
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
@@ -254,12 +254,12 @@ export default function ContactPage() {
         <div style={containerNarrow}>
           <p style={sectionLabel}>Need a faster route?</p>
           <h2 style={ctaTitle}>Call or WhatsApp us directly.</h2>
-          <p style={sectionText}>
+          <p style={sectionTextCentered}>
             For time-sensitive programme support, contact us directly and we’ll
             help guide the next step.
           </p>
 
-          <div style={heroActions}>
+          <div style={heroActionsCentered}>
             <a href="tel:+442086292776" style={primaryButton}>
               +44 20 8629 2776
             </a>
@@ -267,9 +267,9 @@ export default function ContactPage() {
               href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
               target="_blank"
               rel="noopener noreferrer"
-              style={secondaryLink}
+              style={ctaSecondaryLink}
             >
-              WhatsApp →
+              WhatsApp
             </a>
           </div>
         </div>
@@ -277,6 +277,10 @@ export default function ContactPage() {
     </main>
   );
 }
+
+const pageShell: CSSProperties = {
+  background: "#F6F1E8",
+};
 
 const containerWide: CSSProperties = {
   maxWidth: 1200,
@@ -293,22 +297,29 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "46px 0 78px",
+  padding: "56px 0 86px",
   background:
-    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 52%, #FFFFFF 100%)",
+    "radial-gradient(circle at top right, rgba(201,169,97,0.12), transparent 24%), linear-gradient(135deg, #0C1A27 0%, #13293D 46%, #1B344A 100%)",
 };
 
 const section: CSSProperties = {
-  padding: "100px 0",
+  padding: "108px 0",
+  background: "linear-gradient(180deg, #F6F1E8 0%, #F3EDE4 100%)",
 };
 
 const sectionSoft: CSSProperties = {
-  padding: "94px 0",
-  background: "linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 100%)",
+  padding: "96px 0",
+  background: "linear-gradient(180deg, #F0E8DE 0%, #ECE3D7 100%)",
+};
+
+const sectionSoftAlt: CSSProperties = {
+  padding: "96px 0",
+  background: "linear-gradient(180deg, #EEE6DB 0%, #F6F1E8 100%)",
 };
 
 const ctaSection: CSSProperties = {
-  padding: "90px 0 48px",
+  padding: "92px 0 56px",
+  background: "linear-gradient(180deg, #F6F1E8 0%, #EFE7DC 100%)",
 };
 
 const heroGrid: CSSProperties = {
@@ -336,9 +347,9 @@ const formShell: CSSProperties = {
 const eyebrow: CSSProperties = {
   margin: 0,
   fontSize: 11,
-  letterSpacing: "0.2em",
+  letterSpacing: "0.22em",
   textTransform: "uppercase",
-  color: "rgba(18, 36, 56, 0.52)",
+  color: "rgba(248,244,238,0.72)",
 };
 
 const sectionLabel: CSSProperties = {
@@ -346,7 +357,7 @@ const sectionLabel: CSSProperties = {
   fontSize: 11,
   letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(18, 36, 56, 0.52)",
+  color: "rgba(22,33,43,0.54)",
 };
 
 const heroTitle: CSSProperties = {
@@ -357,7 +368,7 @@ const heroTitle: CSSProperties = {
   letterSpacing: "-0.04em",
   fontWeight: 700,
   fontFamily: "var(--font-sans)",
-  color: "#10263C",
+  color: "#F8F4EE",
   wordBreak: "break-word",
 };
 
@@ -369,7 +380,7 @@ const sectionTitle: CSSProperties = {
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
-  color: "#10263C",
+  color: "#16212B",
   wordBreak: "break-word",
 };
 
@@ -381,32 +392,33 @@ const ctaTitle: CSSProperties = {
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
-  color: "#10263C",
+  color: "#16212B",
   wordBreak: "break-word",
+  textAlign: "center",
 };
 
 const divider: CSSProperties = {
-  width: 64,
-  height: 3,
+  width: 72,
+  height: 2,
   margin: "18px 0 26px",
   borderRadius: 999,
-  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
+  background: "linear-gradient(90deg, #C9A961 0%, #E5C98C 100%)",
 };
 
 const heroText: CSSProperties = {
   margin: 0,
   maxWidth: 680,
   fontSize: 16,
-  lineHeight: 1.8,
-  color: "rgba(18, 36, 56, 0.78)",
+  lineHeight: 1.85,
+  color: "rgba(248,244,238,0.88)",
 };
 
 const heroSubText: CSSProperties = {
   margin: "14px 0 0",
   maxWidth: 620,
   fontSize: 13,
-  lineHeight: 1.7,
-  color: "rgba(18,36,56,0.58)",
+  lineHeight: 1.8,
+  color: "rgba(248,244,238,0.68)",
 };
 
 const sectionText: CSSProperties = {
@@ -414,7 +426,16 @@ const sectionText: CSSProperties = {
   maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(18, 36, 56, 0.74)",
+  color: "rgba(22,33,43,0.76)",
+};
+
+const sectionTextCentered: CSSProperties = {
+  margin: "0 auto",
+  maxWidth: 700,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(22,33,43,0.76)",
+  textAlign: "center",
 };
 
 const heroActions: CSSProperties = {
@@ -425,30 +446,58 @@ const heroActions: CSSProperties = {
   alignItems: "center",
 };
 
+const heroActionsCentered: CSSProperties = {
+  marginTop: 28,
+  display: "flex",
+  gap: 14,
+  flexWrap: "wrap",
+  alignItems: "center",
+  justifyContent: "center",
+};
+
 const primaryButton: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
-  minHeight: 54,
-  padding: "0 24px",
+  minHeight: 56,
+  padding: "0 26px",
   borderRadius: 999,
-  background: "#10263C",
-  color: "#FFFFFF",
+  background: "linear-gradient(135deg, #C9A961 0%, #B58A3B 100%)",
+  color: "#0C1A27",
   textDecoration: "none",
-  fontWeight: 600,
-  border: "1px solid rgba(16,38,60,0.10)",
-  boxShadow: "0 10px 24px rgba(16,38,60,0.16)",
+  fontWeight: 700,
+  border: "1px solid rgba(255,255,255,0.08)",
+  boxShadow: "0 14px 30px rgba(0,0,0,0.18)",
 };
 
 const secondaryLink: CSSProperties = {
-  textDecoration: "none",
-  color: "#10263C",
-  fontWeight: 600,
   display: "inline-flex",
   alignItems: "center",
-  gap: 6,
-  paddingBottom: 2,
-  borderBottom: "1px solid rgba(91,124,153,0.34)",
+  justifyContent: "center",
+  minHeight: 56,
+  padding: "0 24px",
+  borderRadius: 999,
+  background: "rgba(255,255,255,0.08)",
+  color: "#F8F4EE",
+  textDecoration: "none",
+  fontWeight: 600,
+  border: "1px solid rgba(255,255,255,0.14)",
+  backdropFilter: "blur(10px)",
+};
+
+const ctaSecondaryLink: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 56,
+  padding: "0 24px",
+  borderRadius: 999,
+  background: "#FFFFFF",
+  color: "#16212B",
+  textDecoration: "none",
+  fontWeight: 600,
+  border: "1px solid rgba(22,33,43,0.10)",
+  boxShadow: "0 10px 24px rgba(22,33,43,0.07)",
 };
 
 const pillRow: CSSProperties = {
@@ -461,21 +510,23 @@ const pillRow: CSSProperties = {
 const pill: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
-  minHeight: 34,
-  padding: "0 12px",
+  minHeight: 36,
+  padding: "0 13px",
   borderRadius: 999,
-  background: "#EAF0F5",
-  border: "1px solid rgba(18,36,56,0.08)",
+  background: "rgba(255,255,255,0.08)",
+  border: "1px solid rgba(255,255,255,0.12)",
   fontSize: 13,
-  color: "rgba(18, 36, 56, 0.74)",
+  color: "rgba(248,244,238,0.82)",
 };
 
 const contactPanel: CSSProperties = {
   padding: "30px 28px",
-  borderRadius: 28,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 12px 32px rgba(18, 36, 56, 0.06)",
+  borderRadius: 30,
+  background:
+    "linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.08) 100%)",
+  border: "1px solid rgba(255,255,255,0.14)",
+  boxShadow: "0 18px 40px rgba(0,0,0,0.18)",
+  backdropFilter: "blur(12px)",
 };
 
 const panelEyebrow: CSSProperties = {
@@ -483,7 +534,15 @@ const panelEyebrow: CSSProperties = {
   fontSize: 12,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(18,36,56,0.5)",
+  color: "rgba(22,33,43,0.50)",
+};
+
+const panelEyebrowOnDark: CSSProperties = {
+  margin: "0 0 14px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(248,244,238,0.58)",
 };
 
 const contactStack: CSSProperties = {
@@ -491,33 +550,38 @@ const contactStack: CSSProperties = {
   gap: 18,
 };
 
-const contactItem: CSSProperties = {
+const contactItemOnDark: CSSProperties = {
   paddingBottom: 14,
-  borderBottom: "1px solid rgba(18,36,56,0.08)",
+  borderBottom: "1px solid rgba(255,255,255,0.10)",
 };
 
-const contactLabel: CSSProperties = {
+const contactItemLastOnDark: CSSProperties = {
+  paddingBottom: 0,
+  borderBottom: "none",
+};
+
+const contactLabelOnDark: CSSProperties = {
   margin: "0 0 6px",
   fontSize: 11,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(18,36,56,0.5)",
+  color: "rgba(248,244,238,0.56)",
 };
 
-const contactValue: CSSProperties = {
+const contactValueOnDark: CSSProperties = {
   textDecoration: "none",
-  color: "#10263C",
+  color: "#FFFFFF",
   fontSize: 20,
   lineHeight: 1.4,
   fontWeight: 700,
   wordBreak: "break-word",
 };
 
-const contactMeta: CSSProperties = {
+const contactMetaOnDark: CSSProperties = {
   margin: 0,
   fontSize: 15,
   lineHeight: 1.7,
-  color: "rgba(18,36,56,0.68)",
+  color: "rgba(248,244,238,0.78)",
 };
 
 const proofStrip: CSSProperties = {
@@ -533,10 +597,10 @@ const proofItem: CSSProperties = {
   minHeight: 34,
   padding: "0 12px",
   borderRadius: 999,
-  background: "#E8EEF4",
-  border: "1px solid rgba(18,36,56,0.08)",
+  background: "rgba(255,255,255,0.08)",
+  border: "1px solid rgba(255,255,255,0.12)",
   fontSize: 13,
-  color: "rgba(18, 36, 56, 0.76)",
+  color: "rgba(248,244,238,0.80)",
 };
 
 const cardGrid: CSSProperties = {
@@ -547,26 +611,26 @@ const cardGrid: CSSProperties = {
 
 const supportCard: CSSProperties = {
   display: "block",
-  padding: "28px",
+  padding: "30px",
   borderRadius: 26,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
+  background: "#FCF9F4",
+  border: "1px solid rgba(22,33,43,0.08)",
+  boxShadow: "0 12px 28px rgba(22,33,43,0.05)",
 };
 
 const cardAccent: CSSProperties = {
   width: 48,
-  height: 3,
+  height: 2,
   borderRadius: 999,
   marginBottom: 16,
-  background: "linear-gradient(90deg, #5B7C99 0%, #94AFC5 100%)",
+  background: "linear-gradient(90deg, #C9A961 0%, #E5C98C 100%)",
 };
 
 const supportCardText: CSSProperties = {
   margin: 0,
   fontSize: 18,
   lineHeight: 1.7,
-  color: "#10263C",
+  color: "#16212B",
   fontWeight: 600,
 };
 
@@ -574,9 +638,9 @@ const infoPanel: CSSProperties = {
   marginTop: 30,
   padding: "30px 28px",
   borderRadius: 28,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
+  background: "#FBF7F1",
+  border: "1px solid rgba(22,33,43,0.08)",
+  boxShadow: "0 12px 28px rgba(22,33,43,0.05)",
 };
 
 const lineList: CSSProperties = {
@@ -586,18 +650,18 @@ const lineList: CSSProperties = {
 
 const lineItem: CSSProperties = {
   paddingBottom: 12,
-  borderBottom: "1px solid rgba(18,36,56,0.08)",
+  borderBottom: "1px solid rgba(22,33,43,0.08)",
   fontSize: 16,
   lineHeight: 1.7,
-  color: "#10263C",
+  color: "#16212B",
 };
 
 const formPanel: CSSProperties = {
   padding: "28px",
   borderRadius: 28,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 12px 32px rgba(18, 36, 56, 0.06)",
+  background: "linear-gradient(180deg, #FFFDF9 0%, #F8F2E9 100%)",
+  border: "1px solid rgba(22,33,43,0.10)",
+  boxShadow: "0 16px 34px rgba(22,33,43,0.08)",
 };
 
 const linkGrid: CSSProperties = {
@@ -607,10 +671,11 @@ const linkGrid: CSSProperties = {
 
 const linkCard: CSSProperties = {
   padding: 16,
-  borderRadius: 14,
+  borderRadius: 16,
   background: "#FFFFFF",
-  border: "1px solid rgba(18,36,56,0.1)",
+  border: "1px solid rgba(22,33,43,0.10)",
   textDecoration: "none",
-  color: "#10263C",
+  color: "#16212B",
   fontWeight: 600,
+  boxShadow: "0 8px 20px rgba(22,33,43,0.04)",
 };
