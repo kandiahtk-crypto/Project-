@@ -699,6 +699,7 @@ export default function HomePage() {
 
       <section style={leadSection}>
         <div style={containerNarrow}>
+          <div style={finalSectionRule} />
           <p style={sectionLabel}>Programme enquiry</p>
           <h2 style={sectionTitle}>
             Tell us about your programme requirements.
@@ -730,29 +731,6 @@ export default function HomePage() {
 
           <div style={leadFormWrap}>
             <ProgrammeEnquiryForm />
-          </div>
-        </div>
-      </section>
-
-      <section style={ctaSection}>
-        <div style={containerNarrow}>
-          <p style={ctaEyebrow}>Start a conversation</p>
-          <h2 style={ctaTitle}>Planning a UK or Ireland programme?</h2>
-          <p style={ctaText}>
-            Tell us your routing, timings and group size. We’ll structure the
-            transport around your programme.
-          </p>
-
-          <div style={heroActionsCentered}>
-            <a href="/contact" style={primaryButton}>
-              Contact us
-            </a>
-            <a href="/coach-hire-uk" style={secondaryButton}>
-              Coach hire UK
-            </a>
-            <a href="/services" style={secondaryButton}>
-              View services
-            </a>
           </div>
         </div>
       </section>
@@ -819,15 +797,9 @@ const sectionTint: CSSProperties = {
 };
 
 const leadSection: CSSProperties = {
-  padding: "108px 0",
+  padding: "108px 0 84px",
   background: "linear-gradient(180deg, #F8F3EB 0%, #F1E8DC 100%)",
-};
-
-const ctaSection: CSSProperties = {
-  padding: "96px 0 72px",
-  background:
-    "linear-gradient(135deg, #0C1A27 0%, #13293D 46%, #1B344A 100%)",
-  textAlign: "center",
+  borderTop: "1px solid rgba(22,33,43,0.06)",
 };
 
 const heroShell: CSSProperties = {
@@ -930,14 +902,6 @@ const sectionLabel: CSSProperties = {
   color: "rgba(22,33,43,0.54)",
 };
 
-const ctaEyebrow: CSSProperties = {
-  margin: "0 0 12px",
-  fontSize: 11,
-  letterSpacing: "0.22em",
-  textTransform: "uppercase",
-  color: "rgba(248,244,238,0.68)",
-};
-
 const heroTitle: CSSProperties = {
   margin: "12px 0 18px",
   maxWidth: 760,
@@ -960,18 +924,6 @@ const sectionTitle: CSSProperties = {
   color: "#16212B",
 };
 
-const ctaTitle: CSSProperties = {
-  margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 4vw, 3.2rem)",
-  lineHeight: 1.05,
-  letterSpacing: "-0.03em",
-  fontWeight: 650,
-  fontFamily: "var(--font-sans)",
-  color: "#F8F4EE",
-  textAlign: "center",
-};
-
 const divider: CSSProperties = {
   width: 72,
   height: 2,
@@ -984,6 +936,14 @@ const luxuryRule: CSSProperties = {
   width: 80,
   height: 2,
   margin: "20px 0 24px",
+  borderRadius: 999,
+  background: "linear-gradient(90deg, #C9A961 0%, rgba(201,169,97,0.16) 100%)",
+};
+
+const finalSectionRule: CSSProperties = {
+  width: 72,
+  height: 2,
+  margin: "0 0 22px",
   borderRadius: 999,
   background: "linear-gradient(90deg, #C9A961 0%, rgba(201,169,97,0.16) 100%)",
 };
@@ -1012,29 +972,12 @@ const sectionText: CSSProperties = {
   color: "rgba(22,33,43,0.76)",
 };
 
-const ctaText: CSSProperties = {
-  margin: "0 auto",
-  maxWidth: 720,
-  fontSize: 17,
-  lineHeight: 1.9,
-  color: "rgba(248,244,238,0.78)",
-};
-
 const heroActions: CSSProperties = {
   marginTop: 30,
   display: "flex",
   gap: 14,
   flexWrap: "wrap",
   alignItems: "center",
-};
-
-const heroActionsCentered: CSSProperties = {
-  marginTop: 30,
-  display: "flex",
-  gap: 14,
-  flexWrap: "wrap",
-  alignItems: "center",
-  justifyContent: "center",
 };
 
 const inlineLinks: CSSProperties = {
@@ -1396,10 +1339,10 @@ const leadIntroNote: CSSProperties = {
 };
 
 const leadFormWrap: CSSProperties = {
-  marginTop: 28,
-  padding: "28px",
+  marginTop: 30,
+  padding: "30px",
   borderRadius: 30,
   background: "linear-gradient(180deg, #FFFDF9 0%, #F8F2E9 100%)",
   border: "1px solid rgba(22,33,43,0.10)",
-  boxShadow: "0 16px 34px rgba(22,33,43,0.08)",
+  boxShadow: "0 18px 36px rgba(22,33,43,0.08)",
 };
