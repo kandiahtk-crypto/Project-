@@ -6,7 +6,7 @@ const siteUrl = "https://www.ukinboundgroundtransport.com";
 export const metadata: Metadata = {
   title: "Coach Hire UK | Group & Luxury Coach Hire for Tour Operators",
   description:
-    "Premium coach hire in the UK for tour operators, DMCs and travel planners. Group transport, touring programmes, airport transfers and UK & Ireland itineraries.",
+    "Premium coach hire in the UK for tour operators, DMCs and travel planners. Group transport, luxury coach hire, touring programmes, airport transfers and UK & Ireland itineraries.",
   alternates: {
     canonical: "/coach-hire-uk",
   },
@@ -55,7 +55,7 @@ const faqSchema = {
       name: "Can you support airport and cruise transfers as part of coach hire?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Yes. We support Heathrow arrivals, other airport transfers, cruise port movements and multi-day touring itineraries.",
+        text: "Yes. We support Heathrow arrivals, airport transfers, cruise port movements and multi-day touring itineraries.",
       },
     },
     {
@@ -71,30 +71,30 @@ const faqSchema = {
 
 const serviceCards = [
   {
-    title: "Airport transfers",
-    text: "Heathrow, Gatwick, Manchester, Edinburgh and other gateway arrivals aligned to group schedules and onward programme flow.",
+    title: "Luxury coach hire UK",
+    text: "Premium coach hire aligned to group expectations, itinerary flow and commercially important delivery standards.",
   },
   {
-    title: "Multi-day touring",
-    text: "Coach hire structured around touring itineraries across England, Scotland and Ireland with realistic routing and timing.",
+    title: "Group coach hire UK",
+    text: "Structured group transport for airport arrivals, touring programmes, hotel movements and regional transitions.",
   },
   {
-    title: "Cruise movements",
-    text: "Southampton, Dover and other cruise-related transport with careful sequencing around embarkation, disembarkation and touring.",
+    title: "Coach hire for tour operators",
+    text: "Built for fixed-departure series, private groups and commercially sensitive programmes across the UK and Ireland.",
   },
   {
-    title: "Large group operations",
-    text: "Multi-coach planning for larger movements requiring coordination, timing discipline and consistent delivery.",
+    title: "Coach hire for DMCs",
+    text: "Transport support designed around inbound logistics, calm delivery and coordinated programme execution.",
   },
 ];
 
-const coverageItems = [
-  "London and South East England",
-  "Heathrow and major UK airports",
-  "Scotland touring routes and Highlands",
-  "Ireland touring including Dublin, Galway and Killarney",
-  "Southampton and key cruise ports",
-  "Multi-region UK & Ireland programmes",
+const locationItems = [
+  "Coach hire London",
+  "Coach hire Heathrow",
+  "Coach hire Southampton",
+  "Coach hire Edinburgh",
+  "Coach hire Scotland touring routes",
+  "Coach hire UK & Ireland programmes",
 ];
 
 const buyerItems = [
@@ -103,11 +103,13 @@ const buyerItems = [
   "Travel planners coordinating private and premium group movements",
 ];
 
-const vehicleItems = [
-  "Executive touring coaches",
-  "Luxury coaches for premium groups",
-  "Mini coaches for smaller movements",
-  "Multi-coach solutions for larger programmes",
+const routeItems = [
+  "Heathrow to Central London hotel transfers",
+  "London to Oxford, Bath and Stonehenge",
+  "London to Edinburgh and Scotland touring",
+  "Southampton cruise terminal to London or Heathrow",
+  "Multi-day UK and Ireland touring circuits",
+  "Regional touring and long-distance programme flow",
 ];
 
 export default function CoachHirePage() {
@@ -160,8 +162,8 @@ export default function CoachHirePage() {
               </div>
 
               <div style={pillRow}>
-                <span style={pill}>Airport arrivals</span>
-                <span style={pill}>Touring programmes</span>
+                <span style={pill}>Luxury coach hire</span>
+                <span style={pill}>Group coach hire</span>
                 <span style={pill}>UK &amp; Ireland coverage</span>
               </div>
             </div>
@@ -213,10 +215,26 @@ export default function CoachHirePage() {
           </div>
 
           <div style={proofStrip}>
-            <span style={proofItem}>Group coach hire UK</span>
-            <span style={proofItem}>Airport &amp; cruise coordination</span>
-            <span style={proofItem}>Built for tour operators &amp; DMCs</span>
-            <span style={proofItem}>Multi-region touring support</span>
+            <span style={proofItem}>Coach hire UK</span>
+            <span style={proofItem}>Luxury coach hire UK</span>
+            <span style={proofItem}>Tour operator transport</span>
+            <span style={proofItem}>DMC-ready delivery</span>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={containerWide}>
+          <div style={responseBar} className="premium-card">
+            <p style={responseLabel}>Why this page exists</p>
+            <h2 style={responseTitle}>
+              Coach hire built around programme delivery, not generic transport.
+            </h2>
+            <p style={responseText}>
+              We support group travel programmes that need calm execution,
+              commercially realistic routing and clear coordination across the
+              full itinerary.
+            </p>
           </div>
         </div>
       </section>
@@ -255,6 +273,31 @@ export default function CoachHirePage() {
 
       <section style={section}>
         <div style={containerWide}>
+          <div style={ctaStrip} className="premium-card">
+            <div>
+              <p style={panelEyebrow}>Fast route</p>
+              <h2 style={stripTitle}>Planning a coach hire requirement now?</h2>
+            </div>
+
+            <div style={heroActions}>
+              <a href="/contact" style={primaryButton}>
+                Request proposal
+              </a>
+              <a
+                href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20coach%20hire."
+                target="_blank"
+                rel="noopener noreferrer"
+                style={secondaryLink}
+              >
+                WhatsApp →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={section}>
+        <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
               <p style={sectionLabel}>Who we work with</p>
@@ -280,23 +323,23 @@ export default function CoachHirePage() {
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
-              <p style={sectionLabel}>UK &amp; Ireland coverage</p>
+              <p style={sectionLabel}>High-value keywords</p>
               <h2 style={sectionTitle}>
-                Coach hire across the key routes used by inbound programmes.
+                Coach hire locations and service intent across the UK.
               </h2>
             </div>
 
             <div>
               <p style={sectionText}>
-                We support airport transfers, touring routes, regional
-                transitions and cross-market programme flow across the core
-                destinations used by international operators.
+                This page is designed to support searches around UK coach hire,
+                luxury coach hire, group coach hire and location-led programme
+                transport.
               </p>
             </div>
           </div>
 
           <div style={listGrid}>
-            {coverageItems.map((item) => (
+            {locationItems.map((item) => (
               <div key={item} style={lineItem}>
                 {item}
               </div>
@@ -309,15 +352,15 @@ export default function CoachHirePage() {
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
-              <p style={sectionLabel}>Vehicle options</p>
+              <p style={sectionLabel}>Typical routes</p>
               <h2 style={sectionTitle}>
-                Coach solutions suited to premium group travel requirements.
+                Coach hire commonly used within UK and Ireland itineraries.
               </h2>
             </div>
 
             <div>
               <div style={listPanel} className="premium-card">
-                {vehicleItems.map((item) => (
+                {routeItems.map((item) => (
                   <div key={item} style={listItem}>
                     {item}
                   </div>
@@ -359,7 +402,7 @@ export default function CoachHirePage() {
       <section style={ctaSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Start a conversation</p>
-          <h2 style={ctaTitle}>Planning a coach hire requirement?</h2>
+          <h2 style={ctaTitle}>Planning a coach hire programme?</h2>
           <p style={sectionText}>
             Share your itinerary, group size and travel dates. We’ll structure
             a clear, dependable coach hire solution aligned to your programme.
@@ -398,7 +441,7 @@ const heroSection: CSSProperties = {
 };
 
 const section: CSSProperties = {
-  padding: "100px 0",
+  padding: "70px 0",
 };
 
 const sectionSoft: CSSProperties = {
@@ -426,60 +469,6 @@ const heroVisualStack: CSSProperties = {
   display: "flex",
   flexDirection: "column",
   gap: 18,
-};
-
-const heroImageFrame: CSSProperties = {
-  position: "relative",
-  minHeight: 320,
-  borderRadius: 28,
-  overflow: "hidden",
-  boxShadow: "0 24px 60px rgba(18, 36, 56, 0.14)",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-};
-
-const heroImage: CSSProperties = {
-  width: "100%",
-  height: "100%",
-  minHeight: 320,
-  objectFit: "cover",
-};
-
-const heroImageOverlay: CSSProperties = {
-  position: "absolute",
-  inset: 0,
-  background:
-    "linear-gradient(180deg, rgba(10,29,48,0.04) 0%, rgba(10,29,48,0.34) 100%)",
-};
-
-const heroFloatingCard: CSSProperties = {
-  position: "relative",
-  marginTop: -42,
-  marginLeft: "auto",
-  width: "min(92%, 420px)",
-  padding: "24px",
-  borderRadius: 24,
-  background: "#FFFFFF",
-  border: "1px solid rgba(18, 36, 56, 0.08)",
-  boxShadow: "0 18px 40px rgba(18, 36, 56, 0.10)",
-};
-
-const proofStrip: CSSProperties = {
-  marginTop: 28,
-  display: "flex",
-  flexWrap: "wrap",
-  gap: 12,
-};
-
-const proofItem: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  minHeight: 34,
-  padding: "0 12px",
-  borderRadius: 999,
-  background: "#E8EEF4",
-  border: "1px solid rgba(18,36,56,0.08)",
-  fontSize: 13,
-  color: "rgba(18, 36, 56, 0.76)",
 };
 
 const sectionSplit: CSSProperties = {
@@ -622,6 +611,41 @@ const pill: CSSProperties = {
   color: "rgba(18, 36, 56, 0.74)",
 };
 
+const heroImageFrame: CSSProperties = {
+  position: "relative",
+  minHeight: 320,
+  borderRadius: 28,
+  overflow: "hidden",
+  boxShadow: "0 24px 60px rgba(18, 36, 56, 0.14)",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
+};
+
+const heroImage: CSSProperties = {
+  width: "100%",
+  height: "100%",
+  minHeight: 320,
+  objectFit: "cover",
+};
+
+const heroImageOverlay: CSSProperties = {
+  position: "absolute",
+  inset: 0,
+  background:
+    "linear-gradient(180deg, rgba(10,29,48,0.04) 0%, rgba(10,29,48,0.34) 100%)",
+};
+
+const heroFloatingCard: CSSProperties = {
+  position: "relative",
+  marginTop: -42,
+  marginLeft: "auto",
+  width: "min(92%, 420px)",
+  padding: "24px",
+  borderRadius: 24,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18, 36, 56, 0.08)",
+  boxShadow: "0 18px 40px rgba(18, 36, 56, 0.10)",
+};
+
 const floatingEyebrow: CSSProperties = {
   margin: "0 0 14px",
   fontSize: 11,
@@ -648,6 +672,57 @@ const floatingLabel: CSSProperties = {
   fontSize: 14,
   lineHeight: 1.7,
   color: "rgba(18,36,56,0.66)",
+};
+
+const proofStrip: CSSProperties = {
+  marginTop: 28,
+  display: "flex",
+  flexWrap: "wrap",
+  gap: 12,
+};
+
+const proofItem: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  minHeight: 34,
+  padding: "0 12px",
+  borderRadius: 999,
+  background: "#E8EEF4",
+  border: "1px solid rgba(18,36,56,0.08)",
+  fontSize: 13,
+  color: "rgba(18, 36, 56, 0.76)",
+};
+
+const responseBar: CSSProperties = {
+  padding: "34px 30px",
+  borderRadius: 28,
+  background: "#10263C",
+  color: "#FFFFFF",
+  boxShadow: "0 16px 40px rgba(16,38,60,0.16)",
+};
+
+const responseLabel: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(255,255,255,0.62)",
+};
+
+const responseTitle: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: "clamp(1.6rem, 4vw, 2.4rem)",
+  lineHeight: 1.08,
+  letterSpacing: "-0.03em",
+  fontWeight: 700,
+  color: "#FFFFFF",
+};
+
+const responseText: CSSProperties = {
+  margin: 0,
+  fontSize: 16,
+  lineHeight: 1.8,
+  color: "rgba(255,255,255,0.78)",
 };
 
 const cardGrid: CSSProperties = {
@@ -689,6 +764,36 @@ const cardText: CSSProperties = {
   color: "rgba(18, 36, 56, 0.72)",
 };
 
+const ctaStrip: CSSProperties = {
+  padding: "30px",
+  borderRadius: 28,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
+  boxShadow: "0 12px 28px rgba(18,36,56,0.05)",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  gap: 20,
+  flexWrap: "wrap",
+};
+
+const stripTitle: CSSProperties = {
+  margin: 0,
+  fontSize: "clamp(1.5rem, 3vw, 2.2rem)",
+  lineHeight: 1.1,
+  letterSpacing: "-0.03em",
+  fontWeight: 700,
+  color: "#10263C",
+};
+
+const panelEyebrow: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(18, 36, 56, 0.5)",
+};
+
 const listPanel: CSSProperties = {
   padding: "30px 28px",
   borderRadius: 28,
@@ -725,14 +830,6 @@ const editorialPanel: CSSProperties = {
   background: "#FFFFFF",
   border: "1px solid rgba(18, 36, 56, 0.08)",
   boxShadow: "0 12px 28px rgba(18, 36, 56, 0.05)",
-};
-
-const panelEyebrow: CSSProperties = {
-  margin: "0 0 10px",
-  fontSize: 12,
-  letterSpacing: "0.16em",
-  textTransform: "uppercase",
-  color: "rgba(18, 36, 56, 0.5)",
 };
 
 const panelTitle: CSSProperties = {
