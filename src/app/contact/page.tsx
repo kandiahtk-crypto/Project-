@@ -93,7 +93,7 @@ export default function ContactPage() {
                   href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
                   target="_blank"
                   rel="noopener noreferrer"
-                  style={secondaryLink}
+                  style={secondaryButton}
                 >
                   WhatsApp
                 </a>
@@ -106,42 +106,42 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={contactPanel}>
-              <p style={panelEyebrowOnDark}>Direct contact</p>
+            <div style={contactPanel} className="premium-card">
+              <p style={panelEyebrow}>Direct contact</p>
 
               <div style={contactStack}>
-                <div style={contactItemOnDark}>
-                  <p style={contactLabelOnDark}>Email</p>
+                <div style={contactItem}>
+                  <p style={contactLabel}>Email</p>
                   <a
                     href="mailto:info@ukinboundgroundtransport.com"
-                    style={contactValueOnDark}
+                    style={contactValue}
                   >
                     info@ukinboundgroundtransport.com
                   </a>
                 </div>
 
-                <div style={contactItemOnDark}>
-                  <p style={contactLabelOnDark}>Phone</p>
-                  <a href="tel:+442086292776" style={contactValueOnDark}>
+                <div style={contactItem}>
+                  <p style={contactLabel}>Phone</p>
+                  <a href="tel:+442086292776" style={contactValue}>
                     +44 20 8629 2776
                   </a>
                 </div>
 
-                <div style={contactItemOnDark}>
-                  <p style={contactLabelOnDark}>WhatsApp</p>
+                <div style={contactItem}>
+                  <p style={contactLabel}>WhatsApp</p>
                   <a
                     href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
                     target="_blank"
                     rel="noopener noreferrer"
-                    style={contactValueOnDark}
+                    style={contactValue}
                   >
                     Message us directly
                   </a>
                 </div>
 
-                <div style={contactItemLastOnDark}>
-                  <p style={contactLabelOnDark}>Coverage</p>
-                  <p style={contactMetaOnDark}>
+                <div style={contactItemLast}>
+                  <p style={contactLabel}>Coverage</p>
+                  <p style={contactMeta}>
                     England • Scotland • Ireland • London • Airports • Cruise
                     ports
                   </p>
@@ -181,7 +181,7 @@ export default function ContactPage() {
 
           <div style={cardGrid} className="feature-grid">
             {supportItems.map((item) => (
-              <div key={item} style={supportCard}>
+              <div key={item} style={supportCard} className="premium-card">
                 <div style={cardAccent} />
                 <p style={supportCardText}>{item}</p>
               </div>
@@ -202,8 +202,8 @@ export default function ContactPage() {
                 a clear transport approach aligned to your programme.
               </p>
 
-              <div style={infoPanel}>
-                <p style={panelEyebrow}>Helpful enquiry details</p>
+              <div style={infoPanel} className="premium-card">
+                <p style={panelEyebrowSoft}>Helpful enquiry details</p>
 
                 <div style={lineList}>
                   <div style={lineItem}>Travel dates and duration</div>
@@ -215,7 +215,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={formPanel}>
+            <div style={formPanel} className="premium-card">
               <ProgrammeEnquiryForm />
             </div>
           </div>
@@ -279,7 +279,7 @@ export default function ContactPage() {
 }
 
 const pageShell: CSSProperties = {
-  background: "#F6F1E8",
+  background: "#FCFAF6",
 };
 
 const containerWide: CSSProperties = {
@@ -299,27 +299,27 @@ const containerNarrow: CSSProperties = {
 const heroSection: CSSProperties = {
   padding: "56px 0 86px",
   background:
-    "radial-gradient(circle at top right, rgba(201,169,97,0.12), transparent 24%), linear-gradient(135deg, #0C1A27 0%, #13293D 46%, #1B344A 100%)",
+    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 52%, #FFFFFF 100%)",
 };
 
 const section: CSSProperties = {
   padding: "108px 0",
-  background: "linear-gradient(180deg, #F6F1E8 0%, #F3EDE4 100%)",
+  background: "linear-gradient(180deg, #FFFFFF 0%, #FCFAF6 100%)",
 };
 
 const sectionSoft: CSSProperties = {
   padding: "96px 0",
-  background: "linear-gradient(180deg, #F0E8DE 0%, #ECE3D7 100%)",
+  background: "linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 100%)",
 };
 
 const sectionSoftAlt: CSSProperties = {
   padding: "96px 0",
-  background: "linear-gradient(180deg, #EEE6DB 0%, #F6F1E8 100%)",
+  background: "linear-gradient(180deg, #F6F8FB 0%, #FFFFFF 100%)",
 };
 
 const ctaSection: CSSProperties = {
   padding: "92px 0 56px",
-  background: "linear-gradient(180deg, #F6F1E8 0%, #EFE7DC 100%)",
+  background: "linear-gradient(180deg, #F6F8FB 0%, #EDF2F6 100%)",
 };
 
 const heroGrid: CSSProperties = {
@@ -349,7 +349,7 @@ const eyebrow: CSSProperties = {
   fontSize: 11,
   letterSpacing: "0.22em",
   textTransform: "uppercase",
-  color: "rgba(248,244,238,0.72)",
+  color: "rgba(18,36,56,0.52)",
 };
 
 const sectionLabel: CSSProperties = {
@@ -357,7 +357,7 @@ const sectionLabel: CSSProperties = {
   fontSize: 11,
   letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(22,33,43,0.54)",
+  color: "rgba(18,36,56,0.54)",
 };
 
 const heroTitle: CSSProperties = {
@@ -368,7 +368,7 @@ const heroTitle: CSSProperties = {
   letterSpacing: "-0.04em",
   fontWeight: 700,
   fontFamily: "var(--font-sans)",
-  color: "#F8F4EE",
+  color: "#10263C",
   wordBreak: "break-word",
 };
 
@@ -380,7 +380,7 @@ const sectionTitle: CSSProperties = {
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
-  color: "#16212B",
+  color: "#10263C",
   wordBreak: "break-word",
 };
 
@@ -392,17 +392,17 @@ const ctaTitle: CSSProperties = {
   letterSpacing: "-0.03em",
   fontWeight: 650,
   fontFamily: "var(--font-sans)",
-  color: "#16212B",
+  color: "#10263C",
   wordBreak: "break-word",
   textAlign: "center",
 };
 
 const divider: CSSProperties = {
   width: 72,
-  height: 2,
+  height: 3,
   margin: "18px 0 26px",
   borderRadius: 999,
-  background: "linear-gradient(90deg, #C9A961 0%, #E5C98C 100%)",
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
 };
 
 const heroText: CSSProperties = {
@@ -410,7 +410,7 @@ const heroText: CSSProperties = {
   maxWidth: 680,
   fontSize: 16,
   lineHeight: 1.85,
-  color: "rgba(248,244,238,0.88)",
+  color: "rgba(18,36,56,0.78)",
 };
 
 const heroSubText: CSSProperties = {
@@ -418,7 +418,7 @@ const heroSubText: CSSProperties = {
   maxWidth: 620,
   fontSize: 13,
   lineHeight: 1.8,
-  color: "rgba(248,244,238,0.68)",
+  color: "rgba(18,36,56,0.58)",
 };
 
 const sectionText: CSSProperties = {
@@ -426,7 +426,7 @@ const sectionText: CSSProperties = {
   maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(22,33,43,0.76)",
+  color: "rgba(18,36,56,0.76)",
 };
 
 const sectionTextCentered: CSSProperties = {
@@ -434,7 +434,7 @@ const sectionTextCentered: CSSProperties = {
   maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(22,33,43,0.76)",
+  color: "rgba(18,36,56,0.76)",
   textAlign: "center",
 };
 
@@ -462,27 +462,26 @@ const primaryButton: CSSProperties = {
   minHeight: 56,
   padding: "0 26px",
   borderRadius: 999,
-  background: "linear-gradient(135deg, #C9A961 0%, #B58A3B 100%)",
-  color: "#0C1A27",
+  background: "#10263C",
+  color: "#FFFFFF",
   textDecoration: "none",
   fontWeight: 700,
-  border: "1px solid rgba(255,255,255,0.08)",
-  boxShadow: "0 14px 30px rgba(0,0,0,0.18)",
+  border: "1px solid rgba(16,38,60,0.10)",
+  boxShadow: "0 12px 26px rgba(16,38,60,0.16)",
 };
 
-const secondaryLink: CSSProperties = {
+const secondaryButton: CSSProperties = {
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   minHeight: 56,
   padding: "0 24px",
   borderRadius: 999,
-  background: "rgba(255,255,255,0.08)",
-  color: "#F8F4EE",
+  background: "#FFFFFF",
+  color: "#10263C",
   textDecoration: "none",
   fontWeight: 600,
-  border: "1px solid rgba(255,255,255,0.14)",
-  backdropFilter: "blur(10px)",
+  border: "1px solid rgba(16,38,60,0.10)",
 };
 
 const ctaSecondaryLink: CSSProperties = {
@@ -493,11 +492,11 @@ const ctaSecondaryLink: CSSProperties = {
   padding: "0 24px",
   borderRadius: 999,
   background: "#FFFFFF",
-  color: "#16212B",
+  color: "#10263C",
   textDecoration: "none",
   fontWeight: 600,
-  border: "1px solid rgba(22,33,43,0.10)",
-  boxShadow: "0 10px 24px rgba(22,33,43,0.07)",
+  border: "1px solid rgba(16,38,60,0.10)",
+  boxShadow: "0 10px 24px rgba(16,38,60,0.07)",
 };
 
 const pillRow: CSSProperties = {
@@ -513,20 +512,18 @@ const pill: CSSProperties = {
   minHeight: 36,
   padding: "0 13px",
   borderRadius: 999,
-  background: "rgba(255,255,255,0.08)",
-  border: "1px solid rgba(255,255,255,0.12)",
+  background: "#EAF0F5",
+  border: "1px solid rgba(18,36,56,0.08)",
   fontSize: 13,
-  color: "rgba(248,244,238,0.82)",
+  color: "rgba(18,36,56,0.74)",
 };
 
 const contactPanel: CSSProperties = {
   padding: "30px 28px",
   borderRadius: 30,
-  background:
-    "linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.08) 100%)",
-  border: "1px solid rgba(255,255,255,0.14)",
-  boxShadow: "0 18px 40px rgba(0,0,0,0.18)",
-  backdropFilter: "blur(12px)",
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
+  boxShadow: "0 18px 40px rgba(18,36,56,0.10)",
 };
 
 const panelEyebrow: CSSProperties = {
@@ -534,15 +531,15 @@ const panelEyebrow: CSSProperties = {
   fontSize: 12,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(22,33,43,0.50)",
+  color: "rgba(18,36,56,0.50)",
 };
 
-const panelEyebrowOnDark: CSSProperties = {
+const panelEyebrowSoft: CSSProperties = {
   margin: "0 0 14px",
   fontSize: 12,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(248,244,238,0.58)",
+  color: "rgba(18,36,56,0.50)",
 };
 
 const contactStack: CSSProperties = {
@@ -550,38 +547,38 @@ const contactStack: CSSProperties = {
   gap: 18,
 };
 
-const contactItemOnDark: CSSProperties = {
+const contactItem: CSSProperties = {
   paddingBottom: 14,
-  borderBottom: "1px solid rgba(255,255,255,0.10)",
+  borderBottom: "1px solid rgba(18,36,56,0.08)",
 };
 
-const contactItemLastOnDark: CSSProperties = {
+const contactItemLast: CSSProperties = {
   paddingBottom: 0,
   borderBottom: "none",
 };
 
-const contactLabelOnDark: CSSProperties = {
+const contactLabel: CSSProperties = {
   margin: "0 0 6px",
   fontSize: 11,
   letterSpacing: "0.16em",
   textTransform: "uppercase",
-  color: "rgba(248,244,238,0.56)",
+  color: "rgba(18,36,56,0.56)",
 };
 
-const contactValueOnDark: CSSProperties = {
+const contactValue: CSSProperties = {
   textDecoration: "none",
-  color: "#FFFFFF",
+  color: "#10263C",
   fontSize: 20,
   lineHeight: 1.4,
   fontWeight: 700,
   wordBreak: "break-word",
 };
 
-const contactMetaOnDark: CSSProperties = {
+const contactMeta: CSSProperties = {
   margin: 0,
   fontSize: 15,
   lineHeight: 1.7,
-  color: "rgba(248,244,238,0.78)",
+  color: "rgba(18,36,56,0.72)",
 };
 
 const proofStrip: CSSProperties = {
@@ -597,10 +594,10 @@ const proofItem: CSSProperties = {
   minHeight: 34,
   padding: "0 12px",
   borderRadius: 999,
-  background: "rgba(255,255,255,0.08)",
-  border: "1px solid rgba(255,255,255,0.12)",
+  background: "#E8EEF4",
+  border: "1px solid rgba(18,36,56,0.08)",
   fontSize: 13,
-  color: "rgba(248,244,238,0.80)",
+  color: "rgba(18,36,56,0.76)",
 };
 
 const cardGrid: CSSProperties = {
@@ -613,24 +610,24 @@ const supportCard: CSSProperties = {
   display: "block",
   padding: "30px",
   borderRadius: 26,
-  background: "#FCF9F4",
-  border: "1px solid rgba(22,33,43,0.08)",
-  boxShadow: "0 12px 28px rgba(22,33,43,0.05)",
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
+  boxShadow: "0 12px 28px rgba(18,36,56,0.05)",
 };
 
 const cardAccent: CSSProperties = {
   width: 48,
-  height: 2,
+  height: 3,
   borderRadius: 999,
   marginBottom: 16,
-  background: "linear-gradient(90deg, #C9A961 0%, #E5C98C 100%)",
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
 };
 
 const supportCardText: CSSProperties = {
   margin: 0,
   fontSize: 18,
   lineHeight: 1.7,
-  color: "#16212B",
+  color: "#10263C",
   fontWeight: 600,
 };
 
@@ -638,9 +635,9 @@ const infoPanel: CSSProperties = {
   marginTop: 30,
   padding: "30px 28px",
   borderRadius: 28,
-  background: "#FBF7F1",
-  border: "1px solid rgba(22,33,43,0.08)",
-  boxShadow: "0 12px 28px rgba(22,33,43,0.05)",
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
+  boxShadow: "0 12px 28px rgba(18,36,56,0.05)",
 };
 
 const lineList: CSSProperties = {
@@ -650,18 +647,18 @@ const lineList: CSSProperties = {
 
 const lineItem: CSSProperties = {
   paddingBottom: 12,
-  borderBottom: "1px solid rgba(22,33,43,0.08)",
+  borderBottom: "1px solid rgba(18,36,56,0.08)",
   fontSize: 16,
   lineHeight: 1.7,
-  color: "#16212B",
+  color: "#10263C",
 };
 
 const formPanel: CSSProperties = {
   padding: "28px",
   borderRadius: 28,
-  background: "linear-gradient(180deg, #FFFDF9 0%, #F8F2E9 100%)",
-  border: "1px solid rgba(22,33,43,0.10)",
-  boxShadow: "0 16px 34px rgba(22,33,43,0.08)",
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.10)",
+  boxShadow: "0 16px 34px rgba(18,36,56,0.08)",
 };
 
 const linkGrid: CSSProperties = {
@@ -673,9 +670,9 @@ const linkCard: CSSProperties = {
   padding: 16,
   borderRadius: 16,
   background: "#FFFFFF",
-  border: "1px solid rgba(22,33,43,0.10)",
+  border: "1px solid rgba(18,36,56,0.10)",
   textDecoration: "none",
-  color: "#16212B",
+  color: "#10263C",
   fontWeight: 600,
-  boxShadow: "0 8px 20px rgba(22,33,43,0.04)",
+  boxShadow: "0 8px 20px rgba(18,36,56,0.04)",
 };
