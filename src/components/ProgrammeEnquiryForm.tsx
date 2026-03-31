@@ -2,15 +2,54 @@
 
 import { useState, type FormEvent, type CSSProperties } from "react";
 
-export default function ProgrammeEnquiryForm() {
-  const [submitted, setSubmitted] = useState(false);
+type Status = "idle" | "submitting" | "success" | "error";
 
-  function handleSubmit(e: FormEvent) {
+export default function ProgrammeEnquiryForm() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      companyName: String(formData.get("companyName") || ""),
+      contactName: String(formData.get("contactName") || ""),
+      emailAddress: String(formData.get("emailAddress") || ""),
+      travelWindow: String(formData.get("travelWindow") || ""),
+      groupSize: String(formData.get("groupSize") || ""),
+      programmeType: String(formData.get("programmeType") || ""),
+      programmeDetails: String(formData.get("programmeDetails") || ""),
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to submit enquiry");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch (error) {
+      setStatus("error");
+      setErrorMessage(
+        "Something went wrong while sending your enquiry. Please try again or contact us directly by phone or WhatsApp."
+      );
+    }
   }
 
-  if (submitted) {
+  if (status === "success") {
     return (
       <div style={successBox}>
         <p style={successEyebrow}>Enquiry received</p>
@@ -131,9 +170,18 @@ export default function ProgrammeEnquiryForm() {
       </div>
 
       <div style={footerRow}>
-        <button type="submit" style={button}>
-          Submit programme enquiry
+        <button
+          type="submit"
+          style={button}
+          disabled={status === "submitting"}
+        >
+          {status === "submitting"
+            ? "Sending enquiry..."
+            : "Submit programme enquiry"}
         </button>
+
+        {status === "error" && <p style={errorText}>{errorMessage}</p>}
+
         <p style={microText}>
           For urgent movements, you can also call or WhatsApp us directly.
         </p>
@@ -241,12 +289,12 @@ const button: CSSProperties = {
   padding: "0 28px",
   borderRadius: 999,
   border: "none",
-  background: "linear-gradient(135deg, #C9A961 0%, #B58A3B 100%)",
-  color: "#0C1A27",
+  background: "#10263C",
+  color: "#FFFFFF",
   fontWeight: 700,
   fontSize: 15,
   cursor: "pointer",
-  boxShadow: "0 14px 30px rgba(0,0,0,0.12)",
+  boxShadow: "0 12px 26px rgba(16,38,60,0.16)",
 };
 
 const microText: CSSProperties = {
@@ -256,11 +304,18 @@ const microText: CSSProperties = {
   color: "rgba(22,33,43,0.58)",
 };
 
+const errorText: CSSProperties = {
+  margin: 0,
+  fontSize: 14,
+  lineHeight: 1.7,
+  color: "#B42318",
+};
+
 const successBox: CSSProperties = {
   marginTop: 8,
   padding: "24px 22px",
   borderRadius: 22,
-  background: "linear-gradient(180deg, #FBF7F1 0%, #F4ECE0 100%)",
+  background: "#FFFFFF",
   border: "1px solid rgba(22,33,43,0.08)",
   boxShadow: "0 12px 28px rgba(22,33,43,0.05)",
 };
