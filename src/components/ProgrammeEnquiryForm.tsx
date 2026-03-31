@@ -14,34 +14,38 @@ export default function ProgrammeEnquiryForm() {
     setErrorMessage("");
 
     const form = e.currentTarget;
-    const formData = new FormData(form);
+    const formData = new FormData();
 
-    const payload = {
-      companyName: String(formData.get("companyName") || ""),
-      contactName: String(formData.get("contactName") || ""),
-      emailAddress: String(formData.get("emailAddress") || ""),
-      travelWindow: String(formData.get("travelWindow") || ""),
-      groupSize: String(formData.get("groupSize") || ""),
-      programmeType: String(formData.get("programmeType") || ""),
-      programmeDetails: String(formData.get("programmeDetails") || ""),
-    };
+    formData.append("access_key", "fd957626-6fe6-4cba-8703-0af4aaca5ad6");
+    formData.append("subject", "New Programme Enquiry");
+    formData.append("from_name", "UK Inbound Ground Transport");
+
+    formData.append("companyName", String(new FormData(form).get("companyName") || ""));
+    formData.append("contactName", String(new FormData(form).get("contactName") || ""));
+    formData.append("email", String(new FormData(form).get("emailAddress") || ""));
+    formData.append("travelWindow", String(new FormData(form).get("travelWindow") || ""));
+    formData.append("groupSize", String(new FormData(form).get("groupSize") || ""));
+    formData.append("programmeType", String(new FormData(form).get("programmeType") || ""));
+    formData.append("message", String(new FormData(form).get("programmeDetails") || ""));
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+        body: formData,
       });
 
-      if (!response.ok) {
-        throw new Error("Failed to submit enquiry");
-      }
+      const result = await response.json();
 
-      setStatus("success");
-      form.reset();
-    } catch (error) {
+      if (result.success) {
+        setStatus("success");
+        form.reset();
+      } else {
+        setStatus("error");
+        setErrorMessage(
+          "Something went wrong while sending your enquiry. Please try again or contact us directly by phone or WhatsApp."
+        );
+      }
+    } catch {
       setStatus("error");
       setErrorMessage(
         "Something went wrong while sending your enquiry. Please try again or contact us directly by phone or WhatsApp."
