@@ -80,10 +80,25 @@ export default function ProgrammesPage() {
             across fixed-departure series, private itineraries, regional touring
             and cross-border programmes.
           </p>
+
+          <p style={heroSubText}>
+            Our role is to help programme transport feel coordinated, reliable
+            and commercially well structured from first arrival to final
+            departure.
+          </p>
+
+          <div style={heroActions}>
+            <a href="/contact" style={primaryButtonDark}>
+              Contact us
+            </a>
+            <a href="/services" style={secondaryLink}>
+              View services →
+            </a>
+          </div>
         </div>
       </section>
 
-      <section style={section}>
+      <section style={sectionSoft}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Touring regions</p>
 
@@ -97,10 +112,16 @@ export default function ProgrammesPage() {
             used by international operators and DMC teams.
           </p>
 
-          <div style={regionCards}>
+          <div style={regionCards} className="feature-grid">
             {touringRegions.map((region) => (
-              <a key={region.title} href={region.href} style={regionCardLink}>
+              <a
+                key={region.title}
+                href={region.href}
+                style={regionCardLink}
+                className="premium-card"
+              >
                 <article style={regionCard}>
+                  <div style={cardAccent} />
                   <div style={regionCardTopRow}>
                     <h3 style={regionCardTitle}>{region.title}</h3>
                     <span style={regionArrow} aria-hidden="true">
@@ -115,11 +136,24 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      <section style={sectionSoft}>
+      <section style={section}>
         <div style={containerNarrow}>
+          <div style={introPanel} className="premium-card">
+            <p style={panelEyebrow}>Programme structure</p>
+            <h2 style={panelTitle}>
+              Delivery models aligned to the rhythm of touring.
+            </h2>
+            <p style={panelText}>
+              Different programme types require different transport structures.
+              Some need repeatability across scheduled departures, while others
+              require flexibility around custom routing, hotel patterns and
+              regional transitions.
+            </p>
+          </div>
+
           <div style={list}>
             {programmes.map((programme) => (
-              <article key={programme.title} style={item}>
+              <article key={programme.title} style={item} className="premium-card">
                 <div style={accentLine} />
                 <div>
                   <h2 style={itemTitle}>{programme.title}</h2>
@@ -127,6 +161,33 @@ export default function ProgrammesPage() {
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={sectionSoftAlt}>
+        <div style={containerNarrow}>
+          <p style={sectionLabel}>Approach</p>
+          <h2 style={sectionTitle}>
+            Transport planning built around the wider programme.
+          </h2>
+          <p style={sectionText}>
+            We do not treat movements as disconnected bookings. Our focus is to
+            align routing, timing, service levels and operational flow with the
+            wider shape of the itinerary so that the programme works as one
+            coherent delivery.
+          </p>
+
+          <div style={responseBar} className="premium-card">
+            <p style={responseLabel}>Working standard</p>
+            <h3 style={responseTitle}>
+              Clear routing, calm coordination and dependable execution.
+            </h3>
+            <p style={responseText}>
+              From regional touring to cross-border transitions, the objective
+              remains the same: transport that supports the programme rather
+              than disrupts it.
+            </p>
           </div>
         </div>
       </section>
@@ -145,8 +206,11 @@ export default function ProgrammesPage() {
           </p>
 
           <div style={ctaActions}>
-            <a href="/contact" style={primaryButton}>
+            <a href="/contact" style={primaryButtonDark}>
               Contact us
+            </a>
+            <a href="/coach-hire-uk" style={secondaryLink}>
+              Coach hire UK →
             </a>
           </div>
         </div>
@@ -162,87 +226,150 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "64px 0 64px",
+  padding: "56px 0 76px",
+  background:
+    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 60%, #FFFFFF 100%)",
 };
 
 const section: CSSProperties = {
-  padding: "88px 0",
+  padding: "96px 0",
+  background: "linear-gradient(180deg, #FFFFFF 0%, #FCFAF6 100%)",
 };
 
 const sectionSoft: CSSProperties = {
-  padding: "80px 0",
-  background: "#F8F5EF",
+  padding: "88px 0",
+  background: "linear-gradient(180deg, #F8FAFC 0%, #EEF3F7 100%)",
+};
+
+const sectionSoftAlt: CSSProperties = {
+  padding: "88px 0",
+  background: "linear-gradient(180deg, #F6F8FB 0%, #FFFFFF 100%)",
 };
 
 const ctaSection: CSSProperties = {
-  padding: "72px 0 48px",
+  padding: "80px 0 48px",
 };
 
 const eyebrow: CSSProperties = {
   margin: 0,
-  fontSize: 12,
-  letterSpacing: "0.18em",
+  fontSize: 11,
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(18,36,56,0.52)",
 };
 
 const sectionLabel: CSSProperties = {
   margin: "0 0 12px",
-  fontSize: 12,
-  letterSpacing: "0.18em",
+  fontSize: 11,
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(18,36,56,0.52)",
 };
 
 const heroTitle: CSSProperties = {
-  margin: "14px 0 16px",
-  fontSize: "clamp(2.6rem, 7vw, 5rem)",
-  lineHeight: 1.02,
+  margin: "12px 0 18px",
+  fontSize: "clamp(2.2rem, 5.8vw, 4.8rem)",
+  lineHeight: 1.03,
   letterSpacing: "-0.04em",
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontWeight: 700,
+  fontFamily: "var(--font-sans)",
+  color: "#10263C",
 };
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
-  fontSize: "clamp(2rem, 5vw, 3.2rem)",
-  lineHeight: 1.06,
-  letterSpacing: "-0.025em",
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+  lineHeight: 1.04,
+  letterSpacing: "-0.03em",
+  fontWeight: 650,
+  fontFamily: "var(--font-sans)",
+  color: "#10263C",
 };
 
 const ctaTitle: CSSProperties = {
   margin: "0 0 18px",
-  fontSize: "clamp(2rem, 5vw, 3rem)",
-  lineHeight: 1.06,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontSize: "clamp(2rem, 4vw, 3rem)",
+  lineHeight: 1.05,
+  letterSpacing: "-0.03em",
+  fontWeight: 650,
+  fontFamily: "var(--font-sans)",
+  color: "#10263C",
 };
 
 const divider: CSSProperties = {
-  width: 48,
-  height: 2,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  width: 56,
+  height: 3,
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
   margin: "18px 0 24px",
+  borderRadius: 999,
 };
 
 const heroText: CSSProperties = {
+  margin: 0,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18,36,56,0.74)",
+};
+
+const heroSubText: CSSProperties = {
+  margin: "16px 0 0",
+  fontSize: 15,
+  lineHeight: 1.8,
+  color: "rgba(18,36,56,0.58)",
 };
 
 const sectionText: CSSProperties = {
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18,36,56,0.72)",
+};
+
+const heroActions: CSSProperties = {
+  marginTop: 26,
+  display: "flex",
+  gap: 16,
+  flexWrap: "wrap",
+  alignItems: "center",
+};
+
+const ctaActions: CSSProperties = {
+  marginTop: 24,
+  display: "flex",
+  gap: 18,
+  flexWrap: "wrap",
+  alignItems: "center",
+};
+
+const primaryButtonDark: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 54,
+  padding: "0 24px",
+  borderRadius: 999,
+  background: "#10263C",
+  textDecoration: "none",
+  color: "#FFFFFF",
+  fontWeight: 600,
+  border: "1px solid rgba(16,38,60,0.10)",
+  boxShadow: "0 10px 24px rgba(16,38,60,0.16)",
+};
+
+const secondaryLink: CSSProperties = {
+  textDecoration: "none",
+  color: "#10263C",
+  fontWeight: 600,
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
+  paddingBottom: 2,
+  borderBottom: "1px solid rgba(91,124,153,0.34)",
 };
 
 const regionCards: CSSProperties = {
   marginTop: 40,
   display: "grid",
-  gap: 28,
+  gap: 24,
 };
 
 const regionCardLink: CSSProperties = {
@@ -251,13 +378,19 @@ const regionCardLink: CSSProperties = {
 };
 
 const regionCard: CSSProperties = {
-  background: "#FBFAF7",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
-  borderRadius: 28,
-  padding: "32px 28px",
-  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
-  cursor: "pointer",
-  transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
+  borderRadius: 26,
+  padding: "30px",
+  boxShadow: "0 12px 28px rgba(18,36,56,0.05)",
+};
+
+const cardAccent: CSSProperties = {
+  width: 48,
+  height: 3,
+  borderRadius: 999,
+  marginBottom: 16,
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
 };
 
 const regionCardTopRow: CSSProperties = {
@@ -269,67 +402,127 @@ const regionCardTopRow: CSSProperties = {
 
 const regionCardTitle: CSSProperties = {
   margin: "0 0 14px",
-  fontSize: "clamp(1.7rem, 4vw, 2.2rem)",
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontSize: "clamp(1.45rem, 3vw, 2rem)",
+  color: "#10263C",
   letterSpacing: "-0.02em",
-  lineHeight: 1.08,
+  lineHeight: 1.1,
+  fontWeight: 700,
   flex: 1,
 };
 
 const regionArrow: CSSProperties = {
   fontSize: 22,
   lineHeight: 1,
-  color: "rgba(11, 26, 43, 0.5)",
+  color: "#5B7C99",
   paddingTop: 6,
 };
 
 const regionCardText: CSSProperties = {
   fontSize: 16,
   lineHeight: 1.85,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18,36,56,0.72)",
   margin: 0,
+};
+
+const introPanel: CSSProperties = {
+  padding: "30px 28px",
+  borderRadius: 28,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
+  boxShadow: "0 12px 28px rgba(18,36,56,0.05)",
+  marginBottom: 34,
+};
+
+const panelEyebrow: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(18,36,56,0.52)",
+};
+
+const panelTitle: CSSProperties = {
+  margin: "0 0 14px",
+  fontSize: "clamp(1.6rem, 3vw, 2.3rem)",
+  lineHeight: 1.08,
+  letterSpacing: "-0.03em",
+  fontWeight: 700,
+  color: "#10263C",
+};
+
+const panelText: CSSProperties = {
+  margin: 0,
+  fontSize: 16,
+  lineHeight: 1.85,
+  color: "rgba(18,36,56,0.72)",
 };
 
 const list: CSSProperties = {
   display: "grid",
-  gap: 30,
+  gap: 24,
 };
 
 const item: CSSProperties = {
   display: "grid",
   gap: 14,
-  paddingBottom: 20,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
+  padding: "28px",
+  borderRadius: 26,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
+  boxShadow: "0 12px 28px rgba(18,36,56,0.05)",
 };
 
 const accentLine: CSSProperties = {
   width: 48,
-  height: 2,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  height: 3,
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
+  borderRadius: 999,
 };
 
 const itemTitle: CSSProperties = {
-  fontSize: "clamp(1.5rem, 4vw, 2rem)",
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  margin: "0 0 10px",
+  fontSize: "clamp(1.4rem, 3vw, 1.9rem)",
+  fontWeight: 700,
+  color: "#10263C",
+  lineHeight: 1.12,
 };
 
 const itemText: CSSProperties = {
+  margin: 0,
   fontSize: 16,
   lineHeight: 1.85,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18,36,56,0.72)",
 };
 
-const ctaActions: CSSProperties = {
-  marginTop: 24,
+const responseBar: CSSProperties = {
+  marginTop: 26,
+  padding: "28px",
+  borderRadius: 26,
+  background: "#10263C",
+  color: "#FFFFFF",
+  boxShadow: "0 14px 32px rgba(16,38,60,0.14)",
 };
 
-const primaryButton: CSSProperties = {
-  padding: "14px 20px",
-  borderRadius: 999,
-  background: "#F2EEE6",
-  textDecoration: "none",
-  color: "#0B1A2B",
-  fontWeight: 600,
+const responseLabel: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 12,
+  letterSpacing: "0.16em",
+  textTransform: "uppercase",
+  color: "rgba(255,255,255,0.62)",
+};
+
+const responseTitle: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: "clamp(1.4rem, 3vw, 2rem)",
+  lineHeight: 1.1,
+  letterSpacing: "-0.03em",
+  fontWeight: 700,
+  color: "#FFFFFF",
+};
+
+const responseText: CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.8,
+  color: "rgba(255,255,255,0.78)",
 };
