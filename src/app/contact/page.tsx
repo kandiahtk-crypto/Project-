@@ -53,6 +53,25 @@ const supportItems = [
   "DMC and tour operator support",
 ];
 
+const trustItems = [
+  "UK & Ireland coverage",
+  "Tour operators & DMCs",
+  "Fast structured responses",
+  "Airport & cruise coordination",
+];
+
+const quickLinks = [
+  { href: "/coach-hire-uk", label: "Coach hire UK" },
+  { href: "/tour-operator-transport-uk", label: "Tour operator transport UK" },
+  { href: "/dmc-transport-uk", label: "DMC transport UK" },
+  { href: "/heathrow-group-transfers", label: "Heathrow group transfers" },
+  {
+    href: "/southampton-cruise-transfers",
+    label: "Southampton cruise transfers",
+  },
+  { href: "/uk-ireland-touring", label: "UK & Ireland touring" },
+];
+
 export default function ContactPage() {
   return (
     <main style={pageShell}>
@@ -68,7 +87,7 @@ export default function ContactPage() {
               <p style={eyebrow}>Contact</p>
 
               <h1 style={heroTitle}>
-                Speak with us about your UK or Ireland programme.
+                Get a structured UK transport plan for your programme.
               </h1>
 
               <div style={divider} />
@@ -151,10 +170,11 @@ export default function ContactPage() {
           </div>
 
           <div style={proofStrip}>
-            <span style={proofItem}>Structured programme responses</span>
-            <span style={proofItem}>Coach hire & touring support</span>
-            <span style={proofItem}>Airport & cruise coordination</span>
-            <span style={proofItem}>UK & Ireland coverage</span>
+            {trustItems.map((item) => (
+              <span key={item} style={proofItem}>
+                {item}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -165,16 +185,15 @@ export default function ContactPage() {
             <div>
               <p style={sectionLabel}>What to send us</p>
               <h2 style={sectionTitle}>
-                The more detail you share, the better we can structure the
-                transport.
+                The more detail you share, the stronger the transport plan.
               </h2>
             </div>
 
             <div>
               <p style={sectionText}>
                 A strong enquiry normally includes travel dates, arrival point,
-                group size, route outline, hotel pattern and any special
-                operational requirements.
+                group size, route outline, hotel pattern and any operational or
+                service-level requirements.
               </p>
             </div>
           </div>
@@ -195,7 +214,9 @@ export default function ContactPage() {
           <div style={formShell} className="split-grid">
             <div>
               <p style={sectionLabel}>Programme enquiry</p>
-              <h2 style={sectionTitle}>Tell us about your requirement.</h2>
+              <h2 style={sectionTitle}>
+                Get a commercially structured response.
+              </h2>
 
               <p style={sectionText}>
                 Share your itinerary, timings and group profile. We respond with
@@ -208,10 +229,21 @@ export default function ContactPage() {
                 <div style={lineList}>
                   <div style={lineItem}>Travel dates and duration</div>
                   <div style={lineItem}>Arrival airport or cruise port</div>
-                  <div style={lineItem}>Group size and programme type</div>
+                  <div style={lineItem}>Approximate group size</div>
                   <div style={lineItem}>Route outline and hotel pattern</div>
                   <div style={lineItem}>Premium or operational requirements</div>
                 </div>
+              </div>
+
+              <div style={responsePanel} className="premium-card">
+                <p style={responseLabel}>What you can expect</p>
+                <h3 style={responseTitle}>
+                  Clear options, fast turnaround and structured support.
+                </h3>
+                <p style={responseText}>
+                  No generic reply. We focus on realistic routing, service fit
+                  and delivery clarity for professional travel buyers.
+                </p>
               </div>
             </div>
 
@@ -226,25 +258,18 @@ export default function ContactPage() {
         <div style={containerWide}>
           <div style={sectionSplit} className="split-grid">
             <div>
-              <p style={sectionLabel}>Related pages</p>
+              <p style={sectionLabel}>Explore related pages</p>
               <h2 style={sectionTitle}>
-                Explore the transport models most relevant to your programme.
+                Transport models commonly used by inbound travel buyers.
               </h2>
             </div>
 
             <div style={linkGrid}>
-              <a href="/coach-hire-uk" style={linkCard}>
-                Coach hire UK →
-              </a>
-              <a href="/heathrow-group-transfers" style={linkCard}>
-                Heathrow group transfers →
-              </a>
-              <a href="/southampton-cruise-transfers" style={linkCard}>
-                Southampton cruise transfers →
-              </a>
-              <a href="/uk-ireland-touring" style={linkCard}>
-                UK &amp; Ireland touring →
-              </a>
+              {quickLinks.map((link) => (
+                <a key={link.href} href={link.href} style={linkCard}>
+                  {link.label} →
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -651,6 +676,38 @@ const lineItem: CSSProperties = {
   fontSize: 16,
   lineHeight: 1.7,
   color: "#10263C",
+};
+
+const responsePanel: CSSProperties = {
+  marginTop: 24,
+  padding: "28px",
+  borderRadius: 28,
+  background: "#10263C",
+  boxShadow: "0 14px 30px rgba(16,38,60,0.12)",
+};
+
+const responseLabel: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: 11,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(255,255,255,0.62)",
+};
+
+const responseTitle: CSSProperties = {
+  margin: "0 0 10px",
+  fontSize: "clamp(1.35rem, 3vw, 1.8rem)",
+  lineHeight: 1.15,
+  letterSpacing: "-0.03em",
+  color: "#FFFFFF",
+  fontWeight: 700,
+};
+
+const responseText: CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.8,
+  color: "rgba(255,255,255,0.78)",
 };
 
 const formPanel: CSSProperties = {
