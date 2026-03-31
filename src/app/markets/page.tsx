@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "International Markets",
   description:
-    "UK & Ireland programme transport support for international travel partners across the United States, Europe, China and India, including airport arrivals, cruise ports and multi-region touring delivery.",
+    "UK & Ireland programme transport support for international travel partners across key inbound markets.",
   alternates: {
     canonical: "/markets",
   },
@@ -14,22 +14,22 @@ const markets = [
   {
     title: "United States",
     href: "/markets/usa",
-    text: "Supporting US-based tour operators, DMCs and travel planners delivering premium UK and Ireland programmes, from first-arrival airport movements to wider multi-region touring and cruise-linked itineraries.",
+    text: "Supporting US-based tour operators, DMCs and travel planners delivering premium UK and Ireland programmes.",
   },
   {
     title: "Europe",
     href: "/markets/europe",
-    text: "Working with European partners managing structured inbound programmes requiring dependable coordination across London, regional gateways, cruise ports and wider UK & Ireland routing.",
+    text: "Working with European partners managing structured inbound programmes across London, regional gateways and cruise ports.",
   },
   {
     title: "China",
     href: "/markets/china",
-    text: "Supporting Chinese outbound travel specialists with structured touring logistics, airport arrivals, premium group handling and clear programme flow across Britain and Ireland.",
+    text: "Supporting Chinese outbound specialists with structured touring logistics, arrivals and programme flow.",
   },
   {
     title: "India",
     href: "/markets/india",
-    text: "Working with Indian travel companies delivering premium UK and Ireland itineraries with well-planned routing, coordinated arrivals and strong operational structure throughout the programme.",
+    text: "Working with Indian travel companies delivering premium UK and Ireland itineraries with strong operational structure.",
   },
 ];
 
@@ -60,6 +60,7 @@ const cruisePorts = [
 export default function MarketsPage() {
   return (
     <main>
+      {/* HERO */}
       <section style={heroSection}>
         <div style={containerNarrow}>
           <p style={eyebrow}>International markets</p>
@@ -73,29 +74,27 @@ export default function MarketsPage() {
           <p style={heroText}>
             We work with operators, DMCs and travel planners globally,
             supporting UK and Ireland programmes with structured transport
-            delivery across airport arrivals, cruise-linked movements, regional
-            touring and multi-stop itineraries.
+            delivery across arrivals, cruise movements and multi-region touring.
           </p>
         </div>
       </section>
 
+      {/* MARKETS */}
       <section style={section}>
         <div style={containerWide}>
-          <div style={introSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid">
             <div>
               <p style={sectionLabel}>Markets we support</p>
               <h2 style={sectionTitle}>
-                Premium programme support for source markets that require
-                consistency, pace and clear coordination.
+                Programme delivery aligned to international expectations.
               </h2>
             </div>
 
             <div>
               <p style={sectionText}>
-                Different source markets often bring different programme shapes,
-                service expectations and routing priorities. Our role is to
-                support operational delivery in a way that remains structured,
-                commercially focused and aligned to the wider itinerary.
+                Each market brings different pacing, expectations and itinerary
+                structure. Our role is to align transport delivery so the
+                programme flows clearly from arrival to departure.
               </p>
             </div>
           </div>
@@ -106,7 +105,7 @@ export default function MarketsPage() {
                 key={market.title}
                 href={market.href}
                 style={marketCard}
-                className="luxury-card"
+                className="premium-card"
               >
                 <div style={cardTopRow}>
                   <h3 style={cardTitle}>{market.title}</h3>
@@ -119,92 +118,62 @@ export default function MarketsPage() {
         </div>
       </section>
 
+      {/* AIRPORTS */}
       <section style={sectionSoft}>
         <div style={containerWide}>
-          <div style={introSplit} className="split-grid">
+          <div style={sectionSplit}>
             <div>
               <p style={sectionLabel}>Gateway airports</p>
               <h2 style={sectionTitle}>
-                Major airport gateways commonly used in UK and Ireland
-                programmes.
+                Major arrival points across the UK & Ireland.
               </h2>
             </div>
 
-            <div>
-              <p style={sectionText}>
-                International touring programmes frequently begin or end at key
-                airport gateways, where transfer timing, hotel positioning and
-                onward routing shape the rest of the itinerary.
-              </p>
+            <div style={listGrid}>
+              {airports.map((item) => (
+                <div key={item} style={listItem}>
+                  {item}
+                </div>
+              ))}
             </div>
-          </div>
-
-          <div style={listGrid}>
-            {airports.map((item) => (
-              <div key={item} style={listItem}>
-                {item}
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
+      {/* CRUISE */}
       <section style={section}>
         <div style={containerWide}>
-          <div style={introSplit} className="split-grid">
+          <div style={sectionSplit}>
             <div>
               <p style={sectionLabel}>Cruise ports</p>
               <h2 style={sectionTitle}>
-                Major cruise ports across the UK &amp; Ireland used in touring
-                and turnaround programmes.
+                Ports supporting touring and turnaround programmes.
               </h2>
             </div>
 
-            <div>
-              <p style={sectionText}>
-                Cruise-linked work often requires precise coordination around
-                embarkation, disembarkation, shore-side touring and onward
-                regional movements, particularly where timings are fixed and
-                port access is tightly managed.
-              </p>
+            <div style={listGrid}>
+              {cruisePorts.map((item) => (
+                <div key={item} style={listItem}>
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
-
-          <div style={listGrid}>
-            {cruisePorts.map((item) => (
-              <div key={item} style={listItem}>
-                {item}
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
-      <section style={sectionSoft}>
-        <div style={containerNarrow}>
-          <p style={sectionLabel}>Why this matters</p>
-          <h2 style={sectionTitle}>
-            Market-specific understanding improves programme delivery.
-          </h2>
-          <p style={sectionText}>
-            Our focus is not simply assigning vehicles. We support the wider
-            operational structure of the programme by aligning arrivals,
-            departures, regional transitions and touring flow to the needs of
-            the buyer, the itinerary and the guest experience.
-          </p>
-        </div>
-      </section>
-
+      {/* CTA */}
       <section style={ctaSection}>
         <div style={containerNarrow}>
           <p style={sectionLabel}>Start a conversation</p>
+
           <h2 style={ctaTitle}>
             Planning a market-specific UK or Ireland programme?
           </h2>
+
           <p style={sectionText}>
-            Tell us the source market, routing structure, airport or cruise port
-            requirements and wider programme shape. We will help frame the right
-            transport approach around it.
+            Tell us the source market, routing and programme structure — we’ll
+            shape the right transport approach around it.
           </p>
 
           <div style={ctaActions}>
@@ -234,191 +203,162 @@ const containerNarrow: CSSProperties = {
 };
 
 const heroSection: CSSProperties = {
-  padding: "48px 0 64px",
+  padding: "56px 0 72px",
+  background:
+    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 60%, #FFFFFF 100%)",
 };
 
 const section: CSSProperties = {
   padding: "96px 0",
+  background: "linear-gradient(180deg, #FFFFFF 0%, #FCFAF6 100%)",
 };
 
 const sectionSoft: CSSProperties = {
   padding: "88px 0",
-  background: "#F8F5EF",
+  background: "linear-gradient(180deg, #F6F8FB 0%, #EEF3F7 100%)",
 };
 
 const ctaSection: CSSProperties = {
   padding: "88px 0 48px",
 };
 
-const introSplit: CSSProperties = {
+const sectionSplit: CSSProperties = {
   display: "grid",
-  gap: 40,
-  alignItems: "start",
+  gap: 36,
 };
 
 const eyebrow: CSSProperties = {
   margin: 0,
-  fontSize: 12,
-  letterSpacing: "0.18em",
+  fontSize: 11,
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(18,36,56,0.52)",
 };
 
 const sectionLabel: CSSProperties = {
   margin: "0 0 12px",
-  fontSize: 12,
-  letterSpacing: "0.18em",
+  fontSize: 11,
+  letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "rgba(11, 26, 43, 0.52)",
+  color: "rgba(18,36,56,0.52)",
 };
 
 const heroTitle: CSSProperties = {
-  margin: "14px 0 16px",
-  maxWidth: 760,
-  fontSize: "clamp(2.7rem, 7vw, 5.2rem)",
-  lineHeight: 1.01,
+  margin: "12px 0 18px",
+  fontSize: "clamp(2.2rem, 5.8vw, 4.6rem)",
+  lineHeight: 1.02,
   letterSpacing: "-0.04em",
-  fontWeight: 400,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontWeight: 700,
+  color: "#10263C",
 };
 
 const sectionTitle: CSSProperties = {
   margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 5vw, 3.4rem)",
-  lineHeight: 1.05,
-  letterSpacing: "-0.025em",
-  fontWeight: 400,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontSize: "clamp(2rem, 4vw, 3.2rem)",
+  lineHeight: 1.04,
+  fontWeight: 650,
+  color: "#10263C",
 };
 
 const ctaTitle: CSSProperties = {
   margin: "0 0 18px",
-  maxWidth: 760,
-  fontSize: "clamp(2rem, 5vw, 3.2rem)",
+  fontSize: "clamp(2rem, 4vw, 3rem)",
   lineHeight: 1.05,
-  letterSpacing: "-0.025em",
-  fontWeight: 400,
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
+  fontWeight: 650,
+  color: "#10263C",
 };
 
 const divider: CSSProperties = {
-  width: 48,
-  height: 2,
-  background: "linear-gradient(90deg, #C9A227 0%, #E3C565 100%)",
+  width: 56,
+  height: 3,
+  background: "linear-gradient(90deg, #5B7C99, #97B3C8)",
   margin: "18px 0 24px",
   borderRadius: 999,
 };
 
 const heroText: CSSProperties = {
-  margin: 0,
-  maxWidth: 720,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18,36,56,0.72)",
 };
 
 const sectionText: CSSProperties = {
-  margin: 0,
-  maxWidth: 700,
   fontSize: 17,
   lineHeight: 1.9,
-  color: "rgba(11, 26, 43, 0.72)",
+  color: "rgba(18,36,56,0.72)",
 };
 
 const cardGrid: CSSProperties = {
-  marginTop: 44,
+  marginTop: 40,
   display: "grid",
   gap: 24,
 };
 
 const marketCard: CSSProperties = {
-  display: "block",
-  padding: "28px 26px",
-  borderRadius: 28,
-  background: "#FBFAF7",
-  border: "1px solid rgba(11, 26, 43, 0.06)",
+  padding: "28px",
+  borderRadius: 26,
+  background: "#FFFFFF",
+  border: "1px solid rgba(18,36,56,0.08)",
   textDecoration: "none",
-  boxShadow: "0 8px 30px rgba(11, 26, 43, 0.03)",
+  boxShadow: "0 10px 26px rgba(18,36,56,0.05)",
 };
 
 const cardTopRow: CSSProperties = {
   display: "flex",
   justifyContent: "space-between",
-  alignItems: "flex-start",
-  gap: 16,
-  marginBottom: 10,
 };
 
 const cardTitle: CSSProperties = {
-  margin: 0,
-  fontSize: "clamp(1.6rem, 3vw, 2rem)",
-  lineHeight: 1.08,
-  fontWeight: 400,
-  letterSpacing: "-0.02em",
-  fontFamily: "var(--font-serif)",
-  color: "#0B1A2B",
-  flex: 1,
+  fontSize: "clamp(1.4rem, 2.5vw, 1.9rem)",
+  fontWeight: 700,
+  color: "#10263C",
 };
 
 const cardArrow: CSSProperties = {
-  fontSize: 22,
-  lineHeight: 1,
-  color: "#C9A227",
-  paddingTop: 6,
+  fontSize: 20,
+  color: "#5B7C99",
 };
 
 const cardText: CSSProperties = {
-  margin: 0,
-  fontSize: 16,
-  lineHeight: 1.85,
-  color: "rgba(11, 26, 43, 0.72)",
+  marginTop: 10,
+  fontSize: 15,
+  lineHeight: 1.8,
+  color: "rgba(18,36,56,0.7)",
 };
 
 const listGrid: CSSProperties = {
-  marginTop: 42,
+  marginTop: 28,
   display: "grid",
-  gap: 16,
+  gap: 14,
 };
 
 const listItem: CSSProperties = {
-  paddingBottom: 14,
-  borderBottom: "1px solid rgba(11, 26, 43, 0.08)",
-  fontSize: 20,
-  lineHeight: 1.5,
-  color: "#0B1A2B",
+  paddingBottom: 10,
+  borderBottom: "1px solid rgba(18,36,56,0.08)",
+  fontSize: 18,
+  color: "#10263C",
 };
 
 const ctaActions: CSSProperties = {
   marginTop: 26,
   display: "flex",
   gap: 18,
-  flexWrap: "wrap",
-  alignItems: "center",
 };
 
 const primaryButton: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
-  justifyContent: "center",
-  minHeight: 52,
   padding: "0 22px",
+  minHeight: 52,
   borderRadius: 999,
-  background: "#F2EEE6",
-  color: "#0B1A2B",
+  background: "#10263C",
+  color: "#fff",
   textDecoration: "none",
   fontWeight: 600,
-  border: "1px solid rgba(11, 26, 43, 0.08)",
+  display: "inline-flex",
+  alignItems: "center",
 };
 
 const secondaryLink: CSSProperties = {
   textDecoration: "none",
-  color: "#0B1A2B",
-  fontWeight: 500,
-  display: "inline-flex",
-  alignItems: "center",
-  gap: 6,
+  color: "#10263C",
+  fontWeight: 600,
 };
