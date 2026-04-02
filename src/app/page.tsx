@@ -216,10 +216,14 @@ export default function HomePage() {
       />
 
       <section style={heroSection}>
+        <div style={heroGlowOne} />
+        <div style={heroGlowTwo} />
+        <div style={heroGridGlow} />
+
         <div style={containerWide}>
-          <div style={heroShell}>
+          <div style={heroShell} className="fade-up">
             <div style={heroGrid} className="hero-grid">
-              <div style={heroContent}>
+              <div style={heroContent} className="fade-up delay-1">
                 <p style={eyebrow}>UK inbound ground transport</p>
 
                 <h1 style={heroTitle}>
@@ -261,8 +265,11 @@ export default function HomePage() {
                 </div>
               </div>
 
-              <div style={heroVisualStack}>
-                <div style={heroImageFrame} className="hero-image premium-card">
+              <div style={heroVisualStack} className="fade-up delay-2">
+                <div
+                  style={heroImageFrame}
+                  className="hero-image premium-card image-float"
+                >
                   <img
                     src="/hero-coach.png"
                     alt="Luxury UK touring coach"
@@ -271,7 +278,7 @@ export default function HomePage() {
                   <div style={heroImageOverlay} />
                 </div>
 
-                <div style={heroFloatingCard} className="premium-card">
+                <div style={heroFloatingCard} className="premium-card card-lift">
                   <p style={floatingEyebrow}>Operational focus</p>
 
                   <div style={floatingGrid}>
@@ -308,7 +315,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={proofStrip}>
+          <div style={proofStrip} className="fade-up delay-3">
             <span style={proofItem}>UK &amp; Ireland coverage</span>
             <span style={proofItem}>Airport &amp; cruise coordination</span>
             <span style={proofItem}>Built for tour operators &amp; DMCs</span>
@@ -319,7 +326,7 @@ export default function HomePage() {
 
       <section style={sectionSoft}>
         <div style={containerWide}>
-          <div style={sectionSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid fade-up">
             <div>
               <p style={sectionLabel}>Key gateways</p>
               <h2 style={sectionTitle}>
@@ -345,8 +352,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={gatewayEditorialGrid} className="gateway-grid">
-            <div style={gatewayEditorialCard} className="premium-card">
+          <div style={gatewayEditorialGrid} className="gateway-grid fade-up delay-1">
+            <div style={gatewayEditorialCard} className="premium-card card-lift">
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Airports</p>
 
@@ -391,7 +398,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div style={gatewayEditorialCard} className="premium-card">
+            <div style={gatewayEditorialCard} className="premium-card card-lift">
               <div style={gatewayAccent} />
               <p style={gatewayHeading}>Cruise ports</p>
 
@@ -449,7 +456,7 @@ export default function HomePage() {
 
       <section style={section}>
         <div style={containerWide}>
-          <div style={sectionSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid fade-up">
             <div>
               <p style={sectionLabel}>What we support</p>
               <h2 style={sectionTitle}>
@@ -470,7 +477,7 @@ export default function HomePage() {
 
       <section style={sectionTint}>
         <div style={containerWide}>
-          <div style={sectionSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid fade-up">
             <div>
               <p style={sectionLabel}>Why operators work with us</p>
               <h2 style={sectionTitle}>
@@ -496,7 +503,7 @@ export default function HomePage() {
             </div>
 
             <div style={planningGrid} className="feature-grid">
-              <article style={planningCard} className="premium-card">
+              <article style={planningCard} className="premium-card card-lift">
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Programme-first approach</h3>
                 <p style={cardText}>
@@ -505,7 +512,7 @@ export default function HomePage() {
                 </p>
               </article>
 
-              <article style={planningCard} className="premium-card">
+              <article style={planningCard} className="premium-card card-lift">
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Multi-region coordination</h3>
                 <p style={cardText}>
@@ -514,7 +521,7 @@ export default function HomePage() {
                 </p>
               </article>
 
-              <article style={planningCard} className="premium-card">
+              <article style={planningCard} className="premium-card card-lift">
                 <div style={cardAccent} />
                 <h3 style={cardTitle}>Reliable delivery</h3>
                 <p style={cardText}>
@@ -529,7 +536,7 @@ export default function HomePage() {
 
       <section style={sectionSoftAlt}>
         <div style={containerWide}>
-          <div style={sectionSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid fade-up">
             <div>
               <p style={sectionLabel}>Planning</p>
               <h2 style={sectionTitle}>
@@ -556,7 +563,7 @@ export default function HomePage() {
                   key={item.title}
                   href={item.href}
                   style={planningCard}
-                  className="premium-card"
+                  className="premium-card card-lift"
                 >
                   <div style={cardTopRow}>
                     <h3 style={cardTitle}>{item.title}</h3>
@@ -572,7 +579,7 @@ export default function HomePage() {
 
       <section style={section}>
         <div style={containerWide}>
-          <div style={sectionSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid fade-up">
             <div>
               <p style={sectionLabel}>International markets</p>
               <h2 style={sectionTitle}>
@@ -598,13 +605,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={marketsGrid}>
+          <div style={marketsGrid} className="fade-up delay-1">
             {markets.map((market) => (
               <a
                 key={market.title}
                 href={market.href}
                 style={marketCard}
-                className="premium-card"
+                className="premium-card card-lift"
               >
                 <div style={cardTopRow}>
                   <h3 style={cardTitle}>{market.title}</h3>
@@ -619,7 +626,7 @@ export default function HomePage() {
 
       <section style={sectionSoft}>
         <div style={containerWide}>
-          <div style={sectionSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid fade-up">
             <div>
               <p style={sectionLabel}>Touring regions</p>
               <h2 style={sectionTitle}>
@@ -637,13 +644,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div style={regionsGrid} className="feature-grid">
+          <div style={regionsGrid} className="feature-grid fade-up delay-1">
             {regionCards.map((item) => (
               <a
                 key={item.title}
                 href={item.href}
                 style={regionCard}
-                className="premium-card"
+                className="premium-card card-lift"
               >
                 <div style={cardAccent} />
                 <div style={cardTopRow}>
@@ -659,7 +666,7 @@ export default function HomePage() {
 
       <section style={section}>
         <div style={containerWide}>
-          <div style={sectionSplit} className="split-grid">
+          <div style={sectionSplit} className="split-grid fade-up">
             <div>
               <p style={sectionLabel}>Programme structure</p>
               <h2 style={sectionTitle}>
@@ -675,7 +682,7 @@ export default function HomePage() {
                 programme delivery.
               </p>
 
-              <div style={editorialPanel} className="premium-card">
+              <div style={editorialPanel} className="premium-card card-lift">
                 <p style={panelEyebrow}>Example England itinerary</p>
                 <p style={panelText}>
                   London arrivals, Oxford, Bath, Cambridge, York and the Lake
@@ -702,7 +709,9 @@ export default function HomePage() {
               <details key={faq.q} style={faqItem}>
                 <summary style={faqQuestion}>
                   <span>{faq.q}</span>
-                  <span style={faqPlus}>+</span>
+                  <span style={faqPlus} className="faq-plus-spin">
+                    +
+                  </span>
                 </summary>
                 <p style={faqAnswer}>{faq.a}</p>
               </details>
@@ -743,7 +752,7 @@ export default function HomePage() {
             </a>
           </div>
 
-          <div style={leadFormWrap} className="premium-card">
+          <div style={leadFormWrap} className="premium-card fade-up delay-2">
             <ProgrammeEnquiryForm />
           </div>
         </div>
@@ -780,6 +789,43 @@ const heroSection: CSSProperties = {
   padding: "56px 0 92px",
   background:
     "linear-gradient(180deg, #EEF3F8 0%, #F6F9FC 52%, #FFFFFF 100%)",
+};
+
+const heroGlowOne: CSSProperties = {
+  position: "absolute",
+  top: -80,
+  left: -120,
+  width: 320,
+  height: 320,
+  borderRadius: "50%",
+  background:
+    "radial-gradient(circle, rgba(151,179,200,0.24) 0%, rgba(151,179,200,0.08) 35%, rgba(151,179,200,0) 72%)",
+  filter: "blur(12px)",
+  pointerEvents: "none",
+  zIndex: 1,
+};
+
+const heroGlowTwo: CSSProperties = {
+  position: "absolute",
+  right: -80,
+  top: 40,
+  width: 360,
+  height: 360,
+  borderRadius: "50%",
+  background:
+    "radial-gradient(circle, rgba(91,124,153,0.18) 0%, rgba(91,124,153,0.06) 40%, rgba(91,124,153,0) 74%)",
+  filter: "blur(10px)",
+  pointerEvents: "none",
+  zIndex: 1,
+};
+
+const heroGridGlow: CSSProperties = {
+  position: "absolute",
+  inset: 0,
+  background:
+    "linear-gradient(180deg, rgba(255,255,255,0.32) 0%, rgba(255,255,255,0) 28%)",
+  pointerEvents: "none",
+  zIndex: 1,
 };
 
 const section: CSSProperties = {
