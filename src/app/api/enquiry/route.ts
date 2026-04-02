@@ -1,78 +1,338 @@
-import { NextResponse } from "next/server";
-import { Resend } from "resend";
+"use client";
 
-function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
+import { useState, type FormEvent, type CSSProperties } from "react";
 
-export async function POST(req: Request) {
-  try {
-    const apiKey = process.env.RESEND_API_KEY;
+type Status = "idle" | "submitting" | "success" | "error";
 
-    if (!apiKey) {
-      return NextResponse.json(
-        { success: false, message: "Missing email service configuration." },
-        { status: 500 }
+export default function ProgrammeEnquiryForm() {
+  const [status, setStatus] = useState<Status>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("submitting");
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      companyName: String(formData.get("companyName") || "").trim(),
+      contactName: String(formData.get("contactName") || "").trim(),
+      emailAddress: String(formData.get("emailAddress") || "").trim(),
+      travelWindow: String(formData.get("travelWindow") || "").trim(),
+      groupSize: String(formData.get("groupSize") || "").trim(),
+      programmeType: String(formData.get("programmeType") || "").trim(),
+      programmeDetails: String(formData.get("programmeDetails") || "").trim(),
+    };
+
+    try {
+      const response = await fetch("/api/enquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to submit enquiry");
+      }
+
+      setStatus("success");
+      form.reset();
+    } catch {
+      setStatus("error");
+      setErrorMessage(
+        "Something went wrong while sending your enquiry. Please try again or contact us directly by phone or WhatsApp."
       );
     }
+  }
 
-    const resend = new Resend(apiKey);
-
-    const body = await req.json();
-
-    const companyName = String(body.companyName || "").trim();
-    const contactName = String(body.contactName || "").trim();
-    const emailAddress = String(body.emailAddress || "").trim();
-    const travelWindow = String(body.travelWindow || "").trim();
-    const groupSize = String(body.groupSize || "").trim();
-    const programmeType = String(body.programmeType || "").trim();
-    const programmeDetails = String(body.programmeDetails || "").trim();
-
-    if (!companyName || !contactName || !emailAddress) {
-      return NextResponse.json(
-        { success: false, message: "Missing required fields." },
-        { status: 400 }
-      );
-    }
-
-    await resend.emails.send({
-      from: "UK Inbound Ground Transport <onboarding@resend.dev>",
-      to: "info@ukinboundgroundtransport.com",
-      replyTo: emailAddress,
-      subject: `New programme enquiry from ${contactName}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; line-height: 1.7; color: #16212B;">
-          <h2>New programme enquiry</h2>
-          <p><strong>Company name:</strong> ${escapeHtml(companyName)}</p>
-          <p><strong>Contact name:</strong> ${escapeHtml(contactName)}</p>
-          <p><strong>Email address:</strong> ${escapeHtml(emailAddress)}</p>
-          <p><strong>Travel window:</strong> ${escapeHtml(travelWindow || "-")}</p>
-          <p><strong>Group size:</strong> ${escapeHtml(groupSize || "-")}</p>
-          <p><strong>Programme type:</strong> ${escapeHtml(programmeType || "-")}</p>
-          <p><strong>Itinerary and requirements:</strong></p>
-          <div style="padding: 14px 16px; background: #F7F7F7; border-radius: 12px; white-space: pre-wrap;">
-            ${escapeHtml(programmeDetails || "-")}
-          </div>
-        </div>
-      `,
-    });
-
-    return NextResponse.json({ success: true });
-  } catch (error) {
-    console.error("Enquiry send error:", error);
-
-    return NextResponse.json(
-      {
-        success: false,
-        message:
-          "Something went wrong while sending your enquiry. Please try again.",
-      },
-      { status: 500 }
+  if (status === "success") {
+    return (
+      <div style={successBox}>
+        <p style={successEyebrow}>Enquiry received</p>
+        <p style={successText}>
+          Thank you. A member of our team will respond shortly with a structured
+          transport approach aligned to your programme.
+        </p>
+      </div>
     );
   }
+
+  return (
+    <form onSubmit={handleSubmit} style={form}>
+      <div style={introBlock}>
+        <p style={formEyebrow}>Programme enquiry</p>
+        <h3 style={formTitle}>Share your programme details</h3>
+        <p style={formText}>
+          Give us the core outline and we’ll come back with a clear transport
+          approach.
+        </p>
+      </div>
+
+      <div style={section}>
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="companyName">
+              Company name
+            </label>
+            <input
+              id="companyName"
+              name="companyName"
+              placeholder="Your company"
+              required
+              style={input}
+            />
+          </div>
+
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="contactName">
+              Contact name
+            </label>
+            <input
+              id="contactName"
+              name="contactName"
+              placeholder="Your full name"
+              required
+              style={input}
+            />
+          </div>
+        </div>
+
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="emailAddress">
+              Email address
+            </label>
+            <input
+              id="emailAddress"
+              name="emailAddress"
+              type="email"
+              placeholder="name@company.com"
+              required
+              style={input}
+            />
+          </div>
+
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="travelWindow">
+              Travel window
+            </label>
+            <input
+              id="travelWindow"
+              name="travelWindow"
+              placeholder="e.g. May 2026"
+              style={input}
+            />
+          </div>
+        </div>
+
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="groupSize">
+              Group size
+            </label>
+            <input
+              id="groupSize"
+              name="groupSize"
+              placeholder="Approximate passenger count"
+              style={input}
+            />
+          </div>
+
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="programmeType">
+              Programme type
+            </label>
+            <input
+              id="programmeType"
+              name="programmeType"
+              placeholder="Series / Private / FIT"
+              style={input}
+            />
+          </div>
+        </div>
+
+        <div style={fieldWrap}>
+          <label style={label} htmlFor="programmeDetails">
+            Itinerary and requirements
+          </label>
+          <textarea
+            id="programmeDetails"
+            name="programmeDetails"
+            placeholder="Outline itinerary, routing, gateways, hotels, cruise movements or any operational requirements"
+            rows={6}
+            style={textarea}
+          />
+        </div>
+      </div>
+
+      <div style={footerRow}>
+        <button
+          type="submit"
+          style={button}
+          disabled={status === "submitting"}
+        >
+          {status === "submitting"
+            ? "Sending enquiry..."
+            : "Submit programme enquiry"}
+        </button>
+
+        {status === "error" && <p style={errorText}>{errorMessage}</p>}
+
+        <p style={microText}>
+          For urgent movements, you can also call or WhatsApp us directly.
+        </p>
+      </div>
+    </form>
+  );
 }
+
+const form: CSSProperties = {
+  display: "grid",
+  gap: 28,
+};
+
+const introBlock: CSSProperties = {
+  display: "grid",
+  gap: 8,
+};
+
+const formEyebrow: CSSProperties = {
+  margin: 0,
+  fontSize: 11,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(22,33,43,0.54)",
+};
+
+const formTitle: CSSProperties = {
+  margin: 0,
+  fontSize: "clamp(1.35rem, 3vw, 1.8rem)",
+  lineHeight: 1.15,
+  letterSpacing: "-0.03em",
+  color: "#16212B",
+  fontWeight: 650,
+};
+
+const formText: CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.8,
+  color: "rgba(22,33,43,0.70)",
+};
+
+const section: CSSProperties = {
+  display: "grid",
+  gap: 18,
+};
+
+const gridTwo: CSSProperties = {
+  display: "grid",
+  gap: 18,
+};
+
+const fieldWrap: CSSProperties = {
+  display: "grid",
+  gap: 9,
+};
+
+const label: CSSProperties = {
+  fontSize: 13,
+  lineHeight: 1.4,
+  fontWeight: 600,
+  color: "#16212B",
+};
+
+const input: CSSProperties = {
+  width: "100%",
+  minHeight: 58,
+  padding: "0 18px",
+  borderRadius: 16,
+  border: "1px solid rgba(22,33,43,0.12)",
+  background: "#FFFFFF",
+  color: "#16212B",
+  fontSize: 15,
+  lineHeight: 1.4,
+  outline: "none",
+  boxShadow: "inset 0 1px 2px rgba(22,33,43,0.03)",
+};
+
+const textarea: CSSProperties = {
+  width: "100%",
+  minHeight: 150,
+  padding: "16px 18px",
+  borderRadius: 16,
+  border: "1px solid rgba(22,33,43,0.12)",
+  background: "#FFFFFF",
+  color: "#16212B",
+  fontSize: 15,
+  lineHeight: 1.7,
+  outline: "none",
+  resize: "vertical",
+  boxShadow: "inset 0 1px 2px rgba(22,33,43,0.03)",
+};
+
+const footerRow: CSSProperties = {
+  display: "grid",
+  gap: 12,
+  alignItems: "start",
+};
+
+const button: CSSProperties = {
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  minHeight: 58,
+  padding: "0 28px",
+  borderRadius: 999,
+  border: "none",
+  background: "#10263C",
+  color: "#FFFFFF",
+  fontWeight: 700,
+  fontSize: 15,
+  cursor: "pointer",
+  boxShadow: "0 12px 26px rgba(16,38,60,0.16)",
+};
+
+const microText: CSSProperties = {
+  margin: 0,
+  fontSize: 13,
+  lineHeight: 1.7,
+  color: "rgba(22,33,43,0.58)",
+};
+
+const errorText: CSSProperties = {
+  margin: 0,
+  fontSize: 14,
+  lineHeight: 1.7,
+  color: "#B42318",
+};
+
+const successBox: CSSProperties = {
+  marginTop: 8,
+  padding: "24px 22px",
+  borderRadius: 22,
+  background: "#FFFFFF",
+  border: "1px solid rgba(22,33,43,0.08)",
+  boxShadow: "0 12px 28px rgba(22,33,43,0.05)",
+};
+
+const successEyebrow: CSSProperties = {
+  margin: "0 0 8px",
+  fontSize: 11,
+  letterSpacing: "0.18em",
+  textTransform: "uppercase",
+  color: "rgba(22,33,43,0.54)",
+};
+
+const successText: CSSProperties = {
+  margin: 0,
+  fontSize: 15,
+  lineHeight: 1.8,
+  color: "#16212B",
+};
