@@ -17,13 +17,13 @@ export default function ProgrammeEnquiryForm() {
     const formData = new FormData(form);
 
     const payload = {
-      companyName: String(formData.get("companyName") || ""),
-      contactName: String(formData.get("contactName") || ""),
-      emailAddress: String(formData.get("emailAddress") || ""),
-      travelWindow: String(formData.get("travelWindow") || ""),
-      groupSize: String(formData.get("groupSize") || ""),
-      programmeType: String(formData.get("programmeType") || ""),
-      programmeDetails: String(formData.get("programmeDetails") || ""),
+      companyName: String(formData.get("companyName") || "").trim(),
+      contactName: String(formData.get("contactName") || "").trim(),
+      emailAddress: String(formData.get("emailAddress") || "").trim(),
+      travelWindow: String(formData.get("travelWindow") || "").trim(),
+      groupSize: String(formData.get("groupSize") || "").trim(),
+      programmeType: String(formData.get("programmeType") || "").trim(),
+      programmeDetails: String(formData.get("programmeDetails") || "").trim(),
     };
 
     try {
