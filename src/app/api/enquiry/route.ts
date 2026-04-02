@@ -1,9 +1,5 @@
-
-
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
-
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 function escapeHtml(value: string) {
   return value
@@ -16,6 +12,17 @@ function escapeHtml(value: string) {
 
 export async function POST(req: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+
+    if (!apiKey) {
+      return NextResponse.json(
+        { success: false, message: "Missing email service configuration." },
+        { status: 500 }
+      );
+    }
+
+    const resend = new Resend(apiKey);
+
     const body = await req.json();
 
     const companyName = String(body.companyName || "").trim();
@@ -58,6 +65,7 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error("Enquiry send error:", error);
+
     return NextResponse.json(
       {
         success: false,
