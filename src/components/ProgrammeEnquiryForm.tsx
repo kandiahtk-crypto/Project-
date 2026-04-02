@@ -14,37 +14,35 @@ export default function ProgrammeEnquiryForm() {
     setErrorMessage("");
 
     const form = e.currentTarget;
-    const formData = new FormData();
+    const formData = new FormData(form);
 
-    formData.append("access_key", "fd957626-6fe6-4cba-8703-0af4aaca5ad6");
-    formData.append("subject", "New Programme Enquiry");
-    formData.append("from_name", "UK Inbound Ground Transport");
-
-    formData.append("companyName", String(new FormData(form).get("companyName") || ""));
-    formData.append("contactName", String(new FormData(form).get("contactName") || ""));
-    formData.append("email", String(new FormData(form).get("emailAddress") || ""));
-    formData.append("travelWindow", String(new FormData(form).get("travelWindow") || ""));
-    formData.append("groupSize", String(new FormData(form).get("groupSize") || ""));
-    formData.append("programmeType", String(new FormData(form).get("programmeType") || ""));
-    formData.append("message", String(new FormData(form).get("programmeDetails") || ""));
+    const payload = {
+      companyName: String(formData.get("companyName") || ""),
+      contactName: String(formData.get("contactName") || ""),
+      emailAddress: String(formData.get("emailAddress") || ""),
+      travelWindow: String(formData.get("travelWindow") || ""),
+      groupSize: String(formData.get("groupSize") || ""),
+      programmeType: String(formData.get("programmeType") || ""),
+      programmeDetails: String(formData.get("programmeDetails") || ""),
+    };
 
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("/api/enquiry", {
         method: "POST",
-        body: formData,
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
 
-      if (result.success) {
-        setStatus("success");
-        form.reset();
-      } else {
-        setStatus("error");
-        setErrorMessage(
-          "Something went wrong while sending your enquiry. Please try again or contact us directly by phone or WhatsApp."
-        );
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || "Failed to submit enquiry");
       }
+
+      setStatus("success");
+      form.reset();
     } catch {
       setStatus("error");
       setErrorMessage(
