@@ -271,3 +271,138 @@ select:focus {
 }
 
 padding-bottom: 96px;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: fadeUpSoft 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.12s;
+}
+
+.delay-2 {
+  animation-delay: 0.24s;
+}
+
+.delay-3 {
+  animation-delay: 0.36s;
+}
+
+.card-lift,
+.premium-card {
+  transition:
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.45s ease;
+  will-change: transform;
+}
+
+.card-lift:hover,
+.premium-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(18, 36, 56, 0.1);
+  border-color: rgba(91, 124, 153, 0.18);
+}
+
+.image-float {
+  animation: floatImage 7s ease-in-out infinite;
+}
+
+.hero-image img {
+  transition:
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 0.9s ease;
+}
+
+.hero-image:hover img {
+  transform: scale(1.04);
+  filter: saturate(1.04) contrast(1.02);
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    110deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.12) 48%,
+    rgba(255, 255, 255, 0) 72%
+  );
+  transform: translateX(-140%);
+  animation: shimmerSweep 6.5s ease-in-out infinite;
+  pointer-events: none;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+details {
+  transition: border-color 0.35s ease;
+}
+
+details[open] {
+  border-color: rgba(91, 124, 153, 0.18);
+}
+
+details[open] .faq-plus-spin {
+  transform: rotate(45deg);
+}
+
+.faq-plus-spin {
+  transition: transform 0.35s ease;
+}
+
+a[href],
+button {
+  transition:
+    transform 0.28s ease,
+    box-shadow 0.28s ease,
+    opacity 0.28s ease,
+    background-color 0.28s ease,
+    color 0.28s ease;
+}
+
+a[href]:hover,
+button:hover {
+  transform: translateY(-2px);
+}
+
+@keyframes fadeUpSoft {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatImage {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    transform: translateX(-140%);
+  }
+  45%,
+  100% {
+    transform: translateX(140%);
+  }
+}
