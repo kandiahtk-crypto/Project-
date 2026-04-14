@@ -1,6 +1,6 @@
 const result = await resend.emails.send({
   from: "UK Inbound Ground Transport <onboarding@resend.dev>",
-  to: "info@ukinboundgroundtransport.com",
+  to: "kandiah.tk@gmail.com",
   replyTo: emailAddress,
   subject: `New programme enquiry from ${contactName}`,
   html: `
