@@ -40,7 +40,7 @@ export async function POST(req: Request) {
     }
 
     const result = await resend.emails.send({
-      from: "UK Inbound Ground Transport <onboarding@resend.dev>",
+      from: "UK Inbound Ground Transport <info@ukinboundgroundtransport.com>",
       to: "kandiah.tk@gmail.com",
       replyTo: emailAddress,
       subject: `New programme enquiry from ${contactName}`,
@@ -82,7 +82,9 @@ export async function POST(req: Request) {
       {
         success: false,
         message:
-          error instanceof Error ? error.message : "Something went wrong while sending your enquiry.",
+          error instanceof Error
+            ? error.message
+            : "Something went wrong while sending your enquiry.",
       },
       { status: 500 }
     );
