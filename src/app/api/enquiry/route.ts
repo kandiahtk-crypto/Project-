@@ -10,6 +10,10 @@ function escapeHtml(value: string) {
     .replaceAll("'", "&#039;");
 }
 
+export async function GET() {
+  return NextResponse.json({ ok: true, message: "API route is working" });
+}
+
 export async function POST(req: Request) {
   try {
     const apiKey = process.env.RESEND_API_KEY;
@@ -41,7 +45,7 @@ export async function POST(req: Request) {
 
     const result = await resend.emails.send({
       from: "UK Inbound Ground Transport <info@ukinboundgroundtransport.com>",
-      to: "kandiah.tk@gmail.com",
+      to: "info@ukinboundgroundtransport.com",
       replyTo: emailAddress,
       subject: `New programme enquiry from ${contactName}`,
       html: `
@@ -61,10 +65,7 @@ export async function POST(req: Request) {
       `,
     });
 
-    console.log("Resend result:", result);
-
     if (result.error) {
-      console.error("Resend error:", result.error);
       return NextResponse.json(
         {
           success: false,
@@ -76,8 +77,6 @@ export async function POST(req: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Enquiry send error:", error);
-
     return NextResponse.json(
       {
         success: false,
