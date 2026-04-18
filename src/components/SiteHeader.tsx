@@ -287,7 +287,7 @@ const brand: CSSProperties = {
 };
 
 const brandTop: CSSProperties = {
-  fontSize: "11px",
+  fontSize: "18px",
   letterSpacing: "0.22em",
   textTransform: "uppercase",
   fontWeight: 700,
