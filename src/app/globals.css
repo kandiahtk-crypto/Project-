@@ -441,3 +441,19 @@ button:hover {
     transform: translateX(140%);
   }
 }
+
+/* One-file visual alignment for the existing internal pages. The homepage
+   keeps its own compact-* styles above. */
+body > div > main > main { color:#162b40; background:#fff; }
+body > div > main > main > section { padding-top:60px!important; padding-bottom:60px!important; }
+body > div > main > main > section:first-of-type { padding-top:48px!important; padding-bottom:48px!important; background:linear-gradient(110deg,#eef4fa,#f8fbfe 56%,#e9f1f8)!important; border-bottom:1px solid #dbe4ed; }
+body > div > main > main > section > div { max-width:1180px!important; }
+body > div > main > main h1 { color:#071f3b!important; font-size:clamp(36px,4.4vw,58px)!important; line-height:1.09!important; letter-spacing:-.035em!important; }
+body > div > main > main h2 { color:#071f3b; font-size:clamp(27px,3vw,38px)!important; line-height:1.18!important; letter-spacing:-.035em!important; }
+body > div > main > main h3 { letter-spacing:-.025em; }
+body > div > main > main .premium-card,body > div > main > main .card-lift { border-radius:8px!important; }
+body > div > main > main .feature-grid { gap:14px!important; }
+body > div > main > main .split-grid { gap:36px!important; }
+body > div > main > main > section:first-of-type a[href='/contact'] { background:#1467bf!important; color:#fff!important; border-radius:5px!important; box-shadow:none!important; }
+@media(max-width:850px){body > div > main > main > section { padding-top:48px!important; padding-bottom:48px!important; }body > div > main > main .split-grid { gap:25px!important; }}
+@media(max-width:520px){body > div > main > main > section:first-of-type { padding-top:39px!important; padding-bottom:39px!important; }body > div > main > main h1 { font-size:36px!important; }body > div > main > main > section > div { padding-left:16px!important; padding-right:16px!important; }}
