@@ -7,6 +7,7 @@ type Status = "idle" | "submitting" | "success" | "error";
 export default function ProgrammeEnquiryForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const [reference, setReference] = useState("");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -24,6 +25,16 @@ export default function ProgrammeEnquiryForm() {
       groupSize: String(formData.get("groupSize") || "").trim(),
       programmeType: String(formData.get("programmeType") || "").trim(),
       programmeDetails: String(formData.get("programmeDetails") || "").trim(),
+      serviceType: String(formData.get("serviceType") || "").trim(),
+      startDate: String(formData.get("startDate") || "").trim(),
+      endDate: String(formData.get("endDate") || "").trim(),
+      pickup: String(formData.get("pickup") || "").trim(),
+      dropoff: String(formData.get("dropoff") || "").trim(),
+      luggage: String(formData.get("luggage") || "").trim(),
+      vehicleNeeds: String(formData.get("vehicleNeeds") || "").trim(),
+      itineraryLink: String(formData.get("itineraryLink") || "").trim(),
+      phone: String(formData.get("phone") || "").trim(),
+      website: String(formData.get("website") || "").trim(),
     };
 
     try {
@@ -42,6 +53,7 @@ export default function ProgrammeEnquiryForm() {
       }
 
       setStatus("success");
+      setReference(result.reference);
       form.reset();
     } catch (error) {
       setStatus("error");
@@ -58,8 +70,9 @@ export default function ProgrammeEnquiryForm() {
       <div style={successBox}>
         <p style={successEyebrow}>Enquiry received</p>
         <p style={successText}>
-          Thank you. A member of our team will respond shortly with a structured
-          transport approach aligned to your programme.
+          Thank you. Your RFQ reference is <strong>{reference}</strong>. We’ve sent
+          your programme to our team for review. Please quote this reference if
+          you contact us about it. This is an enquiry, not a confirmed booking.
         </p>
       </div>
     );
@@ -72,7 +85,7 @@ export default function ProgrammeEnquiryForm() {
         <h3 style={formTitle}>Share your programme details</h3>
         <p style={formText}>
           Give us the core outline and we’ll come back with a clear transport
-          approach.
+          approach. Fields marked * are needed to review your request.
         </p>
       </div>
 
@@ -85,6 +98,7 @@ export default function ProgrammeEnquiryForm() {
             <input
               id="companyName"
               name="companyName"
+              maxLength={120}
               placeholder="Your company"
               required
               style={input}
@@ -98,6 +112,7 @@ export default function ProgrammeEnquiryForm() {
             <input
               id="contactName"
               name="contactName"
+              maxLength={120}
               placeholder="Your full name"
               required
               style={input}
@@ -114,6 +129,7 @@ export default function ProgrammeEnquiryForm() {
               id="emailAddress"
               name="emailAddress"
               type="email"
+              maxLength={254}
               placeholder="name@company.com"
               required
               style={input}
@@ -121,13 +137,15 @@ export default function ProgrammeEnquiryForm() {
           </div>
 
           <div style={fieldWrap}>
-            <label style={label} htmlFor="travelWindow">
-              Travel window
+            <label style={label} htmlFor="phone">
+              Phone / WhatsApp
             </label>
             <input
-              id="travelWindow"
-              name="travelWindow"
-              placeholder="e.g. May 2026"
+              id="phone"
+              name="phone"
+              type="tel"
+              maxLength={40}
+              placeholder="Include country code"
               style={input}
             />
           </div>
@@ -141,6 +159,10 @@ export default function ProgrammeEnquiryForm() {
             <input
               id="groupSize"
               name="groupSize"
+              type="number"
+              min={1}
+              max={5000}
+              required
               placeholder="Approximate passenger count"
               style={input}
             />
@@ -153,12 +175,63 @@ export default function ProgrammeEnquiryForm() {
             <input
               id="programmeType"
               name="programmeType"
-              placeholder="Series / Private / FIT"
+              placeholder="Series, private group, cruise or other"
+              maxLength={100}
               style={input}
             />
           </div>
         </div>
 
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="serviceType">Service type *</label>
+            <select id="serviceType" name="serviceType" required style={input} defaultValue="">
+              <option value="" disabled>Select service</option>
+              <option>Multi-day touring</option><option>Touring series</option>
+              <option>Airport transfer</option><option>Cruise movement</option>
+              <option>Day hire</option><option>Other group movement</option>
+            </select>
+          </div>
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="travelWindow">Travel window</label>
+            <input id="travelWindow" name="travelWindow" maxLength={100} placeholder="If dates are flexible" style={input} />
+          </div>
+        </div>
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="startDate">First travel date *</label>
+            <input id="startDate" name="startDate" type="date" required style={input} />
+          </div>
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="endDate">Last travel date</label>
+            <input id="endDate" name="endDate" type="date" style={input} />
+          </div>
+        </div>
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="pickup">First pickup / gateway *</label>
+            <input id="pickup" name="pickup" required maxLength={180} placeholder="Airport, port, hotel or city" style={input} />
+          </div>
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="dropoff">Final drop-off / destination *</label>
+            <input id="dropoff" name="dropoff" required maxLength={180} placeholder="Hotel, airport, port or city" style={input} />
+          </div>
+        </div>
+        <div style={gridTwo} className="lead-form-two">
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="luggage">Luggage</label>
+            <input id="luggage" name="luggage" maxLength={160} placeholder="e.g. 40 large cases and cabin bags" style={input} />
+          </div>
+          <div style={fieldWrap}>
+            <label style={label} htmlFor="vehicleNeeds">Vehicle / accessibility needs</label>
+            <input id="vehicleNeeds" name="vehicleNeeds" maxLength={180} placeholder="Coach size, mobility or special requirements" style={input} />
+          </div>
+        </div>
+        <div style={fieldWrap}>
+          <label style={label} htmlFor="itineraryLink">Itinerary link</label>
+          <input id="itineraryLink" name="itineraryLink" type="url" maxLength={1000} placeholder="Optional shared PDF or document URL" style={input} />
+          <p style={microText}>Use a link accessible to our team, or email the itinerary after submitting.</p>
+        </div>
         <div style={fieldWrap}>
           <label style={label} htmlFor="programmeDetails">
             Itinerary and requirements
@@ -168,8 +241,14 @@ export default function ProgrammeEnquiryForm() {
             name="programmeDetails"
             placeholder="Outline itinerary, routing, gateways, hotels, cruise movements or any operational requirements"
             rows={6}
+            required
+            maxLength={5000}
             style={textarea}
           />
+        </div>
+        <div style={{ display: "none" }} aria-hidden="true">
+          <label htmlFor="website">Website</label>
+          <input id="website" name="website" tabIndex={-1} autoComplete="off" />
         </div>
       </div>
 
@@ -187,7 +266,7 @@ export default function ProgrammeEnquiryForm() {
         {status === "error" && <p style={errorText}>{errorMessage}</p>}
 
         <p style={microText}>
-          For urgent movements, you can also call or WhatsApp us directly.
+          Submitting an RFQ does not reserve a vehicle or confirm a price. For urgent movements, call us directly.
         </p>
       </div>
     </form>
