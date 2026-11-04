@@ -10,6 +10,7 @@ const MOBILE_LINKS = [
   { href: "/services", label: "Services" },
   { href: "/markets", label: "Markets" },
   { href: "/programmes", label: "Programmes" },
+  { href: "/itinerary-builder", label: "Itinerary Builder" },
 ];
 
 const WHATSAPP_URL =
@@ -50,6 +51,8 @@ export default function SiteHeader() {
   const mobilePanel: CSSProperties = {
     position: "fixed",
     top: "88px",
+    maxHeight: "calc(100dvh - 104px)",
+    overflowY: "auto",
     left: "16px",
     right: "16px",
     background: "linear-gradient(180deg, #F7FAFD 0%, #EEF3F8 100%)",
@@ -179,6 +182,14 @@ export default function SiteHeader() {
               Programmes
             </Link>
 
+            <Link
+              href="/itinerary-builder"
+              className={pathname === "/itinerary-builder" ? "active" : ""}
+              style={navLink}
+            >
+              Itinerary Builder
+            </Link>
+
             <a
               href={WHATSAPP_URL}
               target="_blank"
@@ -303,7 +314,9 @@ const brandBottom: CSSProperties = {
 const desktopNav: CSSProperties = {
   display: "none",
   alignItems: "center",
-  gap: "28px",
+  gap: "16px",
+  flexWrap: "wrap",
+  justifyContent: "flex-end",
 };
 
 const navLink: CSSProperties = {
