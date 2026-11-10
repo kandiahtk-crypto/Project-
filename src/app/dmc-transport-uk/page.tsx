@@ -80,7 +80,7 @@ const serviceSchema = {
 
 export default function DMCTransportUKPage() {
   return (
-    <main style={container}>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -88,26 +88,41 @@ export default function DMCTransportUKPage() {
         }}
       />
 
-      <section style={hero}>
-        <p style={eyebrow}>DMC transport UK</p>
+      <section style={heroSection}>
+        <div style={containerNarrow}>
+          <p style={eyebrow}>DMC transport UK</p>
 
-        <h1 style={title}>
-          UK transport for destination management companies delivering premium
-          group programmes.
-        </h1>
+          <h1 style={heroTitle}>
+            UK transport for destination management companies delivering premium
+            group programmes.
+          </h1>
 
-        <p style={text}>
-          Structured transport support for DMCs managing airport arrivals, hotel
-          movements, touring itineraries, event logistics and multi-region
-          programme flow across England, Scotland and Ireland.
-        </p>
+          <div style={divider} />
 
-        <p style={subText}>
-          Built for professionally managed group itineraries where calm
-          execution, timing discipline and presentation directly affect the
-          client experience.
-        </p>
+          <p style={heroText}>
+            Structured transport support for DMCs managing airport arrivals, hotel
+            movements, touring itineraries, event logistics and multi-region
+            programme flow across England, Scotland and Ireland.
+          </p>
 
+          <p style={heroSubText}>
+            Built for professionally managed group itineraries where calm
+            execution, timing discipline and presentation directly affect the
+            client experience.
+          </p>
+
+          <div style={heroActions}>
+            <a href="/contact" style={primaryButton}>
+              Request DMC transport support
+            </a>
+            <a href="/uk-ireland-touring" style={secondaryLink}>
+              UK &amp; Ireland touring →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div style={container}>
         <div style={imageWrap}>
           <img
             src="/coach-parking.jpg"
@@ -116,138 +131,129 @@ export default function DMCTransportUKPage() {
           />
         </div>
 
-        <div style={ctaRow}>
-          <a href="/contact" style={primaryButton}>
-            Request DMC transport support
-          </a>
-          <a href="/uk-ireland-touring" style={secondaryLink}>
-            UK &amp; Ireland touring →
-          </a>
-        </div>
-      </section>
+        <section style={sectionSoft}>
+          <h2 style={heading}>Built around DMC programme delivery</h2>
 
-      <section style={sectionSoft}>
-        <h2 style={heading}>Built around DMC programme delivery</h2>
+          <p style={text}>
+            Destination management companies need more than simple transport
+            supply. They need structured programme support that fits the wider
+            itinerary, protects guest experience and supports dependable
+            on-the-ground delivery.
+          </p>
 
-        <p style={text}>
-          Destination management companies need more than simple transport
-          supply. They need structured programme support that fits the wider
-          itinerary, protects guest experience and supports dependable
-          on-the-ground delivery.
-        </p>
+          <ul style={list}>
+            <li>Airport arrival and departure coordination</li>
+            <li>Hotel transfers and city movements</li>
+            <li>Touring support across England, Scotland and Ireland</li>
+            <li>Event and hospitality movement logistics</li>
+            <li>Multi-day, multi-region itinerary delivery</li>
+          </ul>
+        </section>
 
-        <ul style={list}>
-          <li>Airport arrival and departure coordination</li>
-          <li>Hotel transfers and city movements</li>
-          <li>Touring support across England, Scotland and Ireland</li>
-          <li>Event and hospitality movement logistics</li>
-          <li>Multi-day, multi-region itinerary delivery</li>
-        </ul>
-      </section>
+        <section style={section}>
+          <h2 style={heading}>Where DMC transport support matters most</h2>
 
-      <section style={section}>
-        <h2 style={heading}>Where DMC transport support matters most</h2>
+          <p style={text}>
+            DMC itineraries often combine several movement types in one programme.
+            Airport collections, city transport, dining transfers, attractions,
+            touring departures and final airport movements all need to work
+            together without friction.
+          </p>
 
-        <p style={text}>
-          DMC itineraries often combine several movement types in one programme.
-          Airport collections, city transport, dining transfers, attractions,
-          touring departures and final airport movements all need to work
-          together without friction.
-        </p>
+          <ul style={list}>
+            <li>Heathrow and major gateway arrivals</li>
+            <li>London hotel and event movements</li>
+            <li>Regional touring transitions</li>
+            <li>Cruise-linked pre and post programme transport</li>
+            <li>Final departures and return airport movements</li>
+          </ul>
+        </section>
 
-        <ul style={list}>
-          <li>Heathrow and major gateway arrivals</li>
-          <li>London hotel and event movements</li>
-          <li>Regional touring transitions</li>
-          <li>Cruise-linked pre and post programme transport</li>
-          <li>Final departures and return airport movements</li>
-        </ul>
-      </section>
+        <section style={sectionSoft}>
+          <h2 style={heading}>Regional coverage for DMC itineraries</h2>
 
-      <section style={sectionSoft}>
-        <h2 style={heading}>Regional coverage for DMC itineraries</h2>
+          <div style={linkGrid}>
+            <a href="/england-touring" style={linkCard}>
+              England touring →
+            </a>
 
-        <div style={linkGrid}>
-          <a href="/england-touring" style={linkCard}>
-            England touring →
-          </a>
+            <a href="/scotland-programmes" style={linkCard}>
+              Scotland programmes →
+            </a>
 
-          <a href="/scotland-programmes" style={linkCard}>
-            Scotland programmes →
-          </a>
+            <a href="/ireland-touring" style={linkCard}>
+              Ireland touring →
+            </a>
 
-          <a href="/ireland-touring" style={linkCard}>
-            Ireland touring →
-          </a>
+            <a href="/uk-ireland-touring" style={linkCard}>
+              UK &amp; Ireland touring →
+            </a>
+          </div>
+        </section>
 
-          <a href="/uk-ireland-touring" style={linkCard}>
-            UK &amp; Ireland touring →
-          </a>
-        </div>
-      </section>
+        <section style={section}>
+          <h2 style={heading}>Operationally calm, commercially aware</h2>
 
-      <section style={section}>
-        <h2 style={heading}>Operationally calm, commercially aware</h2>
+          <p style={text}>
+            DMCs need transport partners who understand that client confidence,
+            guest handling and programme credibility all depend on reliable
+            execution. Our focus is supporting the full programme with clarity,
+            consistency and realistic routing.
+          </p>
 
-        <p style={text}>
-          DMCs need transport partners who understand that client confidence,
-          guest handling and programme credibility all depend on reliable
-          execution. Our focus is supporting the full programme with clarity,
-          consistency and realistic routing.
-        </p>
+          <ul style={list}>
+            <li>Structured responses for professional travel buyers</li>
+            <li>Programme-first transport planning</li>
+            <li>Routing aligned to hotel flow and realistic timings</li>
+            <li>Support for premium, high-touch group movements</li>
+          </ul>
+        </section>
 
-        <ul style={list}>
-          <li>Structured responses for professional travel buyers</li>
-          <li>Programme-first transport planning</li>
-          <li>Routing aligned to hotel flow and realistic timings</li>
-          <li>Support for premium, high-touch group movements</li>
-        </ul>
-      </section>
+        <section style={sectionSoft}>
+          <h2 style={heading}>Related transport services</h2>
 
-      <section style={sectionSoft}>
-        <h2 style={heading}>Related transport services</h2>
+          <div style={linkGrid}>
+            <a href="/tour-operator-transport-uk" style={linkCard}>
+              Tour operator transport UK →
+            </a>
 
-        <div style={linkGrid}>
-          <a href="/tour-operator-transport-uk" style={linkCard}>
-            Tour operator transport UK →
-          </a>
+            <a href="/heathrow-group-transfers" style={linkCard}>
+              Heathrow group transfers →
+            </a>
 
-          <a href="/heathrow-group-transfers" style={linkCard}>
-            Heathrow group transfers →
-          </a>
+            <a href="/southampton-cruise-transfers" style={linkCard}>
+              Southampton cruise transfers →
+            </a>
 
-          <a href="/southampton-cruise-transfers" style={linkCard}>
-            Southampton cruise transfers →
-          </a>
+            <a href="/services" style={linkCard}>
+              UK transport services →
+            </a>
+          </div>
+        </section>
 
-          <a href="/services" style={linkCard}>
-            UK transport services →
-          </a>
-        </div>
-      </section>
+        <section style={cta}>
+          <h2 style={heading}>Need a UK transport partner for DMC delivery?</h2>
 
-      <section style={cta}>
-        <h2 style={heading}>Need a UK transport partner for DMC delivery?</h2>
+          <p style={text}>
+            Share your itinerary, dates, movement types and group size. We’ll help
+            shape a clear transport plan aligned to your programme.
+          </p>
 
-        <p style={text}>
-          Share your itinerary, dates, movement types and group size. We’ll help
-          shape a clear transport plan aligned to your programme.
-        </p>
-
-        <div style={ctaRow}>
-          <a href="/contact" style={primaryButton}>
-            Request proposal
-          </a>
-          <a
-            href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
-            target="_blank"
-            rel="noopener noreferrer"
-            style={secondaryLink}
-          >
-            WhatsApp us →
-          </a>
-        </div>
-      </section>
+          <div style={ctaRow}>
+            <a href="/contact" style={primaryButton}>
+              Request proposal
+            </a>
+            <a
+              href="https://wa.me/447957776778?text=Hello%20UK%20Inbound%20Ground%20Transport%20%E2%80%94%20I%20need%20help%20with%20a%20movement."
+              target="_blank"
+              rel="noopener noreferrer"
+              style={secondaryLink}
+            >
+              WhatsApp us →
+            </a>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
@@ -255,11 +261,13 @@ export default function DMCTransportUKPage() {
 const container: CSSProperties = {
   maxWidth: 900,
   margin: "0 auto",
-  padding: "40px 24px 80px",
+  padding: "0 24px 80px",
 };
 
-const hero: CSSProperties = {
-  marginBottom: 80,
+const heroSection: CSSProperties = {
+  padding: "56px 0 76px",
+  background:
+    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 60%, #FFFFFF 100%)",
 };
 
 const section: CSSProperties = {
@@ -274,19 +282,21 @@ const sectionSoft: CSSProperties = {
 };
 
 const eyebrow: CSSProperties = {
-  fontSize: 12,
+  margin: 0,
+  fontSize: 11,
   letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "#5B7C99",
+  color: "rgba(18,36,56,0.52)",
 };
 
-const title: CSSProperties = {
-  fontSize: "clamp(2.1rem, 5vw, 3.4rem)",
-  lineHeight: 1.06,
-  margin: "12px 0 20px",
+const heroTitle: CSSProperties = {
+  margin: "12px 0 18px",
+  fontSize: "clamp(2.2rem, 5.8vw, 4.8rem)",
+  lineHeight: 1.03,
+  letterSpacing: "-0.04em",
   fontWeight: 700,
+  fontFamily: "var(--font-sans)",
   color: "#10263C",
-  letterSpacing: "-0.03em",
 };
 
 const heading: CSSProperties = {
@@ -302,15 +312,15 @@ const text: CSSProperties = {
   color: "rgba(18,36,56,0.75)",
 };
 
-const subText: CSSProperties = {
-  marginTop: 14,
-  fontSize: 14,
-  lineHeight: 1.75,
+const heroSubText: CSSProperties = {
+  margin: "16px 0 0",
+  fontSize: 15,
+  lineHeight: 1.8,
   color: "rgba(18,36,56,0.58)",
 };
 
 const imageWrap: CSSProperties = {
-  marginTop: 28,
+  margin: "32px 0 48px",
   borderRadius: 22,
   overflow: "hidden",
   boxShadow: "0 18px 40px rgba(16, 38, 60, 0.12)",
@@ -356,11 +366,14 @@ const primaryButton: CSSProperties = {
 };
 
 const secondaryLink: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
   textDecoration: "none",
   color: "#10263C",
   fontWeight: 600,
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
+  paddingBottom: 2,
+  borderBottom: "1px solid rgba(91,124,153,0.34)",
 };
 
 const linkGrid: CSSProperties = {
@@ -376,4 +389,33 @@ const linkCard: CSSProperties = {
   textDecoration: "none",
   color: "#10263C",
   fontWeight: 600,
+};
+
+const containerNarrow: CSSProperties = {
+  maxWidth: 760,
+  margin: "0 auto",
+  padding: "0 24px",
+};
+
+const divider: CSSProperties = {
+  width: 56,
+  height: 3,
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
+  margin: "18px 0 24px",
+  borderRadius: 999,
+};
+
+const heroText: CSSProperties = {
+  margin: 0,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(18,36,56,0.74)",
+};
+
+const heroActions: CSSProperties = {
+  marginTop: 26,
+  display: "flex",
+  gap: 16,
+  flexWrap: "wrap",
+  alignItems: "center",
 };
