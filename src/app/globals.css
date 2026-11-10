@@ -225,7 +225,7 @@ select:focus {
 
 /* DESKTOP */
 
-@media (min-width: 900px) {
+@media (min-width: 1024px) {
   .desktop-nav {
     display: flex !important;
   }
@@ -233,7 +233,9 @@ select:focus {
   .mobile-menu-button {
     display: none !important;
   }
+}
 
+@media (min-width: 900px) {
   .hero-grid {
     grid-template-columns: minmax(0, 1.06fr) minmax(340px, 0.94fr) !important;
     gap: 54px !important;

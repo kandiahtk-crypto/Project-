@@ -295,6 +295,7 @@ const brand: CSSProperties = {
   textDecoration: "none",
   color: "#10263C",
   minWidth: 0,
+  maxWidth: "290px",
 };
 
 const brandTop: CSSProperties = {
@@ -314,8 +315,10 @@ const brandBottom: CSSProperties = {
 const desktopNav: CSSProperties = {
   display: "none",
   alignItems: "center",
-  gap: "16px",
-  flexWrap: "wrap",
+  gap: "clamp(10px, 1.25vw, 16px)",
+  flexWrap: "nowrap",
+  whiteSpace: "nowrap",
+  flexShrink: 0,
   justifyContent: "flex-end",
 };
 
