@@ -63,25 +63,40 @@ const faqSchema = {
 
 export default function HeathrowPage() {
   return (
-    <main style={container}>
+    <main>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section style={hero}>
-        <p style={eyebrow}>Heathrow airport transport</p>
+      <section style={heroSection}>
+        <div style={containerNarrow}>
+          <p style={eyebrow}>Heathrow airport transport</p>
 
-        <h1 style={title}>
-          Heathrow group transfers for UK &amp; Ireland touring programmes.
-        </h1>
+          <h1 style={heroTitle}>
+            Heathrow group transfers for UK &amp; Ireland touring programmes.
+          </h1>
 
-        <p style={text}>
-          Structured group transport from Heathrow for arrivals, departures,
-          hotel transfers and onward touring across England, Scotland and
-          Ireland.
-        </p>
+          <div style={divider} />
 
+          <p style={heroText}>
+            Structured group transport from Heathrow for arrivals, departures,
+            hotel transfers and onward touring across England, Scotland and
+            Ireland.
+          </p>
+
+          <div style={heroActions}>
+            <a href="/contact" style={primaryButton}>
+              Request Heathrow transport
+            </a>
+            <a href="/southampton-cruise-transfers" style={secondaryLink}>
+              Southampton cruise transfers →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div style={container}>
         <div style={heroImageWrap}>
           <img
             src="/heathrow-terminal.png"
@@ -90,116 +105,107 @@ export default function HeathrowPage() {
           />
         </div>
 
-        <div style={ctaRow}>
-          <a href="/contact" style={primaryButton}>
-            Request Heathrow transport
-          </a>
-          <a href="/southampton-cruise-transfers" style={secondaryLink}>
-            Southampton cruise transfers →
-          </a>
-        </div>
-      </section>
+        <section style={sectionSoft}>
+          <h2 style={heading}>Heathrow group transport support</h2>
 
-      <section style={sectionSoft}>
-        <h2 style={heading}>Heathrow group transport support</h2>
+          <p style={text}>
+            Heathrow is the UK’s main international gateway for inbound touring.
+            Group transport here requires timing discipline, terminal awareness
+            and clear coordination with the onward programme.
+          </p>
 
-        <p style={text}>
-          Heathrow is the UK’s main international gateway for inbound touring.
-          Group transport here requires timing discipline, terminal awareness
-          and clear coordination with the onward programme.
-        </p>
+          <ul style={list}>
+            <li>Airport arrivals and departures for organised groups</li>
+            <li>Terminal collections aligned to flight schedules</li>
+            <li>Heathrow to London hotel transfers</li>
+            <li>Heathrow to direct touring departures</li>
+            <li>Multi-coach coordination for larger movements</li>
+          </ul>
+        </section>
 
-        <ul style={list}>
-          <li>Airport arrivals and departures for organised groups</li>
-          <li>Terminal collections aligned to flight schedules</li>
-          <li>Heathrow to London hotel transfers</li>
-          <li>Heathrow to direct touring departures</li>
-          <li>Multi-coach coordination for larger movements</li>
-        </ul>
-      </section>
+        <section style={section}>
+          <h2 style={heading}>Heathrow terminals and group coordination</h2>
 
-      <section style={section}>
-        <h2 style={heading}>Heathrow terminals and group coordination</h2>
+          <p style={text}>
+            We support structured programme movements across Heathrow’s major
+            terminals, aligning collection timing, vehicle planning and onward
+            routing with the operational realities of inbound group travel.
+          </p>
 
-        <p style={text}>
-          We support structured programme movements across Heathrow’s major
-          terminals, aligning collection timing, vehicle planning and onward
-          routing with the operational realities of inbound group travel.
-        </p>
+          <ul style={list}>
+            <li>Terminal 2 group arrivals</li>
+            <li>Terminal 3 group arrivals</li>
+            <li>Terminal 4 group arrivals</li>
+            <li>Terminal 5 group arrivals</li>
+            <li>Staggered flight arrival coordination where required</li>
+          </ul>
+        </section>
 
-        <ul style={list}>
-          <li>Terminal 2 group arrivals</li>
-          <li>Terminal 3 group arrivals</li>
-          <li>Terminal 4 group arrivals</li>
-          <li>Terminal 5 group arrivals</li>
-          <li>Staggered flight arrival coordination where required</li>
-        </ul>
-      </section>
+        <section style={sectionSoft}>
+          <h2 style={heading}>Typical Heathrow routes</h2>
 
-      <section style={sectionSoft}>
-        <h2 style={heading}>Typical Heathrow routes</h2>
+          <ul style={list}>
+            <li>Heathrow to Central London hotels</li>
+            <li>Heathrow to Windsor, Oxford and Bath touring starts</li>
+            <li>Heathrow to direct long-distance UK touring departures</li>
+            <li>Heathrow to cruise connections and regional gateways</li>
+            <li>Heathrow to wider England, Scotland and Ireland programmes</li>
+          </ul>
+        </section>
 
-        <ul style={list}>
-          <li>Heathrow to Central London hotels</li>
-          <li>Heathrow to Windsor, Oxford and Bath touring starts</li>
-          <li>Heathrow to direct long-distance UK touring departures</li>
-          <li>Heathrow to cruise connections and regional gateways</li>
-          <li>Heathrow to wider England, Scotland and Ireland programmes</li>
-        </ul>
-      </section>
+        <section style={section}>
+          <h2 style={heading}>Who we work with</h2>
 
-      <section style={section}>
-        <h2 style={heading}>Who we work with</h2>
+          <p style={text}>
+            Our Heathrow transport services are built for professional travel
+            buyers managing commercially sensitive itineraries and structured
+            group operations.
+          </p>
 
-        <p style={text}>
-          Our Heathrow transport services are built for professional travel
-          buyers managing commercially sensitive itineraries and structured
-          group operations.
-        </p>
+          <ul style={list}>
+            <li>Tour operators running fixed-departure and escorted touring</li>
+            <li>DMCs managing airport arrivals and programme flow</li>
+            <li>Travel planners coordinating premium group itineraries</li>
+          </ul>
+        </section>
 
-        <ul style={list}>
-          <li>Tour operators running fixed-departure and escorted touring</li>
-          <li>DMCs managing airport arrivals and programme flow</li>
-          <li>Travel planners coordinating premium group itineraries</li>
-        </ul>
-      </section>
+        <section style={sectionSoft}>
+          <h2 style={heading}>Related transport services</h2>
 
-      <section style={sectionSoft}>
-        <h2 style={heading}>Related transport services</h2>
+          <div style={linkGrid}>
+            <a href="/southampton-cruise-transfers" style={linkCard}>
+              Southampton cruise transfers →
+            </a>
 
-        <div style={linkGrid}>
-          <a href="/southampton-cruise-transfers" style={linkCard}>
-            Southampton cruise transfers →
-          </a>
+            <a href="/services" style={linkCard}>
+              UK transport services →
+            </a>
 
-          <a href="/services" style={linkCard}>
-            UK transport services →
-          </a>
+            <a href="/programmes" style={linkCard}>
+              Touring programmes →
+            </a>
+          </div>
+        </section>
 
-          <a href="/programmes" style={linkCard}>
-            Touring programmes →
-          </a>
-        </div>
-      </section>
+        <section style={cta}>
+          <h2 style={heading}>Planning a Heathrow arrival or departure?</h2>
 
-      <section style={cta}>
-        <h2 style={heading}>Planning a Heathrow arrival or departure?</h2>
+          <p style={text}>
+            Share your flight schedule, group size and onward itinerary. We’ll
+            structure a clear and reliable Heathrow transport plan around your
+            programme.
+          </p>
 
-        <p style={text}>
-          Share your flight schedule, group size and onward itinerary. We’ll
-          structure a clear and reliable Heathrow transport plan around your
-          programme.
-        </p>
-
-        <div style={ctaRow}>
-          <a href="/contact" style={primaryButton}>
-            Request proposal
-          </a>
-          <a href="/" style={secondaryLink}>
-            Return to homepage →
-          </a>
-        </div>
-      </section>
+          <div style={ctaRow}>
+            <a href="/contact" style={primaryButton}>
+              Request proposal
+            </a>
+            <a href="/" style={secondaryLink}>
+              Return to homepage →
+            </a>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
@@ -207,11 +213,42 @@ export default function HeathrowPage() {
 const container: CSSProperties = {
   maxWidth: 900,
   margin: "0 auto",
-  padding: "40px 24px 80px",
+  padding: "0 24px 80px",
 };
 
-const hero: CSSProperties = {
-  marginBottom: 80,
+const containerNarrow: CSSProperties = {
+  maxWidth: 760,
+  margin: "0 auto",
+  padding: "0 24px",
+};
+
+const heroSection: CSSProperties = {
+  padding: "56px 0 76px",
+  background:
+    "linear-gradient(180deg, #EEF3F8 0%, #F7F9FC 60%, #FFFFFF 100%)",
+};
+
+const divider: CSSProperties = {
+  width: 56,
+  height: 3,
+  background: "linear-gradient(90deg, #5B7C99 0%, #97B3C8 100%)",
+  margin: "18px 0 24px",
+  borderRadius: 999,
+};
+
+const heroText: CSSProperties = {
+  margin: 0,
+  fontSize: 17,
+  lineHeight: 1.9,
+  color: "rgba(18,36,56,0.74)",
+};
+
+const heroActions: CSSProperties = {
+  marginTop: 26,
+  display: "flex",
+  gap: 16,
+  flexWrap: "wrap",
+  alignItems: "center",
 };
 
 const section: CSSProperties = {
@@ -226,17 +263,20 @@ const sectionSoft: CSSProperties = {
 };
 
 const eyebrow: CSSProperties = {
-  fontSize: 12,
+  margin: 0,
+  fontSize: 11,
   letterSpacing: "0.2em",
   textTransform: "uppercase",
-  color: "#5B7C99",
+  color: "rgba(18,36,56,0.52)",
 };
 
-const title: CSSProperties = {
-  fontSize: "clamp(2.2rem, 5vw, 3.4rem)",
-  lineHeight: 1.05,
-  margin: "12px 0 20px",
+const heroTitle: CSSProperties = {
+  margin: "12px 0 18px",
+  fontSize: "clamp(2.2rem, 5.8vw, 4.8rem)",
+  lineHeight: 1.03,
+  letterSpacing: "-0.04em",
   fontWeight: 700,
+  fontFamily: "var(--font-sans)",
   color: "#10263C",
 };
 
@@ -287,11 +327,14 @@ const primaryButton: CSSProperties = {
 };
 
 const secondaryLink: CSSProperties = {
-  display: "inline-flex",
-  alignItems: "center",
   textDecoration: "none",
   color: "#10263C",
   fontWeight: 600,
+  display: "inline-flex",
+  alignItems: "center",
+  gap: 6,
+  paddingBottom: 2,
+  borderBottom: "1px solid rgba(91,124,153,0.34)",
 };
 
 const linkGrid: CSSProperties = {
@@ -310,7 +353,7 @@ const linkCard: CSSProperties = {
 };
 
 const heroImageWrap: CSSProperties = {
-  marginTop: 32,
+  margin: "32px 0 48px",
   borderRadius: 20,
   overflow: "hidden",
 };
