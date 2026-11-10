@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>UKIGT | Route &amp; Logistics Planner</title><meta name="description" content="Coach tour planning workspace for UK Inbound Ground Transport."><link rel="stylesheet" href="style.css"><script type="module" src="app.js"></script></head>
+<body>
+<header class="top"><div class="brand"><span class="mark" aria-hidden="true">↗</span><div>UK INBOUND GROUND TRANSPORT<small>OPERATIONS WORKSPACE</small></div></div><span class="private">TRADE PLANNER</span></header>
+<main>
+<section class="hero"><div class="eyebrow">TOUR OPERATIONS / ROUTE DESK</div><h1>Route &amp; Logistics Planner</h1><p>Build a coach itinerary from gateway pickup to final departure. Plan visits, overnight stays, crossings and driver duty in one place.</p><div class="hero-foot"><span>UK · Ireland · Western Europe</span><span>Planning estimates · Operator verification required</span></div></section>
+<div class="workspace">
+<form id="editor" class="editor">
+<section class="card"><div class="section-head"><span class="step">01</span><div><h2>Tour brief</h2><p>Dates, passenger numbers and gateway commitments</p></div></div>
+<div class="fields">
+<label class="wide">Tour name<input name="title" maxlength="120" required></label>
+<label>Arrival date<input name="startDate" type="date" required></label><label>Departure date<input name="endDate" type="date" required></label>
+<label>Arrival point<select name="start" class="places"></select></label><label>Departure point<select name="end" class="places"></select></label>
+<label>Arrival / pickup time<input name="arrival" type="time" required></label><label>Departure deadline<input name="departure" type="time" required></label>
+<label>Arrival details<input name="arrivalRef" placeholder="Flight, terminal, meeting point"></label><label>Departure details<input name="departureRef" placeholder="Flight or drop-off point"></label>
+<label>Arrival allowance (min)<input name="arrivalBuffer" type="number" min="0" max="360" required></label><label>Final drop-off allowance (min)<input name="departureBuffer" type="number" min="0" max="360" required></label>
+<label>Passengers<input name="pax" type="number" min="1" max="200" required></label><label>Vehicle<select name="vehicle"><option value="8">8 passenger seats</option><option value="16">16-seat minicoach</option><option value="29">29-seat midi coach</option><option value="49">49-seat coach</option><option value="53">53-seat coach</option><option value="57">57-seat coach</option><option value="70">70-seat coach</option></select></label>
+<label class="wide">Channel preference<select name="channel"><option value="auto">Quickest in planning network</option><option>Ferry</option><option>Tunnel</option></select></label>
+</div></section>
+<section class="card"><div class="section-head"><span class="step">02</span><div><h2>Stops &amp; venues</h2><p>Build the programme. Lock fixed stops before optimising.</p></div></div>
+<div class="fields add-fields"><label class="wide">Destination library<select id="place" class="places"></select></label><label>Activity<select id="kind"><option>Sightseeing</option><option>Free time</option><option>Shopping</option><option>Hotel</option><option>Restaurant</option><option>Transfer</option></select></label><button class="primary" type="button" id="add">+ Add stop</button></div>
+<div id="stops"></div></section>
+<section class="card"><div class="section-head"><span class="step">03</span><div><h2>Driver &amp; duty</h2><p>Set the working window and record requirements for the quote.</p></div></div>
+<div class="fields"><label>Standard duty start<input name="dayStart" type="time" required></label><label>Standard duty end<input name="dayEnd" type="time" required></label><label>Drivers requested<select name="drivers"><option>1</option><option>2</option><option>3</option></select></label><label>Driver room<select name="room"><option>Required</option><option>To confirm</option><option>Arranged separately</option></select></label><label>Driving before tour this week (h)<input name="prior" type="number" min="0" max="56" step="0.25" placeholder="Unknown"></label><label>Previous week driving (h)<input name="priorWeek" type="number" min="0" max="56" step="0.25" placeholder="Unknown"></label><label class="wide">Driver &amp; quote notes<textarea name="notes" rows="3" placeholder="Depot positioning, room and meals, luggage, guide seats, relief driver"></textarea></label></div></section>
+<div class="editor-actions"><button type="submit" class="primary">Generate itinerary</button><button type="button" id="optimise">Optimise &amp; generate</button><button type="button" id="save">Save tour</button></div>
+</form>
+<div class="output">
+<section class="library card"><div><h2>Saved tours</h2><p>Saved in this browser. Export a tour file to move it to another device.</p></div><div class="toolbar"><select aria-label="Saved tours" id="saved"></select><button id="load">Load</button><button id="copy">Open as copy</button></div><div class="toolbar"><button id="sample">Load example</button><button id="download-tour">Export tour file</button><label class="button" for="import">Import tour file</label><input id="import" type="file" accept=".json,application/json" hidden></div></section>
+<section class="results" id="results" aria-label="Generated itinerary"></section>
+</div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+</main>
+<footer><a href="/contact#programme-enquiry" target="_top">Request a coach quote</a> <span>·</span> UK INBOUND GROUND TRANSPORT <span>·</span> B2B Operations <span>·</span> <a href="https://www.gov.uk/guidance/drivers-hours-passenger-vehicles" target="_blank" rel="noopener">DVSA guidance</a></footer>
+</body></html>

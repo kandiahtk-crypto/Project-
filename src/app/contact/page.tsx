@@ -247,7 +247,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div style={formPanel} className="premium-card">
+            <div id="programme-enquiry" style={formPanel} className="premium-card">
               <ProgrammeEnquiryForm />
             </div>
           </div>

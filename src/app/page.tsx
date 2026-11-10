@@ -133,8 +133,8 @@ export default function HomePage() {
             </p>
 
             <div className="compact-actions">
-              <Link className="compact-button" href="/contact">
-                Send a programme enquiry{" "}
+              <Link className="compact-button" href="/itinerary-builder">
+                Plan a Group Tour{" "}
                 <span aria-hidden="true">↗</span>
               </Link>
 

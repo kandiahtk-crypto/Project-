@@ -22,7 +22,7 @@ export default function PlannerFrame() {
     <section aria-label="Trade itinerary builder" style={{ background: "#FFFFFF" }}>
       <iframe
         ref={frame}
-        src="/ukigt-planner.html"
+        src="/route-logistics/index.html"
         title="UK Inbound Ground Transport itinerary builder"
         style={{ display: "block", width: "100%", height, border: 0, background: "#FFFFFF" }}
       />
