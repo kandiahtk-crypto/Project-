@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
+import "./unified-site.css";
 import { Inter } from "next/font/google";
 
 import SiteChrome from "../components/SiteChrome";
