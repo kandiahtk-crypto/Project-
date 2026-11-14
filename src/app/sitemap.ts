@@ -5,6 +5,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
+      url: `${baseUrl}/uk-coach-tour-planning-beyond-the-landmarks`,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/`,
       lastModified: new Date(),
       changeFrequency: "weekly",
