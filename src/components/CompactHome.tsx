@@ -13,7 +13,7 @@ export default function CompactHome(){
  motionNodes.forEach((node,index)=>{node.classList.add('motion-ready');if(node.matches('.hero-copy,.programme-copy'))node.classList.add('motion-left');if(node.matches('.hero-visual,.programme-photo,.fleet-trust figure'))node.classList.add('motion-right');node.style.setProperty('--reveal-delay',`${index%3*70}ms`);observer!.observe(node);});
  }
  let busy=false;
- const click=(e:Event)=>{const a=(e.target as Element).closest<HTMLElement>('[data-service]');if(a)(root.querySelector('#service') as HTMLSelectElement).value=a.dataset.service!;};
+ const click=(e:Event)=>{const target=e.target as Element;if(target.closest('.home-mobile-menu a'))root.querySelector<HTMLDetailsElement>('.home-mobile-menu')?.removeAttribute('open');const a=(e.target as Element).closest<HTMLElement>('[data-service]');if(a)(root.querySelector('#service') as HTMLSelectElement).value=a.dataset.service!;};
  const send=async(e:Event)=>{e.preventDefault();if(busy)return;busy=true;submit.disabled=true;submit.textContent='Sending…';status.textContent='';
  const fields=Object.fromEntries(new FormData(form).entries());
  try{const response=await fetch('/api/enquiry',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(fields)});const result=await response.json();if(!response.ok||!result.success)throw new Error(result.message||'Enquiry could not be sent.');status.textContent=`Thank you. Your enquiry reference is ${result.reference}. This is not a booking confirmation.`;form.reset();}
