@@ -4,6 +4,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.ukinboundgroundtransport.com";
 
   return [
+    { url: `${baseUrl}/operational-guides/heathrow-group-arrivals`, lastModified: new Date("2026-11-14"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/operational-guides/london-emissions-coach-access`, lastModified: new Date("2026-11-14"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/operational-guides/uk-ireland-drivers-hours`, lastModified: new Date("2026-11-14"), changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/operational-guides`, changeFrequency: "monthly", priority: 0.8 },
     {
       url: `${baseUrl}/uk-coach-tour-planning-beyond-the-landmarks`,
       changeFrequency: "monthly",
