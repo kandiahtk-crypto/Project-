@@ -91,6 +91,18 @@ export default function Page() {
         </div>
       </section>
 
+      <section style={section} aria-label="Latest operational guides">
+        <div style={container}>
+          <p style={sectionLabel}>B2B operational guides · November 2026</p>
+          <h2 style={sectionTitle}>Plan the details before the programme goes on sale.</h2>
+          <div style={grid}>
+            <article style={card}><h3 style={cardTitle}><a href="/operational-guides/heathrow-group-arrivals" style={{color: "inherit"}}>Managing Heathrow Group Arrivals</a></h3><p style={cardText}>Terminal coordination, luggage planning and a realistic first-day schedule for inbound groups arriving through Heathrow.</p><a href="/operational-guides/heathrow-group-arrivals" style={button}>Read the guide →</a></article>
+            <article style={card}><h3 style={cardTitle}><a href="/operational-guides/london-emissions-coach-access" style={{color: "inherit"}}>London Emissions Zones & Central Coach Access</a></h3><p style={cardText}>Understand vehicle compliance, legal stopping points and coach repositioning before confirming a London programme.</p><a href="/operational-guides/london-emissions-coach-access" style={button}>Read the guide →</a></article>
+            <article style={card}><h3 style={cardTitle}><a href="/operational-guides/uk-ireland-drivers-hours" style={{color: "inherit"}}>Planning Realistic UK & Ireland Coach Itineraries</a></h3><p style={cardText}>How driving limits, overnight rest, weekly rest and ferry arrangements shape a workable multi-day coach programme.</p><a href="/operational-guides/uk-ireland-drivers-hours" style={button}>Read the guide →</a></article>
+          </div>
+        </div>
+      </section>
+
       <section style={section}>
         <div style={container}>
           <p style={sectionLabel}>Operational considerations</p>
