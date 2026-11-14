@@ -82,6 +82,15 @@ export default function Page() {
         </div>
       </section>
 
+      <section style={sectionSoft} aria-label="Featured article">
+        <div style={container}>
+          <p style={sectionLabel}>The group travel edit</p>
+          <h2 style={sectionTitle}>A Great UK Coach Tour Is Built Between the Landmarks</h2>
+          <p style={sectionText}>Airport arrivals, luggage, hotel access and the rhythm of each day: the details that turn an attractive itinerary into a journey guests can enjoy.</p>
+          <a href="/uk-coach-tour-planning-beyond-the-landmarks" style={button}>Read the article →</a>
+        </div>
+      </section>
+
       <section style={section}>
         <div style={container}>
           <p style={sectionLabel}>Operational considerations</p>
