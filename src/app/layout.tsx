@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import type { ReactNode } from "react";
 import "./globals.css";
 import "./unified-site.css";
+import "./rose-site.css";
 import { Inter } from "next/font/google";
 
 import SiteChrome from "../components/SiteChrome";
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#10263C",
+  themeColor: "#59394b",
 };
 
 export default function RootLayout({
@@ -44,8 +45,8 @@ export default function RootLayout({
         style={{
           margin: 0,
           fontFamily: "var(--font-sans)",
-          background: "#FFFFFF",
-          color: "#10263C",
+          background: "#fffaf8",
+          color: "#59394b",
           WebkitFontSmoothing: "antialiased",
           MozOsxFontSmoothing: "grayscale",
         }}
