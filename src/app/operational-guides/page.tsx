@@ -2,7 +2,7 @@ import type { CSSProperties } from "react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Operational Guides for Tour Operators & DMCs | UK Inbound Ground Transport",
+  title: "Operational Guides for Tour Operators & DMCs",
   description:
     "Operational guides for tour operators and DMCs planning UK coach transport, cruise movements, multi-day itineraries and driver-hours compliant programmes.",
   alternates: {
