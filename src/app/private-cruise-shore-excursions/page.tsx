@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Private Cruise Shore Excursions from Southampton",
   description: "Request private shore excursion transport from Southampton for cruise travel advisers, tour operators and DMCs. Ask for a tailored quote for groups of 4–16.",
-  alternates: { canonical: "/private-cruise-shore-excursions/" },
+  alternates: { canonical: "/private-cruise-shore-excursions" },
 };
 
 const quoteUrl = "/request-a-quote/?service=Cruise%20movement";
