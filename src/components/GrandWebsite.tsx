@@ -5,6 +5,12 @@ const pages=pageData as Record<string,{html:string;title:string;description:stri
 const home=pages["/"].html;
 const before=home.slice(0,home.indexOf('<main id="main">'));
 const after=home.slice(home.lastIndexOf('</main>')+7);
+function addShoreExcursionsLink(html: string, currentPath: string) {
+ const shorePath = "/private-cruise-shore-excursions";
+ const current = currentPath === shorePath ? ' aria-current="page"' : "";
+ const link = '<a href="' + shorePath + '/"' + current + '>Shore excursions</a>';
+ return html.replace(/(<nav aria-label="(?:Main|Mobile) navigation"[^>]*>)(<a href="\/services\/"[^>]*>Services<\/a>)/g, "$1$2" + link);
+}
 export default function GrandWebsite({path,children}:{path:string;children:ReactNode}){
  const host=useRef<HTMLDivElement>(null);
  const normalized=path.replace(/\/$/,"")||"/";
@@ -55,5 +61,5 @@ export default function GrandWebsite({path,children}:{path:string;children:React
   }
   return ()=>controller.abort();
  },[normalized]);
- return <div className="grand-website" ref={host} key={normalized}>{page?<div dangerouslySetInnerHTML={{__html:page.html}}/>:<><div dangerouslySetInnerHTML={{__html:before}}/><main id="main" className="legacy-content">{children}</main><div dangerouslySetInnerHTML={{__html:after}}/></>}</div>;
+ return <div className="grand-website" ref={host} key={normalized}>{page?<div dangerouslySetInnerHTML={{__html:addShoreExcursionsLink(page.html,normalized)}}/>:<><div dangerouslySetInnerHTML={{__html:addShoreExcursionsLink(before,normalized)}}/><main id="main" className="legacy-content">{children}</main><div dangerouslySetInnerHTML={{__html:after}}/></>}</div>;
 }
