@@ -12,3 +12,30 @@
 
 /* Service discovery uses the existing brand and responsive layout. */
 .grand-website .seo-resource-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:24px}.grand-website .seo-resources h3{font-size:1.15rem;line-height:1.5}.grand-website .seo-resources .text-link{white-space:normal}
+
+@media (max-width: 700px) {
+  .grand-website .trade-bar {
+    font-size: 12px;
+    letter-spacing: .07em;
+  }
+
+  .grand-website .site-header .brand {
+    font-size: clamp(16px, 4.6vw, 18px);
+  }
+
+  .grand-website .site-header .brand small {
+    font-size: 10px;
+    letter-spacing: .1em;
+  }
+
+  .grand-website .site-header .mobile-menu > summary {
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-size: 15px;
+  }
+
+  .grand-website .site-header .mobile-menu nav a {
+    font-size: 16px;
+  }
+}
