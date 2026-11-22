@@ -20,7 +20,14 @@
   }
 
   .grand-website .site-header .brand {
+    min-width: 0;
+    flex-shrink: 1;
     font-size: clamp(16px, 4.6vw, 18px);
+  }
+
+  .grand-website .site-header .brand-icon,
+  .grand-website .site-header .mobile-menu {
+    flex-shrink: 0;
   }
 
   .grand-website .site-header .brand small {
@@ -37,5 +44,15 @@
 
   .grand-website .site-header .mobile-menu nav a {
     font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .grand-website .site-header .nav-wrap {
+    width: calc(100% - 32px);
+    min-height: 89px;
+    height: auto;
+    gap: 10px;
+    padding-block: 8px;
   }
 }
